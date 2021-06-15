@@ -914,17 +914,20 @@
 
 1623425501 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.2\clsvendedor.h
 
-1623432175 source:c:\users\sebas\desktop\sebas\finallab\gestark\main.cpp
+1623799362 source:c:\users\sebas\desktop\sebas\finallab\gestark\main.cpp
 	<iostream>
 	<iostream>
 	<cstdlib>
 	<cstring>
 	<stdio.h>
+	"herramientas.h"
 	"Menus.h"
+	"clscadena.h"
 	"clsdirrecion.h"
 	"clsfecha.h"
-	"clsarticulo.h"
+	"clspersona.h"
 	"clscliente.h"
+	"clsarticulo.h"
 	"clsventa.h"
 	"clsvendedor.h"
 	"herramientas.h"
@@ -933,10 +936,10 @@
 	"Menuventa.h"
 	"MenuConfiguracion.h"
 
-1623118500 c:\users\sebas\desktop\sebas\finallab\gestark\menus.h
+1623476724 c:\users\sebas\desktop\sebas\finallab\gestark\menus.h
 	"rlutil.h"
 
-1571512338 c:\users\sebas\desktop\sebas\finallab\gestark\rlutil.h
+1623476724 c:\users\sebas\desktop\sebas\finallab\gestark\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -950,27 +953,27 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1623432307 c:\users\sebas\desktop\sebas\finallab\gestark\clsdirrecion.h
+1623798924 c:\users\sebas\desktop\sebas\finallab\gestark\clsdirrecion.h
 
-1622930675 c:\users\sebas\desktop\sebas\finallab\gestark\clsfecha.h
+1623476724 c:\users\sebas\desktop\sebas\finallab\gestark\clsfecha.h
 
-1623118547 c:\users\sebas\desktop\sebas\finallab\gestark\clsarticulo.h
+1623476724 c:\users\sebas\desktop\sebas\finallab\gestark\clsarticulo.h
 
-1623432610 c:\users\sebas\desktop\sebas\finallab\gestark\clscliente.h
+1623798972 c:\users\sebas\desktop\sebas\finallab\gestark\clscliente.h
 
-1623425376 c:\users\sebas\desktop\sebas\finallab\gestark\clsventa.h
+1623476724 c:\users\sebas\desktop\sebas\finallab\gestark\clsventa.h
 
-1623433067 c:\users\sebas\desktop\sebas\finallab\gestark\clsvendedor.h
+1623476724 c:\users\sebas\desktop\sebas\finallab\gestark\clsvendedor.h
 
-1623118500 c:\users\sebas\desktop\sebas\finallab\gestark\herramientas.h
+1623799452 c:\users\sebas\desktop\sebas\finallab\gestark\herramientas.h
 
-1623102674 c:\users\sebas\desktop\sebas\finallab\gestark\menuarticulos.h
+1623476724 c:\users\sebas\desktop\sebas\finallab\gestark\menuarticulos.h
 
-1623116005 c:\users\sebas\desktop\sebas\finallab\gestark\menuclientes.h
+1623799039 c:\users\sebas\desktop\sebas\finallab\gestark\menuclientes.h
 
-1623102673 c:\users\sebas\desktop\sebas\finallab\gestark\menuventa.h
+1623799640 c:\users\sebas\desktop\sebas\finallab\gestark\menuventa.h
 
-1623102674 c:\users\sebas\desktop\sebas\finallab\gestark\menuconfiguracion.h
+1623476724 c:\users\sebas\desktop\sebas\finallab\gestark\menuconfiguracion.h
 
 1623469104 source:c:\users\chave\desktop\gestark\main.cpp
 	<iostream>
@@ -1035,4 +1038,8 @@
 1623463971 c:\users\chave\desktop\gestark\menuventa.h
 
 1623463971 c:\users\chave\desktop\gestark\menuconfiguracion.h
+
+1623476724 c:\users\sebas\desktop\sebas\finallab\gestark\clscadena.h
+
+1623799426 c:\users\sebas\desktop\sebas\finallab\gestark\clspersona.h
 

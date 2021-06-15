@@ -21,51 +21,64 @@ class Cliente: public Persona{
         ///Metodos
         void cargar();
         void mostrar();
-        bool leerDeDisco(int pos);
+        bool leerDeDisco(int );
         bool grabarEnDisco();
-        bool modificarEnDisco(Cliente reg, int pos);
+        bool modificarEnDisco(int );
     };
-
-void Cliente::cargar(){
-
-    Persona::Cargar();
-    domicilio.cargar();
-}
-
 void Cliente::mostrar(){
     cout<<"-----------------------------"<<endl;
     Persona::Mostrar();
     domicilio.Mostrar();
 }
 
+void Cliente::cargar(){
+    Persona::Cargar();
+    domicilio.cargar();
+}
+
+
+
 bool Cliente::leerDeDisco(int pos){
-    FILE *pCliente;
-    pCliente=fopen(ARCHIVOCLIENTE,"rb");
-    if(pCliente==NULL){return false;}
-    fseek(pCliente,pos*sizeof(Cliente),0);
-    bool leyo=fread(this,sizeof (Cliente),1,pCliente);
-    fclose(pCliente);
-    return leyo;
+    FILE *pArchivo;
+
+    pArchivo=fopen(ARCHIVOCLIENTE, "rb");
+    if(pArchivo==NULL){return false;}
+    fseek(pArchivo, sizeof (Cliente)*pos, 0); /// Nos ubicamos para leer
+    if(fread(this, sizeof (Cliente), 1, pArchivo)){ /// Sacamos el registro del archivo
+        fclose(pArchivo);
+        return true;
+    }
+    fclose(pArchivo);
+    return false;
 }
 
 bool Cliente::grabarEnDisco(){
-    FILE *pCliente;
-    pCliente=fopen(ARCHIVOCLIENTE,"ab");
-    if(pCliente==NULL){return false;}
-    bool escribio=fwrite(this,sizeof (Cliente),1,pCliente);
-    fclose(pCliente);
-    return escribio;
+    FILE *pArchivo;
+
+    pArchivo=fopen(ARCHIVOCLIENTE, "ab");
+    if(pArchivo==NULL){return false;}
+    if(fwrite(this, sizeof (Cliente), 1, pArchivo)){
+        fclose(pArchivo);
+        return true;
+    }
+    fclose(pArchivo);
+    return false;
 
 }
 
-bool Cliente::modificarEnDisco(Cliente reg, int pos){
-    FILE *pCliente;
-    pCliente=fopen(ARCHIVOCLIENTE,"rb+");
-    if(pCliente==NULL){return false;}
-    fseek(pCliente,pos*sizeof reg,0);
-    bool escribio=fwrite(&reg,sizeof reg,1,pCliente);
-    fclose(pCliente);
-    return escribio;
+bool Cliente::modificarEnDisco(int pos){
+    FILE *pArchivo;
+
+    pArchivo=fopen(ARCHIVOCLIENTE, "rb+");
+    if (pArchivo==NULL){return false;}
+
+    fseek(pArchivo, sizeof (Cliente)*pos, 0);
+    if (fwrite(this, sizeof (Cliente), 1, pArchivo)){
+        fclose(pArchivo);
+        return true;
+    }
+    fclose(pArchivo);
+    return false;
 }
 ///-------------------------------------------------------///
 #endif // CLSCLIENTE_H_INCLUDED

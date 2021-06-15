@@ -2,66 +2,49 @@
 #define MENUCLIENTES_H_INCLUDED
 ///MENU CLIENTE
 ///-------------------------------------------------------///
-bool verificarcliente(Cliente cli){
-    int pos=0;
-    Cliente aux;
-    aux.setDni(cli.getDni());
-    FILE *pCliente;
-    pCliente=fopen(ARCHIVOCLIENTE,"rb");
-    if(pCliente==NULL){return false;}
-    while((cli.leerDeDisco(pos))==1){
-        if(aux.getDni()==cli.getDni()){
-           fclose(pCliente);
-           return true;}
-        pos++;
-    }
-    fclose(pCliente);
-    return false;
-}
+int buscarDNICliente(int dniBuscado){
+    int posicion=0;
+    Cliente registro;
 
-bool agregarCliente(){//crea o agrega un registro cliente al final de los que esten echos
-    Cliente cli;
-    cli.cargar();
-    if(verificarcliente(cli)){
-        cout<<"CLIENTE YA EXISTE"<<endl;
-        return false;
-    }
-    else{
-        bool grabo=cli.grabarEnDisco();
-        return grabo;
-    }
-}
-
-int buscarCliente(int codigo){//recibe "id" del registro y devuelve la posicion donde se encuentra el registro
-    Cliente cli;
-    int pos=0;
-    FILE *pCliente;
-    pCliente=fopen(ARCHIVOCLIENTE,"rb");
-    if(pCliente==NULL){return -1;}
-    while((cli.leerDeDisco(pos))==1){
-        if(cli.getDni()==codigo){
-            fclose(pCliente);
-            return pos;
+    while(registro.leerDeDisco(posicion)){
+        if(dniBuscado==registro.getDni()){
+            return posicion;
         }
-        pos++;
+        posicion++;
     }
-    fclose(pCliente);
-    return -2;
+    return -1;
 }
 
-int BuscarClientporDNI(int dni){//busca articulo por id y lo muestra si "estado" esta en true
+int agregarCliente(){//crea o agrega un registro cliente al final de los que esten hechos
+    int r;
+    int contador=0;
+    do{
+        Cliente cli;
+        cli.cargar();
+        if(!cli.grabarEnDisco()){
+            cout << "Error al guardar el archivo.";
+            system("pause");
+            return contador;
+        }
+        contador++;
+        cout<<"DESEA AGREGAR OTRO CLIENTE (y/n)?"<<endl;
+        r=getch();
+    }while(r==121||r==89);
+    return contador;
+}
+
+int mostrarClientePorDNI(int dni){//busca cliente por DNI y lo muestra si "estado" esta en true
     Cliente cli;
     int pos=0;
-    FILE *pCliente;
-    pCliente=fopen(ARCHIVOCLIENTE,"rb");
-    if(pCliente==NULL){return -1;}
-    pos=buscarCliente(dni);
-    if(pos<0){return -2;}
-    cli.leerDeDisco(pos);
-    if(cli.GetEstado()==true){cli.mostrar();}
-    else{return -2;}
-    fclose(pCliente);
 
+    pos=buscarDNICliente(dni);
+    if(pos<0){return -2;}
+
+    if(!cli.leerDeDisco(pos)){return -3;}
+
+    if(!cli.GetEstado()){return -1;}
+
+    cli.mostrar();
 }
 
 int contarRegistrosClientes(){//Devuelve la cantidad de registros
@@ -76,153 +59,167 @@ int contarRegistrosClientes(){//Devuelve la cantidad de registros
     return c;
 }
 
-bool listarClientes(){//lista todo el registro siempre y cuando "estado" este en true
-    int cantReg,i;
-    Cliente cli;
-    cantReg=contarRegistrosClientes();
-    for(i=0;i<cantReg;i++){
-        cli.leerDeDisco(i);
-        if(cli.GetEstado()){
-            cli.mostrar();
-            cout<<endl;
+int listarClientes(){//lista todo el registro siempre y cuando "estado" este en true
+    Cliente registro;
+    int pos=0;
+    while(registro.leerDeDisco(pos++)){
+        if(registro.GetEstado()){
+            registro.mostrar();
+            cout << endl;
         }
     }
-    return cantReg;
+    return pos;
 }
 
-bool modificarMail(){//modifica el precio unitario de un articulo
-    char mail[30];
-    int dni,pos;
+int modificarMail(){//modifica el precio unitario de un articulo
+    int dni, pos;
+    bool modifico=false;
     Cliente cli;
-    FILE *pCliente;
-    pCliente=fopen(ARCHIVOCLIENTE,"rb");
-    if(pCliente==NULL){return false;}
+
     cout<<"INGRESE DNI DEL CLIENTE: ";
     cin>>dni;
-    pos=buscarCliente(dni);
-    if(pos<0){
-        fclose(pCliente);
-        return false;
-        }
-    cli.leerDeDisco(pos);
-    cli.mostrar();
+
+    pos=buscarDNICliente(dni);
+    if(pos<0){return -2;}
+
+
+    if(!cli.leerDeDisco(pos)){return -3;}
     if(cli.GetEstado()==true){
+        char mailNuevo[30];
         cout<<"INGRESE NUEVO MAIL: ";
-        cin>>mail;
-        cli.setEmail(mail);
-        bool modifico=cli.modificarEnDisco(cli,pos);
+        cin.ignore();
+        cin.getline(mailNuevo, 30);
+        cli.setEmail(mailNuevo);
+        modifico=cli.modificarEnDisco(pos);
+    }
+    return modifico;
+}
+
+int eliminarCliente(){//cambia el estado de true a false
+    int r;
+    int dni, pos;
+    bool modifico=false;
+    Cliente cli;
+
+    cout<<"INGRESE DNI DEL CLIENTE: ";
+    cin>>dni;
+
+    pos=buscarDNICliente(dni);
+    if(pos<0){return -2;}
+
+    if(!cli.leerDeDisco(pos)){return -3;}
+
+    cout<<"ELIMINAR CLIENTE (Y/N)?";
+    r=getch();
+    if(r!=121 && r!=89){
+        modifico = -1;
         return modifico;
     }
-    else{return false;}
+    cli.setEstado(false);
+    modifico=cli.modificarEnDisco(pos);
+    return modifico;
 }
 
-bool eliminarCliente(){//cambia el estado de true a false
-    bool nodisponible=false;
-    char r;
-    int dni;
+int altaCliente(){// cambia el estado de false a true
+    int r;
+    int dni, pos;
     Cliente cli;
-    FILE *pCliente;
-    pCliente=fopen(ARCHIVOCLIENTE,"rb+");
-    if(pCliente==NULL){return false;}
-    cout<<"INGRESE DNI DEL CLIENTE: ";
-    cin>>dni;
-    int pos=buscarCliente(dni);
-    if(pos<0){
-            fclose(pCliente);
-            return false;}
-    cli.leerDeDisco(pos);
-    cli.mostrar();
-    cout<<"ELIMINAR CLIENTE (Y/N)?";
-    cin>>r;
-    if(r=='y'||r=='Y'){
-            cli.leerDeDisco(pos);
-            cli.setEstado(nodisponible);
-            bool modifico=cli.modificarEnDisco(cli,pos);
-            fclose(pCliente);
-            return modifico;
-    }
-    else{return false;}
-}
+    bool modifico=false;
 
-bool altaCliente(){// cambia el estado de false a true
-    bool disponible=true;
-    char r;
-    int dni;
-    Cliente cli;
-    FILE *pCliente;
-    pCliente=fopen(ARCHIVOCLIENTE,"rb+");
-    if(pCliente==NULL){return false;}
     cout<<"INGRESE DNI DEL CLIENTE: ";
     cin>>dni;
-    int pos=buscarCliente(dni);
-    if(pos<0){
-            fclose(pCliente);
-            return false;}
-            cli.leerDeDisco(pos);
-            cli.mostrar();
-            cout<<"DAR EL ALTA CLIENTE (Y/N)?";
-            cin>>r;
-    if(r=='y'||r=='Y'){
-            cli.leerDeDisco(pos);
-            cli.setEstado(disponible);
-            bool modifico=cli.modificarEnDisco(cli,pos);
-            fclose(pCliente);
-            return modifico;
+
+    pos=buscarDNICliente(dni);
+    if(pos<0){return -2;}
+
+    if(!cli.leerDeDisco(pos)){return -3;}
+    cout<<"DAR EL ALTA CLIENTE (Y/N)?" << endl;
+    r=getch();
+    if(r!=121 && r!=89){
+        modifico = -1;
+        return modifico;
     }
-    else{return false;}
+    cli.setEstado(true);
+    modifico=cli.modificarEnDisco(pos);
+    return modifico;
 }
 
 void seccionClientes(){
     int opc;
     do{
+        int checkeo=0;
         opc=Menucliente();
         switch(opc){
         case 12:
-               char r;
-               system("cls");
-               do{
+            {
+                int agregados=0;
                 system("cls");
-               if(agregarCliente()==1){cout<<"CARGADO CON EXITO"<<endl;}
-               cout<<"DESEA AGREGAR OTRO CLIENTE (y/n)?"<<endl;
-               cin>>r;
-               cin.ignore();
-               }while(r=='y'||r=='Y');
-            break;
+                agregados = agregarCliente();
+                cout << agregados <<"CLIENTE/s CARGADO/s CON EXITO!"<<endl;
+                break;
+            }
         case 13:
+            {
                 system("cls");
                 int dni;
                 cout<<"INGRESE DNI DEL CLIENTE: "<<endl;
                 cin>>dni;
-                if(BuscarClientporDNI(dni)==-2){cout<<"CLIENTE NO ENCONTRADO"<<endl;}
+                checkeo=mostrarClientePorDNI(dni);
+                if(checkeo==-1){cout<<"El cliente esta dado de baja."<<endl;}
+                if(checkeo==-2){cout<<"El cliente no se encuentra registrado."<<endl;}
+                if(checkeo==-3){cout<<"Error al leer el archivo."<<endl;}
                 system("pause");
-            break;
+                break;
+            }
         case 14:
+            {
                 system("cls");
-                if(listarClientes()==false){cout<<"ERROR AL LEER ARCHIVO CLIENTES"<<endl;}
+                int leyo;
+                leyo=listarClientes();
+                if (leyo==0){cout << "Error al leer el archivo" << endl;}
                 system("pause");
-            break;
+                break;
+            }
         case 15:
+            {
                 system("cls");
-                if(modificarMail()){cout<<"MODIFICADO CON EXITO"<<endl;}
-                else{cout<<"ERROR AL MODIFICAR MAIL"<<endl;}
+                checkeo=modificarMail();
+                if(checkeo==-2){cout<<"El cliente no se encuentra registrado."<<endl;}
+                if(checkeo==-3){cout<<"Error al leer el archivo."<<endl;}
+                if(checkeo==1){cout<<"Email modificado con exito."<<endl;}
+                if(checkeo==0){cout<<"Error al guardar los nuevos datos en el archivo."<<endl;}
                 system("pause");
-            break;
+                break;
+            }
         case 16:
+            {
                 system("cls");
-                if(eliminarCliente()){cout<<"CLIENTE ELIMINADO CON EXITO"<<endl;}
-                else{cout<<"ERROR AL INTENTAR ELIMINAR CLIENTE"<<endl;}
+                checkeo=eliminarCliente();
+                if(checkeo==-1){cout<<"El cliente no fue dado de baja."<<endl;}
+                if(checkeo==-2){cout<<"El cliente no se encuentra registrado."<<endl;}
+                if(checkeo==-3){cout<<"Error al leer el archivo."<<endl;}
+                if(checkeo==1){cout<<"Cliente dado de baja con exito."<<endl;}
+                if(checkeo==0){cout<<"Error al guardar los nuevos datos en el archivo."<<endl;}
                 system("pause");
-            break;
+                break;
+            }
         case 17:
+            {
                 system("cls");
-                if(altaCliente()){cout<<"ALTA CLIENTE EXITOSA"<<endl;}
-                else{cout<<"ERROR AL INTENTAR ALTA DE CLIENTE"<<endl;}
+                checkeo=altaCliente();
+                if(checkeo==-1){cout<<"El cliente no fue dado de alta."<<endl;}
+                if(checkeo==-2){cout<<"El cliente no se encuentra registrado."<<endl;}
+                if(checkeo==-3){cout<<"Error al leer el archivo."<<endl;}
+                if(checkeo==1){cout<<"Cliente dado de alta con exito."<<endl;}
+                if(checkeo==0){cout<<"Error al guardar los nuevos datos en el archivo."<<endl;}
                 system("pause");
-            break;
+                break;
+            }
         }
     }while(opc!=18);
 }
 ///-------------------------------------------------------///
+
 
 
 

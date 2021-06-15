@@ -46,7 +46,7 @@ bool VerificarVenta(int idarticulo, int dni, int cantidad){
             cout<<"EL ARTICULO NO EXISTE"<<endl;
             contador++;
     }
-    if(buscarCliente(dni)<0){
+    if(buscarDNICliente(dni)<0){
         cout<<"EL CLIENTE NO EXISTE"<<endl;
         contador++;
     }
@@ -115,6 +115,8 @@ int BuscarVentaporNumero(int venta){//busca articulo por id y lo muestra si "est
     if(ven.getEstado()==true){ven.mostrar();}
     else{return -2;}
     fclose(pVenta);
+
+
 }
 
 int contarRegistrosVentas(){//Devuelve la cantidad de registros
