@@ -1,6 +1,9 @@
 #ifndef HERRAMIENTAS_H_INCLUDED
 #define HERRAMIENTAS_H_INCLUDED
 
+
+
+
 ///PROTOTIPOS
 void cargarCadena(char *pal, int tam);
 ///ARTICULO
@@ -28,27 +31,28 @@ void seccionArticulos();
 ///-------------------------------------------------------///
 ///CLIENTE
 ///-------------------------------------------------------///
-bool verificarcliente(Cliente cli);
+int buscarDNICliente(int );
 
-bool agregarCliente();
+int agregarCliente();
 
-int buscarCliente(int codigo);
-
-int BuscarClientporDNI(int dni);
+int mostrarClientePorDNI(int );
 
 int contarRegistrosClientes();
 
-bool listarClientes();
+int listarClientes();
 
-bool modificarMail();
+int modificarMail();
 
-bool eliminarCliente();
+int eliminarCliente();
 
-bool altaCliente();
+int altaCliente();
 
 int Menucliente();
 
 void seccionClientes();
+
+
+
 ///FIN CLIENTE
 ///-------------------------------------------------------///
 ///VENTA

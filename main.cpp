@@ -26,13 +26,15 @@ const char ARCHIVOVENTAS[]="Archivoventa.dat";
 const char ARCHIVOVENTAS_BKP[]="Archivoventa_bkp.dat";
 const char ARCHIVOVENTASINICIAL[]="Archivoventainicial.dat";
 ///-------------------------------------------------------///
+
+#include "herramientas.h"
 #include "Menus.h"
 #include "clscadena.h"
 #include "clsdirrecion.h"
 #include "clsfecha.h"
 #include "clspersona.h"
-#include "clsarticulo.h"
 #include "clscliente.h"
+#include "clsarticulo.h"
 #include "clsventa.h"
 #include "clsvendedor.h"
 #include "herramientas.h"
