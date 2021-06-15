@@ -29,9 +29,9 @@ public:
     //metodos
     void cargar();
     void mostrar();
-//    bool leerDeDisco(int pos);
+    bool leerDeDisco(int pos);
     bool grabarEnDisco();
-//    bool modificarEnDisco(Vendedor reg, int pos);
+    bool modificarEnDisco(Vendedor reg, int pos);
 };
 
 void Vendedor::cargar(){
@@ -50,16 +50,16 @@ void Vendedor::mostrar(){
     cout<<"CATEGORIA VENDEDOR: "<<Categoria<<endl;
 }
 
-/*bool Cliente::leerDeDisco(int pos){
-    FILE *pCliente;
-    pCliente=fopen(ARCHIVOCLIENTE,"rb");
-    if(pCliente==NULL){return false;}
-    fseek(pCliente,pos*sizeof(Cliente),0);
-    bool leyo=fread(this,sizeof (Cliente),1,pCliente);
-    fclose(pCliente);
+bool Vendedor::leerDeDisco(int pos){
+    FILE *pVendedor;
+    pVendedor=fopen(ARCHIVOVENDEDOR,"rb");
+    if(pVendedor==NULL){return false;}
+    fseek(pVendedor,pos*sizeof(Vendedor),0);
+    bool leyo=fread(this,sizeof (Vendedor),1,pVendedor);
+    fclose(pVendedor);
     return leyo;
 }
-*/
+
 
 bool Vendedor::grabarEnDisco(){
     FILE *pVendedor;
@@ -70,16 +70,17 @@ bool Vendedor::grabarEnDisco(){
     return escribio;
 
 }
-/*
-bool Cliente::modificarEnDisco(Cliente reg, int pos){
-    FILE *pCliente;
-    pCliente=fopen(ARCHIVOCLIENTE,"rb+");
-    if(pCliente==NULL){return false;}
-    fseek(pCliente,pos*sizeof reg,0);
-    bool escribio=fwrite(&reg,sizeof reg,1,pCliente);
-    fclose(pCliente);
+
+
+bool Vendedor::modificarEnDisco(Vendedor reg, int pos){
+    FILE *pVendedor;
+    pVendedor=fopen(ARCHIVOVENDEDOR,"rb+");
+    if(pVendedor==NULL){return false;}
+    fseek(pVendedor,pos*sizeof reg,0);
+    bool escribio=fwrite(&reg,sizeof reg,1,pVendedor);
+    fclose(pVendedor);
     return escribio;
-}*/
+}
 
 
 
