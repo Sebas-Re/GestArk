@@ -1,0 +1,1038 @@
+# depslib dependency file v1.0
+1619796217 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1\tp parciallab\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"Menus.h"
+	"clsfecha.h"
+	"clsarticulo.h"
+	"clscliente.h"
+
+1619792072 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1\tp parciallab\funciones.h
+	"rlutil.h"
+
+1571555538 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1\tp parciallab\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1619788426 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1\tp parciallab\clsfecha.h
+
+1619797104 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1\tp parciallab\clsarticulo.h
+
+1619788426 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1\tp parciallab\clscliente.h
+
+1619793745 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1\tp parciallab\menus.h
+	"rlutil.h"
+
+1619891988 source:c:\users\lupel\desktop\ama utn\tp parcial 1-20210501t130222z-001\tp parcial 1\tp parciallab\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"Menus.h"
+	"clsfecha.h"
+	"clsarticulo.h"
+	"clscliente.h"
+
+1619779344 c:\users\lupel\desktop\ama utn\tp parcial 1-20210501t130222z-001\tp parcial 1\tp parciallab\menus.h
+	"rlutil.h"
+
+1571541138 c:\users\lupel\desktop\ama utn\tp parcial 1-20210501t130222z-001\tp parcial 1\tp parciallab\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1619887380 c:\users\lupel\desktop\ama utn\tp parcial 1-20210501t130222z-001\tp parcial 1\tp parciallab\clsfecha.h
+
+1619891640 c:\users\lupel\desktop\ama utn\tp parcial 1-20210501t130222z-001\tp parcial 1\tp parciallab\clsarticulo.h
+
+1619774026 c:\users\lupel\desktop\ama utn\tp parcial 1-20210501t130222z-001\tp parcial 1\tp parciallab\clscliente.h
+
+1619973195 source:c:\users\lupel\desktop\ama utn\tp parcial 1.0\tp parcial 1\tp parciallab\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"Menus.h"
+	"clsfecha.h"
+	"clsarticulo.h"
+	"clscliente.h"
+
+1619779344 c:\users\lupel\desktop\ama utn\tp parcial 1.0\tp parcial 1\tp parciallab\menus.h
+	"rlutil.h"
+
+1571541138 c:\users\lupel\desktop\ama utn\tp parcial 1.0\tp parcial 1\tp parciallab\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1619887380 c:\users\lupel\desktop\ama utn\tp parcial 1.0\tp parcial 1\tp parciallab\clsfecha.h
+
+1619973112 c:\users\lupel\desktop\ama utn\tp parcial 1.0\tp parcial 1\tp parciallab\clsarticulo.h
+
+1619976077 c:\users\lupel\desktop\ama utn\tp parcial 1.0\tp parcial 1\tp parciallab\clscliente.h
+
+1620023253 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1.0\tp parcial 1.0\tp parcial 1\tp parciallab\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"Menus.h"
+	"clsfecha.h"
+	"clsarticulo.h"
+	"clscliente.h"
+
+1619779344 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1.0\tp parcial 1.0\tp parcial 1\tp parciallab\menus.h
+	"rlutil.h"
+
+1571541138 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1.0\tp parcial 1.0\tp parcial 1\tp parciallab\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1619887380 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1.0\tp parcial 1.0\tp parcial 1\tp parciallab\clsfecha.h
+
+1620221673 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1.0\tp parcial 1.0\tp parcial 1\tp parciallab\clsarticulo.h
+
+1620023400 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1.0\tp parcial 1.0\tp parcial 1\tp parciallab\clscliente.h
+
+1620304707 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1.1\tp parcial 1.0\tp parcial 1\tp parciallab\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"Menus.h"
+	"clsfecha.h"
+	"clsarticulo.h"
+	"clscliente.h"
+
+1619779344 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1.1\tp parcial 1.0\tp parcial 1\tp parciallab\menus.h
+	"rlutil.h"
+
+1571541138 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1.1\tp parcial 1.0\tp parcial 1\tp parciallab\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1619887380 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1.1\tp parcial 1.0\tp parcial 1\tp parciallab\clsfecha.h
+
+1620304480 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1.1\tp parcial 1.0\tp parcial 1\tp parciallab\clsarticulo.h
+
+1620305426 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1.1\tp parcial 1.0\tp parcial 1\tp parciallab\clscliente.h
+
+1620303501 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial 1.1\tp parcial 1.0\tp parcial 1\tp parciallab\funcionesarticulos.h
+	"clsarticulo.h"
+
+1620494019 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.2\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"Menus.h"
+	"clsfecha.h"
+	"clsarticulo.h"
+	"clscliente.h"
+
+1620494258 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.2\menus.h
+	"rlutil.h"
+
+1571541138 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.2\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1619887380 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.2\clsfecha.h
+
+1620526993 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.2\clsarticulo.h
+
+1620527242 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.2\clscliente.h
+
+1620533820 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.3\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"Menus.h"
+	"clsfecha.h"
+	"clsarticulo.h"
+	"clscliente.h"
+
+1620527606 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.3\menus.h
+	"rlutil.h"
+
+1571541138 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.3\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1619887380 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.3\clsfecha.h
+
+1620535435 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.3\clsarticulo.h
+
+1620535435 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.3\clscliente.h
+
+1620579784 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.4\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"Menus.h"
+	"clsfecha.h"
+	"clsarticulo.h"
+	"clscliente.h"
+	"clsventas.h"
+
+1620575592 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.4\menus.h
+	"rlutil.h"
+
+1571541138 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.4\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1620574801 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.4\clsfecha.h
+
+1620578989 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.4\clsarticulo.h
+
+1620572552 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.4\clscliente.h
+
+1620580087 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.4\clsventas.h
+
+1620709093 source:c:\users\lupel\desktop\ama utn\tp parcial 1.4-20210511t000314z-001\tp parcial 1.4\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"Menus.h"
+	"clsfecha.h"
+	"clsarticulo.h"
+	"clscliente.h"
+	"clsventas.h"
+
+1620702726 c:\users\lupel\desktop\ama utn\tp parcial 1.4-20210511t000314z-001\tp parcial 1.4\menus.h
+	"rlutil.h"
+
+1571526738 c:\users\lupel\desktop\ama utn\tp parcial 1.4-20210511t000314z-001\tp parcial 1.4\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1620560400 c:\users\lupel\desktop\ama utn\tp parcial 1.4-20210511t000314z-001\tp parcial 1.4\clsfecha.h
+
+1620694700 c:\users\lupel\desktop\ama utn\tp parcial 1.4-20210511t000314z-001\tp parcial 1.4\clsarticulo.h
+
+1620702396 c:\users\lupel\desktop\ama utn\tp parcial 1.4-20210511t000314z-001\tp parcial 1.4\clscliente.h
+
+1620709878 c:\users\lupel\desktop\ama utn\tp parcial 1.4-20210511t000314z-001\tp parcial 1.4\clsventas.h
+
+1620824128 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.5\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"Menus.h"
+	"clsfecha.h"
+	"clsarticulo.h"
+	"clscliente.h"
+	"clsventas.h"
+
+1620824322 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.5\menus.h
+	"rlutil.h"
+
+1571512338 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.5\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1620546000 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.5\clsfecha.h
+
+1620823937 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.5\clsarticulo.h
+
+1620824216 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.5\clscliente.h
+
+1620823612 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.5\clsventas.h
+
+1621486586 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.6\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"Menus.h"
+	"clsfecha.h"
+	"clsarticulo.h"
+	"clscliente.h"
+	"clsventas.h"
+
+1620824322 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.6\menus.h
+	"rlutil.h"
+
+1571512338 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.6\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1621483492 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.6\clsfecha.h
+
+1621486202 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.6\clsarticulo.h
+
+1621486202 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.6\clscliente.h
+
+1621487008 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.6\clsventas.h
+
+1621519705 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.7\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"Menus.h"
+	"clsfecha.h"
+	"clsarticulo.h"
+	"clscliente.h"
+	"clsventas.h"
+
+1621513897 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.7\menus.h
+	"rlutil.h"
+
+1571512338 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.7\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1621483492 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.7\clsfecha.h
+
+1621505580 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.7\clsarticulo.h
+
+1621519705 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.7\clscliente.h
+
+1621519831 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.7\clsventas.h
+
+1621519705 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.7\tp parcial 1.7\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"Menus.h"
+	"clsfecha.h"
+	"clsarticulo.h"
+	"clscliente.h"
+	"clsventas.h"
+
+1621513897 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.7\tp parcial 1.7\menus.h
+	"rlutil.h"
+
+1571512338 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.7\tp parcial 1.7\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1621483492 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.7\tp parcial 1.7\clsfecha.h
+
+1621505580 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.7\tp parcial 1.7\clsarticulo.h
+
+1621519705 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.7\tp parcial 1.7\clscliente.h
+
+1621519831 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.7\tp parcial 1.7\clsventas.h
+
+1622210083 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\tp parcial 1.7\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"Menus.h"
+	"herramientas.h"
+
+1621513897 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\tp parcial 1.7\menus.h
+	"rlutil.h"
+
+1571512338 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\tp parcial 1.7\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1621483492 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\tp parcial 1.7\clsfecha.h
+
+1621505580 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\tp parcial 1.7\clsarticulo.h
+
+1621519705 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\tp parcial 1.7\clscliente.h
+
+1621519831 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\tp parcial 1.7\clsventas.h
+
+1622210233 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\tp parcial 1.7\clsarticulo.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+
+1622210983 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\tp parcial 1.7\herramientas.h
+
+1622210073 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\tp parcial 1.7\clsfecha.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+
+1622210626 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\tp parcial 1.7\clscliente.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"herramientas.h"
+
+1622210655 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\tp parcial 1.7\clsventas.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"herramientas.h"
+
+1622215146 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\clsarticulo.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"herramientas.h"
+
+1622215146 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\clscliente.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"herramientas.h"
+
+1622215232 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\herramientas.h
+
+1622210073 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\clsfecha.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+
+1622215146 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\clsventas.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"herramientas.h"
+
+1622215333 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"Menus.h"
+	"herramientas.h"
+
+1621513897 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\menus.h
+	"rlutil.h"
+
+1571512338 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1622214785 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.8\globales.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"herramientas.h"
+
+1622295280 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.9\clsarticulo.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"herramientas.h"
+
+1622305980 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.9\herramientas.h
+
+1622210073 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.9\clsfecha.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+
+1622295268 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.9\clsventas.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"herramientas.h"
+
+1622381716 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.9\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"Menus.h"
+	"herramientas.h"
+
+1621513897 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.9\menus.h
+	"rlutil.h"
+
+1571512338 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.9\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1622294681 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.9\clscliente.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"herramientas.h"
+
+1622306346 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.9\globales.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"herramientas.h"
+
+1623095737 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.10\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<ctime>
+	"clsfecha.h"
+	"clsarticulo.h"
+	"clscliente.h"
+	"clsventa.h"
+	"herramientas.h"
+	"MenuArticulos.h"
+	"MenuClientes.h"
+	"Menuventa.h"
+	"MenuConfiguracion.h"
+	"Menus.h"
+
+1622930675 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.10\clsfecha.h
+
+1622930669 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.10\clsarticulo.h
+
+1622930673 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.10\clscliente.h
+
+1622930675 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.10\clsventa.h
+
+1623096096 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.10\herramientas.h
+
+1622930675 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.10\menuarticulos.h
+	"rlutil.h"
+
+1571512338 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.10\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1622930828 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.10\menuclientes.h
+	"rlutil.h"
+
+1622932396 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.10\menuventa.h
+	"rlutil.h"
+	"clsventa.h"
+
+1622931166 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.10\menuconfiguracion.h
+	"rlutil.h"
+
+1622931166 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 1.10\menus.h
+	"rlutil.h"
+
+1623103208 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.0\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"clsfecha.h"
+	"clsarticulo.h"
+	"clscliente.h"
+	"clsventa.h"
+	"herramientas.h"
+	"Menus.h"
+	"MenuArticulos.h"
+	"MenuClientes.h"
+	"Menuventa.h"
+	"MenuConfiguracion.h"
+
+1622930675 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.0\clsfecha.h
+
+1622930669 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.0\clsarticulo.h
+
+1622930673 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.0\clscliente.h
+
+1622930675 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.0\clsventa.h
+
+1623103514 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.0\herramientas.h
+
+1623102674 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.0\menuarticulos.h
+
+1571512338 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.0\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1623102673 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.0\menuclientes.h
+
+1623102673 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.0\menuventa.h
+
+1623102674 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.0\menuconfiguracion.h
+
+1623102673 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.0\menus.h
+	"rlutil.h"
+
+1623338861 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.1\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Menus.h"
+	"clscadena.h"
+	"clsfecha.h"
+	"clsarticulo.h"
+	"clscliente.h"
+	"clsventa.h"
+	"herramientas.h"
+	"MenuArticulos.h"
+	"MenuClientes.h"
+	"Menuventa.h"
+	"MenuConfiguracion.h"
+
+1622930675 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.1\clsfecha.h
+
+1623118547 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.1\clsarticulo.h
+
+1623118694 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.1\clscliente.h
+
+1622930675 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.1\clsventa.h
+
+1623118500 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.1\herramientas.h
+
+1623118500 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.1\menus.h
+	"rlutil.h"
+
+1571512338 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.1\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1623102674 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.1\menuarticulos.h
+
+1623116005 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.1\menuclientes.h
+
+1623102673 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.1\menuventa.h
+
+1623102674 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.1\menuconfiguracion.h
+
+1623116898 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.1\clscadena.h
+
+1623425449 source:f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.2\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Menus.h"
+	"clsdirrecion.h"
+	"clsfecha.h"
+	"clsarticulo.h"
+	"clscliente.h"
+	"clsventa.h"
+	"clsvendedor.h"
+	"herramientas.h"
+	"MenuArticulos.h"
+	"MenuClientes.h"
+	"Menuventa.h"
+	"MenuConfiguracion.h"
+
+1623118500 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.2\menus.h
+	"rlutil.h"
+
+1571512338 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.2\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1623421706 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.2\clsdirrecion.h
+
+1622930675 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.2\clsfecha.h
+
+1623118547 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.2\clsarticulo.h
+
+1623118694 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.2\clscliente.h
+
+1623425376 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.2\clsventa.h
+
+1623118500 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.2\herramientas.h
+
+1623102674 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.2\menuarticulos.h
+
+1623116005 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.2\menuclientes.h
+
+1623102673 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.2\menuventa.h
+
+1623102674 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.2\menuconfiguracion.h
+
+1623425501 f:\utn\cuatrimestre 2\laboratorio de computación ii\tp parcial\tp parcial 2.2\clsvendedor.h
+
+1623432175 source:c:\users\sebas\desktop\sebas\finallab\gestark\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Menus.h"
+	"clsdirrecion.h"
+	"clsfecha.h"
+	"clsarticulo.h"
+	"clscliente.h"
+	"clsventa.h"
+	"clsvendedor.h"
+	"herramientas.h"
+	"MenuArticulos.h"
+	"MenuClientes.h"
+	"Menuventa.h"
+	"MenuConfiguracion.h"
+
+1623118500 c:\users\sebas\desktop\sebas\finallab\gestark\menus.h
+	"rlutil.h"
+
+1571512338 c:\users\sebas\desktop\sebas\finallab\gestark\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1623432307 c:\users\sebas\desktop\sebas\finallab\gestark\clsdirrecion.h
+
+1622930675 c:\users\sebas\desktop\sebas\finallab\gestark\clsfecha.h
+
+1623118547 c:\users\sebas\desktop\sebas\finallab\gestark\clsarticulo.h
+
+1623432610 c:\users\sebas\desktop\sebas\finallab\gestark\clscliente.h
+
+1623425376 c:\users\sebas\desktop\sebas\finallab\gestark\clsventa.h
+
+1623433067 c:\users\sebas\desktop\sebas\finallab\gestark\clsvendedor.h
+
+1623118500 c:\users\sebas\desktop\sebas\finallab\gestark\herramientas.h
+
+1623102674 c:\users\sebas\desktop\sebas\finallab\gestark\menuarticulos.h
+
+1623116005 c:\users\sebas\desktop\sebas\finallab\gestark\menuclientes.h
+
+1623102673 c:\users\sebas\desktop\sebas\finallab\gestark\menuventa.h
+
+1623102674 c:\users\sebas\desktop\sebas\finallab\gestark\menuconfiguracion.h
+
+1623469104 source:c:\users\chave\desktop\gestark\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Menus.h"
+	"clscadena.h"
+	"clsdirrecion.h"
+	"clsfecha.h"
+	"clspersona.h"
+	"clsarticulo.h"
+	"clscliente.h"
+	"clsventa.h"
+	"clsvendedor.h"
+	"herramientas.h"
+	"MenuArticulos.h"
+	"MenuClientes.h"
+	"Menuventa.h"
+	"MenuConfiguracion.h"
+
+1623463971 c:\users\chave\desktop\gestark\menus.h
+	"rlutil.h"
+
+1623463971 c:\users\chave\desktop\gestark\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1623468950 c:\users\chave\desktop\gestark\clscadena.h
+
+1623469032 c:\users\chave\desktop\gestark\clsdirrecion.h
+
+1623472677 c:\users\chave\desktop\gestark\clsfecha.h
+
+1623469305 c:\users\chave\desktop\gestark\clspersona.h
+
+1623463971 c:\users\chave\desktop\gestark\clsarticulo.h
+
+1623471062 c:\users\chave\desktop\gestark\clscliente.h
+
+1623463971 c:\users\chave\desktop\gestark\clsventa.h
+
+1623463971 c:\users\chave\desktop\gestark\clsvendedor.h
+
+1623463971 c:\users\chave\desktop\gestark\herramientas.h
+
+1623463971 c:\users\chave\desktop\gestark\menuarticulos.h
+
+1623472245 c:\users\chave\desktop\gestark\menuclientes.h
+
+1623463971 c:\users\chave\desktop\gestark\menuventa.h
+
+1623463971 c:\users\chave\desktop\gestark\menuconfiguracion.h
+
