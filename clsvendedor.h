@@ -30,7 +30,7 @@ public:
     void cargar();
     void mostrar();
 //    bool leerDeDisco(int pos);
-//    bool grabarEnDisco();
+    bool grabarEnDisco();
 //    bool modificarEnDisco(Vendedor reg, int pos);
 };
 
@@ -59,17 +59,18 @@ void Vendedor::mostrar(){
     fclose(pCliente);
     return leyo;
 }
+*/
 
-bool Cliente::grabarEnDisco(){
-    FILE *pCliente;
-    pCliente=fopen(ARCHIVOCLIENTE,"ab");
-    if(pCliente==NULL){return false;}
-    bool escribio=fwrite(this,sizeof (Cliente),1,pCliente);
-    fclose(pCliente);
+bool Vendedor::grabarEnDisco(){
+    FILE *pVendedor;
+    pVendedor=fopen(ARCHIVOVENDEDOR  ,"ab");
+    if(pVendedor==NULL){return false;}
+    bool escribio=fwrite(this,sizeof (Vendedor),1,pVendedor);
+    fclose(pVendedor);
     return escribio;
 
 }
-
+/*
 bool Cliente::modificarEnDisco(Cliente reg, int pos){
     FILE *pCliente;
     pCliente=fopen(ARCHIVOCLIENTE,"rb+");
