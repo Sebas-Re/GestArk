@@ -62,17 +62,227 @@ int contarRegistros(){//Devuelve la cantidad de registros
     return c;
 }
 
-bool listarArticulos(){//lista todo el registro siempre y cuando "estado" sea true
+void copiarArchivoArticulo(Articulo *pArticulos, int cantArticulos){
+    int i;
+    for(i=0;i<cantArticulos;i++){
+        pArticulos[i].leerDeDisco(i);
+    }
+}
+
+void ordenarAZArticulos(Articulo *pArticulos, int cantArticulos){
+    int i, j, posMin;
+    Articulo aux;
+    for(i=0;i<cantArticulos-1;i++){
+        posMin=i;
+        for(j=i+1;j<cantArticulos;j++){
+
+            if(strcmp(pArticulos[j].getDescripcion(), pArticulos[posMin].getDescripcion())<0){
+                posMin=j;
+            }
+        }
+        aux=pArticulos[i];
+        pArticulos[i]=pArticulos[posMin];
+        pArticulos[posMin]=aux;
+    }
+ }
+
+void ordenarIDArticulos(Articulo *pArticulos, int cantArticulos){
+    int i, j, posMin;
+    Articulo aux;
+    for(i=0;i<cantArticulos-1;i++){
+        posMin=i;
+        for(j=i+1;j<cantArticulos;j++){
+            if(pArticulos[j].getID()<pArticulos[posMin].getID()){
+                posMin=j;
+            }
+        }
+        aux=pArticulos[i];
+        pArticulos[i]=pArticulos[posMin];
+        pArticulos[posMin]=aux;
+    }
+ }
+
+void ordenarPUArticulos(Articulo *pArticulos, int cantArticulos){
+    int i, j, posMin;
+    Articulo aux;
+    for(i=0;i<cantArticulos-1;i++){
+        posMin=i;
+        for(j=i+1;j<cantArticulos;j++){
+            if(pArticulos[j].getPu()<pArticulos[posMin].getPu()){
+                posMin=j;
+            }
+        }
+        aux=pArticulos[i];
+        pArticulos[i]=pArticulos[posMin];
+        pArticulos[posMin]=aux;
+    }
+ }
+
+void ordenarStockArticulos(Articulo *pArticulos, int cantArticulos){
+    int i, j, posMin;
+    Articulo aux;
+    for(i=0;i<cantArticulos-1;i++){
+        posMin=i;
+        for(j=i+1;j<cantArticulos;j++){
+            if(pArticulos[j].getStock()<pArticulos[posMin].getStock()){
+                posMin=j;
+            }
+        }
+        aux=pArticulos[i];
+        pArticulos[i]=pArticulos[posMin];
+        pArticulos[posMin]=aux;
+    }
+ }
+
+void mostrarVectorArticulos(Articulo *pArticulos, int cantArticulos){
+    int i;
+    cartelListarArticulos();
+    for(i=0;i<cantArticulos;i++){
+        pArticulos[i].mostrar(i+3);
+        cout<<endl;
+    }
+}
+
+void listarArticulosOrdenadosAZ(){
+    int cantArticulos=contarRegistros();
+    Articulo *pArticulos;
+    pArticulos=new Articulo[cantArticulos];
+    if(pArticulos==NULL){
+        cout<<"ERROR DE ASIGNACION DE MEORIA";
+        return;
+    }
+    copiarArchivoArticulo(pArticulos,cantArticulos);
+    ordenarAZArticulos(pArticulos, cantArticulos);
+    mostrarVectorArticulos(pArticulos, cantArticulos);
+    delete pArticulos;
+}
+
+void listarArticulosOrdenadosID(){
+    int cantArticulos=contarRegistros();
+    Articulo *pArticulos;
+    pArticulos=new Articulo[cantArticulos];
+    if(pArticulos==NULL){
+        cout<<"ERROR DE ASIGNACION DE MEORIA";
+        return;
+    }
+    copiarArchivoArticulo(pArticulos,cantArticulos);
+    ordenarIDArticulos(pArticulos, cantArticulos);
+    mostrarVectorArticulos(pArticulos, cantArticulos);
+    delete pArticulos;
+
+}
+
+void listarArticulosOrdenadosPU(){
+    int cantArticulos=contarRegistros();
+    Articulo *pArticulos;
+    pArticulos=new Articulo[cantArticulos];
+    if(pArticulos==NULL){
+        cout<<"ERROR DE ASIGNACION DE MEORIA";
+        return;
+    }
+    copiarArchivoArticulo(pArticulos,cantArticulos);
+    ordenarPUArticulos(pArticulos, cantArticulos);
+    mostrarVectorArticulos(pArticulos, cantArticulos);
+    delete pArticulos;
+
+}
+
+void listarArticulosOrdenadosStock(){
+    int cantArticulos=contarRegistros();
+    Articulo *pArticulos;
+    pArticulos=new Articulo[cantArticulos];
+    if(pArticulos==NULL){
+        cout<<"ERROR DE ASIGNACION DE MEORIA";
+        return;
+    }
+    copiarArchivoArticulo(pArticulos,cantArticulos);
+    ordenarStockArticulos(pArticulos,cantArticulos);
+    mostrarVectorArticulos(pArticulos,cantArticulos);
+    delete pArticulos;
+
+}
+
+bool listarArticulosPorDefecto(){//lista todo el registro como fue cargado siempre y cuando "estado" sea true
        int cantReg,i;
        Articulo reg;
        cantReg=contarRegistros();
+       cartelListarArticulos();
        for(i=0;i<cantReg;i++){
         reg.leerDeDisco(i);
-        if(reg.getEstado()){
-        reg.mostrar();
+        reg.mostrar(i+3);
         cout<<endl;}
-       }
        return cantReg;
+}
+
+bool listarArticulosDisponibles(){//lista todo el registro como fue cargado siempre y cuando "estado" sea true
+       int cantReg,i=0,linea=0;
+       Articulo reg;
+       cartelListarArticulos();
+       while(reg.leerDeDisco(i++)){
+        if(reg.getEstado()){
+        reg.mostrar(linea+3);
+        cout<<endl;
+        linea++;}
+        }
+       return cantReg;
+}
+
+bool listarArticulosNoDisponibles(){//lista todo el registro como fue cargado siempre y cuando "estado" sea true
+       int cantReg,i=0,linea=0;
+       Articulo reg;
+       cantReg=contarRegistros();
+       cartelListarArticulos();
+       while(reg.leerDeDisco(i++)){
+        if(!reg.getEstado()){
+        reg.mostrar(linea+3);
+        cout<<endl;
+        linea++;}
+        }
+       return cantReg;
+}
+
+void listarArticulos(){
+    int opc;
+    do{
+        opc=MenuListarArticulos();
+        switch(opc){
+        case 12:
+            system("cls;");
+            listarArticulosPorDefecto();
+            system("pause");
+            break;
+        case 13:
+            system("cls;");
+            listarArticulosOrdenadosAZ();
+            system("pause");
+            break;
+        case 14:
+            system("cls;");
+            listarArticulosOrdenadosID();
+            system("pause");
+            break;
+        case 15:
+            system("cls;");
+            listarArticulosOrdenadosPU();
+            system("pause");
+            break;
+        case 16:
+            system("cls;");
+            listarArticulosOrdenadosStock();
+            system("pause");
+            break;
+        case 17:
+            system("cls;");
+            listarArticulosDisponibles();
+            system("pause");
+            break;
+        case 18:
+            system("cls;");
+            listarArticulosNoDisponibles();
+            system("pause");
+            break;
+        }
+    }while(opc!=19);
 }
 
 bool modificarPrecioU(){//modifica el precio unitario de un articulo
@@ -184,9 +394,7 @@ void seccionArticulos(){
             break;
            case 14:
                 system("cls");
-                cout<<"INVENTARIO: "<<endl;
-                if(listarArticulos()==0){cout<<"ERROR. NO SE PUDO MOSTRAR LA LISTA DE ARTICULOS";}
-                system("pause");
+                listarArticulos();
             break;
            case 15:
                system("cls");
@@ -209,6 +417,7 @@ void seccionArticulos(){
             }
     }while(opc!=18);
 }
+
 ///-------------------------------------------------------///
 
 #endif // MENUARTICULOS_H_INCLUDED

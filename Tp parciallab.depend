@@ -975,31 +975,32 @@
 
 1623476724 c:\users\sebas\desktop\sebas\finallab\gestark\menuconfiguracion.h
 
-1623469104 source:c:\users\chave\desktop\gestark\main.cpp
+1623856696 source:c:\users\chave\desktop\gestark\main.cpp
 	<iostream>
 	<iostream>
 	<cstdlib>
 	<cstring>
 	<stdio.h>
+	"FuncionesGlobales.h"
+	"clsarticulo.h"
+	"herramientas.h"
 	"Menus.h"
 	"clscadena.h"
 	"clsdirrecion.h"
 	"clsfecha.h"
 	"clspersona.h"
-	"clsarticulo.h"
 	"clscliente.h"
 	"clsventa.h"
 	"clsvendedor.h"
-	"herramientas.h"
 	"MenuArticulos.h"
 	"MenuClientes.h"
 	"Menuventa.h"
 	"MenuConfiguracion.h"
 
-1623463971 c:\users\chave\desktop\gestark\menus.h
+1623856961 c:\users\chave\desktop\gestark\menus.h
 	"rlutil.h"
 
-1623463971 c:\users\chave\desktop\gestark\rlutil.h
+1623813587 c:\users\chave\desktop\gestark\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -1013,33 +1014,36 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1623468950 c:\users\chave\desktop\gestark\clscadena.h
+1623813587 c:\users\chave\desktop\gestark\clscadena.h
 
-1623469032 c:\users\chave\desktop\gestark\clsdirrecion.h
+1623813587 c:\users\chave\desktop\gestark\clsdirrecion.h
 
-1623472677 c:\users\chave\desktop\gestark\clsfecha.h
+1623813587 c:\users\chave\desktop\gestark\clsfecha.h
 
-1623469305 c:\users\chave\desktop\gestark\clspersona.h
+1623813587 c:\users\chave\desktop\gestark\clspersona.h
 
-1623463971 c:\users\chave\desktop\gestark\clsarticulo.h
+1623854996 c:\users\chave\desktop\gestark\clsarticulo.h
 
-1623471062 c:\users\chave\desktop\gestark\clscliente.h
+1623813587 c:\users\chave\desktop\gestark\clscliente.h
 
-1623463971 c:\users\chave\desktop\gestark\clsventa.h
+1623813587 c:\users\chave\desktop\gestark\clsventa.h
 
-1623463971 c:\users\chave\desktop\gestark\clsvendedor.h
+1623854996 c:\users\chave\desktop\gestark\clsvendedor.h
 
-1623463971 c:\users\chave\desktop\gestark\herramientas.h
+1623857368 c:\users\chave\desktop\gestark\herramientas.h
 
-1623463971 c:\users\chave\desktop\gestark\menuarticulos.h
+1623857338 c:\users\chave\desktop\gestark\menuarticulos.h
 
-1623472245 c:\users\chave\desktop\gestark\menuclientes.h
+1623813587 c:\users\chave\desktop\gestark\menuclientes.h
 
-1623463971 c:\users\chave\desktop\gestark\menuventa.h
+1623813587 c:\users\chave\desktop\gestark\menuventa.h
 
-1623463971 c:\users\chave\desktop\gestark\menuconfiguracion.h
+1623813587 c:\users\chave\desktop\gestark\menuconfiguracion.h
 
 1623476724 c:\users\sebas\desktop\sebas\finallab\gestark\clscadena.h
 
 1623799426 c:\users\sebas\desktop\sebas\finallab\gestark\clspersona.h
+
+1623856523 c:\users\chave\desktop\gestark\funcionesglobales.h
+	"rlutil.h"
 

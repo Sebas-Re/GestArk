@@ -27,6 +27,8 @@ const char ARCHIVOVENTAS_BKP[]="Archivoventa_bkp.dat";
 const char ARCHIVOVENTASINICIAL[]="Archivoventainicial.dat";
 ///-------------------------------------------------------///
 
+#include "FuncionesGlobales.h"
+#include "clsarticulo.h"
 #include "herramientas.h"
 #include "Menus.h"
 #include "clscadena.h"
@@ -34,10 +36,8 @@ const char ARCHIVOVENTASINICIAL[]="Archivoventainicial.dat";
 #include "clsfecha.h"
 #include "clspersona.h"
 #include "clscliente.h"
-#include "clsarticulo.h"
 #include "clsventa.h"
 #include "clsvendedor.h"
-#include "herramientas.h"
 #include "MenuArticulos.h"
 #include "MenuClientes.h"
 #include "Menuventa.h"
