@@ -5,6 +5,10 @@
 #include <stdio.h>
 using namespace std;
 
+
+
+///hola
+
 ///-------------------------------------------------------///
 ///ARCHVOS ARTICULO///
 const char ARCHIVOARTICULO[]="ArchivoArticulo.dat";
