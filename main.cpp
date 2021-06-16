@@ -4,7 +4,7 @@
 #include <cstring>
 #include <stdio.h>
 using namespace std;
-///Nueva prueba de GitKraken
+
 ///-------------------------------------------------------///
 ///ARCHVOS ARTICULO///
 const char ARCHIVOARTICULO[]="ArchivoArticulo.dat";
