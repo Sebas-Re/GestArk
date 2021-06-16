@@ -5,18 +5,42 @@
 
 
 ///PROTOTIPOS
-void cargarCadena(char *pal, int tam);
+
 ///ARTICULO
 ///-------------------------------------------------------///
 bool agregarArticulo();
 
-int buscarArticulo(int codigo);
+int buscarArticulo(int );
 
-int BuscarArticuloporId(int id);
+int BuscarArticuloporId(int );
 
 int contarRegistros();
 
-bool listarArticulos();
+void copiarArchivoArticulo(Articulo *, int );
+
+void mostrarVectorArticulos(Articulo *, int );
+
+void ordenarAZArticulos(Articulo *, int );
+
+void ordenarIDArticulos(Articulo *, int );
+
+void ordenarPUArticulos(Articulo *, int );
+
+void ordenarStockArticulos(Articulo *, int );
+
+void listarArticulosOrdenadosID();
+
+void listarArticulosOrdenadosPU();
+
+void listarArticulosOrdenadosStock();
+
+bool listarArticulosPorDefecto();
+
+bool listarArticulosDisponibles();
+
+bool listarArticulosNoDisponibles();
+
+void listarArticulos();
 
 bool modificarPrecioU();
 
@@ -127,5 +151,7 @@ void seccionConfiguracion();
 ///FIN CONFIGURACION
 ///-------------------------------------------------------///
 
-
+///GLOBALES
+///-------------------------------------------------------///
+void cargarCadena(char *, int );
 #endif // HERRAMIENTAS_H_INCLUDED

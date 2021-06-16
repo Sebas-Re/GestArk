@@ -40,6 +40,7 @@ public:
     ///Metodos
     void cargar();
     void mostrar();
+    void mostrar(int y);
     bool leerDeDisco(int );
     bool grabarEnDisco();
     bool modificarEnDisco(Articulo reg, int pos);
@@ -60,6 +61,20 @@ void Articulo::cargar(){
         cin>>Stock;
         Estado=true;
         cout<<"------------------------"<<endl;
+}
+
+void Articulo::mostrar(int y){
+        gotoxy(4,y);
+        cout<<ID<<"\t";
+        gotoxy(8,y);
+        cout<<Descripcion<<"\t";
+        gotoxy(35,y);
+        cout<<Pu<<"\t";
+        gotoxy(60,y);
+        cout<<Stock<<"\t";
+        gotoxy(75,y);
+        if(Estado==true){cout<<"DISPONIBLE"<<endl;}
+        else{cout<<"NO DISPONIBLE"<<endl;}
 }
 
 void Articulo::mostrar(){

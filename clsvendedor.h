@@ -31,7 +31,7 @@ public:
     void mostrar();
     bool leerDeDisco(int pos);
     bool grabarEnDisco();
-    bool modificarEnDisco(Vendedor reg, int pos);
+    bool modificarEnDisco(int pos);
 };
 
 void Vendedor::cargar(){
@@ -60,7 +60,6 @@ bool Vendedor::leerDeDisco(int pos){
     return leyo;
 }
 
-
 bool Vendedor::grabarEnDisco(){
     FILE *pVendedor;
     pVendedor=fopen(ARCHIVOVENDEDOR  ,"ab");
@@ -70,7 +69,6 @@ bool Vendedor::grabarEnDisco(){
     return escribio;
 
 }
-
 
 bool Vendedor::modificarEnDisco(int pos){
     FILE *pArchivo;
@@ -86,8 +84,6 @@ bool Vendedor::modificarEnDisco(int pos){
     fclose(pArchivo);
     return false;
 }
-
-
 
 
 ///-------------------------------------------------------///
