@@ -72,14 +72,19 @@ bool Vendedor::grabarEnDisco(){
 }
 
 
-bool Vendedor::modificarEnDisco(Vendedor reg, int pos){
-    FILE *pVendedor;
-    pVendedor=fopen(ARCHIVOVENDEDOR,"rb+");
-    if(pVendedor==NULL){return false;}
-    fseek(pVendedor,pos*sizeof reg,0);
-    bool escribio=fwrite(&reg,sizeof reg,1,pVendedor);
-    fclose(pVendedor);
-    return escribio;
+bool Vendedor::modificarEnDisco(int pos){
+    FILE *pArchivo;
+
+    pArchivo=fopen(ARCHIVOVENDEDOR, "rb+");
+    if (pArchivo==NULL){return false;}
+
+    fseek(pArchivo, sizeof (Cliente)*pos, 0);
+    if (fwrite(this, sizeof (Cliente), 1, pArchivo)){
+        fclose(pArchivo);
+        return true;
+    }
+    fclose(pArchivo);
+    return false;
 }
 
 
