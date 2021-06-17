@@ -29,18 +29,74 @@ public:
     //metodos
     void cargar();
     void mostrar();
+    void VerificacionID(int ID);
     bool leerDeDisco(int pos);
     bool grabarEnDisco();
     bool modificarEnDisco(int pos);
 };
 
 void Vendedor::cargar(){
+    int x;
     Persona::Cargar();
     cout<<"ID DEL VENDEDOR: ";
+    cin >> x;
+    VerificacionID (x);
     cin>>idVendedor;
     cout<<"CATEGORIA DEL VENDEDOR: ";
     cin>>Categoria;
     Estado=true;
+}
+
+
+void Vendedor::VerificacionID (int ID){
+Vendedor reg;
+bool Existe=false;
+
+    FILE *ArchivoVendedor;
+    ArchivoVendedor=fopen(ARCHIVOVENDEDOR, "rb");
+
+        /*
+    if (ArchivoVendedor == NULL)
+    {
+        cout << "Error al abrir";
+        system("pause");
+    }
+
+*/
+//Está comentado porque al principio, si el archivo no está creado, da error pero es un falso positivo, porque sigue el proceso de verificacion y asignacion de ID;
+
+
+
+    do
+    {
+
+        if (Existe == true)
+        {
+            cout << "ID en uso, por favor ingrese un nuevo ID: ";
+            cin >> ID;
+            cout << endl;
+        }
+
+        Existe = false;
+        fseek(ArchivoVendedor, 0 * sizeof reg, 0);
+
+        while (fread(&reg, sizeof reg, 1, ArchivoVendedor) == 1)
+        {
+            if (reg.getIdVendedor() == ID)
+            {
+                Existe = true;
+            }
+        }
+
+        if (Existe == false)
+        {
+            idVendedor = ID;
+        }
+
+    } while (Existe == true);
+
+    fclose(ArchivoVendedor);
+
 }
 
 void Vendedor::mostrar(){

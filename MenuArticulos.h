@@ -180,7 +180,7 @@ bool listarArticulosPorDefecto(){//lista todo el registro como fue cargado siemp
        return cantReg;
 }
 
-bool listarArticulosDisponibles(){//lista todo el registro como fue cargado siempre y cuando "estado" sea true
+int listarArticulosDisponibles(){//lista todo el registro como fue cargado siempre y cuando "estado" sea true
        int cantReg,i=0,linea=0;
        Articulo reg;
        cartelListarArticulos();
