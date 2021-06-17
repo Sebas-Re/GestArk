@@ -5,6 +5,9 @@
 #include <stdio.h>
 using namespace std;
 
+///asikudjhakjsdhasd
+
+
 ///-------------------------------------------------------///
 ///ARCHVOS ARTICULO///
 const char ARCHIVOARTICULO[]="ArchivoArticulo.dat";
