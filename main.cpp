@@ -44,7 +44,6 @@ const char ARCHIVOVENTASINICIAL[]="Archivoventainicial.dat";
 #include "MenuConfiguracion.h"
 
 int main(){
-    cout<<"probando gitkraken";
     system("TITLE GestArk - gestion empresarial");
     int opc;
     while(true){
