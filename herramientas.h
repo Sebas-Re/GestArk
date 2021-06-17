@@ -32,7 +32,7 @@ void listarArticulosOrdenados();
 
 bool listarArticulosPorDefecto();
 
-bool listarArticulosDisponibles();
+int listarArticulosDisponibles();
 
 bool listarArticulosNoDisponibles();
 
