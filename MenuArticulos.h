@@ -3,6 +3,8 @@
 ///MENU ARTICULO
 ///-------------------------------------------------------///
 bool agregarArticulo(){//agrega un registro articulo
+    int r,contador=0;
+    do{
     Articulo reg;
     FILE *pArticulo;
     pArticulo=fopen(ARCHIVOARTICULO,"rb");
@@ -12,51 +14,48 @@ bool agregarArticulo(){//agrega un registro articulo
     fclose(pArticulo);
     cout<<"CODIGO AUTONUMERICO ASIGNADO: "<<reg.getID()<<endl;
     reg.cargar();
-    bool grabo=reg.grabarEnDisco();
-    return grabo;
+    if(!reg.grabarEnDisco()){
+            cout << "Error al guardar el archivo.";
+            system("pause");
+            return contador;
+        }
+        contador++;
+        cout<<"DESEA AGREGAR OTRO ARTICULO (y/n)?"<<endl;
+        r=getch();
+        system("cls");
+    }while(r==121||r==89);
+    return contador;
 }
 
 int buscarArticulo(int codigo){//recibe "id" del registro y devuelve la posicion donde se encuentra el registro
     Articulo reg;
     int pos=0;
-    FILE *pArticulo;
-    pArticulo=fopen(ARCHIVOARTICULO,"rb");
-    if(pArticulo==NULL){return -1;}
     while((reg.leerDeDisco(pos))==1){
         if(reg.getID()==codigo){
-            fclose(pArticulo);
             return pos;
         }
         pos++;
-    }
-    fclose(pArticulo);
-    return -2;
+        }
+    return -1;
 }
 
 int BuscarArticuloporId(int id){//busca articulo por id y lo muestra si "estado" esta en true
     Articulo reg;
     int pos=0;
-    FILE *pArticulo;
-    pArticulo=fopen(ARCHIVOARTICULO,"rb");
-    if(pArticulo==NULL){return -2;}
     pos=buscarArticulo(id);
     if(pos<0){return -2;}
     reg.leerDeDisco(pos);
     if(reg.getEstado()==true){reg.mostrar();}
     else{return -2;}
-    fclose(pArticulo);
-
 }
 
 int contarRegistros(){//Devuelve la cantidad de registros
     int c=0, tam;
     FILE *pArticulo;
-
     pArticulo=fopen(ARCHIVOARTICULO, "rb");
     if(pArticulo==NULL){return -1;}
-
     fseek(pArticulo, 0, 2);
-    tam=ftell(pArticulo);/// ftell() devuelve la cantidad de bytes que hay entre el principio del archivo y la posición actual del puntero FILE
+    tam=ftell(pArticulo);
     fclose(pArticulo);
     c=tam/sizeof(Articulo);
     return c;
@@ -75,16 +74,15 @@ void ordenarAZArticulos(Articulo *pArticulos, int cantArticulos){
     for(i=0;i<cantArticulos-1;i++){
         posMin=i;
         for(j=i+1;j<cantArticulos;j++){
-
-            if(strcmp(pArticulos[j].getDescripcion(), pArticulos[posMin].getDescripcion())<0){
-                posMin=j;
-            }
+                if(strcmp(pArticulos[j].getDescripcion(), pArticulos[posMin].getDescripcion())<0){
+                        posMin=j;
+                }
         }
         aux=pArticulos[i];
         pArticulos[i]=pArticulos[posMin];
         pArticulos[posMin]=aux;
     }
- }
+}
 
 void ordenarIDArticulos(Articulo *pArticulos, int cantArticulos){
     int i, j, posMin;
@@ -93,14 +91,14 @@ void ordenarIDArticulos(Articulo *pArticulos, int cantArticulos){
         posMin=i;
         for(j=i+1;j<cantArticulos;j++){
             if(pArticulos[j].getID()<pArticulos[posMin].getID()){
-                posMin=j;
+                    posMin=j;
             }
         }
         aux=pArticulos[i];
         pArticulos[i]=pArticulos[posMin];
         pArticulos[posMin]=aux;
     }
- }
+}
 
 void ordenarPUArticulos(Articulo *pArticulos, int cantArticulos){
     int i, j, posMin;
@@ -143,7 +141,7 @@ void mostrarVectorArticulos(Articulo *pArticulos, int cantArticulos){
     }
 }
 
-void listarArticulosOrdenadosAZ(){
+void listarArticulosOrdenados(int orden){
     int cantArticulos=contarRegistros();
     Articulo *pArticulos;
     pArticulos=new Articulo[cantArticulos];
@@ -152,54 +150,22 @@ void listarArticulosOrdenadosAZ(){
         return;
     }
     copiarArchivoArticulo(pArticulos,cantArticulos);
-    ordenarAZArticulos(pArticulos, cantArticulos);
+    switch(orden){
+    case 1:
+        ordenarAZArticulos(pArticulos, cantArticulos);
+        break;
+    case 2:
+        ordenarIDArticulos(pArticulos, cantArticulos);
+        break;
+    case 3:
+        ordenarPUArticulos(pArticulos, cantArticulos);
+        break;
+    case 4:
+        ordenarStockArticulos(pArticulos,cantArticulos);
+        break;
+    }
     mostrarVectorArticulos(pArticulos, cantArticulos);
     delete pArticulos;
-}
-
-void listarArticulosOrdenadosID(){
-    int cantArticulos=contarRegistros();
-    Articulo *pArticulos;
-    pArticulos=new Articulo[cantArticulos];
-    if(pArticulos==NULL){
-        cout<<"ERROR DE ASIGNACION DE MEORIA";
-        return;
-    }
-    copiarArchivoArticulo(pArticulos,cantArticulos);
-    ordenarIDArticulos(pArticulos, cantArticulos);
-    mostrarVectorArticulos(pArticulos, cantArticulos);
-    delete pArticulos;
-
-}
-
-void listarArticulosOrdenadosPU(){
-    int cantArticulos=contarRegistros();
-    Articulo *pArticulos;
-    pArticulos=new Articulo[cantArticulos];
-    if(pArticulos==NULL){
-        cout<<"ERROR DE ASIGNACION DE MEORIA";
-        return;
-    }
-    copiarArchivoArticulo(pArticulos,cantArticulos);
-    ordenarPUArticulos(pArticulos, cantArticulos);
-    mostrarVectorArticulos(pArticulos, cantArticulos);
-    delete pArticulos;
-
-}
-
-void listarArticulosOrdenadosStock(){
-    int cantArticulos=contarRegistros();
-    Articulo *pArticulos;
-    pArticulos=new Articulo[cantArticulos];
-    if(pArticulos==NULL){
-        cout<<"ERROR DE ASIGNACION DE MEORIA";
-        return;
-    }
-    copiarArchivoArticulo(pArticulos,cantArticulos);
-    ordenarStockArticulos(pArticulos,cantArticulos);
-    mostrarVectorArticulos(pArticulos,cantArticulos);
-    delete pArticulos;
-
 }
 
 bool listarArticulosPorDefecto(){//lista todo el registro como fue cargado siempre y cuando "estado" sea true
@@ -253,22 +219,22 @@ void listarArticulos(){
             break;
         case 13:
             system("cls;");
-            listarArticulosOrdenadosAZ();
+            listarArticulosOrdenados(1);
             system("pause");
             break;
         case 14:
             system("cls;");
-            listarArticulosOrdenadosID();
+            listarArticulosOrdenados(2);
             system("pause");
             break;
         case 15:
             system("cls;");
-            listarArticulosOrdenadosPU();
+            listarArticulosOrdenados(3);
             system("pause");
             break;
         case 16:
             system("cls;");
-            listarArticulosOrdenadosStock();
+            listarArticulosOrdenados(4);
             system("pause");
             break;
         case 17:
@@ -289,16 +255,10 @@ bool modificarPrecioU(){//modifica el precio unitario de un articulo
     float pu;
     int id;
     Articulo reg;
-    FILE *pArticulo;
-    pArticulo=fopen(ARCHIVOARTICULO,"rb");
-    if(pArticulo==NULL){return false;}
     cout<<"INGRESE EL CODIGO DEL ARTICULO: ";
     cin>>id;
     int pos=buscarArticulo(id);
-    if(pos<0){
-            fclose(pArticulo);
-            return false;
-            }
+    if(pos<0){return false;}
     reg.leerDeDisco(pos);
     reg.mostrar();
     if(reg.getEstado()==true){
@@ -316,15 +276,10 @@ bool elmininarArticulo(){//cambia el estado de true a false
     char r;
     int id;
     Articulo reg;
-    FILE *pArticulo;
-    pArticulo=fopen(ARCHIVOARTICULO,"rb+");
-    if(pArticulo==NULL){return false;}
     cout<<"INGRESE EL CODIGO DEL ARTICULO: ";
     cin>>id;
     int pos=buscarArticulo(id);
-    if(pos<0){
-            fclose(pArticulo);
-            return false;}
+    if(pos<0){return false;}
     reg.leerDeDisco(pos);
     reg.mostrar();
     cout<<"ELIMINAR ARTICULO (Y/N)?";
@@ -333,7 +288,6 @@ bool elmininarArticulo(){//cambia el estado de true a false
             reg.leerDeDisco(pos);
             reg.setEstado(nodisponible);
             bool modifico=reg.modificarEnDisco(reg,pos);
-            fclose(pArticulo);
             return modifico;
     }
     else{return false;}
@@ -344,15 +298,10 @@ bool altaArticulo(){// cambia el estado de false a true
     char r;
     int id;
     Articulo reg;
-    FILE *pArticulo;
-    pArticulo=fopen(ARCHIVOARTICULO,"rb+");
-    if(pArticulo==NULL){return false;}
     cout<<"INGRESE EL CODIGO DEL ARTICULO: ";
     cin>>id;
     int pos=buscarArticulo(id);
-    if(pos<0){
-            fclose(pArticulo);
-            return false;}
+    if(pos<0){return false;}
     reg.leerDeDisco(pos);
     reg.mostrar();
             cout<<"DAR EL ALTA AL ARTICULO (Y/N)?";
@@ -361,7 +310,6 @@ bool altaArticulo(){// cambia el estado de false a true
             reg.leerDeDisco(pos);
             reg.setEstado(disponible);
             bool modifico=reg.modificarEnDisco(reg,pos);
-            fclose(pArticulo);
             return modifico;
     }
     else{return false;}
@@ -373,16 +321,13 @@ void seccionArticulos(){
         opc=Menuarticulos();
         switch(opc){
            case 12:
-               char r;
-               system("cls");
-               do{
-               system("cls");
-               if(agregarArticulo()==1){cout<<"CARGADO CON EXITO"<<endl;}
-               else{cout<<"ERROR AL LEER ARCHIVO"<<endl;}
-               cout<<"DESEA AGREGAR OTRO ARTICULO (y/n)?"<<endl;
-               cin>>r;
-               cin.ignore();
-               }while(r=='y'||r=='Y');
+               {
+                int agregados=0;
+                system("cls");
+                agregados = agregarArticulo();
+                cout << agregados <<"ARTICULO/s CARGADO/s CON EXITO!"<<endl;
+                break;
+            }
             break;
            case 13:
                system("cls");

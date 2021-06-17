@@ -28,11 +28,7 @@ void ordenarPUArticulos(Articulo *, int );
 
 void ordenarStockArticulos(Articulo *, int );
 
-void listarArticulosOrdenadosID();
-
-void listarArticulosOrdenadosPU();
-
-void listarArticulosOrdenadosStock();
+void listarArticulosOrdenados();
 
 bool listarArticulosPorDefecto();
 

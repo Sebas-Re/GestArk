@@ -121,7 +121,7 @@ int Menuarticulos(){
 int MenuListarArticulos(){
     int x=49,y=12;
    system("cls");
-   recuadro(40,9,40,11);
+   recuadro(40,9,40,14);
    rlutil::locate(53,10);
    cout <<"LISTAR ARTICULOS"<<endl;
    rlutil::locate(47,11);
