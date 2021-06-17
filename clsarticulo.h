@@ -6,7 +6,6 @@ class Articulo{
 private:
     int ID;
     char Descripcion[25];
-    int prueba;
     float Pu;
     int Stock;
     char Proveedor[25];
