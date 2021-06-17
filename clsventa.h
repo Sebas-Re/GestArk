@@ -7,6 +7,7 @@ private:
     int Nventa;
     int IDarticulo;
     int DNIcliente;
+    int IDvendedor;
     float importe;
     int cantVendida;
     Fecha fe;
