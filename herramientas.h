@@ -1,9 +1,5 @@
 #ifndef HERRAMIENTAS_H_INCLUDED
 #define HERRAMIENTAS_H_INCLUDED
-
-
-
-
 ///PROTOTIPOS
 
 ///ARTICULO
@@ -70,9 +66,6 @@ int altaCliente();
 int Menucliente();
 
 void seccionClientes();
-
-
-
 ///FIN CLIENTE
 ///-------------------------------------------------------///
 ///VENTA
@@ -105,6 +98,30 @@ int Menuventas();
 void seccionVenta();
 ///FIN VENTA
 ///-------------------------------------------------------///
+///PROVEEDOR
+bool agregarProveedor();
+
+int buscarProveedor(int codigo);
+
+int BuscarProveedorCod(int id);
+
+int contarRegistrosProv();
+
+void copiarArchivoProveedor(Proveedor *pProveeedor, int cantProveedor);
+
+void mostrarVectorProveedor(Proveedor *pProveedor, int cantProveedor);
+
+void ordenarAZProveedor(Proveedor *pProveeedor, int cantProveedor);
+
+bool listarProveedorPorDefecto();
+
+void listarProveedoresOrdenados(int orden);
+
+void listarProveedores();
+
+void seccionProveedores();
+///FIN PROVEEDOR
+///-------------------------------------------------------///
 ///CONFIGURACION
 ///-------------------------------------------------------///
 void mostrarVentaBackup();
@@ -116,9 +133,7 @@ bool hacerBackupVentas();
 bool restablecerArchivoVentas();
 
 bool restablecerarchivosVentasinicio();
-///-------------------------------------------------------///
 ///ARCHIVO ARTICULO
-///-------------------------------------------------------///
 void mostrarArticuloBackup();
 
 void mostrarArticuloinicial();
@@ -128,9 +143,7 @@ bool hacerBackupArticulo();
 bool restablecerArchivoArticulo();
 
 bool restablecerarchivosArticuloinicio();
-///-------------------------------------------------------///
 ///ARCHIVOS CLIENTE
-///-------------------------------------------------------///
 void mostrarClienteBackup();
 
 void mostrarClienteinicial();
@@ -150,4 +163,8 @@ void seccionConfiguracion();
 ///GLOBALES
 ///-------------------------------------------------------///
 void cargarCadena(char *, int );
+
+void cartelListarArticulos();
+
+void cartelListarProveedores();
 #endif // HERRAMIENTAS_H_INCLUDED

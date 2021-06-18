@@ -24,6 +24,7 @@ public:
     //metodos
     void cargar();
     void Mostrar();
+    void Mostrar(int i);
 };
 ///METODOS
 void Direccion::cargar(){
@@ -39,6 +40,10 @@ void Direccion::cargar(){
 void Direccion::Mostrar(){
     cout<<"DIRECCION: "<< endl;
     cout << Calle <<" "<<Numero<<", " << Localidad << endl;
+}
+
+void Direccion::Mostrar(int i){
+    cout << Calle <<" "<<Numero<<"-" << Localidad << endl;
 }
 ///-------------------------------------------------------///
 #endif // CLSDIRRECION_H_INCLUDED
