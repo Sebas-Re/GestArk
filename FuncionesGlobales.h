@@ -21,12 +21,28 @@ void cartelListarArticulos(){
     cout<<"ID";
     gotoxy(8,2);
     cout<<"DESCRIPCION";
-    gotoxy(35,2);
+    gotoxy(28,2);
     cout<<"PRECIO UNITARIO";
-    gotoxy(60,2);
+    gotoxy(46,2);
     cout<<"STOCK";
-    gotoxy(75,2);
+    gotoxy(54,2);
     cout<<"ESTADO";
+    gotoxy(66,2);
+    cout<<"PROVEEDOR";
 }
 
+void cartelListarProveedores(){
+    gotoxy(1,1);
+    cout<<"PROVEEDORES: ";
+    gotoxy(4,2);
+    cout<<"CODIGO";
+    gotoxy(8,2);
+    cout<<"PROVEEDOR";
+    gotoxy(35,2);
+    cout<<"TELEFONO";
+    gotoxy(60,2);
+    cout<<"MAIL";
+    gotoxy(75,2);
+    cout<<"DIRECCION";
+}
 #endif // FUNCIONESGLOBALES_H_INCLUDED

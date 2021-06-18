@@ -29,13 +29,22 @@ const char ARCHIVOVENTAS[]="Archivoventa.dat";
 const char ARCHIVOVENTAS_BKP[]="Archivoventa_bkp.dat";
 const char ARCHIVOVENTASINICIAL[]="Archivoventainicial.dat";
 ///-------------------------------------------------------///
+///ARCHIVOS PROVEEDOR///
+const char ARCHIVOPROVEEDOR[]="ArchivoProveedor.dat";
+const char ARCHIVOPROVEEDOR_BKP[]="ArchivoProveedor_bkp.dat";
+const char ARCHIVOPROVEEDORINICIAL[]="ArchivoProveedorinicial.dat";
+///-------------------------------------------------------///
+///ARCHIVOS PEDIDO///
+const char ARCHIVOPEDIDO[]="ArchivoPedido.dat";
+///-------------------------------------------------------///
 
 #include "FuncionesGlobales.h"
 #include "clsarticulo.h"
+#include "clsdirrecion.h"
+#include "clsproveedor.h"
 #include "herramientas.h"
 #include "Menus.h"
 #include "clscadena.h"
-#include "clsdirrecion.h"
 #include "clsfecha.h"
 #include "clspersona.h"
 #include "clscliente.h"
@@ -44,6 +53,7 @@ const char ARCHIVOVENTASINICIAL[]="Archivoventainicial.dat";
 #include "MenuArticulos.h"
 #include "MenuClientes.h"
 #include "Menuventa.h"
+#include "MenuProveedores.h"
 #include "MenuConfiguracion.h"
 
 int main(){
@@ -61,9 +71,16 @@ int main(){
         case 14:
             seccionVenta();
             break;
+        case 15:
+            seccionProveedores();
+            break;
         case 16:
             seccionConfiguracion();
+            break;
         case 17:
+            seccionConfiguracion();
+            break;
+        case 18:
             rlutil::locate(1,25);
             return 0;
             break;
