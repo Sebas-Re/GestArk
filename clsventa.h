@@ -1,22 +1,28 @@
 #ifndef CLSVENTA_H_INCLUDED
 #define CLSVENTA_H_INCLUDED
-///CLASE ARTICULO
+///CLASE Venta
 ///-------------------------------------------------------///
+
+float CalculoDeImporte(int id, int cv);
+
+
 class Venta{
 private:
     int Nventa;
     int IDarticulo;
     int DNIcliente;
+    int IDvendedor;
     float importe;
     int cantVendida;
     Fecha fe;
     bool estado;
 public:
     //constructor
-    Venta(int nv=0, int iart=0, int dc=0, float im=0, int cv=0, Fecha v=(0,0,0),bool e=false){
+    Venta(int nv=0, int iart=0, int dc=0, int iv=0, float im=0, int cv=0, Fecha v=(0,0,0),bool e=false){
         Nventa=nv;
         IDarticulo=iart;
         DNIcliente=dc;
+        IDvendedor=iv;
         importe=im;
         cantVendida=cv;
         fe=v;
@@ -33,6 +39,7 @@ public:
     int getNventa(){return Nventa;}
     int getIDarticulo(){ return IDarticulo;}
     int getDNIcliente(){return DNIcliente;}
+    int getIDvendedor() {return IDvendedor;}
     float getImporte(){return importe;}
     int getCantidadVendida(){return cantVendida;}
     bool getEstado(){return estado;}
@@ -43,22 +50,175 @@ public:
     //Metodos
     void cargar();
     void mostrar();
+    void VerificacionID (int id);
+    void VerificacionDNI(int dni);
     bool leerDeDisco(int pos);
     bool grabarEnDisco();
     bool modificarEnDisco(Venta venta, int pos);
+
 };
 
 void Venta::cargar(){
+    int x;
     cout<<"INGRESE ID DE ARTICULO"<<endl;
     cin>>IDarticulo;
     cout<<"INGRESE DNI DEL CLIENTE"<<endl;
     cin>>DNIcliente;
+    cout << "INGRESE ID DEL VENDEDOR"<<endl;
+    cin >> x;
+    VerificacionID(x);
     cout<<"INGRESE CANTIDAD VENDIDA"<<endl;
     cin>>cantVendida;
+
+ //   setimporte ( CalculoDeImporte(IDarticulo, cantVendida ) );  falta terminar funcion CalculoDeImporte
+
     cout<<"INGRESE FECHA DE VENTA"<<endl;
     fe.cargar();
     estado=true;
 }
+
+float CalculoDeImporte (int id, int cv){
+
+    Articulo reg;
+    float Importe = 0;
+
+    FILE *pArticulo;
+    pArticulo = fopen(ARCHIVOARTICULO, "rb+");
+    if (pArticulo == NULL)
+    {
+        cout << "Error al abrir";
+        system("pause");
+    }
+
+    ///Lectura del articulo
+ //   reg = LeerRegistroArticulo( buscarArticulo(id) );   Está funcion lee el registro de articulos segun la posicion. La funcion BuscarArticulo(id) debería devolver POS para la funcion de lectura
+
+    ///Calculo de Importe
+    Importe = (reg.getPu() * cv);
+
+    /// NuevoStock
+    reg.setStock(reg.getStock() - cv);
+
+    fseek(pArticulo, buscarArticulo(id) * sizeof reg, 0);
+    bool escribio = fwrite(&reg, sizeof reg, 1, pArticulo);
+    if (escribio == false)
+    {
+        cout << "Error de escritura" << endl;
+        system("pause");
+    }
+
+    fclose(pArticulo);
+    return Importe;
+
+
+
+
+}
+
+void Venta::VerificacionDNI(int dni){
+
+    Cliente reg;
+    bool DNIexistente = true;
+
+    FILE *ArchivoClientes;
+    ArchivoClientes = fopen(ARCHIVOCLIENTE, "rb");
+    if (ArchivoClientes == NULL)
+    {
+        cout << "Error al abrir";
+        system("pause");
+    }
+
+
+
+    do
+    {
+
+        if (DNIexistente == false)
+        {
+            cout << "DNI no encontrado, por favor ingrese un nuevo DNI o ingrese '-1' para volver al menu anterior. ";
+            cin >> dni;
+            cout << endl;
+        }
+
+        DNIexistente = false;
+        fseek(ArchivoClientes, 0 * sizeof reg, 0);
+
+        while (fread(&reg, sizeof reg, 1, ArchivoClientes) == 1)
+        {
+            if (reg.getDni() == dni)
+            {
+                DNIexistente = true;
+            }
+        }
+
+        if (DNIexistente == true)
+        {
+            DNIcliente = dni;
+        }
+
+        if (dni == -1)
+        {
+            return;
+        }
+
+    } while (DNIexistente == false);
+
+    fclose(ArchivoClientes);
+
+
+}
+
+
+void Venta::VerificacionID(int id){
+
+   Vendedor reg;
+    bool IDexistente = true;
+
+    FILE *ArchivoVendedor;
+    ArchivoVendedor = fopen(ARCHIVOVENDEDOR, "rb");
+
+
+    if (ArchivoVendedor == NULL)
+    {
+        cout << "Error al abrir";
+        system("pause");
+    }
+
+
+
+    do
+    {
+
+        if (IDexistente == false)
+        {
+            cout << "ID no encontrado, por favor ingrese un nuevo ID o ingrese '-1' para volver al menú anterior: ";
+            cin >> id;
+            cout << endl;
+        }
+
+        IDexistente = false;
+        fseek(ArchivoVendedor, 0 * sizeof reg, 0);
+
+        while (fread(&reg, sizeof reg, 1, ArchivoVendedor) == 1)
+        {
+            if (reg.getIdVendedor() == id)
+            {
+                IDexistente = true;
+                IDvendedor = id;
+            }
+        }
+
+        if (id == -1)
+        {
+            return;
+        }
+
+    } while (IDexistente == false);
+
+    fclose(ArchivoVendedor);
+
+}
+
 
 void Venta::mostrar(){
     cout<<"-----------------------------"<<endl;

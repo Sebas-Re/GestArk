@@ -25,6 +25,8 @@ bool controlstock(int cantidad, int idarticulo, bool mod){
      art.setStock(stockoriginal-cantidad);}
      else{art.setStock(stockoriginal+cantidad);}
      bool modifico=art.modificarEnDisco(art,pos);
+
+     return modifico;
 }
 
 int calcularimporte(int cantidad,int idarticulo){
@@ -76,7 +78,6 @@ int buscarVenta(int Nventa){//recibe "id" del registro y devuelve la posicion do
 
 bool agregarVenta(){
     Venta ven;
-    int pos=0;
     cout<<"REGISTAR VENTA"<<endl;
     FILE *pVenta;
             pVenta=fopen(ARCHIVOVENTAS,"rb");
@@ -105,7 +106,6 @@ bool agregarVenta(){
 int BuscarVentaporNumero(int venta){//busca articulo por id y lo muestra si "estado" esta en true
     Venta ven;
     int pos=0;
-    int Nventa;
     FILE *pVenta;
     pVenta=fopen(ARCHIVOVENTAS,"rb");
     if(pVenta==NULL){return -1;}

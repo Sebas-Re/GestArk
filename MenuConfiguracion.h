@@ -7,7 +7,6 @@
 void mostrarArticuloBackup(){
     FILE *p;
     Articulo aux;
-    int pos=0;
     p=fopen(ARCHIVOARTICULO_BKP,"rb");
     if(p==NULL) return;
 
@@ -20,7 +19,6 @@ void mostrarArticuloBackup(){
 void mostrarArticuloinicial(){
     FILE *p;
     Articulo aux;
-    int pos=0;
     p=fopen(ARCHIVOINICIAL,"rb");
     if(p==NULL) return;
 
@@ -67,7 +65,6 @@ bool hacerBackupArticulo(){
 bool restablecerArchivoArticulo(){
     FILE *p, *bk;
     Articulo aux;
-    int pos=0;
 
     bk=fopen(ARCHIVOARTICULO_BKP, "rb");
     if(bk==NULL) return false;
@@ -93,7 +90,6 @@ bool restablecerArchivoArticulo(){
 bool restablecerarchivosArticuloinicio(){
     FILE *p, *bk;
     Articulo aux;
-    int pos=0;
     bk=fopen(ARCHIVOINICIAL, "rb");
     if(bk==NULL) return false;
     p=fopen(ARCHIVOARTICULO,"wb");
@@ -116,7 +112,6 @@ bool restablecerarchivosArticuloinicio(){
 void mostrarClienteBackup(){
     FILE *p;
     Cliente aux;
-    int pos=0;
     p=fopen(ARCHIVOCLIENTE_BKP,"rb");
     if(p==NULL) return;
 
@@ -129,7 +124,6 @@ void mostrarClienteBackup(){
 void mostrarClienteinicial(){
     FILE *p;
     Cliente aux;
-    int pos=0;
     p=fopen(ARCHIVOINICIALCLIENTE,"rb");
     if(p==NULL) return;
 
@@ -175,7 +169,6 @@ bool hacerBackupCliente(){
 bool restablecerArchivoCliente(){
     FILE *p, *bk;
     Cliente aux;
-    int pos=0;
 
     bk=fopen(ARCHIVOCLIENTE_BKP, "rb");
     if(bk==NULL) return false;
@@ -201,7 +194,6 @@ bool restablecerArchivoCliente(){
 bool restablecerarchivosClientesinicio(){
     FILE *p, *bk;
     Cliente aux;
-    int pos=0;
     bk=fopen(ARCHIVOINICIALCLIENTE, "rb");
     if(bk==NULL) return false;
     p=fopen(ARCHIVOCLIENTE,"wb");
@@ -224,7 +216,6 @@ bool restablecerarchivosClientesinicio(){
 void mostrarVentaBackup(){
     FILE *p;
     Venta aux;
-    int pos=0;
     p=fopen(ARCHIVOVENTAS_BKP,"rb");
     if(p==NULL) return;
 
@@ -283,7 +274,6 @@ bool hacerBackupVentas(){
 bool restablecerArchivoVentas(){
     FILE *p, *bk;
     Venta aux;
-    int pos=0;
 
     bk=fopen(ARCHIVOVENTAS_BKP, "rb");
     if(bk==NULL) return false;
@@ -309,7 +299,6 @@ bool restablecerArchivoVentas(){
 bool restablecerarchivosVentasinicio(){
     FILE *p, *bk;
     Venta aux;
-    int pos=0;
     bk=fopen(ARCHIVOVENTASINICIAL, "rb");
     if(bk==NULL) return false;
     p=fopen(ARCHIVOVENTAS,"wb");

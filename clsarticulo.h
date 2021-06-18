@@ -8,6 +8,7 @@ private:
     char Descripcion[25];
     float Pu;
     int Stock;
+    char Proveedor[25];
     bool Estado;
 public:
     ///constructor
@@ -16,6 +17,7 @@ public:
         strcpy(Descripcion,d);
         Pu=p;
         Stock=s;
+        strcpy(Proveedor,d);
         Estado=false;
     }
     ///Sets
@@ -30,18 +32,20 @@ public:
             Pu=p;}
     }
     void setStock(int s){Stock=s;}
+    void setProveedor(char *d){strcpy(Proveedor,d);}
     void setEstado(bool e){Estado=e;}
     ///Gets
     int getID(){return ID;}
     char *getDescripcion(){return Descripcion;}
     float getPu(){return Pu;}
     int getStock(){return Stock;}
+    char *getProveedor(){return Proveedor;}
     bool getEstado(){return Estado;}
     ///Metodos
     void cargar();
     void mostrar();
     void mostrar(int y);
-    bool leerDeDisco(int );
+    bool leerDeDisco(int i);
     bool grabarEnDisco();
     bool modificarEnDisco(Articulo reg, int pos);
 
@@ -59,6 +63,8 @@ void Articulo::cargar(){
         }
         cout<<"INGRESE EL STOCK DEL ARTICULO: ";
         cin>>Stock;
+        cout<<"INGRESE PROVEEDOR DEL ARTICULO: ";
+        cargarCadena(Proveedor,24);
         Estado=true;
         cout<<"------------------------"<<endl;
 }
@@ -68,13 +74,15 @@ void Articulo::mostrar(int y){
         cout<<ID<<"\t";
         gotoxy(8,y);
         cout<<Descripcion<<"\t";
-        gotoxy(35,y);
+        gotoxy(28,y);
         cout<<Pu<<"\t";
-        gotoxy(60,y);
+        gotoxy(46,y);
         cout<<Stock<<"\t";
-        gotoxy(75,y);
+        gotoxy(54,y);
         if(Estado==true){cout<<"DISPONIBLE"<<endl;}
         else{cout<<"NO DISPONIBLE"<<endl;}
+        gotoxy(66,y);
+        cout<<Proveedor;
 }
 
 void Articulo::mostrar(){
@@ -83,6 +91,7 @@ void Articulo::mostrar(){
         cout<<"DESCRIPCION: "<<Descripcion<<endl;
         cout<<"PRECIO UNITARIO: "<<Pu<<endl;
         cout<<"STOCK: "<<Stock<<endl;
+        cout<<"PROVEEDOR: "<<Proveedor<<endl;
         cout<<"ESTADO: "<<"\t";
         if(Estado==true){cout<<"DISPONIBLE"<<endl;}
         else{cout<<"NO DISPONIBLE"<<endl;}
