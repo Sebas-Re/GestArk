@@ -5,8 +5,6 @@
 #include <stdio.h>
 using namespace std;
 
-///asikudjhakjsdhasd
-
 
 ///-------------------------------------------------------///
 ///ARCHVOS ARTICULO///
@@ -55,6 +53,10 @@ const char ARCHIVOPEDIDO[]="ArchivoPedido.dat";
 #include "Menuventa.h"
 #include "MenuProveedores.h"
 #include "MenuConfiguracion.h"
+#include "menuVendedor.h"
+
+
+
 
 int main(){
     system("TITLE GestArk - gestion empresarial");
@@ -72,15 +74,18 @@ int main(){
             seccionVenta();
             break;
         case 15:
-            seccionProveedores();
+            seccionVendedor();
             break;
         case 16:
-            seccionConfiguracion();
+            seccionProveedores();
             break;
         case 17:
             seccionConfiguracion();
             break;
         case 18:
+            seccionConfiguracion();
+            break;
+        case 19:
             rlutil::locate(1,25);
             return 0;
             break;

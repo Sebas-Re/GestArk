@@ -1,5 +1,6 @@
 #ifndef CLSVENDEDOR_H_INCLUDED
 #define CLSVENDEDOR_H_INCLUDED
+
 ///CLASE VENDEDOR
 ///-------------------------------------------------------///
 class Vendedor: public Persona{
@@ -9,7 +10,7 @@ protected:
     bool Estado;
 public:
 
-    Vendedor(const int i=0,bool e=true){
+    Vendedor(const int i=1,bool e=true){
         idVendedor=i;
         Categoria=i;
         Estado=e;
@@ -27,27 +28,40 @@ public:
     int getCategoria(){return Categoria;}
     bool getEstado(){return Estado;}
     //metodos
+    bool iDAutomatico();
     void cargar();
     void mostrar();
+    void mostrar(int);
     void VerificacionID(int ID);
     bool leerDeDisco(int pos);
     bool grabarEnDisco();
     bool modificarEnDisco(int pos);
+
 };
 
+bool Vendedor::iDAutomatico(){
+    FILE *pArchivo;
+    pArchivo=fopen(ARCHIVOVENDEDOR,"rb");
+    if(pArchivo==NULL){return false;}
+    fseek(pArchivo,-sizeof (Vendedor),2);
+    fread(this, sizeof (Vendedor),1,pArchivo);
+    idVendedor+=1;
+    fclose(pArchivo);
+    return true;
+}
+
 void Vendedor::cargar(){
-    int x;
+    //int x;
     Persona::Cargar();
-    cout<<"ID DEL VENDEDOR: ";
+/*    cout<<"ID DEL VENDEDOR: ";
     cin >> x;
     VerificacionID (x);
     cin>>idVendedor;
+    */
     cout<<"CATEGORIA DEL VENDEDOR: ";
     cin>>Categoria;
-    Estado=true;
 }
-
-
+/*
 void Vendedor::VerificacionID (int ID){
 Vendedor reg;
 bool Existe=false;
@@ -55,14 +69,12 @@ bool Existe=false;
     FILE *ArchivoVendedor;
     ArchivoVendedor=fopen(ARCHIVOVENDEDOR, "rb");
 
-        /*
+
     if (ArchivoVendedor == NULL)
     {
         cout << "Error al abrir";
         system("pause");
     }
-
-*/
 //Está comentado porque al principio, si el archivo no está creado, da error pero es un falso positivo, porque sigue el proceso de verificacion y asignacion de ID;
 
 
@@ -98,22 +110,39 @@ bool Existe=false;
     fclose(ArchivoVendedor);
 
 }
-
+*/
 void Vendedor::mostrar(){
     cout<<"-----------------------------"<<endl;
-     Persona::Mostrar();
     cout<<"ID VENDEDOR: "<<idVendedor<<endl;
     cout<<"CATEGORIA VENDEDOR: "<<Categoria<<endl;
+    Persona::Mostrar();
+
 }
 
+
+void Vendedor::mostrar(int y){
+    gotoxy(4,y);
+    cout<<idVendedor;
+    gotoxy(8,y);
+    cout<<Categoria;
+    gotoxy(12,y);
+    Persona::Mostrar(y);
+
+}
+
+
 bool Vendedor::leerDeDisco(int pos){
-    FILE *pVendedor;
-    pVendedor=fopen(ARCHIVOVENDEDOR,"rb");
-    if(pVendedor==NULL){return false;}
-    fseek(pVendedor,pos*sizeof(Vendedor),0);
-    bool leyo=fread(this,sizeof (Vendedor),1,pVendedor);
-    fclose(pVendedor);
-    return leyo;
+    FILE *pArchivo;
+
+    pArchivo=fopen(ARCHIVOVENDEDOR, "rb");
+    if(pArchivo==NULL){return false;}
+    fseek(pArchivo, sizeof (Vendedor)*pos, 0); /// Nos ubicamos para leer
+    if(fread(this, sizeof (Vendedor), 1, pArchivo)){ /// Sacamos el registro del archivo
+        fclose(pArchivo);
+        return true;
+    }
+    fclose(pArchivo);
+    return false;
 }
 
 bool Vendedor::grabarEnDisco(){
@@ -132,8 +161,8 @@ bool Vendedor::modificarEnDisco(int pos){
     pArchivo=fopen(ARCHIVOVENDEDOR, "rb+");
     if (pArchivo==NULL){return false;}
 
-    fseek(pArchivo, sizeof (Cliente)*pos, 0);
-    if (fwrite(this, sizeof (Cliente), 1, pArchivo)){
+    fseek(pArchivo, sizeof (Vendedor)*pos, 0);
+    if (fwrite(this, sizeof (Vendedor), 1, pArchivo)){
         fclose(pArchivo);
         return true;
     }

@@ -25,6 +25,7 @@ class Cliente: public Persona{
         bool grabarEnDisco();
         bool modificarEnDisco(int );
     };
+
 void Cliente::mostrar(){
     cout<<"-----------------------------"<<endl;
     Persona::Mostrar();

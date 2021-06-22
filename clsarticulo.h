@@ -42,6 +42,7 @@ public:
     char *getProveedor(){return Proveedor;}
     bool getEstado(){return Estado;}
     ///Metodos
+  //  void iDAutomatico();
     void cargar();
     void mostrar();
     void mostrar(int y);
@@ -50,7 +51,17 @@ public:
     bool modificarEnDisco(Articulo reg, int pos);
 
 };
-
+/*
+void Articulo::iDAutomatico(){
+    FILE *pArchivo;
+    pArchivo=fopen(ARCHIVOARTICULO,"rb");
+    fseek(pArchivo,-sizeof (Articulo),2);
+    fread(this, sizeof (Articulo),1,pArchivo);
+    ID+=1;
+    fclose(pArchivo);
+    cout<<"CODIGO AUTONUMERICO ASIGNADO: "<<ID<<endl;
+}
+*/
 void Articulo::cargar(){
         cout<<"INGRESE DESCRIPCION DEL ARTICULO: ";
         cargarCadena(Descripcion,24);
