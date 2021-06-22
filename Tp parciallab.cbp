@@ -39,6 +39,7 @@
 		<Unit filename="MenuArticulos.h" />
 		<Unit filename="MenuClientes.h" />
 		<Unit filename="MenuConfiguracion.h" />
+		<Unit filename="MenuProveedores.h" />
 		<Unit filename="Menus.h" />
 		<Unit filename="Menuventa.h" />
 		<Unit filename="clsarticulo.h" />
@@ -46,11 +47,14 @@
 		<Unit filename="clscliente.h" />
 		<Unit filename="clsdirrecion.h" />
 		<Unit filename="clsfecha.h" />
+		<Unit filename="clspedido.h" />
 		<Unit filename="clspersona.h" />
+		<Unit filename="clsproveedor.h" />
 		<Unit filename="clsvendedor.h" />
 		<Unit filename="clsventa.h" />
 		<Unit filename="herramientas.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="menuVendedor.h" />
 		<Unit filename="rlutil.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

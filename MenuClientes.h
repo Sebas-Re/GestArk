@@ -15,6 +15,19 @@ int buscarDNICliente(int dniBuscado){
     return -1;
 }
 
+bool verificarCliente(int d){
+    int posicion=0;
+    Cliente registro;
+
+    while(registro.leerDeDisco(posicion)){
+        if(d==registro.getDni()){
+            return true;
+        }
+        posicion++;
+    }
+    return false;
+}
+
 int agregarCliente(){//crea o agrega un registro cliente al final de los que esten hechos
     int r;
     int contador=0;
@@ -71,7 +84,7 @@ int listarClientes(){//lista todo el registro siempre y cuando "estado" este en 
     return pos;
 }
 
-int modificarMail(){//modifica el precio unitario de un articulo
+int modificarMailCliente(){
     int dni, pos;
     bool modifico=false;
     Cliente cli;
@@ -183,7 +196,7 @@ void seccionClientes(){
         case 15:
             {
                 system("cls");
-                checkeo=modificarMail();
+                checkeo=modificarMailCliente();
                 if(checkeo==-2){cout<<"El cliente no se encuentra registrado."<<endl;}
                 if(checkeo==-3){cout<<"Error al leer el archivo."<<endl;}
                 if(checkeo==1){cout<<"Email modificado con exito."<<endl;}

@@ -1,5 +1,6 @@
 #ifndef CLSPERSONA_H_INCLUDED
 #define CLSPERSONA_H_INCLUDED
+
 ///CLASE PERSONA
 ///-------------------------------------------------------///
 
@@ -26,6 +27,7 @@ public:
 
     void Cargar();
     void Mostrar();
+    void Mostrar(int);
 
     void setNombre(const char *n){strcpy(Nombre, n);}
     void setApellido(const char *a){strcpy(Apellido, a);}
@@ -44,17 +46,25 @@ public:
 };
 
 void Persona::Cargar(){
-
+    bool vCli=false, vVen=false;
     cout << "DNI: ";
     cin >> Dni;
-            while( buscarDNICliente(Dni) > -1){
-        cout<<"EL DNI CLIENTE YA SE ENCUENTRA REGISTRADO."<<endl;
-        cout << "Ingrese un DNI valido: ";
-        cin >> Dni;
+    vCli=verificarCliente(Dni);
+    vVen=verificarVendedor(Dni);
+    while(vCli==true || vVen==true){
+        if (vCli){
+            cout<<"EL DNI DEL CLIENTE YA SE ENCUENTRA REGISTRADO."<<endl;
+            cout << "Ingrese un DNI valido: ";
+            cin >> Dni;
+        }
+        if (vVen){
+            cout<<"EL DNI DEL VENDEDOR YA SE ENCUENTRA REGISTRADO."<<endl;
+            cout << "Ingrese un DNI valido: ";
+            cin >> Dni;
+        }
+        vCli=verificarCliente(Dni);
+        vVen=verificarVendedor(Dni);
     }
-
-   // setDni(Dni);
-
     cout << "Nombre: ";
     cin.ignore();
     cin.getline(Nombre, 25);
@@ -82,6 +92,20 @@ void Persona::Mostrar(){
     cout << "Telefono: " << Telefono << endl;
 }
 
+void Persona::Mostrar(int y){
+
+    cout << Dni;
+    gotoxy(24,y);
+    cout << Nombre;
+    gotoxy(49,y);
+    cout << Apellido;
+    gotoxy(74,y);
+    FechaDeNacimiento.mostrar();
+    gotoxy(90,y);
+    cout << Email;
+    gotoxy(120,y);
+    cout << Telefono;
+}
 
 
 ///-------------------------------------------------------///

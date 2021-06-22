@@ -1,7 +1,6 @@
 #ifndef HERRAMIENTAS_H_INCLUDED
 #define HERRAMIENTAS_H_INCLUDED
 ///PROTOTIPOS
-
 ///ARTICULO
 ///-------------------------------------------------------///
 bool agregarArticulo();
@@ -49,6 +48,8 @@ void seccionArticulos();
 ///-------------------------------------------------------///
 int buscarDNICliente(int );
 
+bool verificarCliente(int );
+
 int agregarCliente();
 
 int mostrarClientePorDNI(int );
@@ -57,7 +58,7 @@ int contarRegistrosClientes();
 
 int listarClientes();
 
-int modificarMail();
+int modificarMailCliente();
 
 int eliminarCliente();
 
@@ -121,6 +122,30 @@ void listarProveedores();
 
 void seccionProveedores();
 ///FIN PROVEEDOR
+///-------------------------------------------------------///
+///-------------------------------------------------------///
+///VENDEDOR
+///-------------------------------------------------------///
+int buscarDNIVendedor(int );
+
+bool verificarVendedor(int );
+
+int agregarVendedor();
+
+int mostrarVendedorPorDni(int );
+
+bool listarVendedores();
+
+int modificarCategoria();
+
+int eliminarVendedor();
+
+int altaVendedor();
+
+int menuVendedor();
+
+void seccionVendedor();
+///FIN VENDEDOR
 ///-------------------------------------------------------///
 ///CONFIGURACION
 ///-------------------------------------------------------///

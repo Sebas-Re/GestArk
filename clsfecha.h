@@ -59,7 +59,7 @@ void Fecha::cargar(){
 }
 
 void Fecha::mostrar(){
-    cout<<dia<<"/"<<mes<<"/"<<anio<<endl;
+    cout<<dia<<"/"<<mes<<"/"<<anio;
 }
 ///-------------------------------------------------------///
 

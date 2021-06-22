@@ -18,14 +18,13 @@ private:
     bool estado;
 public:
     //constructor
-    Venta(int nv=0, int iart=0, int dc=0, int iv=0, float im=0, int cv=0, Fecha v=(0,0,0),bool e=false){
+    Venta(int nv=0, int iart=0, int dc=0, int iv=0, float im=0, int cv=0,bool e=false){
         Nventa=nv;
         IDarticulo=iart;
         DNIcliente=dc;
         IDvendedor=iv;
         importe=im;
         cantVendida=cv;
-        fe=v;
         estado=e;
     }
     //sets
@@ -43,9 +42,7 @@ public:
     float getImporte(){return importe;}
     int getCantidadVendida(){return cantVendida;}
     bool getEstado(){return estado;}
-    int getfeanio(){return fe.getanio();}
-    int getfemes(){return fe.getmes();}
-
+    Fecha getFe(){return fe;}
 
     //Metodos
     void cargar();
@@ -128,8 +125,6 @@ void Venta::VerificacionDNI(int dni){
         system("pause");
     }
 
-
-
     do
     {
 
@@ -167,7 +162,6 @@ void Venta::VerificacionDNI(int dni){
 
 
 }
-
 
 void Venta::VerificacionID(int id){
 
@@ -218,7 +212,6 @@ void Venta::VerificacionID(int id){
     fclose(ArchivoVendedor);
 
 }
-
 
 void Venta::mostrar(){
     cout<<"-----------------------------"<<endl;
