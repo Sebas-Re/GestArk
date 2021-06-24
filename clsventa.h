@@ -62,15 +62,19 @@ void Venta::cargar(){
     int x;
     cout<<"INGRESE ID DE ARTICULO"<<endl;
     cin>>IDarticulo;
+
     cout<<"INGRESE DNI DEL CLIENTE"<<endl;
-    cin>>DNIcliente;
+    cin>> x;
+    VerificacionDNI (x);
     cout << "INGRESE ID DEL VENDEDOR"<<endl;
     cin >> x;
     VerificacionID(x);
     cout<<"INGRESE CANTIDAD VENDIDA"<<endl;
     cin>>cantVendida;
 
- //   setimporte ( CalculoDeImporte(IDarticulo, cantVendida ) );  falta terminar funcion CalculoDeImporte
+setimporte ( calcularimporte(cantVendida,IDarticulo) );
+
+    cout << "IMPORTE: " << importe << endl;
 
     cout<<"INGRESE FECHA DE VENTA"<<endl;
     fe.cargar();
