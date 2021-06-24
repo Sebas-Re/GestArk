@@ -74,43 +74,6 @@ void Venta::cargar(){
     estado=true;
 }
 
-float CalculoDeImporte (int id, int cv){
-
-    Articulo reg;
-    float Importe = 0;
-
-    FILE *pArticulo;
-    pArticulo = fopen(ARCHIVOARTICULO, "rb+");
-    if (pArticulo == NULL)
-    {
-        cout << "Error al abrir";
-        system("pause");
-    }
-
-    ///Lectura del articulo
- //   reg = LeerRegistroArticulo( buscarArticulo(id) );   Está funcion lee el registro de articulos segun la posicion. La funcion BuscarArticulo(id) debería devolver POS para la funcion de lectura
-
-    ///Calculo de Importe
-    Importe = (reg.getPu() * cv);
-
-    /// NuevoStock
-    reg.setStock(reg.getStock() - cv);
-
-    fseek(pArticulo, buscarArticulo(id) * sizeof reg, 0);
-    bool escribio = fwrite(&reg, sizeof reg, 1, pArticulo);
-    if (escribio == false)
-    {
-        cout << "Error de escritura" << endl;
-        system("pause");
-    }
-
-    fclose(pArticulo);
-    return Importe;
-
-
-
-
-}
 
 void Venta::VerificacionDNI(int dni){
 
