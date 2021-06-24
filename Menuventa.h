@@ -29,7 +29,7 @@ bool controlstock(int cantidad, int idarticulo, bool mod){
      return modifico;
 }
 
-int calcularimporte(int cantidad,int idarticulo){
+float calcularimporte(int cantidad,int idarticulo){
      Articulo art;
      int pos=0;
      float pu=0;
@@ -42,22 +42,6 @@ int calcularimporte(int cantidad,int idarticulo){
 
 }
 
-bool VerificarVenta(int idarticulo, int dni, int cantidad){
-    int contador=0;
-    if(buscarArticulo(idarticulo)<0){
-            cout<<"EL ARTICULO NO EXISTE"<<endl;
-            contador++;
-    }
-    if(buscarDNICliente(dni)<0){
-        cout<<"EL CLIENTE NO EXISTE"<<endl;
-        contador++;
-    }
-    if((verificarstock(cantidad,idarticulo))==0){
-       contador++;
-    }
-    if(contador>0){return false;}
-    else{return true;}
-}
 
 int buscarVenta(int Nventa){//recibe "id" del registro y devuelve la posicion donde se encuentra el registro
     Venta ven;
@@ -76,30 +60,34 @@ int buscarVenta(int Nventa){//recibe "id" del registro y devuelve la posicion do
     return -2;
 }
 
-bool agregarVenta(){
-    Venta ven;
-    cout<<"REGISTAR VENTA"<<endl;
+
+void AsignacionNumeroVenta (Venta &ven){
+
     FILE *pVenta;
             pVenta=fopen(ARCHIVOVENTAS,"rb");
             fseek(pVenta,-sizeof (Venta),2);
             fread(&ven,sizeof ven,1,pVenta);
             ven.setNventa(ven.getNventa()+1);
             fclose(pVenta);
+
+}
+
+
+bool agregarVenta(){
+    Venta ven;
+    cout<<"REGISTAR VENTA"<<endl;
+
+            AsignacionNumeroVenta(ven);
             cout<<"ESTE ES SU NUMERO DE VENTA: "<<ven.getNventa()<<endl;
             cout<<"COMPLETE LOS SIGUIENTES CAMPOS: "<<endl;
+
             ven.cargar();
-            ven.setimporte(calcularimporte(ven.getCantidadVendida(),ven.getIDarticulo()));
-    if(VerificarVenta(ven.getIDarticulo(),ven.getDNIcliente(),ven.getCantidadVendida())==0){
-            cout<<"NO SE PUDO GRABAR VENTA: "<<endl;
-            return false;
-    }
-    else{
-            cout<<"IMPORTE: "<<ven.getImporte()<<endl;
+
             if((controlstock(ven.getCantidadVendida(),ven.getIDarticulo(),true))==0){cout<<"NO SE PUDO MODIFICAR STOCK"<<endl;}
             else{cout<<"STOCK ACTUALIZADO"<<endl;}
             bool grabo=ven.grabarEnDisco();
             return grabo;
-   }
+
 
 }
 
