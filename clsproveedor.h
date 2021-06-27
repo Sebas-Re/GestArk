@@ -67,13 +67,13 @@ void Proveedor::mostrar(){
 void Proveedor::mostrar(int y){
     gotoxy(4,y);
     cout<<codigoProveedor<<"\t";
-    gotoxy(8,y);
+    gotoxy(22,y);
     cout<<nombreProveedor<<"\t";
-    gotoxy(35,y);
-    cout<<telefonoProveedor<<"\t";
     gotoxy(60,y);
+    cout<<telefonoProveedor<<"\t";
+    gotoxy(80,y);
     cout<<mailProveedor<<"\t";
-    gotoxy(75,y);
+    gotoxy(115,y);
     dir.Mostrar(3);
 }
 

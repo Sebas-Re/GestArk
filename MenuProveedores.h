@@ -20,7 +20,7 @@ bool agregarProveedor(){//agrega un registro articulo
             return contador;
         }
         contador++;
-        cout<<"DESEA AGREGAR OTRO ARTICULO (y/n)?"<<endl;
+        cout<<"DESEA AGREGAR OTRO PROVEEDOR (y/n)?"<<endl;
         r=getch();
         system("cls");
     }while(r==121||r==89);

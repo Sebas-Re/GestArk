@@ -18,7 +18,7 @@ void cargarCadena(char *pal, int tam){//recibe un char y un int y ajusta la vari
 ///CARTELES
 void cartelListarArticulos(int y){
     gotoxy(1,y);
-    cout<<"INVETARIO: ";
+    cout<<"INVENTARIO: ";
     y++;
     gotoxy(4,y);
     cout<<"ID";
@@ -58,13 +58,13 @@ void cartelListarProveedores(){
     cout<<"PROVEEDORES: ";
     gotoxy(4,2);
     cout<<"CODIGO";
-    gotoxy(8,2);
+    gotoxy(24,2);
     cout<<"PROVEEDOR";
-    gotoxy(35,2);
-    cout<<"TELEFONO";
     gotoxy(60,2);
+    cout<<"TELEFONO";
+    gotoxy(80,2);
     cout<<"MAIL";
-    gotoxy(75,2);
+    gotoxy(118,2);
     cout<<"DIRECCION";
 }
 

@@ -183,7 +183,7 @@ bool listarArticulosPorDefecto(){//lista todo el registro como fue cargado siemp
 int listarArticulosDisponibles(int linea){//lista todo el registro como fue cargado siempre y cuando "estado" sea true
        int cantReg,i=0;
        Articulo reg;
-       cartelListarArticulos(linea);
+       cartelListarArticulos(1);
        while(reg.leerDeDisco(i++)){
         if(reg.getEstado()){
         reg.mostrar(linea+3);
