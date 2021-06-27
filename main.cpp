@@ -3,7 +3,9 @@
 #include <cstdlib>
 #include <cstring>
 #include <stdio.h>
+#include <windows.h>
 using namespace std;
+
 
 
 ///-------------------------------------------------------///
@@ -40,13 +42,13 @@ const char ARCHIVOPEDIDO[]="ArchivoPedido.dat";
 #include "clsarticulo.h"
 #include "clsdirrecion.h"
 #include "clsproveedor.h"
+#include "clsfecha.h"
+#include "clspersona.h"
+#include "clsvendedor.h"
 #include "herramientas.h"
 #include "Menus.h"
 #include "clscadena.h"
-#include "clsfecha.h"
-#include "clspersona.h"
 #include "clscliente.h"
-#include "clsvendedor.h"
 #include "clsventa.h"
 #include "MenuArticulos.h"
 #include "MenuClientes.h"
@@ -59,6 +61,13 @@ const char ARCHIVOPEDIDO[]="ArchivoPedido.dat";
 
 
 int main(){
+    full_screen(1500, 1000);
+
+    /*char tecla = _getch();
+    int otraTecla = _getch();
+    cout << tecla << "        " << otraTecla << endl;
+    system("pause");
+    return 0;*/
     system("TITLE GestArk - gestion empresarial");
     int opc;
     while(true){
