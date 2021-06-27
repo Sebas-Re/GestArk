@@ -2,7 +2,8 @@
 #define FUNCIONESGLOBALES_H_INCLUDED
 #include "rlutil.h"
 ///FUNCIONES GLOBALES
-
+bool verificarCliente(int );
+bool verificarVendedor(int );
 void cargarCadena(char *pal, int tam){//recibe un char y un int y ajusta la variable con memoria dinamica
   int i;
   fflush(stdin);
@@ -44,5 +45,29 @@ void cartelListarProveedores(){
     cout<<"MAIL";
     gotoxy(75,2);
     cout<<"DIRECCION";
+}
+
+void cartelListarVendedores(){
+    gotoxy(4,2);
+    cout<<"ID";
+    gotoxy(8,2);
+    cout<<"CATEGORIA";
+    gotoxy(22,2);
+    cout<<"DNI";
+    gotoxy(34,2);
+    cout<<"NOMBRE";
+    gotoxy(59,2);
+    cout<<"APELLIDO";
+    gotoxy(84,2);
+    cout<<"FECHA NAC.";
+    gotoxy(100,2);
+    cout<<"EMAIL";
+    gotoxy(140,2);
+    cout<<"TELEFONO";
+}
+
+void full_screen(int ancho, int alto){
+    HWND hwnd = GetForegroundWindow();
+    SetWindowPos(hwnd, HWND_TOPMOST, 0, 0, ancho, alto, 0);
 }
 #endif // FUNCIONESGLOBALES_H_INCLUDED

@@ -48,8 +48,6 @@ void seccionArticulos();
 ///-------------------------------------------------------///
 int buscarDNICliente(int );
 
-bool verificarCliente(int );
-
 int agregarCliente();
 
 int mostrarClientePorDNI(int );
@@ -74,7 +72,7 @@ bool verificarstock(int cantidad, int idarticulo);
 
 bool controlstock(int cantidad, int idarticulo, bool mod);
 
-float calcularimporte(int cantidad,int idarticulo);
+int calcularimporte(int cantidad,int idarticulo);
 
 bool VerificarVenta(int idarticulo, int dni, int cantidad);
 
@@ -128,13 +126,23 @@ void seccionProveedores();
 ///-------------------------------------------------------///
 int buscarDNIVendedor(int );
 
-bool verificarVendedor(int );
+int contarRegistrosVendedores();
+
+void elegirTipoListado();
+
+int MenuListarVendedores();
+
+void listarVendedores();
+
+void listarVendedoresOrdenados(int);
+
+void porApellidoAscendente(Vendedor * , int);
+
+void mostrarVectorOrdenado(Vendedor * , int );
 
 int agregarVendedor();
 
 int mostrarVendedorPorDni(int );
-
-bool listarVendedores();
 
 int modificarCategoria();
 
@@ -187,9 +195,14 @@ void seccionConfiguracion();
 
 ///GLOBALES
 ///-------------------------------------------------------///
+void full_screen(int ancho, int alto);
+
 void cargarCadena(char *, int );
 
 void cartelListarArticulos();
 
 void cartelListarProveedores();
+
+void cartelListarVendedores();
+
 #endif // HERRAMIENTAS_H_INCLUDED

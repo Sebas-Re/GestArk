@@ -95,16 +95,16 @@ void Persona::Mostrar(){
 void Persona::Mostrar(int y){
 
     cout << Dni;
-    gotoxy(24,y);
+    gotoxy(34,y);
     cout << Nombre;
-    gotoxy(49,y);
+    gotoxy(59,y);
     cout << Apellido;
-    gotoxy(74,y);
+    gotoxy(84,y);
     FechaDeNacimiento.mostrar();
-    gotoxy(90,y);
+    gotoxy(100,y);
     cout << Email;
-    gotoxy(120,y);
-    cout << Telefono;
+    gotoxy(140,y);
+    cout << Telefono<<endl;
 }
 
 

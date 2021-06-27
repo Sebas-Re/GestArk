@@ -3,6 +3,14 @@
 
 ///CLASE VENDEDOR
 ///-------------------------------------------------------///
+const char CATEGORIAS[10][10]={
+"TRAINEE",
+"JUNIOR",
+"S. SENIOR",
+"SENIOR",
+"MASTER",
+};
+
 class Vendedor: public Persona{
 protected:
     int idVendedor;
@@ -51,66 +59,11 @@ bool Vendedor::iDAutomatico(){
 }
 
 void Vendedor::cargar(){
-    //int x;
     Persona::Cargar();
-/*    cout<<"ID DEL VENDEDOR: ";
-    cin >> x;
-    VerificacionID (x);
-    cin>>idVendedor;
-    */
     cout<<"CATEGORIA DEL VENDEDOR: ";
     cin>>Categoria;
 }
-/*
-void Vendedor::VerificacionID (int ID){
-Vendedor reg;
-bool Existe=false;
 
-    FILE *ArchivoVendedor;
-    ArchivoVendedor=fopen(ARCHIVOVENDEDOR, "rb");
-
-
-    if (ArchivoVendedor == NULL)
-    {
-        cout << "Error al abrir";
-        system("pause");
-    }
-//Está comentado porque al principio, si el archivo no está creado, da error pero es un falso positivo, porque sigue el proceso de verificacion y asignacion de ID;
-
-
-
-    do
-    {
-
-        if (Existe == true)
-        {
-            cout << "ID en uso, por favor ingrese un nuevo ID: ";
-            cin >> ID;
-            cout << endl;
-        }
-
-        Existe = false;
-        fseek(ArchivoVendedor, 0 * sizeof reg, 0);
-
-        while (fread(&reg, sizeof reg, 1, ArchivoVendedor) == 1)
-        {
-            if (reg.getIdVendedor() == ID)
-            {
-                Existe = true;
-            }
-        }
-
-        if (Existe == false)
-        {
-            idVendedor = ID;
-        }
-
-    } while (Existe == true);
-
-    fclose(ArchivoVendedor);
-
-}
-*/
 void Vendedor::mostrar(){
     cout<<"-----------------------------"<<endl;
     cout<<"ID VENDEDOR: "<<idVendedor<<endl;
@@ -124,12 +77,11 @@ void Vendedor::mostrar(int y){
     gotoxy(4,y);
     cout<<idVendedor;
     gotoxy(8,y);
-    cout<<Categoria;
-    gotoxy(12,y);
+    cout<<CATEGORIAS[Categoria-1];
+    gotoxy(22,y);
     Persona::Mostrar(y);
 
 }
-
 
 bool Vendedor::leerDeDisco(int pos){
     FILE *pArchivo;
