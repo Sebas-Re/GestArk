@@ -52,6 +52,7 @@ const char CATEGORIAS[10][10]={
 };
 ///-------------------------------------------------------///
 
+#include "rlutil.h"
 #include "FuncionesGlobales.h"
 #include "clsarticulo.h"
 #include "clsdirrecion.h"

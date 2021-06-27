@@ -228,7 +228,6 @@ void mostrarVentaBackup(){
 void mostrarVentainicial(){
     FILE *p;
     Venta aux;
-    int pos=0;
     p=fopen(ARCHIVOVENTASINICIAL,"rb");
     if(p==NULL) return;
 

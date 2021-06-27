@@ -54,7 +54,7 @@ int mostrarClientePorDNI(int );
 
 int contarRegistrosClientes();
 
-int listarClientes();
+void listarClientes();
 
 int modificarMailCliente();
 
