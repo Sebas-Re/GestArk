@@ -26,8 +26,10 @@ public:
     }
 
     void Cargar();
-    void Mostrar();
-    void Mostrar(int);
+    void MostrarCliente();
+    void MostrarVendedor();
+    void MostrarVendedor(int);
+    void mostrarCliente(int);
 
     void setNombre(const char *n){strcpy(Nombre, n);}
     void setApellido(const char *a){strcpy(Apellido, a);}
@@ -42,6 +44,7 @@ public:
     char * getApellido() {return Apellido;}
     char * getEmail() {return Email;}
     char * getTel() {return Telefono;}
+    Fecha getFecha() {return FechaDeNacimiento;}
 
 };
 
@@ -80,7 +83,7 @@ void Persona::Cargar(){
 
 }
 
-void Persona::Mostrar(){
+void Persona::MostrarCliente(){
 
     cout << "DNI: " << Dni << endl;
     cout << "Nombre: " << Nombre << endl;
@@ -92,7 +95,19 @@ void Persona::Mostrar(){
     cout << "Telefono: " << Telefono << endl;
 }
 
-void Persona::Mostrar(int y){
+void Persona::MostrarVendedor(){
+
+    cout << "DNI: " << Dni << endl;
+    cout << "Nombre: " << Nombre << endl;
+    cout << "Apellido: " << Apellido << endl;
+    cout << "Fecha de Ingreso: ";
+    FechaDeNacimiento.mostrar();
+    cout << endl;
+    cout << "Email: " << Email << endl;
+    cout << "Telefono: " << Telefono << endl;
+}
+
+void Persona::MostrarVendedor(int y){
 
     cout << Dni;
     gotoxy(34,y);
@@ -104,6 +119,21 @@ void Persona::Mostrar(int y){
     gotoxy(100,y);
     cout << Email;
     gotoxy(140,y);
+    cout << Telefono<<endl;
+}
+
+void Persona::mostrarCliente(int y){
+    gotoxy(4,y);
+    cout << Dni;
+    gotoxy(19,y);
+    cout << Nombre;
+    gotoxy(44,y);
+    cout << Apellido;
+    gotoxy(69,y);
+    FechaDeNacimiento.mostrar();
+    gotoxy(85,y);
+    cout << Email;
+    gotoxy(115,y);
     cout << Telefono<<endl;
 }
 

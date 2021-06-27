@@ -21,6 +21,7 @@ class Cliente: public Persona{
         ///Metodos
         void cargar();
         void mostrar();
+        void mostrar(int);
         bool leerDeDisco(int );
         bool grabarEnDisco();
         bool modificarEnDisco(int );
@@ -28,8 +29,17 @@ class Cliente: public Persona{
 
 void Cliente::mostrar(){
     cout<<"-----------------------------"<<endl;
-    Persona::Mostrar();
+    Persona::MostrarCliente();
     domicilio.Mostrar();
+    cout<<ESTADOS[Estado];
+}
+
+void Cliente::mostrar(int y){
+    Persona::mostrarCliente(y);
+    gotoxy(135, y);
+    domicilio.Mostrar(y);
+    gotoxy(170, y);
+    cout<<ESTADOS[Estado];
 }
 
 void Cliente::cargar(){

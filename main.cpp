@@ -37,8 +37,21 @@ const char ARCHIVOPROVEEDORINICIAL[]="ArchivoProveedorinicial.dat";
 ///ARCHIVOS PEDIDO///
 const char ARCHIVOPEDIDO[]="ArchivoPedido.dat";
 ///-------------------------------------------------------///
+///CONSTANTES GLOBALES///
+const char ESTADOS[3][15]={
+    "NO DISPONIBLE",
+    "DISPONIBLE",
+};
 
-#include "rlutil.h"
+const char CATEGORIAS[10][10]={
+"TRAINEE",
+"JUNIOR",
+"S. SENIOR",
+"SENIOR",
+"MASTER",
+};
+///-------------------------------------------------------///
+
 #include "FuncionesGlobales.h"
 #include "clsarticulo.h"
 #include "clsdirrecion.h"
@@ -46,10 +59,10 @@ const char ARCHIVOPEDIDO[]="ArchivoPedido.dat";
 #include "clsfecha.h"
 #include "clspersona.h"
 #include "clsvendedor.h"
+#include "clscliente.h"
 #include "herramientas.h"
 #include "Menus.h"
 #include "clscadena.h"
-#include "clscliente.h"
 #include "clsventa.h"
 #include "MenuArticulos.h"
 #include "MenuClientes.h"
@@ -62,7 +75,7 @@ const char ARCHIVOPEDIDO[]="ArchivoPedido.dat";
 
 
 int main(){
-    full_screen(1500, 1000);
+    fullScreen(1500, 1000);
 
     /*char tecla = _getch();
     int otraTecla = _getch();

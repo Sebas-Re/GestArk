@@ -60,30 +60,6 @@ int mostrarClientePorDNI(int dni){//busca cliente por DNI y lo muestra si "estad
     cli.mostrar();
 }
 
-int contarRegistrosClientes(){//Devuelve la cantidad de registros
-    int c=0, tam;
-    FILE *pClientes;
-    pClientes=fopen(ARCHIVOCLIENTE, "rb");
-    if(pClientes==NULL){return -1;}
-    fseek(pClientes, 0, 2);
-    tam=ftell(pClientes);
-    fclose(pClientes);
-    c=tam/sizeof(Cliente);
-    return c;
-}
-
-int listarClientes(){//lista todo el registro siempre y cuando "estado" este en true
-    Cliente registro;
-    int pos=0;
-    while(registro.leerDeDisco(pos++)){
-        if(registro.GetEstado()){
-            registro.mostrar();
-            cout << endl;
-        }
-    }
-    return pos;
-}
-
 int modificarMailCliente(){
     int dni, pos;
     bool modifico=false;
@@ -187,10 +163,7 @@ void seccionClientes(){
         case 14:
             {
                 system("cls");
-                int leyo;
-                leyo=listarClientes();
-                if (leyo==0){cout << "Error al leer el archivo" << endl;}
-                system("pause");
+                elegirTipoListadoClientes();
                 break;
             }
         case 15:
@@ -231,6 +204,179 @@ void seccionClientes(){
         }
     }while(opc!=18);
 }
+
+///-------------------------------------------------------///
+///FUNCIONES DE ORDENAMIENTO///
+void porApellidoAscendente(Cliente *vectorCliente, int totalRegistros){
+    int i, j, posMin;
+    Cliente aux;
+    for(i=0;i<totalRegistros-1;i++){
+        posMin=i;
+        for(j=i+1;j<totalRegistros;j++){
+                if(strcmp(vectorCliente[j].getApellido(), vectorCliente[posMin].getApellido())<0){
+                        posMin=j;
+                }
+        }
+        aux=vectorCliente[i];
+        vectorCliente[i]=vectorCliente[posMin];
+        vectorCliente[posMin]=aux;
+    }
+}
+
+void porApellidoDescendente(Cliente *vectorCliente, int totalRegistros){
+    int i, j, posMin;
+    Cliente aux;
+    for(i=0;i<totalRegistros-1;i++){
+        posMin=i;
+        for(j=i+1;j<totalRegistros;j++){
+                if(strcmp(vectorCliente[j].getApellido(), vectorCliente[posMin].getApellido())>0){
+                        posMin=j;
+                }
+        }
+        aux=vectorCliente[i];
+        vectorCliente[i]=vectorCliente[posMin];
+        vectorCliente[posMin]=aux;
+    }
+}
+
+void porFechaAscendente(Cliente *vectorCliente, int totalRegistros){
+    int i, j, posMin;
+    Cliente aux;
+    for(i=0;i<totalRegistros-1;i++){
+        posMin=i;
+        for(j=i+1;j<totalRegistros;j++){
+                if(vectorCliente[j].getFecha()>vectorCliente[posMin].getFecha()){
+                        posMin=j;
+                }
+        }
+        aux=vectorCliente[i];
+        vectorCliente[i]=vectorCliente[posMin];
+        vectorCliente[posMin]=aux;
+    }
+}
+
+void porFechaDescendente(Cliente *vectorCliente, int totalRegistros){
+    int i, j, posMin;
+    Cliente aux;
+    for(i=0;i<totalRegistros-1;i++){
+        posMin=i;
+        for(j=i+1;j<totalRegistros;j++){
+                if(vectorCliente[j].getFecha()>vectorCliente[posMin].getFecha() ==false){
+                        posMin=j;
+                }
+        }
+        aux=vectorCliente[i];
+        vectorCliente[i]=vectorCliente[posMin];
+        vectorCliente[posMin]=aux;
+    }
+}
+
+int contarRegistrosClientes(){//Devuelve la cantidad de registros
+    int c=0, tam;
+    FILE *pClientes;
+    pClientes=fopen(ARCHIVOCLIENTE, "rb");
+    if(pClientes==NULL){return -1;}
+    fseek(pClientes, 0, 2);
+    tam=ftell(pClientes);
+    fclose(pClientes);
+    c=tam/sizeof(Cliente);
+    return c;
+}
+
+void copiarAVectorCliente(Cliente *vectorCliente, int totalRegistros){
+    for(int i=0;i<totalRegistros;i++){
+        vectorCliente[i].leerDeDisco(i);
+    }
+}
+
+void listarClientes(){//lista todo el registro siempre y cuando "estado" este en true
+    Cliente registro;
+    int pos=0, linea=1;
+    cartelListarClientes();
+    while(registro.leerDeDisco(pos++)){
+        if(registro.GetEstado()){
+            registro.mostrar(linea+3);
+            cout << endl;
+            linea++;
+        }
+    }
+}
+
+void mostrarVectorOrdenado(Cliente *vectorCliente, int totalRegistros){
+    int i;
+    cartelListarClientes();
+    for(i=0;i<totalRegistros;i++){
+        vectorCliente[i].mostrar(i+4);
+        cout<<endl;
+    }
+
+}
+
+void listarClientesOrdenados(int tipoOrden){
+    int totalRegistros=contarRegistrosClientes();
+    Cliente *vectorCliente;
+    vectorCliente=new Cliente[totalRegistros];
+    if(vectorCliente==NULL){
+        cout<<"ERROR DE ASIGNACION DE MEORIA";
+        return;
+    }
+    copiarAVectorCliente(vectorCliente,totalRegistros);
+
+    switch(tipoOrden){
+    case 1:
+        porApellidoAscendente(vectorCliente, totalRegistros);
+        break;
+    case 2:
+        porApellidoDescendente(vectorCliente, totalRegistros);
+        break;
+    case 3:
+        porFechaAscendente(vectorCliente, totalRegistros);
+        break;
+    case 4:
+        porFechaDescendente(vectorCliente, totalRegistros);
+        break;
+
+    }
+    mostrarVectorOrdenado(vectorCliente, totalRegistros);
+}
+
+void elegirTipoListadoClientes(){
+    int opc;
+    do{
+        opc=MenuListarClientes();
+        switch(opc){
+        case 12:
+            system("cls;");
+            listarClientes();
+            system("pause");
+            break;
+        case 14:
+            system("cls;");
+            listarClientesOrdenados(1);
+            system("pause");
+            break;
+        case 15:
+            system("cls;");
+            listarClientesOrdenados(2);
+            system("pause");
+            break;
+        case 17:
+            system("cls;");
+            listarClientesOrdenados(3);
+            system("pause");
+            break;
+        case 18:
+            system("cls;");
+            listarClientesOrdenados(4);
+            system("pause");
+            break;
+        }
+    }while(opc!=19);
+}
+
+
+///-------------------------------------------------------///
+
 ///-------------------------------------------------------///
 
 

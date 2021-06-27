@@ -43,7 +43,7 @@ void Direccion::Mostrar(){
 }
 
 void Direccion::Mostrar(int i){
-    cout << Calle <<" "<<Numero<<"-" << Localidad << endl;
+    cout << Calle <<" "<<Numero<<", " << Localidad;
 }
 ///-------------------------------------------------------///
 #endif // CLSDIRRECION_H_INCLUDED

@@ -27,24 +27,6 @@ bool verificarVendedor(int d){
     return false;
 }
 
-int contarRegistrosVendedores(){//Devuelve la cantidad de registros
-    int c=0, tam;
-    FILE *pArchivo;
-    pArchivo=fopen(ARCHIVOVENDEDOR,"rb");
-    if(pArchivo==NULL){return -1;}
-    fseek(pArchivo, 0, 2);
-    tam=ftell(pArchivo);
-    fclose(pArchivo);
-    c=tam/sizeof(Vendedor);
-    return c;
-}
-
-void copiarAVector(Vendedor *vectorVendedor, int totalRegistros){
-    for(int i=0;i<totalRegistros;i++){
-        vectorVendedor[i].leerDeDisco(i);
-    }
-}
-
 int agregarVendedor(){
     int r;
     int contador=0;
@@ -76,82 +58,6 @@ int mostrarVendedorPorDni(int dni){//busca Vendedor por DNI y lo muestra si "est
     if(!registro.getEstado()){return -1;}
 
     registro.mostrar();
-}
-
-void porApellidoAscendente(Vendedor *vectorVendedor, int totalRegistros){
-    int i, j, posMin;
-    Vendedor aux;
-    for(i=0;i<totalRegistros-1;i++){
-        posMin=i;
-        for(j=i+1;j<totalRegistros;j++){
-                if(strcmp(vectorVendedor[j].getApellido(), vectorVendedor[posMin].getApellido())<0){
-                        posMin=j;
-                }
-        }
-        aux=vectorVendedor[i];
-        vectorVendedor[i]=vectorVendedor[posMin];
-        vectorVendedor[posMin]=aux;
-    }
-}
-
-void listarVendedores(){
-    Vendedor registro;
-    int pos=0;
-    cartelListarVendedores();
-
-    while(registro.leerDeDisco(pos++)){
-      if(registro.getEstado()){
-            registro.mostrar(pos+3);
-            cout << endl;
-       }
-    }
-}
-
-void mostrarVectorOrdenado(Vendedor *vectorVendedor, int totalRegistros){
-    int i;
-    cartelListarVendedores();
-    for(i=0;i<totalRegistros;i++){
-        vectorVendedor[i].mostrar(i+4);
-        cout<<endl;
-    }
-
-}
-
-void listarVendedoresOrdenados(int tipoOrden){
-    int totalRegistros=contarRegistrosVendedores();
-    Vendedor *vectorVendedor;
-    vectorVendedor=new Vendedor[totalRegistros];
-    if(vectorVendedor==NULL){
-        cout<<"ERROR DE ASIGNACION DE MEORIA";
-        return;
-    }
-    copiarAVector(vectorVendedor,totalRegistros);
-
-    switch(tipoOrden){
-    case 1:
-        porApellidoAscendente(vectorVendedor, totalRegistros);
-        break;
-    }
-    mostrarVectorOrdenado(vectorVendedor, totalRegistros);
-}
-
-void elegirTipoListado(){
-    int opc;
-    do{
-        opc=MenuListarVendedores();
-        switch(opc){
-        case 12:
-            system("cls;");
-            listarVendedores();
-            system("pause");
-            break;
-        case 13:
-            system("cls;");
-            listarVendedoresOrdenados(1);
-            system("pause");
-            break;
-        }
-    }while(opc!=14);
 }
 
 int modificarCategoria(){
@@ -257,7 +163,7 @@ void seccionVendedor(){
         case 14:
             {
                 system("cls");
-                elegirTipoListado();
+                elegirTipoListadoVendedor();
                 break;
             }
         case 15:
@@ -299,4 +205,176 @@ void seccionVendedor(){
     }while(opc!=18);
 
 }
+
+///-------------------------------------------------------///
+///FUNCIONES DE ORDENAMIENTO///
+
+int contarRegistrosVendedores(){//Devuelve la cantidad de registros
+    int c=0, tam;
+    FILE *pArchivo;
+    pArchivo=fopen(ARCHIVOVENDEDOR,"rb");
+    if(pArchivo==NULL){return -1;}
+    fseek(pArchivo, 0, 2);
+    tam=ftell(pArchivo);
+    fclose(pArchivo);
+    c=tam/sizeof(Vendedor);
+    return c;
+}
+
+void copiarAVectorVendedor(Vendedor *vectorVendedor, int totalRegistros){
+    for(int i=0;i<totalRegistros;i++){
+        vectorVendedor[i].leerDeDisco(i);
+    }
+}
+
+void porApellidoAscendente(Vendedor *vectorVendedor, int totalRegistros){
+    int i, j, posMin;
+    Vendedor aux;
+    for(i=0;i<totalRegistros-1;i++){
+        posMin=i;
+        for(j=i+1;j<totalRegistros;j++){
+                if(strcmp(vectorVendedor[j].getApellido(), vectorVendedor[posMin].getApellido())<0){
+                        posMin=j;
+                }
+        }
+        aux=vectorVendedor[i];
+        vectorVendedor[i]=vectorVendedor[posMin];
+        vectorVendedor[posMin]=aux;
+    }
+}
+
+void porApellidoDescendente(Vendedor *vectorVendedor, int totalRegistros){
+    int i, j, posMin;
+    Vendedor aux;
+    for(i=0;i<totalRegistros-1;i++){
+        posMin=i;
+        for(j=i+1;j<totalRegistros;j++){
+                if(strcmp(vectorVendedor[j].getApellido(), vectorVendedor[posMin].getApellido())>0){
+                        posMin=j;
+                }
+        }
+        aux=vectorVendedor[i];
+        vectorVendedor[i]=vectorVendedor[posMin];
+        vectorVendedor[posMin]=aux;
+    }
+}
+
+void porFechaAscendente(Vendedor *vectorVendedor, int totalRegistros){
+    int i, j, posMin;
+    Vendedor aux;
+    for(i=0;i<totalRegistros-1;i++){
+        posMin=i;
+        for(j=i+1;j<totalRegistros;j++){
+                if(vectorVendedor[j].getFecha()>vectorVendedor[posMin].getFecha()){
+                        posMin=j;
+                }
+        }
+        aux=vectorVendedor[i];
+        vectorVendedor[i]=vectorVendedor[posMin];
+        vectorVendedor[posMin]=aux;
+    }
+}
+
+void porFechaDescendente(Vendedor *vectorVendedor, int totalRegistros){
+    int i, j, posMin;
+    Vendedor aux;
+    for(i=0;i<totalRegistros-1;i++){
+        posMin=i;
+        for(j=i+1;j<totalRegistros;j++){
+                if(vectorVendedor[j].getFecha()>vectorVendedor[posMin].getFecha() ==false){
+                        posMin=j;
+                }
+        }
+        aux=vectorVendedor[i];
+        vectorVendedor[i]=vectorVendedor[posMin];
+        vectorVendedor[posMin]=aux;
+    }
+}
+
+void listarVendedores(){
+    Vendedor registro;
+    int pos=0, linea=1;
+    cartelListarVendedores();
+
+    while(registro.leerDeDisco(pos++)){
+      if(registro.getEstado()){
+            registro.mostrar(linea+3);
+            cout << endl;
+            linea++;
+       }
+    }
+}
+
+void mostrarVectorOrdenado(Vendedor *vectorVendedor, int totalRegistros){
+    int i;
+    cartelListarVendedores();
+    for(i=0;i<totalRegistros;i++){
+        vectorVendedor[i].mostrar(i+4);
+        cout<<endl;
+    }
+
+}
+
+void listarVendedoresOrdenados(int tipoOrden){
+    int totalRegistros=contarRegistrosVendedores();
+    Vendedor *vectorVendedor;
+    vectorVendedor=new Vendedor[totalRegistros];
+    if(vectorVendedor==NULL){
+        cout<<"ERROR DE ASIGNACION DE MEORIA";
+        return;
+    }
+    copiarAVectorVendedor(vectorVendedor,totalRegistros);
+
+    switch(tipoOrden){
+    case 1:
+        porApellidoAscendente(vectorVendedor, totalRegistros);
+        break;
+    case 2:
+        porApellidoDescendente(vectorVendedor, totalRegistros);
+        break;
+    case 3:
+        porFechaAscendente(vectorVendedor, totalRegistros);
+        break;
+    case 4:
+        porFechaDescendente(vectorVendedor, totalRegistros);
+        break;
+    }
+    mostrarVectorOrdenado(vectorVendedor, totalRegistros);
+}
+
+void elegirTipoListadoVendedor(){
+    int opc;
+    do{
+        opc=MenuListarVendedores();
+        switch(opc){
+        case 12:
+            system("cls;");
+            listarVendedores();
+            system("pause");
+            break;
+        case 14:
+            system("cls;");
+            listarVendedoresOrdenados(1);
+            system("pause");
+            break;
+        case 15:
+            system("cls;");
+            listarVendedoresOrdenados(2);
+            system("pause");
+            break;
+        case 17:
+            system("cls;");
+            listarVendedoresOrdenados(3);
+            system("pause");
+            break;
+        case 18:
+            system("cls;");
+            listarVendedoresOrdenados(4);
+            system("pause");
+            break;
+        }
+    }while(opc!=19);
+}
+
+///-------------------------------------------------------///
 #endif // MENUVENDEDOR_H_INCLUDED
