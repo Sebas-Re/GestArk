@@ -167,10 +167,10 @@ int Menucliente(){
    cout <<"---------------------------"<<endl;
    rlutil::locate(50,12);   cout<<"AGREGAR CLIENTE"<<endl;
    rlutil::locate(50,13);   cout<<"LISTAR CLIENTE POR DNI"<<endl;
-   rlutil::locate(50,14);   cout<<"LISTAR TODOS LOS CLIENTES"<<endl;
+   rlutil::locate(50,14);   cout<<"LISTAR CLIENTES"<<endl;
    rlutil::locate(50,15);   cout<<"MODIFICAR EMAIL"<<endl;
-   rlutil::locate(50,16);   cout<<"ELIMINAR CLIENTE"<<endl;
-   rlutil::locate(50,17);   cout<<"ALTA CLIENTE"<<endl;
+   rlutil::locate(50,16);   cout<<"BAJA CLIENTE"<<endl;
+   rlutil::locate(50,17);   cout<<"RECUPERAR CLIENTE"<<endl;
    rlutil::locate(50,18);   cout<<"VOLVER AL MENU PRINCIPAL"<<endl;
    rlutil::locate(47,19);
    cout <<"---------------------------"<<endl;
@@ -187,6 +187,40 @@ int Menucliente(){
         rlutil::locate(x,y);printf("*");}
    }
 }
+
+int MenuListarClientes(){
+    int x=49,y=12;
+   system("cls");
+   recuadro(40,9,40,14);
+   rlutil::locate(53,10);
+   cout <<"LISTAR CLIENTES"<<endl;
+   rlutil::locate(47,11);
+   cout <<"---------------------------"<<endl;
+   rlutil::locate(50,12);   cout<<"POR DEFECTO (SOLO DISPONIBLES)"<<endl;
+   rlutil::locate(50,13);   cout<<"POR APELLIDO"<<endl;
+   rlutil::locate(50,14);   cout<<">> ASCENDENTE(AZ-TODOS)"<<endl;
+   rlutil::locate(50,15);   cout<<">> DESENDENTE(ZA-TODOS)"<<endl;
+   rlutil::locate(50,16);   cout<<"POR FECHA DE INGRESO"<<endl;
+   rlutil::locate(50,17);   cout<<">> ASCENDENTE"<<endl;
+   rlutil::locate(50,18);   cout<<">> DESCENDENTE"<<endl;
+   rlutil::locate(50,19);   cout<<"VOLVER"<<endl;
+   rlutil::locate(47,25);
+   cout <<"---------------------------"<<endl;
+   rlutil::locate(x,y);printf("*");
+   bool elegir=false;
+   while(!elegir){
+    if(_kbhit()){
+        rlutil::locate(x,y);printf(" ");
+       char tecla = _getch();
+        if (tecla==ENTER){elegir= true; return y;}
+        if (tecla==ESC){elegir= true; return 19;}
+        if (tecla==ARRIBA&& y >12) rlutil::locate (x,y--);
+        if(tecla==ABAJO && y < 19) rlutil::locate(x,y++);
+        rlutil::locate(x,y);printf("*");}
+   }
+}
+
+
 ///-------------------------------------------------------///
 ///MENU VENTAS
 ///-------------------------------------------------------///
@@ -327,10 +361,10 @@ int menuVendedor(){
    cout <<"---------------------------"<<endl;
    rlutil::locate(50,12);   cout<<"AGREGAR VENDEDOR"<<endl;
    rlutil::locate(50,13);   cout<<"LISTAR VENDEDOR POR DNI"<<endl;
-   rlutil::locate(50,14);   cout<<"LISTAR TODOS LOS VENDEDORES"<<endl;
+   rlutil::locate(50,14);   cout<<"LISTAR VENDEDORES"<<endl;
    rlutil::locate(50,15);   cout<<"MODIFICAR CATEGORIA"<<endl;
    rlutil::locate(50,16);   cout<<"BAJA DE VENDEDOR"<<endl;
-   rlutil::locate(50,17);   cout<<"ALTA DE VENDEDOR"<<endl;
+   rlutil::locate(50,17);   cout<<"RECUPERAR DE VENDEDOR"<<endl;
    rlutil::locate(50,18);   cout<<"VOLVER AL MENU PRINCIPAL"<<endl;
    rlutil::locate(47,19);
    cout <<"---------------------------"<<endl;
@@ -356,9 +390,14 @@ int MenuListarVendedores(){
    cout <<"LISTAR VENDEDORES"<<endl;
    rlutil::locate(47,11);
    cout <<"---------------------------"<<endl;
-   rlutil::locate(50,12);   cout<<"POR DEFECTO"<<endl;
-   rlutil::locate(50,13);   cout<<"ORDEN ALFABETICO"<<endl;
-   rlutil::locate(50,14);   cout<<"VOLVER"<<endl;
+   rlutil::locate(50,12);   cout<<"POR ID (SOLO DISPONIBLES)"<<endl;
+   rlutil::locate(50,13);   cout<<"POR APELLIDO"<<endl;
+   rlutil::locate(50,14);   cout<<">> ASCENDENTE(AZ-TODOS)"<<endl;
+   rlutil::locate(50,15);   cout<<">> DESENDENTE(ZA-TODOS)"<<endl;
+   rlutil::locate(50,16);   cout<<"POR FECHA DE INGRESO"<<endl;
+   rlutil::locate(50,17);   cout<<">> ASCENDENTE"<<endl;
+   rlutil::locate(50,18);   cout<<">> DESCENDENTE"<<endl;
+   rlutil::locate(50,19);   cout<<"VOLVER"<<endl;
    rlutil::locate(47,25);
    cout <<"---------------------------"<<endl;
    rlutil::locate(x,y);printf("*");
@@ -368,10 +407,12 @@ int MenuListarVendedores(){
         rlutil::locate(x,y);printf(" ");
        char tecla = _getch();
         if (tecla==ENTER){elegir= true; return y;}
-        if (tecla==ESC){elegir= true; return 14;}
+        if (tecla==ESC){elegir= true; return 19;}
         if (tecla==ARRIBA&& y >12) rlutil::locate (x,y--);
-        if(tecla==ABAJO && y < 14) rlutil::locate(x,y++);
+        if(tecla==ABAJO && y < 19) rlutil::locate(x,y++);
         rlutil::locate(x,y);printf("*");}
    }
 }
+
+
 #endif // MENUS_H_INCLUDED

@@ -23,6 +23,15 @@ public:
     int getmes(){return mes;}
     int getanio(){return anio;}
     bool verificar();
+
+    bool operator>(Fecha obj){
+        if(anio>obj.getanio()){return true;}
+        if(anio<obj.getanio()){return false;}
+        if(mes>obj.getmes()){return true;}
+        if(mes<obj.getmes()){return false;}
+        if(dia>obj.getdia()){return true;}
+        return false;
+    }
 };
 
 ///FUNCIONES FECHA
@@ -39,6 +48,8 @@ bool Fecha::verificar(){
 
     return true;
 }
+
+
 void Fecha::cargar(){
     cout<<"DIA: ";
     cin>>dia;

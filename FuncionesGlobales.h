@@ -14,22 +14,22 @@ void cargarCadena(char *pal, int tam){//recibe un char y un int y ajusta la vari
   pal[i]='\0';
   fflush(stdin);
 }
+
 ///CARTELES
-void cartelListarArticulos(int y){
-    gotoxy(1,y);
+void cartelListarArticulos(){
+    gotoxy(1,1);
     cout<<"INVETARIO: ";
-    y++;
-    gotoxy(4,y);
+    gotoxy(4,2);
     cout<<"ID";
-    gotoxy(8,y);
+    gotoxy(8,2);
     cout<<"DESCRIPCION";
-    gotoxy(28,y);
+    gotoxy(28,2);
     cout<<"PRECIO UNITARIO";
-    gotoxy(46,y);
+    gotoxy(46,2);
     cout<<"STOCK";
-    gotoxy(54,y);
+    gotoxy(54,2);
     cout<<"ESTADO";
-    gotoxy(66,y);
+    gotoxy(66,2);
     cout<<"PROVEEDOR";
 }
 
@@ -60,14 +60,33 @@ void cartelListarVendedores(){
     gotoxy(59,2);
     cout<<"APELLIDO";
     gotoxy(84,2);
-    cout<<"FECHA NAC.";
+    cout<<"FECHA ING.";
     gotoxy(100,2);
     cout<<"EMAIL";
     gotoxy(140,2);
     cout<<"TELEFONO";
+    gotoxy(160,2);
+    cout<<"ESTADO";
 }
 
-void full_screen(int ancho, int alto){
+void cartelListarClientes(){
+    gotoxy(4,2);
+    cout<<"DNI";
+    gotoxy(19,2);
+    cout<<"NOMBRE";
+    gotoxy(44,2);
+    cout<<"APELLIDO";
+    gotoxy(69,2);
+    cout<<"FECHA NAC.";
+    gotoxy(85,2);
+    cout<<"EMAIL";
+    gotoxy(115,2);
+    cout<<"TELEFONO";
+    gotoxy(135,2);
+    cout<<"ESTADO";
+}
+
+void fullScreen(int ancho, int alto){
     HWND hwnd = GetForegroundWindow();
     SetWindowPos(hwnd, HWND_TOPMOST, 0, 0, ancho, alto, 0);
 }

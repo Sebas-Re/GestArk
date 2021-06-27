@@ -3,13 +3,7 @@
 
 ///CLASE VENDEDOR
 ///-------------------------------------------------------///
-const char CATEGORIAS[10][10]={
-"TRAINEE",
-"JUNIOR",
-"S. SENIOR",
-"SENIOR",
-"MASTER",
-};
+
 
 class Vendedor: public Persona{
 protected:
@@ -68,7 +62,7 @@ void Vendedor::mostrar(){
     cout<<"-----------------------------"<<endl;
     cout<<"ID VENDEDOR: "<<idVendedor<<endl;
     cout<<"CATEGORIA VENDEDOR: "<<Categoria<<endl;
-    Persona::Mostrar();
+    Persona::MostrarVendedor();
 
 }
 
@@ -79,7 +73,9 @@ void Vendedor::mostrar(int y){
     gotoxy(8,y);
     cout<<CATEGORIAS[Categoria-1];
     gotoxy(22,y);
-    Persona::Mostrar(y);
+    Persona::MostrarVendedor(y);
+    gotoxy(160, y);
+    cout<<ESTADOS[Estado];
 
 }
 
