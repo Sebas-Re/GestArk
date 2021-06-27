@@ -289,10 +289,10 @@ void copiarAVectorCliente(Cliente *vectorCliente, int totalRegistros){
     }
 }
 
-void listarClientes(){//lista todo el registro siempre y cuando "estado" este en true
+void listarClientes(int linea){//lista todo el registro siempre y cuando "estado" este en true
     Cliente registro;
-    int pos=0, linea=1;
-    cartelListarClientes();
+    int pos=0;
+    cartelListarClientes(++linea);
     while(registro.leerDeDisco(pos++)){
         if(registro.GetEstado()){
             registro.mostrar(linea+3);
@@ -304,7 +304,7 @@ void listarClientes(){//lista todo el registro siempre y cuando "estado" este en
 
 void mostrarVectorOrdenado(Cliente *vectorCliente, int totalRegistros){
     int i;
-    cartelListarClientes();
+    cartelListarClientes(2);
     for(i=0;i<totalRegistros;i++){
         vectorCliente[i].mostrar(i+4);
         cout<<endl;
@@ -347,7 +347,7 @@ void elegirTipoListadoClientes(){
         switch(opc){
         case 12:
             system("cls;");
-            listarClientes();
+            listarClientes(1);
             system("pause");
             break;
         case 14:

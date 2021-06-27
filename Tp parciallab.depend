@@ -1074,7 +1074,7 @@
 	"MenuConfiguracion.h"
 	"menuVendedor.h"
 
-1624812256 c:\users\sebas\documents\github\gestark\funcionesglobales.h
+1624823465 c:\users\sebas\documents\github\gestark\funcionesglobales.h
 	"rlutil.h"
 
 1623796670 c:\users\sebas\documents\github\gestark\rlutil.h
@@ -1093,7 +1093,7 @@
 
 1624573598 c:\users\sebas\documents\github\gestark\clsarticulo.h
 
-1624811683 c:\users\sebas\documents\github\gestark\herramientas.h
+1624821621 c:\users\sebas\documents\github\gestark\herramientas.h
 
 1624811098 c:\users\sebas\documents\github\gestark\menus.h
 	"rlutil.h"
@@ -1108,13 +1108,13 @@
 
 1624811098 c:\users\sebas\documents\github\gestark\clscliente.h
 
-1624810469 c:\users\sebas\documents\github\gestark\clsventa.h
+1624824009 c:\users\sebas\documents\github\gestark\clsventa.h
 
 1624811098 c:\users\sebas\documents\github\gestark\clsvendedor.h
 
 1624810469 c:\users\sebas\documents\github\gestark\menuarticulos.h
 
-1624811271 c:\users\sebas\documents\github\gestark\menuclientes.h
+1624812735 c:\users\sebas\documents\github\gestark\menuclientes.h
 
 1624573295 c:\users\sebas\documents\github\gestark\menuventa.h
 
@@ -1124,5 +1124,5 @@
 
 1624573598 c:\users\sebas\documents\github\gestark\menuproveedores.h
 
-1624811098 c:\users\sebas\documents\github\gestark\menuvendedor.h
+1624821943 c:\users\sebas\documents\github\gestark\menuvendedor.h
 

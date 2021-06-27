@@ -34,6 +34,25 @@ void cartelListarArticulos(int y){
     cout<<"PROVEEDOR";
 }
 
+
+void BorrarArea(int x, int y){
+int i,j;
+
+    for (j=x; j < x+200; j++)
+    {
+        for (i=y; i<y+30; i++)
+        {
+            rlutil::locate(j,i);
+            cout <<" ";
+        }
+    }
+
+
+
+
+}
+
+
 void cartelListarProveedores(){
     gotoxy(1,1);
     cout<<"PROVEEDORES: ";
@@ -49,43 +68,43 @@ void cartelListarProveedores(){
     cout<<"DIRECCION";
 }
 
-void cartelListarVendedores(){
-    gotoxy(4,2);
+void cartelListarVendedores(int y){
+    gotoxy(4,y);
     cout<<"ID";
-    gotoxy(8,2);
+    gotoxy(8,y);
     cout<<"CATEGORIA";
-    gotoxy(22,2);
+    gotoxy(22,y);
     cout<<"DNI";
-    gotoxy(34,2);
+    gotoxy(34,y);
     cout<<"NOMBRE";
-    gotoxy(59,2);
+    gotoxy(59,y);
     cout<<"APELLIDO";
-    gotoxy(84,2);
+    gotoxy(84,y);
     cout<<"FECHA ING.";
-    gotoxy(100,2);
+    gotoxy(100,y);
     cout<<"EMAIL";
-    gotoxy(140,2);
+    gotoxy(140,y);
     cout<<"TELEFONO";
-    gotoxy(160,2);
+    gotoxy(160,y);
     cout<<"ESTADO";
 }
 
-void cartelListarClientes(){
-    gotoxy(4,2);
+void cartelListarClientes(int y){
+    gotoxy(4,y);
     cout<<"DNI";
-    gotoxy(19,2);
+    gotoxy(19,y);
     cout<<"NOMBRE";
-    gotoxy(44,2);
+    gotoxy(44,y);
     cout<<"APELLIDO";
-    gotoxy(69,2);
+    gotoxy(69,y);
     cout<<"FECHA NAC.";
-    gotoxy(92,2);
+    gotoxy(92,y);
     cout<<"EMAIL";
-    gotoxy(116,2);
+    gotoxy(116,y);
     cout<<"TELEFONO";
-    gotoxy(140,2);
+    gotoxy(140,y);
     cout<<"DOMICILIO";
-    gotoxy(172,2);
+    gotoxy(172,y);
     cout<<"ESTADO";
 }
 
