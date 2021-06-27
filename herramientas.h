@@ -72,7 +72,7 @@ bool verificarstock(int cantidad, int idarticulo);
 
 bool controlstock(int cantidad, int idarticulo, bool mod);
 
-int calcularimporte(int cantidad,int idarticulo);
+float calcularimporte(int cantidad,int idarticulo);
 
 bool VerificarVenta(int idarticulo, int dni, int cantidad);
 

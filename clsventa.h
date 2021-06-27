@@ -97,9 +97,11 @@ void Venta::VerificacionDNI(int dni){
 
         if (DNIexistente == false)
         {
-            cout << "DNI no encontrado, por favor ingrese un nuevo DNI o ingrese '-1' para volver al menu anterior. ";
+            cout << "DNI no encontrado, por favor ingrese un nuevo DNI o ingrese '-1' para volver al menu anterior: ";
             cin >> dni;
             cout << endl;
+
+            if (dni == -1) Menuventas();
         }
 
         DNIexistente = false;
@@ -155,6 +157,8 @@ void Venta::VerificacionID(int id){
             cout << "ID no encontrado, por favor ingrese un nuevo ID o ingrese '-1' para volver al menú anterior: ";
             cin >> id;
             cout << endl;
+
+            if (id == -1) Menuventas();
         }
 
         IDexistente = false;
