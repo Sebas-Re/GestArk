@@ -79,11 +79,13 @@ void cartelListarClientes(){
     cout<<"APELLIDO";
     gotoxy(69,2);
     cout<<"FECHA NAC.";
-    gotoxy(85,2);
+    gotoxy(92,2);
     cout<<"EMAIL";
-    gotoxy(115,2);
+    gotoxy(116,2);
     cout<<"TELEFONO";
-    gotoxy(135,2);
+    gotoxy(140,2);
+    cout<<"DOMICILIO";
+    gotoxy(172,2);
     cout<<"ESTADO";
 }
 
