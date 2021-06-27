@@ -291,10 +291,10 @@ void porFechaDescendente(Vendedor *vectorVendedor, int totalRegistros){
     }
 }
 
-void listarVendedores(){
+void listarVendedores(int linea){
     Vendedor registro;
-    int pos=0, linea=1;
-    cartelListarVendedores();
+    int pos=0;
+    cartelListarVendedores(linea);
 
     while(registro.leerDeDisco(pos++)){
       if(registro.getEstado()){
@@ -307,7 +307,7 @@ void listarVendedores(){
 
 void mostrarVectorOrdenado(Vendedor *vectorVendedor, int totalRegistros){
     int i;
-    cartelListarVendedores();
+    cartelListarVendedores(2);
     for(i=0;i<totalRegistros;i++){
         vectorVendedor[i].mostrar(i+4);
         cout<<endl;
@@ -349,7 +349,7 @@ void elegirTipoListadoVendedor(){
         switch(opc){
         case 12:
             system("cls;");
-            listarVendedores();
+            listarVendedores(1);
             system("pause");
             break;
         case 14:

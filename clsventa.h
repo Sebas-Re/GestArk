@@ -6,7 +6,8 @@
 float CalculoDeImporte(int id, int cv);
 
 
-class Venta{
+class Venta
+{
 private:
     int Nventa;
     int IDarticulo;
@@ -18,7 +19,8 @@ private:
     bool estado;
 public:
     //constructor
-    Venta(int nv=0, int iart=0, int dc=0, int iv=0, float im=0, int cv=0,bool e=false){
+    Venta(int nv=0, int iart=0, int dc=0, int iv=0, float im=0, int cv=0,bool e=false)
+    {
         Nventa=nv;
         IDarticulo=iart;
         DNIcliente=dc;
@@ -28,26 +30,69 @@ public:
         estado=e;
     }
     //sets
-    void setNventa(int v){Nventa=v;}
-    void setIDarticulo(int v){IDarticulo=v;}
-    void setDNIcliente(int v){DNIcliente=v;}
-    void setimporte(float v){importe=v;}
-    void setcantVendida(int v){cantVendida=v;}
-    void setestado(bool v){estado=v;}
+    void setNventa(int v)
+    {
+        Nventa=v;
+    }
+    void setIDarticulo(int v)
+    {
+        IDarticulo=v;
+    }
+    void setDNIcliente(int v)
+    {
+        DNIcliente=v;
+    }
+    void setimporte(float v)
+    {
+        importe=v;
+    }
+    void setcantVendida(int v)
+    {
+        cantVendida=v;
+    }
+    void setestado(bool v)
+    {
+        estado=v;
+    }
     //gets
-    int getNventa(){return Nventa;}
-    int getIDarticulo(){ return IDarticulo;}
-    int getDNIcliente(){return DNIcliente;}
-    int getIDvendedor() {return IDvendedor;}
-    float getImporte(){return importe;}
-    int getCantidadVendida(){return cantVendida;}
-    bool getEstado(){return estado;}
-    Fecha getFe(){return fe;}
+    int getNventa()
+    {
+        return Nventa;
+    }
+    int getIDarticulo()
+    {
+        return IDarticulo;
+    }
+    int getDNIcliente()
+    {
+        return DNIcliente;
+    }
+    int getIDvendedor()
+    {
+        return IDvendedor;
+    }
+    float getImporte()
+    {
+        return importe;
+    }
+    int getCantidadVendida()
+    {
+        return cantVendida;
+    }
+    bool getEstado()
+    {
+        return estado;
+    }
+    Fecha getFe()
+    {
+        return fe;
+    }
 
     //Metodos
     void cargar();
     void mostrar();
-    void VerificacionID (int id);
+    void VerificacionIDven (int id);
+    void VerificacionIDart (int id);
     void VerificacionDNI(int dni);
     bool leerDeDisco(int pos);
     bool grabarEnDisco();
@@ -55,28 +100,40 @@ public:
 
 };
 
-void Venta::cargar(){
+void Venta::cargar()
+{
     int x;
-    cout<<"INGRESE ID DE ARTICULO: "<<endl;
+
     rlutil::locate(1,30);
     cout << "Articulos disponibles: ";
     listarArticulosDisponibles(31);
-    rlutil::locate(25,4);
-    cin>>IDarticulo;
+    rlutil::locate(1,4);
+    cout<<"INGRESE ID DE ARTICULO: ";cin>>x;
+    VerificacionIDart(x);
 
-    cout<<"INGRESE DNI DEL CLIENTE: "<<endl;
-//    listarClientes();
+    BorrarArea(1,29);
+    rlutil::locate(1,30);
+    cout << "Clientes disponibles: ";
+    listarClientes(31);
 
-    rlutil::locate(26, 5);
-    cin>> x;
+    rlutil::locate(1,5);
+    cout<<"INGRESE DNI DEL CLIENTE: "; cin >> x;
     VerificacionDNI (x);
-    cout << "INGRESE ID DEL VENDEDOR"<<endl;
-    cin >> x;
-    VerificacionID(x);
-    cout<<"INGRESE CANTIDAD VENDIDA"<<endl;
-    cin>>cantVendida;
 
-setimporte ( calcularimporte(cantVendida,IDarticulo) );
+    BorrarArea(1,29);
+    rlutil::locate(1,30);
+    cout << "Vendedores disponibles: ";
+    listarVendedores(31);
+    rlutil::locate(1,6);
+    cout << "INGRESE ID DEL VENDEDOR: ";cin >> x;
+    VerificacionIDven(x);
+
+    BorrarArea(1,29);
+    rlutil::locate(1,7);
+    cout<<"INGRESE CANTIDAD VENDIDA: ";cin>>cantVendida;
+
+
+    setimporte ( calcularimporte(cantVendida,IDarticulo) );
 
     cout << "IMPORTE: " << importe << endl;
 
@@ -86,7 +143,63 @@ setimporte ( calcularimporte(cantVendida,IDarticulo) );
 }
 
 
-void Venta::VerificacionDNI(int dni){
+void Venta::VerificacionIDart(int id){
+
+    Articulo reg;
+    bool IDexistente = true;
+
+    FILE *ArchivoArticulo;
+    ArchivoArticulo = fopen(ARCHIVOARTICULO, "rb");
+
+
+    if (ArchivoArticulo == NULL)
+    {
+        cout << "Error al abrir";
+        system("pause");
+    }
+
+
+
+    do
+    {
+
+        if (IDexistente == false)
+        {
+            cout << "ID no encontrado, por favor ingrese un nuevo ID: ";
+            cin >> id;
+            cout << endl;
+
+
+        }
+
+        IDexistente = false;
+        fseek(ArchivoArticulo, 0 * sizeof reg, 0);
+
+        while (fread(&reg, sizeof reg, 1, ArchivoArticulo) == 1)
+        {
+            if (reg.getID() == id)
+            {
+                IDexistente = true;
+                IDvendedor = id;
+            }
+        }
+
+        if (id == -1)
+        {
+            return;
+        }
+
+    }
+    while (IDexistente == false);
+
+    fclose(ArchivoArticulo);
+
+    BorrarArea(1, 5);
+}
+
+
+void Venta::VerificacionDNI(int dni)
+{
 
     Cliente reg;
     bool DNIexistente = true;
@@ -104,11 +217,12 @@ void Venta::VerificacionDNI(int dni){
 
         if (DNIexistente == false)
         {
-            cout << "DNI no encontrado, por favor ingrese un nuevo DNI o ingrese '-1' para volver al menu anterior: ";
+            cout << "DNI no encontrado, por favor ingrese un nuevo DNI: ";
             cin >> dni;
             cout << endl;
 
-            if (dni == -1) Menuventas();
+
+
         }
 
         DNIexistente = false;
@@ -132,16 +246,19 @@ void Venta::VerificacionDNI(int dni){
             return;
         }
 
-    } while (DNIexistente == false);
+    }
+    while (DNIexistente == false);
 
     fclose(ArchivoClientes);
 
+    BorrarArea(1, 6);
 
 }
 
-void Venta::VerificacionID(int id){
+void Venta::VerificacionIDven(int id)
+{
 
-   Vendedor reg;
+    Vendedor reg;
     bool IDexistente = true;
 
     FILE *ArchivoVendedor;
@@ -161,11 +278,11 @@ void Venta::VerificacionID(int id){
 
         if (IDexistente == false)
         {
-            cout << "ID no encontrado, por favor ingrese un nuevo ID o ingrese '-1' para volver al menú anterior: ";
+            cout << "ID no encontrado, por favor ingrese un nuevo ID: ";
             cin >> id;
             cout << endl;
 
-            if (id == -1) Menuventas();
+
         }
 
         IDexistente = false;
@@ -185,13 +302,17 @@ void Venta::VerificacionID(int id){
             return;
         }
 
-    } while (IDexistente == false);
+    }
+    while (IDexistente == false);
 
     fclose(ArchivoVendedor);
 
+    BorrarArea(1, 7);
+
 }
 
-void Venta::mostrar(){
+void Venta::mostrar()
+{
     cout<<"-----------------------------"<<endl;
     cout<<"NUMERO DE VENTA: "<<Nventa<<endl;
     cout<<"CLIENTE DNI: "<<DNIcliente<<endl;
@@ -202,30 +323,42 @@ void Venta::mostrar(){
     fe.mostrar();
 }
 
-bool Venta::leerDeDisco(int pos){
+bool Venta::leerDeDisco(int pos)
+{
     FILE *pVenta;
     pVenta=fopen(ARCHIVOVENTAS,"rb");
-    if(pVenta==NULL){return false;}
+    if(pVenta==NULL)
+    {
+        return false;
+    }
     fseek(pVenta,pos*sizeof(Venta),0);
     bool leyo=fread(this,sizeof (Venta),1,pVenta);
     fclose(pVenta);
     return leyo;
 }
 
-bool Venta::grabarEnDisco(){
+bool Venta::grabarEnDisco()
+{
     FILE *pVenta;
     pVenta=fopen(ARCHIVOVENTAS,"ab");
-    if(pVenta==NULL){return false;}
+    if(pVenta==NULL)
+    {
+        return false;
+    }
     bool escribio=fwrite(this,sizeof (Venta),1,pVenta);
     fclose(pVenta);
     return escribio;
 
 }
 
-bool Venta::modificarEnDisco(Venta v, int pos){
+bool Venta::modificarEnDisco(Venta v, int pos)
+{
     FILE *pVenta;
     pVenta=fopen(ARCHIVOVENTAS,"rb+");
-    if(pVenta==NULL){return false;}
+    if(pVenta==NULL)
+    {
+        return false;
+    }
     fseek(pVenta,pos*sizeof (v),0);
     bool escribio=fwrite(&v,sizeof v,1,pVenta);
     fclose(pVenta);

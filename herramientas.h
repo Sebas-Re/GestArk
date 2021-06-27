@@ -54,7 +54,7 @@ int mostrarClientePorDNI(int );
 
 int contarRegistrosClientes();
 
-void listarClientes();
+void listarClientes(int);
 
 void elegirTipoListadoClientes();
 
@@ -136,7 +136,7 @@ void elegirTipoListado();
 
 int MenuListarVendedores();
 
-void listarVendedores();
+void listarVendedores(int);
 
 void listarVendedoresOrdenados(int);
 
@@ -207,6 +207,6 @@ void cartelListarArticulos(int);
 
 void cartelListarProveedores();
 
-void cartelListarVendedores();
+void cartelListarVendedores(int y);
 
 #endif // HERRAMIENTAS_H_INCLUDED
