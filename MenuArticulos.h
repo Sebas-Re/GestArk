@@ -134,7 +134,7 @@ void ordenarStockArticulos(Articulo *pArticulos, int cantArticulos){
 
 void mostrarVectorArticulos(Articulo *pArticulos, int cantArticulos){
     int i;
-    cartelListarArticulos();
+    cartelListarArticulos(1);
     for(i=0;i<cantArticulos;i++){
         pArticulos[i].mostrar(i+3);
         cout<<endl;
@@ -172,7 +172,7 @@ bool listarArticulosPorDefecto(){//lista todo el registro como fue cargado siemp
        int cantReg,i;
        Articulo reg;
        cantReg=contarRegistros();
-       cartelListarArticulos();
+       cartelListarArticulos(1);
        for(i=0;i<cantReg;i++){
         reg.leerDeDisco(i);
         reg.mostrar(i+3);
@@ -180,10 +180,10 @@ bool listarArticulosPorDefecto(){//lista todo el registro como fue cargado siemp
        return cantReg;
 }
 
-int listarArticulosDisponibles(){//lista todo el registro como fue cargado siempre y cuando "estado" sea true
-       int cantReg,i=0,linea=0;
+int listarArticulosDisponibles(int linea){//lista todo el registro como fue cargado siempre y cuando "estado" sea true
+       int cantReg,i=0;
        Articulo reg;
-       cartelListarArticulos();
+       cartelListarArticulos(linea);
        while(reg.leerDeDisco(i++)){
         if(reg.getEstado()){
         reg.mostrar(linea+3);
@@ -197,7 +197,7 @@ bool listarArticulosNoDisponibles(){//lista todo el registro como fue cargado si
        int cantReg,i=0,linea=0;
        Articulo reg;
        cantReg=contarRegistros();
-       cartelListarArticulos();
+       cartelListarArticulos(1);
        while(reg.leerDeDisco(i++)){
         if(!reg.getEstado()){
         reg.mostrar(linea+3);
@@ -239,7 +239,7 @@ void listarArticulos(){
             break;
         case 17:
             system("cls;");
-            listarArticulosDisponibles();
+            listarArticulosDisponibles(0);
             system("pause");
             break;
         case 18:

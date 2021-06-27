@@ -38,6 +38,7 @@ const char ARCHIVOPROVEEDORINICIAL[]="ArchivoProveedorinicial.dat";
 const char ARCHIVOPEDIDO[]="ArchivoPedido.dat";
 ///-------------------------------------------------------///
 
+#include "rlutil.h"
 #include "FuncionesGlobales.h"
 #include "clsarticulo.h"
 #include "clsdirrecion.h"

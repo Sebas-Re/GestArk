@@ -27,7 +27,7 @@ void listarArticulosOrdenados();
 
 bool listarArticulosPorDefecto();
 
-int listarArticulosDisponibles();
+int listarArticulosDisponibles(int);
 
 bool listarArticulosNoDisponibles();
 
@@ -199,7 +199,7 @@ void full_screen(int ancho, int alto);
 
 void cargarCadena(char *, int );
 
-void cartelListarArticulos();
+void cartelListarArticulos(int);
 
 void cartelListarProveedores();
 

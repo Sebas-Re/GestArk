@@ -57,10 +57,17 @@ public:
 
 void Venta::cargar(){
     int x;
-    cout<<"INGRESE ID DE ARTICULO"<<endl;
+    cout<<"INGRESE ID DE ARTICULO: "<<endl;
+    rlutil::locate(1,30);
+    cout << "Articulos disponibles: ";
+    listarArticulosDisponibles(31);
+    rlutil::locate(25,4);
     cin>>IDarticulo;
 
-    cout<<"INGRESE DNI DEL CLIENTE"<<endl;
+    cout<<"INGRESE DNI DEL CLIENTE: "<<endl;
+//    listarClientes();
+
+    rlutil::locate(26, 5);
     cin>> x;
     VerificacionDNI (x);
     cout << "INGRESE ID DEL VENDEDOR"<<endl;
