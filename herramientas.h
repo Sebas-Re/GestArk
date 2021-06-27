@@ -56,6 +56,8 @@ int contarRegistrosClientes();
 
 void listarClientes();
 
+void elegirTipoListadoClientes();
+
 int modificarMailCliente();
 
 int eliminarCliente();
@@ -85,6 +87,8 @@ int BuscarVentaporNumero(int nventa);
 int contarRegistrosVentas();
 
 bool listarVentas();
+
+void elegirTipoListadoVendedor();
 
 bool eliminarVenta();
 
