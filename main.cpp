@@ -3,10 +3,9 @@
 #include <cstdlib>
 #include <cstring>
 #include <stdio.h>
+#define _WIN32_WINNT 0x0500
 #include <windows.h>
 using namespace std;
-
-
 
 ///-------------------------------------------------------///
 ///ARCHVOS ARTICULO///
@@ -76,7 +75,8 @@ const char CATEGORIAS[10][10]={
 
 
 int main(){
-    fullScreen(1500, 1000);
+
+    ShowWindow(GetConsoleWindow(),SW_MAXIMIZE);
 
     /*char tecla = _getch();
     int otraTecla = _getch();

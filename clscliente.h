@@ -36,9 +36,9 @@ void Cliente::mostrar(){
 
 void Cliente::mostrar(int y){
     Persona::mostrarCliente(y);
-    gotoxy(135, y);
+    gotoxy(122, y);
     domicilio.Mostrar(y);
-    gotoxy(170, y);
+    gotoxy(163, y);
     cout<<ESTADOS[Estado];
 }
 
