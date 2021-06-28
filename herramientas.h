@@ -122,6 +122,16 @@ void listarProveedoresOrdenados(int orden);
 
 void listarProveedores();
 
+bool modificarmailProveedor();
+
+bool modificarTelProveedor();
+
+bool modificarDirProveedor();
+
+bool elmininarProveedor();
+
+bool recuperoProveedor();
+
 void seccionProveedores();
 ///FIN PROVEEDOR
 ///-------------------------------------------------------///
