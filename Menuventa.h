@@ -39,9 +39,7 @@ float calcularimporte(int cantidad,int idarticulo){
      pu=art.getPu();
      importe=cantidad*pu;
      return importe;
-
 }
-
 
 int buscarVenta(int Nventa){//recibe "id" del registro y devuelve la posicion donde se encuentra el registro
     Venta ven;
@@ -60,20 +58,20 @@ int buscarVenta(int Nventa){//recibe "id" del registro y devuelve la posicion do
     return -2;
 }
 
-
 void AsignacionNumeroVenta (Venta &ven){
 
     FILE *pVenta;
-            pVenta=fopen(ARCHIVOVENTAS,"rb");
-            fseek(pVenta,-sizeof (Venta),2);
-            fread(&ven,sizeof ven,1,pVenta);
-            ven.setNventa(ven.getNventa()+1);
-            fclose(pVenta);
+    pVenta=fopen(ARCHIVOVENTAS,"rb");
+    fseek(pVenta,-sizeof (Venta),2);
+    fread(&ven,sizeof ven,1,pVenta);
+    ven.setNventa(ven.getNventa()+1);
+    fclose(pVenta);
 
 }
 
-
 bool agregarVenta(){
+    int r,contador=0;
+    do{
     Venta ven;
     cout<<"REGISTAR VENTA"<<endl;
 
@@ -82,13 +80,17 @@ bool agregarVenta(){
             cout<<"COMPLETE LOS SIGUIENTES CAMPOS: "<<endl;
 
             ven.cargar();
-
-            if((controlstock(ven.getCantidadVendida(),ven.getIDarticulo(),true))==0){cout<<"NO SE PUDO MODIFICAR STOCK"<<endl;}
-            else{cout<<"STOCK ACTUALIZADO"<<endl;}
-            bool grabo=ven.grabarEnDisco();
-            return grabo;
-
-
+            if(!ven.grabarEnDisco()){
+            cout << "Error al guardar el archivo.";
+            system("pause");
+            return contador;
+        }
+        contador++;
+        cout<<"DESEA AGREGAR OTRO ARTICULO (y/n)?"<<endl;
+        r=getch();
+        system("cls");
+    }while(r==121||r==89);
+    return contador;
 }
 
 int BuscarVentaporNumero(int venta){//busca articulo por id y lo muestra si "estado" esta en true
@@ -223,15 +225,13 @@ void seccionVenta(){
         opc=Menuventas();
         switch(opc){
         case 12:
-            system("cls");
-                char r;
-                do{
+            {
+                int agregados=0;
                 system("cls");
-                if(agregarVenta()==1){cout<<"CARGADO CON EXITO"<<endl;}
-                cout<<"DESEA AGREGAR OTRA VENTA (y/n)?"<<endl;
-                cin>>r;
-                cin.ignore();
-                }while(r=='y'||r=='Y');
+                agregados = agregarVenta();
+                cout << agregados <<"VENTA/s CARGADA/s CON EXITO!"<<endl;
+                break;
+            }
             break;
         case 13:
                 system("cls");

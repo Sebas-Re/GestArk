@@ -69,11 +69,14 @@ void copiarArchivoProveedor(Proveedor *pProveeedor, int cantProveedor){
 }
 
 void mostrarVectorProveedor(Proveedor *pProveedor, int cantProveedor){
-    int i;
-    cartelListarProveedores();
+    int i, linea=1;
+    cartelListarProveedores(linea);
     for(i=0;i<cantProveedor;i++){
-        pProveedor[i].mostrar(i+3);
-        cout<<endl;
+        if(pProveedor[i].getEstado()){
+            pProveedor[i].mostrar(linea+3);
+            cout<<endl;
+            linea++;
+        }
     }
 }
 
@@ -93,17 +96,18 @@ void ordenarAZProveedor(Proveedor *pProveeedor, int cantProveedor){
     }
 }
 
-bool listarProveedorPorDefecto(){//lista todo el registro como fue cargado siempre y cuando "estado" sea true
-       int cantReg,i;
-       Proveedor reg;
-       cantReg=contarRegistrosProv();
-       cartelListarProveedores();
-       for(i=0;i<cantReg;i++){
-        if(reg.getEstado()!=0){
-        reg.mostrar(i+3);
-        cout<<endl;}
-        }
-       return cantReg;
+void listarProveedorPorDefecto(int linea){//lista todo el registro como fue cargado siempre y cuando "estado" sea true
+    Proveedor registro;
+    int pos=0;
+    cartelListarProveedores(linea);
+
+    while(registro.leerDeDisco(pos++)){
+      if(registro.getEstado()){
+            registro.mostrar(linea+3);
+            cout << endl;
+            linea++;
+       }
+    }
 }
 
 void listarProveedoresOrdenados(int orden){
@@ -117,7 +121,7 @@ void listarProveedoresOrdenados(int orden){
     copiarArchivoProveedor(pProveedor,cantProveedores);
     switch(orden){
     case 1:
-        listarProveedorPorDefecto();
+        listarProveedorPorDefecto(1);
         break;
     case 2:
         ordenarAZProveedor(pProveedor, cantProveedores);

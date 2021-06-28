@@ -51,18 +51,19 @@ int i,j;
 
 }
 
-void cartelListarProveedores(){
-    gotoxy(1,1);
+void cartelListarProveedores(int y){
+    gotoxy(1,y);
     cout<<"PROVEEDORES: ";
-    gotoxy(4,2);
+    y++;
+    gotoxy(4,y);
     cout<<"CODIGO";
-    gotoxy(24,2);
+    gotoxy(24,y);
     cout<<"PROVEEDOR";
-    gotoxy(60,2);
+    gotoxy(60,y);
     cout<<"TELEFONO";
-    gotoxy(80,2);
+    gotoxy(80,y);
     cout<<"MAIL";
-    gotoxy(118,2);
+    gotoxy(118,y);
     cout<<"DIRECCION";
 }
 
@@ -92,22 +93,18 @@ void cartelListarClientes(int y){
     cout<<"DNI";
     gotoxy(19,y);
     cout<<"NOMBRE";
-    gotoxy(44,y);
+    gotoxy(40,y);
     cout<<"APELLIDO";
-    gotoxy(69,y);
+    gotoxy(58,y);
     cout<<"FECHA NAC.";
-    gotoxy(92,y);
+    gotoxy(80,y);
     cout<<"EMAIL";
-    gotoxy(116,y);
+    gotoxy(106,y);
     cout<<"TELEFONO";
-    gotoxy(140,y);
+    gotoxy(126,y);
     cout<<"DOMICILIO";
-    gotoxy(172,y);
+    gotoxy(165,y);
     cout<<"ESTADO";
 }
 
-void fullScreen(int ancho, int alto){
-    HWND hwnd = GetForegroundWindow();
-    SetWindowPos(hwnd, HWND_TOPMOST, 0, 0, ancho, alto, 0);
-}
 #endif // FUNCIONESGLOBALES_H_INCLUDED
