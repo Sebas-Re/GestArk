@@ -129,6 +129,13 @@ void Venta::cargar()
     VerificacionIDven(x);
 
     BorrarArea(1,29);
+   rlutil::locate(1,30):
+   cout << "Stock Disponible: ";
+   rlutil::locate(1,31);
+    //  MostrarStock
+    //
+    //
+
     rlutil::locate(1,7);
     cout<<"INGRESE CANTIDAD VENDIDA: ";cin>>cantVendida;
 
