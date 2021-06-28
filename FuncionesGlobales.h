@@ -30,7 +30,7 @@ void cartelListarArticulos(int y){
     cout<<"STOCK";
     gotoxy(54,y);
     cout<<"ESTADO";
-    gotoxy(66,y);
+    gotoxy(74,y);
     cout<<"PROVEEDOR";
 }
 

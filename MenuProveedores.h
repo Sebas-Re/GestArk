@@ -139,11 +139,13 @@ void listarProveedores(){
         case 12:
             system("cls;");
             listarProveedoresOrdenados(1);
+            cout << endl;
             system("pause");
             break;
         case 13:
             system("cls;");
             listarProveedoresOrdenados(2);
+            cout << endl;
             system("pause");
             break;
         }
