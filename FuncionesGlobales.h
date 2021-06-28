@@ -51,18 +51,19 @@ int i,j;
 
 }
 
-void cartelListarProveedores(){
-    gotoxy(1,1);
+void cartelListarProveedores(int y){
+    gotoxy(1,y);
     cout<<"PROVEEDORES: ";
-    gotoxy(4,2);
+    y++;
+    gotoxy(4,y);
     cout<<"CODIGO";
-    gotoxy(24,2);
+    gotoxy(24,y);
     cout<<"PROVEEDOR";
-    gotoxy(60,2);
+    gotoxy(60,y);
     cout<<"TELEFONO";
-    gotoxy(80,2);
+    gotoxy(80,y);
     cout<<"MAIL";
-    gotoxy(118,2);
+    gotoxy(118,y);
     cout<<"DIRECCION";
 }
 

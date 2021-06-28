@@ -43,11 +43,11 @@ const char ESTADOS[3][15]={
 };
 
 const char CATEGORIAS[10][10]={
-"TRAINEE",
-"JUNIOR",
-"S. SENIOR",
-"SENIOR",
-"MASTER",
+    "TRAINEE",
+    "JUNIOR",
+    "S. SENIOR",
+    "SENIOR",
+    "MASTER",
 };
 ///-------------------------------------------------------///
 
