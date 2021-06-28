@@ -180,7 +180,7 @@ void Venta::VerificacionIDart(int id){
             if (reg.getID() == id)
             {
                 IDexistente = true;
-                IDvendedor = id;
+                IDarticulo = id;
             }
         }
 
