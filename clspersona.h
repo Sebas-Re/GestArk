@@ -118,7 +118,7 @@ void Persona::MostrarVendedor(int y){
     FechaDeNacimiento.mostrar();
     gotoxy(100,y);
     cout << Email;
-    gotoxy(140,y);
+    gotoxy(145,y);
     cout << Telefono<<endl;
 }
 
@@ -127,13 +127,13 @@ void Persona::mostrarCliente(int y){
     cout << Dni;
     gotoxy(19,y);
     cout << Nombre;
-    gotoxy(44,y);
+    gotoxy(38,y);
     cout << Apellido;
-    gotoxy(69,y);
+    gotoxy(57,y);
     FechaDeNacimiento.mostrar();
-    gotoxy(85,y);
+    gotoxy(72,y);
     cout << Email;
-    gotoxy(115,y);
+    gotoxy(106,y);
     cout << Telefono<<endl;
 }
 
