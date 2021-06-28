@@ -67,7 +67,7 @@ void Proveedor::mostrar(){
 void Proveedor::mostrar(int y){
     gotoxy(4,y);
     cout<<codigoProveedor<<"\t";
-    gotoxy(22,y);
+    gotoxy(24,y);
     cout<<nombreProveedor<<"\t";
     gotoxy(60,y);
     cout<<telefonoProveedor<<"\t";
@@ -81,19 +81,20 @@ bool Proveedor::leerDeDisco(int pos){
     FILE *pProveedores;
     pProveedores=fopen(ARCHIVOPROVEEDOR,"rb");
     if(pProveedores==NULL){return false;}
-    fseek(pProveedores,pos*sizeof(Articulo),0);
+    fseek(pProveedores,pos*sizeof(Proveedor),0);
     bool leyo=fread(this,sizeof (Proveedor),1,pProveedores);
     fclose(pProveedores);
     return leyo;
 }
 
 bool Proveedor::grabarEnDisco(){
-    FILE *pProveedores;
-    pProveedores=fopen(ARCHIVOPROVEEDOR,"ab");
-    if(pProveedores==NULL){return false;}
-    bool escribio=fwrite(this,sizeof (Proveedor),1,pProveedores);
-    fclose(pProveedores);
+    FILE *pProveedor;
+    pProveedor=fopen(ARCHIVOPROVEEDOR,"ab");
+    if(pProveedor==NULL){return false;}
+    bool escribio=fwrite(this,sizeof (Proveedor),1,pProveedor);
+    fclose(pProveedor);
     return escribio;
+
 }
 
 bool Proveedor::modificarEnDisco(Proveedor reg, int pos){

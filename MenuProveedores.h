@@ -99,9 +99,10 @@ bool listarProveedorPorDefecto(){//lista todo el registro como fue cargado siemp
        cantReg=contarRegistrosProv();
        cartelListarProveedores();
        for(i=0;i<cantReg;i++){
-        reg.leerDeDisco(i);
+        if(reg.getEstado()!=0){
         reg.mostrar(i+3);
         cout<<endl;}
+        }
        return cantReg;
 }
 
@@ -145,6 +146,141 @@ void listarProveedores(){
     }while(opc!=14);
 }
 
+bool modificarmailProveedor(){
+    char mailProv[30];
+    int id;
+    Proveedor reg;
+    cout<<"INGRESE EL CODIGO DEl PROVEEDOR: ";
+    cin>>id;
+    int pos=buscarProveedor(id);
+    if(pos<0){return false;}
+    reg.leerDeDisco(pos);
+    reg.mostrar();
+    if(reg.getEstado()==true){
+            cout<<"INGRESE NUEVO MAIL: ";
+            cargarCadena(mailProv,29);
+    reg.setMailProv(mailProv);
+    bool modifico=reg.modificarEnDisco(reg,pos);
+    return modifico;
+    }
+    else{return false;}
+}
+
+bool modificarTelProveedor(){
+    char telProv[25];
+    int id;
+    Proveedor reg;
+    cout<<"INGRESE EL CODIGO DEl PROVEEDOR: ";
+    cin>>id;
+    int pos=buscarProveedor(id);
+    if(pos<0){return false;}
+    reg.leerDeDisco(pos);
+    reg.mostrar();
+    if(reg.getEstado()==true){
+            cout<<"INGRESE NUEVO TELEFONO: ";
+            cargarCadena(telProv,24);
+    reg.setTelefonoProv(telProv);
+    bool modifico=reg.modificarEnDisco(reg,pos);
+    return modifico;
+    }
+    else{return false;}
+}
+
+bool modificarDirProveedor(){
+    char calle[35],loc[35];
+    int num,id;
+    Proveedor reg;
+    cout<<"INGRESE EL CODIGO DEl PROVEEDOR: ";
+    cin>>id;
+    int pos=buscarProveedor(id);
+    if(pos<0){return false;}
+    reg.leerDeDisco(pos);
+    reg.mostrar();
+    if(reg.getEstado()==true){
+            cout<<"INGRESE NUEVA DIRECCION: "<<endl;
+            cout<<"CALLE: ";
+            cargarCadena(calle,34);
+            reg.setCalleProv(calle);
+            cout<<"NUMERACION: ";
+            cin>>num;
+            reg.setNumProv(num);
+            cout<<"LOCALIDAD: ";
+            cargarCadena(loc,34);
+            reg.setLocProv(loc);
+    bool modifico=reg.modificarEnDisco(reg,pos);
+    return modifico;
+    }
+    else{return false;}
+}
+
+bool modificarDatosProveedor(){
+    int opc;
+    do{
+        opc=MenuModificarProveedores();
+        switch(opc){
+        case 12:
+            system("cls");
+            modificarmailProveedor();
+            system("pause");
+            break;
+        case 13:
+            system("cls");
+            modificarDirProveedor();
+            system("pause");
+            break;
+        case 14:
+            system("cls");
+            modificarTelProveedor();
+            system("pause");
+            break;
+        }
+    }while(opc!=15);
+}
+
+bool elmininarProveedor(){
+    bool nodisponible=false;
+    char r;
+    int id;
+    Proveedor reg;
+    cout<<"INGRESE EL CODIGO DEL PROVEEDOR: ";
+    cin>>id;
+    int pos=buscarProveedor(id);
+    if(pos<0){return false;}
+    reg.leerDeDisco(pos);
+    reg.mostrar();
+    cout<<"ELIMINAR PROVEEDOR (Y/N)?";
+    cin>>r;
+    if(r=='y'||r=='Y'){
+            reg.leerDeDisco(pos);
+            reg.setEstado(nodisponible);
+            bool modifico=reg.modificarEnDisco(reg,pos);
+            return modifico;
+    }
+    else{return false;}
+}
+
+bool recuperoProveedor(){
+    bool disponible=true;
+    char r;
+    int id;
+    Proveedor reg;
+    cout<<"INGRESE EL CODIGO DEL ARTICULO: ";
+    cin>>id;
+    int pos=buscarProveedor(id);
+    if(pos<0){return false;}
+    reg.leerDeDisco(pos);
+    reg.mostrar();
+            cout<<"DAR EL ALTA PROVEEDOR (Y/N)?";
+            cin>>r;
+    if(r=='y'||r=='Y'){
+            reg.leerDeDisco(pos);
+            reg.setEstado(disponible);
+            bool modifico=reg.modificarEnDisco(reg,pos);
+            return modifico;
+    }
+    else{return false;}
+}
+
 void seccionProveedores(){
     int opc;
     do{
@@ -173,20 +309,18 @@ void seccionProveedores(){
             break;
            case 15:
                system("cls");
-               if(modificarPrecioU()==1){cout<<"MODIFICADO CON EXITO"<<endl;}
-               else{cout<<"ERROR AL INTENTAR MODIFICAR.ARTICULO INEXISTENTE O ELIMINADO"<<endl;}
-               system("pause");
+               modificarDatosProveedor();
             break;
            case 16:
                system("cls");
-               if(elmininarArticulo()==1){cout<<"ARTICULO ELIMINADO"<<endl;}
-               else{cout<<"NO SE PUDO ELIMINAR EL ARTICULO."<<endl;}
+               if(elmininarProveedor()==1){cout<<"PROVEEDOR ELIMINADO"<<endl;}
+               else{cout<<"NO SE PUDO ELIMINAR PROVEEDOR."<<endl;}
                system("pause");
             break;
            case 17:
                 system("cls");
-                if(altaArticulo()==1){cout<<"ALTA DE ARTICULO EXITOSA"<<endl;}
-                else{cout<<"NO SE PUDO DAR DE ALTA EL ARTICULO."<<endl;}
+                if(recuperoProveedor()==1){cout<<"ALTA PROVEEDOR EXITOSA"<<endl;}
+                else{cout<<"NO SE PUDO DAR DE ALTA DEL PROVEEDOR."<<endl;}
                 system("pause");
             break;
             }

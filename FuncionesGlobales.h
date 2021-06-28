@@ -34,7 +34,6 @@ void cartelListarArticulos(int y){
     cout<<"PROVEEDOR";
 }
 
-
 void BorrarArea(int x, int y){
 int i,j;
 
@@ -51,7 +50,6 @@ int i,j;
 
 
 }
-
 
 void cartelListarProveedores(){
     gotoxy(1,1);
