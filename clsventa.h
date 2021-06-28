@@ -138,12 +138,13 @@ void Venta::cargar()
 
     rlutil::locate(1,7);
     cout<<"INGRESE CANTIDAD VENDIDA: ";cin>>cantVendida;
-
-
-    setimporte ( calcularimporte(cantVendida,IDarticulo) );
-
+    while(verificarstock(cantVendida,IDarticulo)==0){
+        cout<<"INGRESE CANTIDAD VENDIDA: ";cin>>cantVendida;
+    }
+    if((controlstock(cantVendida,IDarticulo,true))==0){cout<<"NO SE PUDO MODIFICAR STOCK"<<endl;}
+            else{cout<<"STOCK ACTUALIZADO"<<endl;}
+    setimporte (calcularimporte(cantVendida,IDarticulo));
     cout << "IMPORTE: " << importe << endl;
-
     cout<<"INGRESE FECHA DE VENTA"<<endl;
     fe.cargar();
     estado=true;
