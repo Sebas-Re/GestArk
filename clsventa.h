@@ -102,7 +102,8 @@ public:
 
 void Venta::cargar()
 {
-    int x;
+    int x, pos;
+    Articulo aux;
 
     rlutil::locate(1,30);
     cout << "Articulos disponibles: ";
@@ -129,21 +130,29 @@ void Venta::cargar()
     VerificacionIDven(x);
 
     BorrarArea(1,29);
-   rlutil::locate(1,30):
-   cout << "Stock Disponible: ";
-   rlutil::locate(1,31);
-    //  MostrarStock
-    //
-    //
 
     rlutil::locate(1,7);
+    pos=buscarArticulo(IDarticulo);
+    aux.leerDeDisco(pos);
+   cout << "Stock Disponible: "<<aux.getStock();
+
+    rlutil::locate(1,8);
     cout<<"INGRESE CANTIDAD VENDIDA: ";cin>>cantVendida;
+
+
+
     while(verificarstock(cantVendida,IDarticulo)==0){
+
         cout<<"INGRESE CANTIDAD VENDIDA: ";cin>>cantVendida;
     }
     if((controlstock(cantVendida,IDarticulo,true))==0){cout<<"NO SE PUDO MODIFICAR STOCK"<<endl;}
-            else{cout<<"STOCK ACTUALIZADO"<<endl;}
+            else{   BorrarArea(1,9);
+                    rlutil::locate(1,9);
+                    cout<<"STOCK ACTUALIZADO"<<endl;}
     setimporte (calcularimporte(cantVendida,IDarticulo));
+
+
+    rlutil::locate(1,10);
     cout << "IMPORTE: " << importe << endl;
     cout<<"INGRESE FECHA DE VENTA"<<endl;
     fe.cargar();
@@ -185,7 +194,7 @@ void Venta::VerificacionIDart(int id){
 
         while (fread(&reg, sizeof reg, 1, ArchivoArticulo) == 1)
         {
-            if (reg.getID() == id)
+            if (reg.getID() == id && reg.getEstado() == true)
             {
                 IDexistente = true;
                 IDarticulo = id;
@@ -238,7 +247,7 @@ void Venta::VerificacionDNI(int dni)
 
         while (fread(&reg, sizeof reg, 1, ArchivoClientes) == 1)
         {
-            if (reg.getDni() == dni)
+            if (reg.getDni() == dni && reg.GetEstado() == true)
             {
                 DNIexistente = true;
             }
@@ -298,7 +307,7 @@ void Venta::VerificacionIDven(int id)
 
         while (fread(&reg, sizeof reg, 1, ArchivoVendedor) == 1)
         {
-            if (reg.getIdVendedor() == id)
+            if (reg.getIdVendedor() == id && reg.getEstado() == true)
             {
                 IDexistente = true;
                 IDvendedor = id;
