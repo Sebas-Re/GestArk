@@ -116,7 +116,7 @@ void mostrarVectorProveedor(Proveedor *pProveedor, int cantProveedor);
 
 void ordenarAZProveedor(Proveedor *pProveeedor, int cantProveedor);
 
-bool listarProveedorPorDefecto();
+void listarProveedorPorDefecto(int );
 
 void listarProveedoresOrdenados(int orden);
 
@@ -215,7 +215,7 @@ void cargarCadena(char *, int );
 
 void cartelListarArticulos(int);
 
-void cartelListarProveedores();
+void cartelListarProveedores(int );
 
 void cartelListarVendedores(int y);
 

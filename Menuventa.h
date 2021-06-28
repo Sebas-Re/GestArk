@@ -64,14 +64,13 @@ int buscarVenta(int Nventa){//recibe "id" del registro y devuelve la posicion do
 void AsignacionNumeroVenta (Venta &ven){
 
     FILE *pVenta;
-            pVenta=fopen(ARCHIVOVENTAS,"rb");
-            fseek(pVenta,-sizeof (Venta),2);
-            fread(&ven,sizeof ven,1,pVenta);
-            ven.setNventa(ven.getNventa()+1);
-            fclose(pVenta);
+    pVenta=fopen(ARCHIVOVENTAS,"rb");
+    fseek(pVenta,-sizeof (Venta),2);
+    fread(&ven,sizeof ven,1,pVenta);
+    ven.setNventa(ven.getNventa()+1);
+    fclose(pVenta);
 
 }
-
 
 bool agregarVenta(){
     Venta ven;
