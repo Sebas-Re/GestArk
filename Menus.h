@@ -254,6 +254,37 @@ int Menuventas(){
         rlutil::locate(x,y);printf("*");}
    }
 }
+
+int MenuListarVentas(){
+    int x=49,y=12;
+   system("cls");
+   recuadro(40,9,40,14);
+   rlutil::locate(53,10);
+   cout <<"LISTAR VENTAS"<<endl;
+   rlutil::locate(47,11);
+   cout <<"---------------------------"<<endl;
+   rlutil::locate(50,12);   cout<<"POR DEFECTO"<<endl;
+   rlutil::locate(50,13);   cout<<"POR ID"<<endl;
+   rlutil::locate(50,14);   cout<<"POR IMPORTE"<<endl;
+   rlutil::locate(50,15);   cout<<"POR CANTIDAD VENDIDA"<<endl;
+   rlutil::locate(50,16);   cout<<"DISPONIBLES"<<endl;
+   rlutil::locate(50,17);   cout<<"NO DISPONIBLES"<<endl;
+   rlutil::locate(50,18);   cout<<"VOLVER"<<endl;
+   rlutil::locate(47,19);
+   cout <<"---------------------------"<<endl;
+   rlutil::locate(x,y);printf("*");
+   bool elegir=false;
+   while(!elegir){
+    if(_kbhit()){
+        rlutil::locate(x,y);printf(" ");
+       char tecla = _getch();
+        if (tecla==ENTER){elegir= true; return y;}
+        if (tecla==ESC){elegir= true; return 18;}
+        if (tecla==ARRIBA&& y >12) rlutil::locate (x,y--);
+        if(tecla==ABAJO && y < 19) rlutil::locate(x,y++);
+        rlutil::locate(x,y);printf("*");}
+   }
+}
 ///-------------------------------------------------------///
 ///MENU CONFIGURACION
 ///-------------------------------------------------------///

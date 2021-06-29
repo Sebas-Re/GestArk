@@ -70,7 +70,7 @@ void AsignacionNumeroVenta (Venta &ven){
 
 }
 
-bool agregarVenta(){
+int agregarVenta(){
     int r,contador=0;
     do{
     Venta ven;
@@ -87,7 +87,7 @@ bool agregarVenta(){
             return contador;
         }
         contador++;
-        cout<<"DESEA AGREGAR OTRO ARTICULO (y/n)?"<<endl;
+        cout<<"DESEA AGREGAR OTRA VENTA? (y/n)?"<<endl;
         r=getch();
         system("cls");
     }while(r==121||r==89);
@@ -127,7 +127,32 @@ void listarVentas(int linea){//lista todo el registro siempre y cuando "estado" 
     int pos=0;
     cartelListarVentas(++linea);
     while(registro.leerDeDisco(pos++)){
+            registro.mostrar(linea+3);
+            cout << endl;
+            linea++;
+
+    }
+}
+
+void listarVentasDisp(int linea){//lista todo el registro siempre y cuando "estado" este en true
+    Venta registro;
+    int pos=0;
+    cartelListarVentas(++linea);
+    while(registro.leerDeDisco(pos++)){
         if(registro.getEstado()){
+            registro.mostrar(linea+3);
+            cout << endl;
+            linea++;
+        }
+    }
+}
+
+void listarVentasNODisp(int linea){//lista todo el registro siempre y cuando "estado" este en true
+    Venta registro;
+    int pos=0;
+    cartelListarVentas(1);
+    while(registro.leerDeDisco(pos++)){
+        if(!registro.getEstado()){
             registro.mostrar(linea+3);
             cout << endl;
             linea++;
@@ -231,6 +256,7 @@ void seccionVenta(){
                 system("cls");
                 agregados = agregarVenta();
                 cout << agregados <<"VENTA/s CARGADA/s CON EXITO!"<<endl;
+                system("pause");
                 break;
             }
             break;
@@ -244,8 +270,7 @@ void seccionVenta(){
             break;
         case 14:
                 system("cls");
-                listarVentas(1);
-                system("pause");
+                elegirTipoListadoVentas();
             break;
         case 15:
                 system("cls");
@@ -267,5 +292,125 @@ void seccionVenta(){
 }
 ///-------------------------------------------------------///
 
+void mostrarVectorVentas(Venta *pVentas, int cantVentas){
+    int i;
+    cartelListarVentas(1);
+    for(i=0;i<cantVentas;i++){
+                pVentas[i].mostrar(i+3);
+                cout<<endl;
+
+    }
+}
+
+void copiarAVectorVentas(Venta *pVentas, int cantVentas){
+    int i;
+    for(i=0;i<cantVentas;i++){
+        pVentas[i].leerDeDisco(i);
+    }
+}
+
+
+
+void ordenarIDVentas ( Venta *pVentas, int cantVentas){
+    int i, j, posMax;
+    Venta aux;
+    for(i=0;i<cantVentas-1;i++){
+        posMax=i;
+        for(j=i+1;j<cantVentas;j++){
+            if(pVentas[j].getNventa()>pVentas[posMax].getNventa()){
+                posMax=j;
+            }
+        }
+        aux=pVentas[i];
+        pVentas[i]=pVentas[posMax];
+        pVentas[posMax]=aux;
+    }
+
+
+
+}
+
+void ordenarImporteVentas ( Venta *pVentas, int cantVentas){
+    int i, j, posMax;
+    Venta aux;
+    for(i=0;i<cantVentas-1;i++){
+        posMax=i;
+        for(j=i+1;j<cantVentas;j++){
+            if(pVentas[j].getImporte()>pVentas[posMax].getImporte()){
+                posMax=j;
+            }
+        }
+        aux=pVentas[i];
+        pVentas[i]=pVentas[posMax];
+        pVentas[posMax]=aux;
+    }
+
+}
+
+
+
+void listarVentasOrdenadas(int orden){
+    int cantVentas=contarRegistrosVentas();
+    Venta *pVentas;
+    pVentas=new Venta[cantVentas];
+    if(pVentas==NULL){
+        cout<<"ERROR DE ASIGNACION DE MEORIA";
+        return;
+    }
+    copiarAVectorVentas(pVentas,cantVentas);
+    switch(orden){
+    case 1:
+       ordenarIDVentas(pVentas, cantVentas);
+        break;
+    case 2:
+        ordenarImporteVentas(pVentas, cantVentas);
+        break;
+    case 3:
+  // ORDENAR POR CANT VENDIDA
+        break;
+    }
+    mostrarVectorVentas(pVentas, cantVentas);
+    delete pVentas;
+}
+
+
+void elegirTipoListadoVentas(){
+    int opc;
+    do{
+        opc=MenuListarVentas();
+        switch(opc){
+        case 12: ///Por defecto
+            system("cls");
+            listarVentas(1);
+            system("pause");
+            break;
+        case 13: ///POR ID
+            system("cls;");
+        listarVentasOrdenadas(1);
+            system("pause");
+            break;
+        case 14: ///POR IMPORTE
+            system("cls;");
+        listarVentasOrdenadas(2);
+            system("pause");
+            break;
+        case 15: ///POR CANT VENDIDA
+            system("cls;");
+        listarVentasOrdenadas(3);
+            system("pause");
+            break;
+        case 16:
+            system("cls;");
+            listarVentasDisp(1);
+            system("pause");
+            break;
+        case 17:
+            system("cls;");
+            listarVentasNODisp(1);
+            system("pause");
+            break;
+        }
+    }while(opc!=18);
+}
 
 #endif // MENUVENTA_H_INCLUDED

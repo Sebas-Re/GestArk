@@ -74,19 +74,25 @@ bool verificarstock(int cantidad, int idarticulo);
 
 bool controlstock(int cantidad, int idarticulo, bool mod);
 
+void elegirTipoListadoVentas();
+
 float calcularimporte(int cantidad,int idarticulo);
 
 bool VerificarVenta(int idarticulo, int dni, int cantidad);
 
 int buscarVenta(int Nventa);
 
-bool agregarVenta();
+int agregarVenta();
 
 int BuscarVentaporNumero(int nventa);
 
 int contarRegistrosVentas();
 
-bool listarVentas();
+void listarVentas(int linea);
+
+void listarVentasDisp(int linea);
+
+void listarVentasNODisp(int linea);
 
 void elegirTipoListadoVendedor();
 
@@ -225,4 +231,5 @@ void cartelListarProveedores(int );
 
 void cartelListarVendedores(int y);
 
+void cartelListarVentas(int y);
 #endif // HERRAMIENTAS_H_INCLUDED
