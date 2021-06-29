@@ -145,6 +145,7 @@ void seccionVendedor(){
                 system("cls");
                 agregados = agregarVendedor();
                 cout << agregados <<"VENDEDOR/s CARGADO/s CON EXITO!"<<endl;
+                system("pause");
                 break;
             }
         case 13:

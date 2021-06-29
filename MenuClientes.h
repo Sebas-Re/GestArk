@@ -145,6 +145,7 @@ void seccionClientes(){
                 system("cls");
                 agregados = agregarCliente();
                 cout << agregados <<"CLIENTE/s CARGADO/s CON EXITO!"<<endl;
+                system("pause");
                 break;
             }
         case 13:

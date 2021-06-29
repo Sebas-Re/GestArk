@@ -1208,3 +1208,85 @@
 
 1624941652 c:\users\chave\desktop\gestark-main\menuvendedor.h
 
+1624986468 source:c:\users\sebas\documents\github\gestark-main\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<windows.h>
+	"rlutil.h"
+	"FuncionesGlobales.h"
+	"clsfecha.h"
+	"clsdirrecion.h"
+	"clsproveedor.h"
+	"Menus.h"
+	"MenuProveedores.h"
+	"clsarticulo.h"
+	"clspersona.h"
+	"clsvendedor.h"
+	"clscliente.h"
+	"herramientas.h"
+	"clscadena.h"
+	"clspedido.h"
+	"clsventa.h"
+	"MenuArticulos.h"
+	"MenuClientes.h"
+	"Menuventa.h"
+	"MenuConfiguracion.h"
+	"menuVendedor.h"
+
+1624986468 c:\users\sebas\documents\github\gestark-main\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1624989166 c:\users\sebas\documents\github\gestark-main\funcionesglobales.h
+	"rlutil.h"
+
+1624986468 c:\users\sebas\documents\github\gestark-main\clsfecha.h
+
+1624986468 c:\users\sebas\documents\github\gestark-main\clsdirrecion.h
+
+1624986468 c:\users\sebas\documents\github\gestark-main\clsproveedor.h
+
+1624992925 c:\users\sebas\documents\github\gestark-main\menus.h
+	"rlutil.h"
+
+1624995008 c:\users\sebas\documents\github\gestark-main\menuproveedores.h
+
+1624989018 c:\users\sebas\documents\github\gestark-main\clsarticulo.h
+
+1624986468 c:\users\sebas\documents\github\gestark-main\clspersona.h
+
+1624986468 c:\users\sebas\documents\github\gestark-main\clsvendedor.h
+
+1624986468 c:\users\sebas\documents\github\gestark-main\clscliente.h
+
+1624993535 c:\users\sebas\documents\github\gestark-main\herramientas.h
+
+1624986468 c:\users\sebas\documents\github\gestark-main\clscadena.h
+
+1624986468 c:\users\sebas\documents\github\gestark-main\clspedido.h
+
+1624989166 c:\users\sebas\documents\github\gestark-main\clsventa.h
+
+1624994208 c:\users\sebas\documents\github\gestark-main\menuarticulos.h
+
+1624993902 c:\users\sebas\documents\github\gestark-main\menuclientes.h
+
+1624995129 c:\users\sebas\documents\github\gestark-main\menuventa.h
+
+1624986468 c:\users\sebas\documents\github\gestark-main\menuconfiguracion.h
+
+1624995007 c:\users\sebas\documents\github\gestark-main\menuvendedor.h
+
