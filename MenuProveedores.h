@@ -297,7 +297,7 @@ void seccionProveedores(){
                 int agregados=0;
                 system("cls");
                 agregados = agregarProveedor();
-                cout << agregados <<"APROVEEDORES/s CARGADO/s CON EXITO!"<<endl;
+                cout << agregados <<"PROVEEDORES/s CARGADO/s CON EXITO!"<<endl;
                 system("pause");
                 break;
             }
