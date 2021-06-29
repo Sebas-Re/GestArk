@@ -21,18 +21,18 @@ void cargarCadena(char *pal, int tam){//recibe un char y un int y ajusta la vari
 void cartelListarArticulos(int y){
     gotoxy(1,y);
     cout<<"INVENTARIO: ";
-    y++;
+    y+=2;
     gotoxy(4,y);
     cout<<"ID";
-    gotoxy(8,y);
+    gotoxy(13,y);
     cout<<"DESCRIPCION";
     gotoxy(28,y);
     cout<<"PRECIO UNITARIO";
-    gotoxy(46,y);
+    gotoxy(51,y);
     cout<<"STOCK";
-    gotoxy(54,y);
+    gotoxy(62,y);
     cout<<"ESTADO";
-    gotoxy(74,y);
+    gotoxy(79,y);
     cout<<"PROVEEDOR";
 }
 
@@ -108,5 +108,28 @@ void cartelListarClientes(int y){
     gotoxy(165,y);
     cout<<"ESTADO";
 }
+
+void cartelListarVentas(int y){
+    gotoxy(4,y);
+    cout<<"NUM VENTA";
+    gotoxy(19,y);
+    cout<<"DNI CLIENTE";
+    gotoxy(36,y);
+    cout<<"ARTICULO";
+    gotoxy(50,y);
+    cout<<"DESCRIPCION";
+    gotoxy(66,y);
+    cout <<"ID VENDEDOR";
+    gotoxy(83,y);
+    cout<<"IMPORTE";
+    gotoxy(101,y);
+    cout<<"CANT VENDIDA";
+    gotoxy(117,y);
+    cout<<"FECHA DE VENTA";
+    gotoxy(140,y);
+    cout<<"ESTADO";
+}
+
+
 
 #endif // FUNCIONESGLOBALES_H_INCLUDED

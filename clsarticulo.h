@@ -88,18 +88,19 @@ void Articulo::cargar(){
 }
 
 void Articulo::mostrar(int y){
+       y+=2;
         gotoxy(4,y);
         cout<<ID<<"\t";
-        gotoxy(8,y);
+        gotoxy(13,y);
         cout<<Descripcion<<"\t";
-        gotoxy(28,y);
+        gotoxy(33,y);
         cout<<Pu<<"\t";
-        gotoxy(46,y);
+        gotoxy(51,y);
         cout<<Stock<<"\t";
-        gotoxy(54,y);
+        gotoxy(62,y);
         if(Estado==true){cout<<"DISPONIBLE"<<endl;}
         else{cout<<"NO DISPONIBLE"<<endl;}
-        gotoxy(70,y);
+        gotoxy(79,y);
         cout<<Proveedor;
 }
 
