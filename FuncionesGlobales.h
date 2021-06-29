@@ -4,6 +4,8 @@
 ///FUNCIONES GLOBALES
 bool verificarCliente(int );
 bool verificarVendedor(int );
+
+
 void cargarCadena(char *pal, int tam){//recibe un char y un int y ajusta la variable con memoria dinamica
   int i;
   fflush(stdin);
@@ -30,7 +32,7 @@ void cartelListarArticulos(int y){
     cout<<"STOCK";
     gotoxy(54,y);
     cout<<"ESTADO";
-    gotoxy(66,y);
+    gotoxy(74,y);
     cout<<"PROVEEDOR";
 }
 

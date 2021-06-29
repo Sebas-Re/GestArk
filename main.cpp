@@ -3,10 +3,9 @@
 #include <cstdlib>
 #include <cstring>
 #include <stdio.h>
+#define _WIN32_WINNT 0x0500
 #include <windows.h>
 using namespace std;
-
-
 
 ///-------------------------------------------------------///
 ///ARCHVOS ARTICULO///
@@ -44,31 +43,32 @@ const char ESTADOS[3][15]={
 };
 
 const char CATEGORIAS[10][10]={
-"TRAINEE",
-"JUNIOR",
-"S. SENIOR",
-"SENIOR",
-"MASTER",
+    "TRAINEE",
+    "JUNIOR",
+    "S. SENIOR",
+    "SENIOR",
+    "MASTER",
 };
 ///-------------------------------------------------------///
 
 #include "rlutil.h"
 #include "FuncionesGlobales.h"
-#include "clsarticulo.h"
+#include "clsfecha.h"
 #include "clsdirrecion.h"
 #include "clsproveedor.h"
-#include "clsfecha.h"
+#include "Menus.h"
+#include "MenuProveedores.h"
+#include "clsarticulo.h"
 #include "clspersona.h"
 #include "clsvendedor.h"
 #include "clscliente.h"
 #include "herramientas.h"
-#include "Menus.h"
 #include "clscadena.h"
+#include "clspedido.h"
 #include "clsventa.h"
 #include "MenuArticulos.h"
 #include "MenuClientes.h"
 #include "Menuventa.h"
-#include "MenuProveedores.h"
 #include "MenuConfiguracion.h"
 #include "menuVendedor.h"
 
@@ -76,7 +76,8 @@ const char CATEGORIAS[10][10]={
 
 
 int main(){
-    fullScreen(1500, 1000);
+
+    ShowWindow(GetConsoleWindow(),SW_MAXIMIZE);
 
     /*char tecla = _getch();
     int otraTecla = _getch();

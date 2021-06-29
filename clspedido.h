@@ -9,17 +9,17 @@ private:
     char ProvaSolicitar[25];
     char envioMail[25];
 public:
-    Pedido(int d=0,const char *d="0000"){
+    Pedido(int d=0,const char *e="0000"){
         nPedido=d;
-        strcpy(producto,d);
+        strcpy(producto,e);
         cantSolicitada=d;
-        strcpy(ProvaSolicitar,d);
-        strcpy(envioMail,d);
+        strcpy(ProvaSolicitar,e);
+        strcpy(envioMail,e);
     }
     //sets
-    void setnPedido(int d;){nPedido=d;}
-    void setProducto(char *d){strcpy(producto,d)}
-    void setCantSolicitada(int d;){cantSolicitada=d;}
+    void setnPedido(int d){nPedido=d;}
+    void setProducto(char *d){strcpy(producto,d);}
+    void setCantSolicitada(int d){cantSolicitada=d;}
     void setProvasolicitar(char *d){strcpy(ProvaSolicitar,d);}
     void setEnvioMail(char *d){strcpy(envioMail,d);}
     //gets
@@ -44,7 +44,7 @@ void Pedido::mostrar(){
     cout<<"MAIL: "<<envioMail<<endl;
 }
 
-void Pedido::mostar(int y){
+void Pedido::mostrar(int y){
     gotoxy(4,y);
     cout<<nPedido<<"\t";
     gotoxy(8,y);
@@ -62,7 +62,7 @@ bool Pedido::leerDeDisco(int pos){
     pPedido=fopen(ARCHIVOPEDIDO,"rb");
     if(pPedido==NULL){return false;}
     fseek(pPedido,pos*sizeof(Pedido),0);
-    bool leyo=fread(this,sizeof (Pedido,1,pPedido);
+    bool leyo=fread(this,sizeof (Pedido),1,pPedido);
     fclose(pPedido);
     return leyo;
 }
@@ -76,7 +76,7 @@ bool Pedido::grabarEnDisco(){
     return escribio;
 }
 
-bool Pedido::modificarEnDisco(Pedido reg, int pos){
+bool Pedido::modificarEnDisco(Proveedor reg, int pos){
     FILE *pPedido;
     pPedido=fopen(ARCHIVOPEDIDO,"rb+");
     if(pPedido==NULL){return false;}
@@ -86,6 +86,53 @@ bool Pedido::modificarEnDisco(Pedido reg, int pos){
     return escribio;
 }
 
+void AsignacionNumeroPedido (Pedido &ven){
+    FILE *pPedido;
+    pPedido=fopen(ARCHIVOPEDIDO,"rb");
+    fseek(pPedido,-sizeof (Pedido),2);
+    fread(&ven,sizeof ven,1,pPedido);
+    ven.setnPedido(ven.getnPedido()+1);
+    fclose(pPedido);
+}
 
+void generarPedido(int idArticulo){
+    int pos,i=0,v=0,ap=0,cantapedir=0;
+    Pedido regp;
+    Articulo rega;
+    Proveedor regpr;
+    Venta regv;
+    pos=buscarArticulo(idArticulo);
+    rega.leerDeDisco(pos);
+    //aca se fija que haya menos de diez
+    if(rega.getStock()<10){
+        while(regp.leerDeDisco(i++)){
+                //aca busca que el producto no este pedido
+            if(strcmp(rega.getDescripcion(),regp.getProducto())){
+                cout<<"YA SE GENERO UN PEDIDO PARA ESTE ARTICULO"<<endl;
+            }
+        }
+        //asigna numero de pedido
+        AsignacionNumeroPedido(regp);
+        //aca le graba el nombre del producto
+        regp.setProducto(rega.getDescripcion());
+        while(regv.leerDeDisco(v++)){
+                //aca recorre el archivo ventas y acumula cantvendida
+            if(rega.getID()==regv.getIDarticulo()){
+              cantapedir+=regv.getCantidadVendida();
+            }
+        }
+        regp.setCantSolicitada(cantapedir);
+        //agrego el proveedor
+        regp.setProvasolicitar(rega.getProveedor());
+        //recorro el archivo proveedor y saco el mail
+        while(regpr.leerDeDisco(ap++)){
+            if(strcmp(rega.getProveedor(),regpr.getNombreProv())){
+                regp.setEnvioMail(regpr.getMailProv());
+            }
+        }
+        if(!regp.grabarEnDisco()){cout<<"ERROR AL GENERAR PEDIDO"<<endl;}
+    }
+
+}
 
 #endif // CLSPEDIDO_H_INCLUDED

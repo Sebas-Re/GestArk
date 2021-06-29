@@ -74,7 +74,14 @@ void Articulo::cargar(){
         }
         cout<<"INGRESE EL STOCK DEL ARTICULO: ";
         cin>>Stock;
-        cout<<"INGRESE PROVEEDOR DEL ARTICULO: ";
+
+        rlutil::locate(1,25);
+        cout << "Proveedores disponibles: ";
+        listarProveedorPorDefecto(26);
+
+        rlutil::locate(1,5);
+        cout<<"INGRESE EL PROVEEDOR DEL ARTICULO: ";
+        rlutil::locate(1,6);
         cargarCadena(Proveedor,24);
         Estado=true;
         cout<<"------------------------"<<endl;
@@ -92,7 +99,7 @@ void Articulo::mostrar(int y){
         gotoxy(54,y);
         if(Estado==true){cout<<"DISPONIBLE"<<endl;}
         else{cout<<"NO DISPONIBLE"<<endl;}
-        gotoxy(66,y);
+        gotoxy(70,y);
         cout<<Proveedor;
 }
 

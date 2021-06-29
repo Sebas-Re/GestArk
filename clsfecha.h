@@ -32,13 +32,14 @@ public:
         if(dia>obj.getdia()){return true;}
         return false;
     }
+
 };
 
 ///FUNCIONES FECHA
 bool Fecha::verificar(){
-    int diasMeses[12]={31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-    if(anio==0 || anio<1900 ){return false;}
+    int diasMeses[12]={31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    if(anio==0 || anio<1900 or anio >2021){return false;}
     if(mes <=0 || mes>12){return false;}
     if(dia<=0 || dia>31){return false;}
     if(mes==2 && dia > 29){return false;}
@@ -47,6 +48,7 @@ bool Fecha::verificar(){
     if ( !((anio%4==0)||(anio%400==0 && anio%100!=0)) && dia==29 && mes==2){return false;}
 
     return true;
+
 }
 
 
