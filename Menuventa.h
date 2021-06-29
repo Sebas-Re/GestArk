@@ -122,17 +122,17 @@ int contarRegistrosVentas(){//Devuelve la cantidad de registros
     return c;
 }
 
-bool listarVentas(){//lista todo el registro siempre y cuando "estado" este en true
-       int cantReg,i;
-       Venta ven;
-       cantReg=contarRegistrosVentas();
-       for(i=0;i<cantReg;i++){
-        ven.leerDeDisco(i);
-        if(ven.getEstado()){
-        ven.mostrar();
-        cout<<endl;}
-       }
-       return cantReg;
+void listarVentas(int linea){//lista todo el registro siempre y cuando "estado" este en true
+    Venta registro;
+    int pos=0;
+    cartelListarVentas(++linea);
+    while(registro.leerDeDisco(pos++)){
+        if(registro.getEstado()){
+            registro.mostrar(linea+3);
+            cout << endl;
+            linea++;
+        }
+    }
 }
 
 bool eliminarVenta(){//cambia el estado de true a false
@@ -244,7 +244,7 @@ void seccionVenta(){
             break;
         case 14:
                 system("cls");
-                if((listarVentas())==0){cout<<"ERROR AL LISTAR VENTAS"<<endl;}
+                listarVentas(1);
                 system("pause");
             break;
         case 15:

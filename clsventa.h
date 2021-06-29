@@ -91,6 +91,7 @@ public:
     //Metodos
     void cargar();
     void mostrar();
+    void mostrar(int y);
     void VerificacionIDven (int id);
     void VerificacionIDart (int id);
     void VerificacionDNI(int dni);
@@ -341,6 +342,35 @@ void Venta::mostrar()
     cout<<"FECHA DE VENTA: "<<"\t";
     fe.mostrar();
 }
+
+void Venta::mostrar(int y){
+    Articulo aux;
+    int pos;
+        gotoxy(4,y);
+        cout<<Nventa<<"\t";
+        gotoxy(19,y);
+        cout<<DNIcliente<<"\t";
+        gotoxy(36,y);
+        cout<<IDarticulo<<"\t";
+        pos=buscarArticulo(IDarticulo);
+        aux.leerDeDisco(pos);
+        gotoxy(50,y);
+        cout<<aux.getDescripcion()<<"\t";
+        gotoxy(66,y);
+        cout<<IDvendedor<<"\t";
+        gotoxy(83,y);
+        cout<<importe<<"\t";
+        gotoxy(101,y);
+        cout<<cantVendida<<"\t";
+        gotoxy(117,y);
+        fe.mostrar();cout<<"\t";
+        gotoxy(140,y);
+        if(estado==true){cout<<"DISPONIBLE"<<endl;}
+        else{cout<<"NO DISPONIBLE"<<endl;}
+
+}
+
+
 
 bool Venta::leerDeDisco(int pos)
 {
