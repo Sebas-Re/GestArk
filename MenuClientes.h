@@ -338,6 +338,7 @@ void listarClientesOrdenados(int tipoOrden){
 
     }
     mostrarVectorOrdenado(vectorCliente, totalRegistros);
+    delete vectorCliente;
 }
 
 void elegirTipoListadoClientes(){

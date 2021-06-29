@@ -64,6 +64,7 @@ const char CATEGORIAS[10][10]={
 #include "clscliente.h"
 #include "herramientas.h"
 #include "clscadena.h"
+#include "clspedido.h"
 #include "clsventa.h"
 #include "MenuArticulos.h"
 #include "MenuClientes.h"
@@ -104,7 +105,7 @@ int main(){
             seccionProveedores();
             break;
         case 17:
-            seccionConfiguracion();
+            menuReportes();
             break;
         case 18:
             seccionConfiguracion();

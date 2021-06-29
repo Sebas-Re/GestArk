@@ -8,6 +8,7 @@ bool verificarstock(int cantidad, int idarticulo){
     pos=buscarArticulo(idarticulo);
     if(pos<0){return false;}
     art.leerDeDisco(pos);
+
     if(cantidad<1 || cantidad>art.getStock()){
         cout<<"SIN STOCK.LA CANTIDAD VENDIDA DEBE SER MAYOR A CERO Y MENOR  A: "<<art.getStock()<<endl;
         return false;

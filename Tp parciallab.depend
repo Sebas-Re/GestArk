@@ -1047,7 +1047,7 @@
 1623856523 c:\users\chave\desktop\gestark\funcionesglobales.h
 	"rlutil.h"
 
-1624896803 source:c:\users\sebas\documents\github\gestark\main.cpp
+1624811157 source:c:\users\sebas\documents\github\gestark\main.cpp
 	<iostream>
 	<iostream>
 	<cstdlib>
@@ -1056,25 +1056,25 @@
 	<windows.h>
 	"rlutil.h"
 	"FuncionesGlobales.h"
-	"clsfecha.h"
+	"clsarticulo.h"
 	"clsdirrecion.h"
 	"clsproveedor.h"
-	"Menus.h"
-	"MenuProveedores.h"
-	"clsarticulo.h"
+	"clsfecha.h"
 	"clspersona.h"
 	"clsvendedor.h"
 	"clscliente.h"
 	"herramientas.h"
+	"Menus.h"
 	"clscadena.h"
 	"clsventa.h"
 	"MenuArticulos.h"
 	"MenuClientes.h"
 	"Menuventa.h"
+	"MenuProveedores.h"
 	"MenuConfiguracion.h"
 	"menuVendedor.h"
 
-1624897346 c:\users\sebas\documents\github\gestark\funcionesglobales.h
+1624823465 c:\users\sebas\documents\github\gestark\funcionesglobales.h
 	"rlutil.h"
 
 1623796670 c:\users\sebas\documents\github\gestark\rlutil.h
@@ -1091,42 +1091,42 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1624897346 c:\users\sebas\documents\github\gestark\clsarticulo.h
+1624573598 c:\users\sebas\documents\github\gestark\clsarticulo.h
 
-1624892666 c:\users\sebas\documents\github\gestark\herramientas.h
+1624821621 c:\users\sebas\documents\github\gestark\herramientas.h
 
-1624889343 c:\users\sebas\documents\github\gestark\menus.h
+1624811098 c:\users\sebas\documents\github\gestark\menus.h
 	"rlutil.h"
 
 1623796670 c:\users\sebas\documents\github\gestark\clscadena.h
 
-1624826538 c:\users\sebas\documents\github\gestark\clsdirrecion.h
+1624811098 c:\users\sebas\documents\github\gestark\clsdirrecion.h
 
-1624896145 c:\users\sebas\documents\github\gestark\clsfecha.h
+1624811098 c:\users\sebas\documents\github\gestark\clsfecha.h
 
-1624889014 c:\users\sebas\documents\github\gestark\clspersona.h
+1624811098 c:\users\sebas\documents\github\gestark\clspersona.h
 
-1624888752 c:\users\sebas\documents\github\gestark\clscliente.h
+1624811098 c:\users\sebas\documents\github\gestark\clscliente.h
 
-1624899663 c:\users\sebas\documents\github\gestark\clsventa.h
+1624824009 c:\users\sebas\documents\github\gestark\clsventa.h
 
 1624811098 c:\users\sebas\documents\github\gestark\clsvendedor.h
 
-1624892666 c:\users\sebas\documents\github\gestark\menuarticulos.h
+1624810469 c:\users\sebas\documents\github\gestark\menuarticulos.h
 
-1624824572 c:\users\sebas\documents\github\gestark\menuclientes.h
+1624812735 c:\users\sebas\documents\github\gestark\menuclientes.h
 
-1624898056 c:\users\sebas\documents\github\gestark\menuventa.h
+1624573295 c:\users\sebas\documents\github\gestark\menuventa.h
 
 1624811382 c:\users\sebas\documents\github\gestark\menuconfiguracion.h
 
-1624852872 c:\users\sebas\documents\github\gestark\clsproveedor.h
+1624573598 c:\users\sebas\documents\github\gestark\clsproveedor.h
 
-1624897105 c:\users\sebas\documents\github\gestark\menuproveedores.h
+1624573598 c:\users\sebas\documents\github\gestark\menuproveedores.h
 
-1624824572 c:\users\sebas\documents\github\gestark\menuvendedor.h
+1624821943 c:\users\sebas\documents\github\gestark\menuvendedor.h
 
-1624891992 source:c:\users\chave\desktop\gestark-main\main.cpp
+1624984150 source:c:\users\chave\desktop\gestark-main\main.cpp
 	<iostream>
 	<iostream>
 	<cstdlib>
@@ -1135,25 +1135,26 @@
 	<windows.h>
 	"rlutil.h"
 	"FuncionesGlobales.h"
-	"clsarticulo.h"
+	"clsfecha.h"
 	"clsdirrecion.h"
 	"clsproveedor.h"
-	"clsfecha.h"
+	"Menus.h"
+	"MenuProveedores.h"
+	"clsarticulo.h"
 	"clspersona.h"
 	"clsvendedor.h"
 	"clscliente.h"
 	"herramientas.h"
-	"Menus.h"
 	"clscadena.h"
+	"clspedido.h"
 	"clsventa.h"
 	"MenuArticulos.h"
 	"MenuClientes.h"
 	"Menuventa.h"
-	"MenuProveedores.h"
 	"MenuConfiguracion.h"
 	"menuVendedor.h"
 
-1624889398 c:\users\chave\desktop\gestark-main\rlutil.h
+1624941652 c:\users\chave\desktop\gestark-main\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -1167,41 +1168,43 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1624892184 c:\users\chave\desktop\gestark-main\funcionesglobales.h
+1624941652 c:\users\chave\desktop\gestark-main\funcionesglobales.h
 	"rlutil.h"
 
-1624889398 c:\users\chave\desktop\gestark-main\clsarticulo.h
+1624941652 c:\users\chave\desktop\gestark-main\clsfecha.h
 
-1624889398 c:\users\chave\desktop\gestark-main\clsdirrecion.h
+1624941652 c:\users\chave\desktop\gestark-main\clsdirrecion.h
 
-1624889398 c:\users\chave\desktop\gestark-main\clsproveedor.h
+1624941652 c:\users\chave\desktop\gestark-main\clsproveedor.h
 
-1624889398 c:\users\chave\desktop\gestark-main\clsfecha.h
-
-1624889398 c:\users\chave\desktop\gestark-main\clspersona.h
-
-1624889398 c:\users\chave\desktop\gestark-main\clsvendedor.h
-
-1624889398 c:\users\chave\desktop\gestark-main\clscliente.h
-
-1624892184 c:\users\chave\desktop\gestark-main\herramientas.h
-
-1624889398 c:\users\chave\desktop\gestark-main\menus.h
+1624984286 c:\users\chave\desktop\gestark-main\menus.h
 	"rlutil.h"
 
-1624889398 c:\users\chave\desktop\gestark-main\clscadena.h
+1624941652 c:\users\chave\desktop\gestark-main\menuproveedores.h
 
-1624889398 c:\users\chave\desktop\gestark-main\clsventa.h
+1624941652 c:\users\chave\desktop\gestark-main\clsarticulo.h
 
-1624889679 c:\users\chave\desktop\gestark-main\menuarticulos.h
+1624941652 c:\users\chave\desktop\gestark-main\clspersona.h
 
-1624889398 c:\users\chave\desktop\gestark-main\menuclientes.h
+1624941652 c:\users\chave\desktop\gestark-main\clsvendedor.h
 
-1624891992 c:\users\chave\desktop\gestark-main\menuventa.h
+1624941652 c:\users\chave\desktop\gestark-main\clscliente.h
 
-1624892204 c:\users\chave\desktop\gestark-main\menuproveedores.h
+1624984150 c:\users\chave\desktop\gestark-main\herramientas.h
 
-1624889398 c:\users\chave\desktop\gestark-main\menuconfiguracion.h
+1624941652 c:\users\chave\desktop\gestark-main\clscadena.h
 
-1624891992 c:\users\chave\desktop\gestark-main\menuvendedor.h
+1624979285 c:\users\chave\desktop\gestark-main\clspedido.h
+
+1624984175 c:\users\chave\desktop\gestark-main\clsventa.h
+
+1624941652 c:\users\chave\desktop\gestark-main\menuarticulos.h
+
+1624984150 c:\users\chave\desktop\gestark-main\menuclientes.h
+
+1624941652 c:\users\chave\desktop\gestark-main\menuventa.h
+
+1624941652 c:\users\chave\desktop\gestark-main\menuconfiguracion.h
+
+1624941652 c:\users\chave\desktop\gestark-main\menuvendedor.h
 
