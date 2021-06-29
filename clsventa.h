@@ -145,11 +145,13 @@ void Venta::cargar()
 
         cout<<"INGRESE CANTIDAD VENDIDA: ";cin>>cantVendida;
     }
+
     if((controlstock(cantVendida,IDarticulo,true))==0){cout<<"NO SE PUDO MODIFICAR STOCK"<<endl;}
             else{   BorrarArea(1,9);
                     rlutil::locate(1,9);
                     cout<<"STOCK ACTUALIZADO"<<endl;}
     setimporte (calcularimporte(cantVendida,IDarticulo));
+   // generarPedido(IDarticulo);
 
 
     rlutil::locate(1,10);

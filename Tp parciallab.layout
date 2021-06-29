@@ -2,163 +2,235 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="menuVendedor.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="menuVendedor.h" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="8627" topLine="11" />
+			<Cursor1 position="8694" topLine="273" />
+		</Cursor>
+	</File>
+	<File name="clsvendedor.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1090" topLine="11" />
+		</Cursor>
+	</File>
+	<File name="clspedido.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="200" topLine="0" />
 		</Cursor>
 		<Folding>
-			<Collapse line="3" />
-			<Collapse line="6" />
-			<Collapse line="7" />
-			<Collapse line="16" />
-			<Collapse line="20" />
-			<Collapse line="21" />
+			<Collapse line="11" />
+			<Collapse line="38" />
+			<Collapse line="46" />
+			<Collapse line="59" />
+			<Collapse line="69" />
+			<Collapse line="78" />
+			<Collapse line="88" />
+		</Folding>
+	</File>
+	<File name="Menuventa.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7600" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="4" />
+			<Collapse line="11" />
+			<Collapse line="18" />
+			<Collapse line="24" />
+			<Collapse line="32" />
+			<Collapse line="44" />
+			<Collapse line="50" />
+			<Collapse line="51" />
+			<Collapse line="61" />
+			<Collapse line="72" />
+			<Collapse line="74" />
+			<Collapse line="83" />
+			<Collapse line="96" />
+			<Collapse line="112" />
+			<Collapse line="124" />
+			<Collapse line="128" />
+			<Collapse line="130" />
+			<Collapse line="137" />
+			<Collapse line="148" />
+			<Collapse line="155" />
+			<Collapse line="165" />
+			<Collapse line="176" />
+			<Collapse line="183" />
+			<Collapse line="193" />
+			<Collapse line="204" />
+			<Collapse line="211" />
+			<Collapse line="222" />
+			<Collapse line="224" />
+			<Collapse line="226" />
+			<Collapse line="228" />
+		</Folding>
+	</File>
+	<File name="clsventa.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="8" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3260" topLine="143" />
+		</Cursor>
+		<Folding>
+			<Collapse line="199" />
+			<Collapse line="277" />
+			<Collapse line="312" />
+			<Collapse line="333" />
+		</Folding>
+	</File>
+	<File name="Menus.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="17464" topLine="44" />
+		</Cursor>
+		<Folding>
+			<Collapse line="13" />
+			<Collapse line="28" />
 			<Collapse line="29" />
+			<Collapse line="35" />
+			<Collapse line="42" />
+			<Collapse line="61" />
+			<Collapse line="95" />
+			<Collapse line="126" />
+			<Collapse line="146" />
+			<Collapse line="147" />
+			<Collapse line="160" />
+			<Collapse line="179" />
+			<Collapse line="180" />
+			<Collapse line="191" />
+			<Collapse line="211" />
+			<Collapse line="212" />
+			<Collapse line="226" />
+			<Collapse line="245" />
+			<Collapse line="246" />
+			<Collapse line="259" />
+			<Collapse line="279" />
+			<Collapse line="280" />
+			<Collapse line="293" />
+			<Collapse line="324" />
+			<Collapse line="339" />
+			<Collapse line="340" />
+			<Collapse line="351" />
+			<Collapse line="367" />
+			<Collapse line="368" />
+			<Collapse line="382" />
+			<Collapse line="401" />
+			<Collapse line="402" />
+			<Collapse line="413" />
+			<Collapse line="433" />
+			<Collapse line="434" />
+		</Folding>
+	</File>
+	<File name="MenuClientes.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="9216" topLine="14" />
+		</Cursor>
+		<Folding>
+			<Collapse line="4" />
+			<Collapse line="8" />
+			<Collapse line="9" />
+			<Collapse line="17" />
+			<Collapse line="21" />
+			<Collapse line="22" />
+			<Collapse line="30" />
 			<Collapse line="33" />
-			<Collapse line="37" />
-			<Collapse line="49" />
+			<Collapse line="36" />
+			<Collapse line="48" />
 			<Collapse line="62" />
 			<Collapse line="75" />
-			<Collapse line="85" />
-			<Collapse line="101" />
-			<Collapse line="110" />
+			<Collapse line="86" />
+			<Collapse line="102" />
+			<Collapse line="111" />
 			<Collapse line="126" />
 			<Collapse line="135" />
-			<Collapse line="137" />
-			<Collapse line="140" />
 			<Collapse line="142" />
 			<Collapse line="150" />
 			<Collapse line="163" />
 			<Collapse line="169" />
 			<Collapse line="180" />
-			<Collapse line="192" />
-			<Collapse line="211" />
-			<Collapse line="223" />
-			<Collapse line="224" />
-			<Collapse line="229" />
-			<Collapse line="232" />
-			<Collapse line="234" />
-			<Collapse line="235" />
-			<Collapse line="245" />
-			<Collapse line="248" />
-			<Collapse line="250" />
-			<Collapse line="251" />
-			<Collapse line="261" />
-			<Collapse line="280" />
-			<Collapse line="282" />
-			<Collapse line="283" />
-			<Collapse line="307" />
-			<Collapse line="310" />
-			<Collapse line="317" />
-			<Collapse line="321" />
-			<Collapse line="327" />
-			<Collapse line="344" />
-			<Collapse line="346" />
-			<Collapse line="348" />
-		</Folding>
-	</File>
-	<File name="MenuArticulos.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5266" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="4" />
-			<Collapse line="6" />
-			<Collapse line="16" />
-			<Collapse line="29" />
-			<Collapse line="32" />
-			<Collapse line="33" />
-			<Collapse line="41" />
-			<Collapse line="51" />
-			<Collapse line="63" />
-			<Collapse line="65" />
-			<Collapse line="70" />
-			<Collapse line="73" />
-			<Collapse line="75" />
-			<Collapse line="76" />
-			<Collapse line="86" />
-			<Collapse line="89" />
-			<Collapse line="91" />
-			<Collapse line="92" />
-			<Collapse line="102" />
-			<Collapse line="105" />
-			<Collapse line="107" />
-			<Collapse line="108" />
-			<Collapse line="118" />
-			<Collapse line="121" />
-			<Collapse line="123" />
-			<Collapse line="124" />
-			<Collapse line="134" />
-			<Collapse line="137" />
-			<Collapse line="143" />
-			<Collapse line="147" />
-			<Collapse line="152" />
-			<Collapse line="170" />
-			<Collapse line="175" />
-			<Collapse line="182" />
-			<Collapse line="195" />
-			<Collapse line="200" />
-			<Collapse line="201" />
 			<Collapse line="209" />
-			<Collapse line="211" />
-			<Collapse line="213" />
-			<Collapse line="253" />
+			<Collapse line="212" />
+			<Collapse line="214" />
+			<Collapse line="215" />
+			<Collapse line="225" />
+			<Collapse line="228" />
+			<Collapse line="230" />
+			<Collapse line="231" />
+			<Collapse line="241" />
+			<Collapse line="244" />
+			<Collapse line="246" />
+			<Collapse line="247" />
+			<Collapse line="257" />
+			<Collapse line="260" />
+			<Collapse line="262" />
 			<Collapse line="263" />
 			<Collapse line="273" />
-			<Collapse line="286" />
-			<Collapse line="295" />
-			<Collapse line="308" />
-			<Collapse line="317" />
-			<Collapse line="319" />
-			<Collapse line="321" />
-			<Collapse line="323" />
+			<Collapse line="285" />
+			<Collapse line="291" />
+			<Collapse line="304" />
+			<Collapse line="324" />
+			<Collapse line="343" />
 		</Folding>
 	</File>
-	<File name="clsfecha.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="clscadena.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="601" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="Menuventa.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1903" topLine="0" />
+			<Cursor1 position="2531" topLine="28" />
 		</Cursor>
 		<Folding>
-			<Collapse line="4" />
-			<Collapse line="10" />
-			<Collapse line="17" />
-			<Collapse line="31" />
-			<Collapse line="45" />
-			<Collapse line="51" />
-			<Collapse line="52" />
-			<Collapse line="63" />
-			<Collapse line="74" />
-			<Collapse line="92" />
-			<Collapse line="108" />
-			<Collapse line="120" />
-			<Collapse line="124" />
-			<Collapse line="126" />
-			<Collapse line="133" />
-			<Collapse line="144" />
-			<Collapse line="151" />
-			<Collapse line="161" />
-			<Collapse line="172" />
-			<Collapse line="179" />
-			<Collapse line="189" />
-			<Collapse line="218" />
-			<Collapse line="220" />
-			<Collapse line="222" />
-			<Collapse line="226" />
+			<Collapse line="71" />
+			<Collapse line="75" />
+			<Collapse line="81" />
+			<Collapse line="87" />
+			<Collapse line="89" />
 		</Folding>
 	</File>
-	<File name="FuncionesGlobales.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="FuncionesGlobales.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1011" topLine="27" />
+			<Cursor1 position="2135" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="8" />
+			<Collapse line="11" />
+			<Collapse line="20" />
+			<Collapse line="38" />
+			<Collapse line="42" />
+			<Collapse line="44" />
+			<Collapse line="55" />
+			<Collapse line="71" />
+			<Collapse line="92" />
+		</Folding>
+	</File>
+	<File name="herramientas.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="266" topLine="193" />
 		</Cursor>
 	</File>
-	<File name="MenuProveedores.h" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4758" topLine="0" />
+			<Cursor1 position="3250" topLine="79" />
+		</Cursor>
+	</File>
+	<File name="clsarticulo.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2104" topLine="21" />
+		</Cursor>
+		<Folding>
+			<Collapse line="14" />
+			<Collapse line="53" />
+			<Collapse line="64" />
+			<Collapse line="89" />
+			<Collapse line="105" />
+			<Collapse line="118" />
+			<Collapse line="128" />
+			<Collapse line="138" />
+		</Folding>
+	</File>
+	<File name="clsfecha.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1254" topLine="23" />
+		</Cursor>
+		<Folding>
+			<Collapse line="9" />
+		</Folding>
+	</File>
+	<File name="MenuProveedores.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7791" topLine="0" />
 		</Cursor>
 		<Folding>
 			<Collapse line="4" />
@@ -187,142 +259,30 @@
 			<Collapse line="133" />
 			<Collapse line="135" />
 			<Collapse line="137" />
-			<Collapse line="152" />
-			<Collapse line="162" />
-			<Collapse line="172" />
-			<Collapse line="182" />
-			<Collapse line="192" />
-			<Collapse line="202" />
-			<Collapse line="219" />
+			<Collapse line="154" />
+			<Collapse line="164" />
+			<Collapse line="174" />
+			<Collapse line="184" />
+			<Collapse line="194" />
+			<Collapse line="204" />
 			<Collapse line="221" />
 			<Collapse line="223" />
-			<Collapse line="243" />
-			<Collapse line="256" />
-			<Collapse line="265" />
-			<Collapse line="278" />
-			<Collapse line="287" />
-			<Collapse line="289" />
-			<Collapse line="291" />
-			<Collapse line="293" />
-		</Folding>
-	</File>
-	<File name="clsventa.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3832" topLine="75" />
-		</Cursor>
-		<Folding>
-			<Collapse line="201" />
-			<Collapse line="314" />
-			<Collapse line="326" />
-			<Collapse line="340" />
-		</Folding>
-	</File>
-	<File name="clspersona.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2633" topLine="46" />
-		</Cursor>
-		<Folding>
-			<Collapse line="7" />
-			<Collapse line="19" />
-			<Collapse line="56" />
-			<Collapse line="57" />
-			<Collapse line="62" />
-		</Folding>
-	</File>
-	<File name="clscadena.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2531" topLine="28" />
-		</Cursor>
-		<Folding>
-			<Collapse line="71" />
-			<Collapse line="75" />
-			<Collapse line="81" />
-			<Collapse line="87" />
-			<Collapse line="89" />
-		</Folding>
-	</File>
-	<File name="clsvendedor.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1583" topLine="44" />
-		</Cursor>
-	</File>
-	<File name="clscliente.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="513" topLine="15" />
-		</Cursor>
-	</File>
-	<File name="MenuClientes.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="8925" topLine="29" />
-		</Cursor>
-		<Folding>
-			<Collapse line="4" />
-			<Collapse line="8" />
-			<Collapse line="9" />
-			<Collapse line="17" />
-			<Collapse line="21" />
-			<Collapse line="22" />
-			<Collapse line="30" />
-			<Collapse line="33" />
-			<Collapse line="36" />
-			<Collapse line="48" />
-			<Collapse line="62" />
-			<Collapse line="75" />
-			<Collapse line="86" />
-			<Collapse line="102" />
-			<Collapse line="111" />
-			<Collapse line="126" />
-			<Collapse line="135" />
-			<Collapse line="137" />
-			<Collapse line="140" />
-			<Collapse line="142" />
-			<Collapse line="150" />
-			<Collapse line="163" />
-			<Collapse line="169" />
-			<Collapse line="180" />
-			<Collapse line="192" />
-			<Collapse line="209" />
-			<Collapse line="212" />
-			<Collapse line="214" />
-			<Collapse line="215" />
 			<Collapse line="225" />
-			<Collapse line="228" />
-			<Collapse line="230" />
-			<Collapse line="231" />
-			<Collapse line="241" />
-			<Collapse line="244" />
-			<Collapse line="246" />
-			<Collapse line="247" />
-			<Collapse line="257" />
-			<Collapse line="260" />
-			<Collapse line="262" />
-			<Collapse line="263" />
-			<Collapse line="273" />
-			<Collapse line="285" />
-			<Collapse line="286" />
-			<Collapse line="314" />
-			<Collapse line="318" />
-			<Collapse line="324" />
+			<Collapse line="245" />
+			<Collapse line="258" />
+			<Collapse line="267" />
+			<Collapse line="280" />
+			<Collapse line="289" />
 		</Folding>
-	</File>
-	<File name="clsarticulo.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2958" topLine="76" />
-		</Cursor>
 	</File>
 	<File name="clsdirrecion.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1139" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="herramientas.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+	<File name="clscliente.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4479" topLine="184" />
-		</Cursor>
-	</File>
-	<File name="Menus.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2896" topLine="48" />
+			<Cursor1 position="513" topLine="15" />
 		</Cursor>
 	</File>
 	<File name="MenuConfiguracion.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -357,9 +317,71 @@
 			<Collapse line="320" />
 		</Folding>
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+	<File name="clspersona.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1900" topLine="15" />
+			<Cursor1 position="2633" topLine="46" />
 		</Cursor>
+		<Folding>
+			<Collapse line="7" />
+			<Collapse line="19" />
+			<Collapse line="56" />
+			<Collapse line="57" />
+			<Collapse line="62" />
+		</Folding>
+	</File>
+	<File name="MenuArticulos.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1488" topLine="6" />
+		</Cursor>
+		<Folding>
+			<Collapse line="4" />
+			<Collapse line="6" />
+			<Collapse line="16" />
+			<Collapse line="29" />
+			<Collapse line="32" />
+			<Collapse line="33" />
+			<Collapse line="41" />
+			<Collapse line="51" />
+			<Collapse line="63" />
+			<Collapse line="65" />
+			<Collapse line="70" />
+			<Collapse line="73" />
+			<Collapse line="75" />
+			<Collapse line="76" />
+			<Collapse line="86" />
+			<Collapse line="89" />
+			<Collapse line="91" />
+			<Collapse line="92" />
+			<Collapse line="102" />
+			<Collapse line="105" />
+			<Collapse line="107" />
+			<Collapse line="108" />
+			<Collapse line="118" />
+			<Collapse line="121" />
+			<Collapse line="123" />
+			<Collapse line="124" />
+			<Collapse line="134" />
+			<Collapse line="137" />
+			<Collapse line="147" />
+			<Collapse line="152" />
+			<Collapse line="170" />
+			<Collapse line="175" />
+			<Collapse line="182" />
+			<Collapse line="186" />
+			<Collapse line="187" />
+			<Collapse line="195" />
+			<Collapse line="200" />
+			<Collapse line="201" />
+			<Collapse line="253" />
+			<Collapse line="263" />
+			<Collapse line="273" />
+			<Collapse line="286" />
+			<Collapse line="295" />
+			<Collapse line="308" />
+			<Collapse line="317" />
+			<Collapse line="319" />
+			<Collapse line="321" />
+			<Collapse line="323" />
+		</Folding>
 	</File>
 </CodeBlocks_layout_file>
