@@ -81,6 +81,7 @@ int agregarVenta(){
             cout<<"COMPLETE LOS SIGUIENTES CAMPOS: "<<endl;
 
             ven.cargar();
+        
             if(!ven.grabarEnDisco()){
             cout << "Error al guardar el archivo.";
             system("pause");
@@ -414,4 +415,5 @@ void elegirTipoListadoVentas(){
     }while(opc!=18);
 }
 
+///-------------------------------------------------------///
 #endif // MENUVENTA_H_INCLUDED
