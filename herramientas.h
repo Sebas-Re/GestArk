@@ -70,6 +70,7 @@ void seccionClientes();
 ///FIN CLIENTE
 ///-------------------------------------------------------///
 ///VENTA
+
 bool verificarstock(int cantidad, int idarticulo);
 
 bool controlstock(int cantidad, int idarticulo, bool mod);
@@ -179,6 +180,8 @@ void seccionVendedor();
 ///-------------------------------------------------------///
 
 int menuReportes();
+
+//void AsignacionNumeroPedido (Pedido &ven);
 
 ///-------------------------------------------------------///
 ///CONFIGURACION

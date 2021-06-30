@@ -6,6 +6,7 @@
 float CalculoDeImporte(int id, int cv);
 
 
+
 class Venta
 {
 private:
@@ -101,6 +102,8 @@ public:
 
 };
 
+#include "clspedido.h"
+
 void Venta::cargar()
 {
     int x, pos;
@@ -152,7 +155,7 @@ void Venta::cargar()
                     rlutil::locate(1,9);
                     cout<<"STOCK ACTUALIZADO"<<endl;}
     setimporte (calcularimporte(cantVendida,IDarticulo));
-   // generarPedido(IDarticulo);
+    generarPedido(IDarticulo);
 
 
     rlutil::locate(1,10);

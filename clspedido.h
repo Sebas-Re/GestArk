@@ -86,7 +86,7 @@ bool Pedido::modificarEnDisco(Proveedor reg, int pos){
     return escribio;
 }
 
-/*
+
 void AsignacionNumeroPedido (Pedido &ven){
     FILE *pPedido;
     pPedido=fopen(ARCHIVOPEDIDO,"rb");
@@ -135,5 +135,5 @@ void generarPedido(int idArticulo){
     }
 
 }
-*/
+
 #endif // CLSPEDIDO_H_INCLUDED
