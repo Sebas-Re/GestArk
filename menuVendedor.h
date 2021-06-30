@@ -9,7 +9,6 @@ int buscarDNIVendedor(int dniBuscado){
             return pos;
             pos++;
         }
-        pos;
     }
     return -1;
 }
