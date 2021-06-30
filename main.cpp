@@ -79,6 +79,21 @@ int main(){
 
     ShowWindow(GetConsoleWindow(),SW_MAXIMIZE);
 
+/*
+
+Pedido obj;
+int pos;
+
+while(obj.leerDeDisco(pos++)){
+     obj.mostrar();
+}
+
+                system("pause");
+                system("cls");
+return 0;
+
+*/
+
     /*char tecla = _getch();
     int otraTecla = _getch();
     cout << tecla << "        " << otraTecla << endl;

@@ -150,12 +150,23 @@ void Venta::cargar()
         cout<<"INGRESE CANTIDAD VENDIDA: ";cin>>cantVendida;
     }
 
+
     if((controlstock(cantVendida,IDarticulo,true))==0){cout<<"NO SE PUDO MODIFICAR STOCK"<<endl;}
             else{   BorrarArea(1,9);
                     rlutil::locate(1,9);
                     cout<<"STOCK ACTUALIZADO"<<endl;}
+
     setimporte (calcularimporte(cantVendida,IDarticulo));
-    generarPedido(IDarticulo);
+
+    if ((aux.getStock() - cantVendida)< 10){
+
+        if (generarPedido(aux) == true){
+                rlutil::locate(16,13);
+            cout << "Pedido generado.";
+        }
+
+    }
+
 
 
     rlutil::locate(1,10);
@@ -207,10 +218,6 @@ void Venta::VerificacionIDart(int id){
             }
         }
 
-        if (id == -1)
-        {
-            return;
-        }
 
     }
     while (IDexistente == false);
@@ -256,18 +263,10 @@ void Venta::VerificacionDNI(int dni)
             if (reg.getDni() == dni && reg.GetEstado() == true)
             {
                 DNIexistente = true;
+                DNIcliente = dni;
             }
         }
 
-        if (DNIexistente == true)
-        {
-            DNIcliente = dni;
-        }
-
-        if (dni == -1)
-        {
-            return;
-        }
 
     }
     while (DNIexistente == false);
@@ -320,10 +319,6 @@ void Venta::VerificacionIDven(int id)
             }
         }
 
-        if (id == -1)
-        {
-            return;
-        }
 
     }
     while (IDexistente == false);

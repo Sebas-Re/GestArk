@@ -7,7 +7,7 @@ private:
     char producto[25];
     int cantSolicitada;
     char ProvaSolicitar[25];
-    char envioMail[25];
+    char envioMail[30];
 public:
     Pedido(int d=0,const char *e="0000"){
         nPedido=d;
@@ -96,44 +96,81 @@ void AsignacionNumeroPedido (Pedido &ven){
     fclose(pPedido);
 }
 
-void generarPedido(int idArticulo){
-    int pos,i=0,v=0,ap=0,cantapedir=0;
+bool generarPedido(Articulo &aux){
+    int i=0,v=0,ap=0,cantapedir=0;
     Pedido regp;
-    Articulo rega;
     Proveedor regpr;
     Venta regv;
-    pos=buscarArticulo(idArticulo);
-    rega.leerDeDisco(pos);
+
+
     //aca se fija que haya menos de diez
-    if(rega.getStock()<10){
+
         while(regp.leerDeDisco(i++)){
+
                 //aca busca que el producto no este pedido
-            if(strcmp(rega.getDescripcion(),regp.getProducto())){
-                cout<<"YA SE GENERO UN PEDIDO PARA ESTE ARTICULO"<<endl;
+            if(strcmp(aux.getDescripcion(),regp.getProducto())== 0){
+                    rlutil::locate(16,13);
+                cout<<"YA SE GENERO UN PEDIDO PARA ESTE ARTICULO"<<endl; ////FUNCIONA 10 PUNTO
+
+                return false;
             }
         }
+
         //asigna numero de pedido
         AsignacionNumeroPedido(regp);
+
         //aca le graba el nombre del producto
-        regp.setProducto(rega.getDescripcion());
+        regp.setProducto(aux.getDescripcion());
+
         while(regv.leerDeDisco(v++)){
+
                 //aca recorre el archivo ventas y acumula cantvendida
-            if(rega.getID()==regv.getIDarticulo()){
+            if(aux.getID()==regv.getIDarticulo()){
               cantapedir+=regv.getCantidadVendida();
             }
         }
         regp.setCantSolicitada(cantapedir);
-        //agrego el proveedor
-        regp.setProvasolicitar(rega.getProveedor());
-        //recorro el archivo proveedor y saco el mail
-        while(regpr.leerDeDisco(ap++)){
-            if(strcmp(rega.getProveedor(),regpr.getNombreProv())){
-                regp.setEnvioMail(regpr.getMailProv());
-            }
-        }
-        if(!regp.grabarEnDisco()){cout<<"ERROR AL GENERAR PEDIDO"<<endl;}
-    }
 
+        //agrego el proveedor
+        regp.setProvasolicitar(aux.getProveedor());
+
+        //recorro el archivo proveedor y saco el mail
+
+
+
+
+            bool Encontrado=false;
+
+        while(regpr.leerDeDisco(ap++) && Encontrado == 0){
+               // rlutil::locate (1,30);
+                cout << regpr.getNombreProv()<<endl<<endl;
+                cout << regpr.getMailProv()<<endl<<endl;
+                cout << aux.getProveedor()<<endl<<endl;
+                system("pause");
+
+            if(strcmp(aux.getProveedor(),regpr.getNombreProv()) == 0){
+                regp.setEnvioMail(regpr.getMailProv());
+                    Encontrado = true;
+                    rlutil::locate(1,25);
+                    cout << "Email encontrado"<<endl;
+                    system("pause");
+
+            }
+
+        }
+
+        if (Encontrado == false){
+                rlutil::locate(1,25);
+            cout << "Email no encontrado"<<endl;
+            system("pause");
+            return false;
+
+        }
+
+
+        if(!regp.grabarEnDisco()){cout<<"ERROR AL GENERAR PEDIDO"<<endl; return false;}
+
+        return true;
 }
 
 #endif // CLSPEDIDO_H_INCLUDED
