@@ -66,8 +66,6 @@ const char CATEGORIAS[10][10]={
 #include "clscadena.h"
 #include "clsventa.h"
 #include "clspedido.h"
-
-
 #include "MenuArticulos.h"
 #include "MenuClientes.h"
 #include "Menuventa.h"
