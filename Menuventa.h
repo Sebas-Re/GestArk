@@ -366,7 +366,8 @@ void listarVentasOrdenadas(int orden){
         ordenarImporteVentas(pVentas, cantVentas);
         break;
     case 3:
-  // ORDENAR POR CANT VENDIDA
+  // ORDENAR POR CANTIDAD VENDIDA
+
         break;
     }
     mostrarVectorVentas(pVentas, cantVentas);
