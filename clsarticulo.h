@@ -49,6 +49,7 @@ public:
     bool leerDeDisco(int i);
     bool grabarEnDisco();
     bool modificarEnDisco(Articulo reg, int pos);
+    void VerificarStock ();
 
 };
 /*
@@ -62,7 +63,26 @@ void Articulo::iDAutomatico(){
     cout<<"CODIGO AUTONUMERICO ASIGNADO: "<<ID<<endl;
 }
 */
+
+    void Articulo::VerificarStock (){
+
+    int s;
+
+    cin >> s;
+
+    while (s < 1 or s > 99999){
+        cout << "Stock invalido, ingrese Stock: "<<endl;
+        cin >> s;
+
+    }
+
+    Stock=s;
+
+    }
+
 void Articulo::cargar(){
+
+
         cout<<"INGRESE DESCRIPCION DEL ARTICULO: ";
         cargarCadena(Descripcion,24);
         cout<<"INGRESE PRECIO UNITARIO DEL ARTICULO: ";
@@ -72,16 +92,21 @@ void Articulo::cargar(){
             cout<<"INGRESE PRECIO UNITARIO DEL ARTICULO: ";
             cin>>Pu;
         }
+        BorrarArea(1,4);
+        rlutil::locate(1,4);
         cout<<"INGRESE EL STOCK DEL ARTICULO: ";
-        cin>>Stock;
+        VerificarStock();
+        BorrarArea(1,4);
+        rlutil::locate(1,5);
+        cout << "Stock ingresado: " << Stock;
 
         rlutil::locate(1,25);
         cout << "Proveedores disponibles: ";
         listarProveedorPorDefecto(26);
 
-        rlutil::locate(1,5);
-        cout<<"INGRESE EL PROVEEDOR DEL ARTICULO: ";
         rlutil::locate(1,6);
+        cout<<"INGRESE EL PROVEEDOR DEL ARTICULO: ";
+        rlutil::locate(1,7);
         cargarCadena(Proveedor,24);
         Estado=true;
         cout<<"------------------------"<<endl;
