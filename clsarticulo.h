@@ -77,6 +77,9 @@ void Articulo::iDAutomatico(){
     }
 
     Stock=s;
+        BorrarArea(1,4);
+        rlutil::locate(1,4);
+        cout << "Stock ingresado: " << Stock;
 
     }
 
@@ -92,13 +95,14 @@ void Articulo::cargar(){
             cout<<"INGRESE PRECIO UNITARIO DEL ARTICULO: ";
             cin>>Pu;
         }
-        BorrarArea(1,4);
+        BorrarArea(1,3);
+        rlutil::locate(1,3);
+        cout << "El precio unitario ingresado fue: " << Pu;
+
         rlutil::locate(1,4);
         cout<<"INGRESE EL STOCK DEL ARTICULO: ";
         VerificarStock();
-        BorrarArea(1,4);
-        rlutil::locate(1,5);
-        cout << "Stock ingresado: " << Stock;
+
 
         rlutil::locate(1,25);
         cout << "Proveedores disponibles: ";
