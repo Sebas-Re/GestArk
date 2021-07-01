@@ -70,6 +70,7 @@ void Persona::Cargar(){
     }
 
     BorrarArea(1,1);
+    rlutil::locate(1,1);
     cout << "El DNI ingresado fue: " << Dni;
 
     rlutil::locate(1,2);
@@ -79,11 +80,19 @@ void Persona::Cargar(){
     rlutil::locate(1,3);
     cout << "Apellido: ";
     cin.getline(Apellido, 25);
+    rlutil::locate(1,4);
     cout << "Fecha de Nacimiento: ";
     FechaDeNacimiento.cargar();
+    BorrarArea(1,4);
+    rlutil::locate(1,4);
+    cout << "Fecha de nacimiento ingresada: ";
+    rlutil::locate(1,5);
+    FechaDeNacimiento.mostrar();
+    rlutil::locate(1,6);
     cout << "Email: ";
     cin.ignore();
     cin.getline(Email, 30);
+    rlutil::locate(1,7);
     cout << "Telefono: ";
     cin.getline(Telefono, 20);
 

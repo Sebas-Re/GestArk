@@ -154,6 +154,7 @@ void seccionClientes(){
                 int dni;
                 cout<<"INGRESE DNI DEL CLIENTE: "<<endl;
                 cin>>dni;
+               // system("pause");
                 checkeo=mostrarClientePorDNI(dni);
                 if(checkeo==-1){cout<<"El cliente esta dado de baja."<<endl;}
                 if(checkeo==-2){cout<<"El cliente no se encuentra registrado."<<endl;}

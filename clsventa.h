@@ -2,11 +2,6 @@
 #define CLSVENTA_H_INCLUDED
 ///CLASE Venta
 ///-------------------------------------------------------///
-
-float CalculoDeImporte(int id, int cv);
-
-
-
 class Venta
 {
 private:
