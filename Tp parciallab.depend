@@ -1047,7 +1047,7 @@
 1623856523 c:\users\chave\desktop\gestark\funcionesglobales.h
 	"rlutil.h"
 
-1625069386 source:c:\users\sebas\documents\github\gestark\main.cpp
+1625145629 source:c:\users\sebas\documents\github\gestark\main.cpp
 	<iostream>
 	<iostream>
 	<cstdlib>
@@ -1092,7 +1092,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1625144771 c:\users\sebas\documents\github\gestark\clsarticulo.h
+1625144858 c:\users\sebas\documents\github\gestark\clsarticulo.h
 
 1625012499 c:\users\sebas\documents\github\gestark\herramientas.h
 
@@ -1109,7 +1109,7 @@
 
 1624888752 c:\users\sebas\documents\github\gestark\clscliente.h
 
-1625068940 c:\users\sebas\documents\github\gestark\clsventa.h
+1625146677 c:\users\sebas\documents\github\gestark\clsventa.h
 	"clspedido.h"
 
 1624811098 c:\users\sebas\documents\github\gestark\clsvendedor.h
@@ -1292,5 +1292,5 @@
 
 1624995007 c:\users\sebas\documents\github\gestark-main\menuvendedor.h
 
-1625068423 c:\users\sebas\documents\github\gestark\clspedido.h
+1625145442 c:\users\sebas\documents\github\gestark\clspedido.h
 

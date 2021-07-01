@@ -116,14 +116,17 @@ void Venta::cargar()
     cout<<"INGRESE ID DE ARTICULO: ";cin>>x;
     VerificacionIDart(x);
 
+
     BorrarArea(1,29);
     rlutil::locate(1,30);
     cout << "Clientes disponibles: ";
     listarClientes(31);
 
+
     rlutil::locate(1,5);
     cout<<"INGRESE DNI DEL CLIENTE: "; cin >> x;
     VerificacionDNI (x);
+
 
     BorrarArea(1,29);
     rlutil::locate(1,30);
@@ -133,12 +136,13 @@ void Venta::cargar()
     cout << "INGRESE ID DEL VENDEDOR: ";cin >> x;
     VerificacionIDven(x);
 
-    BorrarArea(1,29);
 
+    BorrarArea(1,29);
     rlutil::locate(1,7);
     pos=buscarArticulo(IDarticulo);
     aux.leerDeDisco(pos);
    cout << "Stock Disponible: "<<aux.getStock();
+
 
     rlutil::locate(1,8);
     cout<<"INGRESE CANTIDAD VENDIDA: ";cin>>cantVendida;
@@ -152,7 +156,11 @@ void Venta::cargar()
 
 
     if((controlstock(cantVendida,IDarticulo,true))==0){cout<<"NO SE PUDO MODIFICAR STOCK"<<endl;}
-            else{   BorrarArea(1,9);
+            else{   BorrarArea(1,8);
+
+                    rlutil::locate(1,8);
+                    cout << "Cantidad ingresada: "<<cantVendida;
+
                     rlutil::locate(1,9);
                     cout<<"STOCK ACTUALIZADO"<<endl;}
 
@@ -181,6 +189,7 @@ void Venta::VerificacionIDart(int id){
 
     Articulo reg;
     bool IDexistente = true;
+    char Descripcion[25];
 
     FILE *ArchivoArticulo;
     ArchivoArticulo = fopen(ARCHIVOARTICULO, "rb");
@@ -215,6 +224,7 @@ void Venta::VerificacionIDart(int id){
             {
                 IDexistente = true;
                 IDarticulo = id;
+                strcpy(Descripcion,reg.getDescripcion());
             }
         }
 
@@ -222,9 +232,12 @@ void Venta::VerificacionIDart(int id){
     }
     while (IDexistente == false);
 
-    fclose(ArchivoArticulo);
 
-    BorrarArea(1, 5);
+
+    BorrarArea(1, 4);
+    rlutil::locate(1,4);
+    cout << "El Articulo ingresado fue: " << Descripcion;
+    fclose(ArchivoArticulo);
 }
 
 
@@ -233,6 +246,7 @@ void Venta::VerificacionDNI(int dni)
 
     Cliente reg;
     bool DNIexistente = true;
+    char Nombre[25];
 
     FILE *ArchivoClientes;
     ArchivoClientes = fopen(ARCHIVOCLIENTE, "rb");
@@ -264,6 +278,7 @@ void Venta::VerificacionDNI(int dni)
             {
                 DNIexistente = true;
                 DNIcliente = dni;
+                strcpy(Nombre,reg.getNombre());
             }
         }
 
@@ -271,10 +286,13 @@ void Venta::VerificacionDNI(int dni)
     }
     while (DNIexistente == false);
 
+
+
+    BorrarArea(1, 5);
+    rlutil::locate(1,5);
+    cout << "El cliente ingresado fue: " << Nombre;
+
     fclose(ArchivoClientes);
-
-    BorrarArea(1, 6);
-
 }
 
 void Venta::VerificacionIDven(int id)
@@ -282,6 +300,7 @@ void Venta::VerificacionIDven(int id)
 
     Vendedor reg;
     bool IDexistente = true;
+    char Nombre[25];
 
     FILE *ArchivoVendedor;
     ArchivoVendedor = fopen(ARCHIVOVENDEDOR, "rb");
@@ -316,6 +335,7 @@ void Venta::VerificacionIDven(int id)
             {
                 IDexistente = true;
                 IDvendedor = id;
+                strcpy(Nombre,reg.getNombre());
             }
         }
 
@@ -323,10 +343,12 @@ void Venta::VerificacionIDven(int id)
     }
     while (IDexistente == false);
 
+
+
+    BorrarArea(1, 6);
+    rlutil::locate(1,6);
+    cout << "El Vendedor ingresado fue: " << Nombre;
     fclose(ArchivoVendedor);
-
-    BorrarArea(1, 7);
-
 }
 
 void Venta::mostrar()

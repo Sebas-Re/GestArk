@@ -37,7 +37,7 @@ public:
 };
 
 void Pedido::mostrar(){
-    cout<<"NUEMERO DE PEDIDO: "<<nPedido<<endl;
+    cout<<"NUMERO DE PEDIDO: "<<nPedido<<endl;
     cout<<"PRODUCTO: "<<producto<<endl;
     cout<<"CANTIDAD SOLICITADA: "<<cantSolicitada<<endl;
     cout<<"PROVEEDOR: "<<ProvaSolicitar<<endl;

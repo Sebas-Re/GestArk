@@ -79,8 +79,8 @@ int main(){
 
     ShowWindow(GetConsoleWindow(),SW_MAXIMIZE);
 
+//
 /*
-
 Pedido obj;
 int pos;
 
@@ -93,6 +93,7 @@ while(obj.leerDeDisco(pos++)){
 return 0;
 
 */
+//
 
     /*char tecla = _getch();
     int otraTecla = _getch();
