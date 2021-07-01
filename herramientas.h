@@ -27,7 +27,7 @@ void listarArticulosOrdenados();
 
 bool listarArticulosPorDefecto();
 
-int listarArticulosDisponibles(int);
+int listarArticulosDisponibles(int );
 
 bool listarArticulosNoDisponibles();
 
@@ -46,17 +46,34 @@ void seccionArticulos();
 ///-------------------------------------------------------///
 ///CLIENTE
 ///-------------------------------------------------------///
+///FUNCIONES DE ORDENAMIENTO CLIENTE///
+int contarRegistrosClientes();
+
+void elegirTipoListadoClientes();
+
+void listarClientesOrdenados(int );
+
+void listarClientes(int );
+
+void copiarAVectorCliente(Cliente * , int);
+
+void porApellidoAscendente(Cliente * , int);
+
+void porApellidoDescendente(Cliente * , int);
+
+void porFechaAscendente(Cliente * , int);
+
+void porFechaDescendente(Cliente * , int);
+
+void mostrarVectorOrdenado(Cliente * , int);
+
+int MenuListarClientes();
+///*************** FIN ORDENAMIENTO ********************///
 int buscarDNICliente(int );
 
 int agregarCliente();
 
 int mostrarClientePorDNI(int );
-
-int contarRegistrosClientes();
-
-void listarClientes(int);
-
-void elegirTipoListadoClientes();
 
 int modificarMailCliente();
 
@@ -70,12 +87,17 @@ void seccionClientes();
 ///FIN CLIENTE
 ///-------------------------------------------------------///
 ///VENTA
+///FUNCIONES DE ORDENAMIENTO VENTA///
+void listarVentas(int linea);
+void listarVentasDisp(int linea);
+void listarVentasNODisp(int linea);
+void elegirTipoListadoVentas();
+
+///*************** FIN ORDENAMIENTO ********************///
 
 bool verificarstock(int cantidad, int idarticulo);
 
 bool controlstock(int cantidad, int idarticulo, bool mod);
-
-void elegirTipoListadoVentas();
 
 float calcularimporte(int cantidad,int idarticulo);
 
@@ -89,13 +111,7 @@ int BuscarVentaporNumero(int nventa);
 
 int contarRegistrosVentas();
 
-void listarVentas(int linea);
-
-void listarVentasDisp(int linea);
-
-void listarVentasNODisp(int linea);
-
-void elegirTipoListadoVendedor();
+bool listarVentas();
 
 bool eliminarVenta();
 
@@ -127,8 +143,6 @@ void listarProveedorPorDefecto(int );
 
 void listarProveedoresOrdenados(int orden);
 
-void listarProveedores();
-
 bool modificarmailProveedor();
 
 bool modificarTelProveedor();
@@ -139,27 +153,40 @@ bool elmininarProveedor();
 
 bool recuperoProveedor();
 
+void listarProveedores();
+
 void seccionProveedores();
 ///FIN PROVEEDOR
 ///-------------------------------------------------------///
 ///-------------------------------------------------------///
 ///VENDEDOR
 ///-------------------------------------------------------///
-int buscarDNIVendedor(int );
-
+///FUNCIONES DE ORDENAMIENTO VENDEDOR///
 int contarRegistrosVendedores();
 
-void elegirTipoListado();
+void elegirTipoListadoVendedor();
 
 int MenuListarVendedores();
 
-void listarVendedores(int);
+void listarVendedores(int );
 
 void listarVendedoresOrdenados(int);
 
 void porApellidoAscendente(Vendedor * , int);
 
+void porApellidoDescendente(Vendedor * , int);
+
+void porFechaAscendente(Vendedor *, int );
+
+void porFechaDescendente(Vendedor *, int );
+
+void copiarAVectorVendedor(Vendedor * , int);
+
 void mostrarVectorOrdenado(Vendedor * , int );
+
+///*************** FIN ORDENAMIENTO ********************///
+
+int buscarDNIVendedor(int );
 
 int agregarVendedor();
 
@@ -175,14 +202,6 @@ int menuVendedor();
 
 void seccionVendedor();
 ///FIN VENDEDOR
-///-------------------------------------------------------///
-///PEDIDO
-///-------------------------------------------------------///
-
-int menuReportes();
-
-//void AsignacionNumeroPedido (Pedido &ven);
-
 ///-------------------------------------------------------///
 ///CONFIGURACION
 ///-------------------------------------------------------///
@@ -224,15 +243,17 @@ void seccionConfiguracion();
 
 ///GLOBALES
 ///-------------------------------------------------------///
-void full_screen(int ancho, int alto);
 
 void cargarCadena(char *, int );
 
-void cartelListarArticulos(int);
+void cartelListarArticulos(int );
 
 void cartelListarProveedores(int );
 
-void cartelListarVendedores(int y);
+void cartelListarVendedores(int );
+
+void cartelListarClientes(int );
 
 void cartelListarVentas(int y);
+
 #endif // HERRAMIENTAS_H_INCLUDED

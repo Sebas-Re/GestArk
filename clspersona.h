@@ -68,9 +68,15 @@ void Persona::Cargar(){
         vCli=verificarCliente(Dni);
         vVen=verificarVendedor(Dni);
     }
+
+    BorrarArea(1,1);
+    cout << "El DNI ingresado fue: " << Dni;
+
+    rlutil::locate(1,2);
     cout << "Nombre: ";
     cin.ignore();
     cin.getline(Nombre, 25);
+    rlutil::locate(1,3);
     cout << "Apellido: ";
     cin.getline(Apellido, 25);
     cout << "Fecha de Nacimiento: ";
