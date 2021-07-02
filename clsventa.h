@@ -105,7 +105,7 @@ void Venta::cargar()
     Articulo aux;
 
     rlutil::locate(1,30);
-    cout << "Articulos disponibles: ";
+    cout << "ARTICULOS DISPONIBLES: ";
     listarArticulosDisponibles(31);
     rlutil::locate(1,4);
     cout<<"INGRESE ID DE ARTICULO: ";cin>>x;
@@ -114,7 +114,7 @@ void Venta::cargar()
 
     BorrarArea(1,29);
     rlutil::locate(1,30);
-    cout << "Clientes disponibles: ";
+    cout << "CLIENTES DISPONIBLES: ";
     listarClientes(31);
 
 
@@ -125,7 +125,7 @@ void Venta::cargar()
 
     BorrarArea(1,29);
     rlutil::locate(1,30);
-    cout << "Vendedores disponibles: ";
+    cout << "VENDEDORES DISPONIBLES: ";
     listarVendedores(31);
     rlutil::locate(1,6);
     cout << "INGRESE ID DEL VENDEDOR: ";cin >> x;
@@ -136,7 +136,7 @@ void Venta::cargar()
     rlutil::locate(1,7);
     pos=buscarArticulo(IDarticulo);
     aux.leerDeDisco(pos);
-   cout << "Stock Disponible: "<<aux.getStock();
+   cout << "STOCK DISPONIBLE: "<<aux.getStock();
 
 
     rlutil::locate(1,8);
@@ -154,7 +154,7 @@ void Venta::cargar()
             else{   BorrarArea(1,8);
 
                     rlutil::locate(1,8);
-                    cout << "Cantidad ingresada: "<<cantVendida;
+                    cout << "CANTIDAD INGRESADA: "<<cantVendida;
 
                     rlutil::locate(1,9);
                     cout<<"STOCK ACTUALIZADO"<<endl;}
@@ -164,17 +164,19 @@ void Venta::cargar()
     if ((aux.getStock() - cantVendida)< 10){
 
         if (generarPedido(aux) == true){
-                rlutil::locate(16,13);
-            cout << "Pedido generado.";
+                rlutil::locate(1,10);
+            cout << "PEDIDO GENERADO.";
         }
 
     }
 
 
 
-    rlutil::locate(1,10);
+    rlutil::locate(1,11);
     cout << "IMPORTE: " << importe << endl;
+    rlutil::locate(1,12);
     cout<<"INGRESE FECHA DE VENTA"<<endl;
+    rlutil::locate(1,13);
     fe.cargar();
     estado=true;
 }
@@ -192,7 +194,7 @@ void Venta::VerificacionIDart(int id){
 
     if (ArchivoArticulo == NULL)
     {
-        cout << "Error al abrir";
+        cout << "ERROR AL ABRIR";
         system("pause");
     }
 
@@ -203,7 +205,7 @@ void Venta::VerificacionIDart(int id){
 
         if (IDexistente == false)
         {
-            cout << "ID no encontrado, por favor ingrese un nuevo ID: ";
+            cout << "ID NO ENCONTRADO, POR FAVOR INGRESE UN ID EXISTENTE: ";
             cin >> id;
             cout << endl;
 
@@ -231,7 +233,7 @@ void Venta::VerificacionIDart(int id){
 
     BorrarArea(1, 4);
     rlutil::locate(1,4);
-    cout << "El Articulo ingresado fue: " << Descripcion;
+    cout << "EL ARTICULO INGRESADO FUE: " << Descripcion;
     fclose(ArchivoArticulo);
 }
 
@@ -247,7 +249,7 @@ void Venta::VerificacionDNI(int dni)
     ArchivoClientes = fopen(ARCHIVOCLIENTE, "rb");
     if (ArchivoClientes == NULL)
     {
-        cout << "Error al abrir";
+        cout << "ERROR AL ABRIR";
         system("pause");
     }
 
@@ -256,7 +258,7 @@ void Venta::VerificacionDNI(int dni)
 
         if (DNIexistente == false)
         {
-            cout << "DNI no encontrado, por favor ingrese un nuevo DNI: ";
+            cout << "DNI NO ENCONTRADO, POR FAVOR INGRESE UN DNI EXISTENTE: ";
             cin >> dni;
             cout << endl;
 
@@ -285,7 +287,7 @@ void Venta::VerificacionDNI(int dni)
 
     BorrarArea(1, 5);
     rlutil::locate(1,5);
-    cout << "El cliente ingresado fue: " << Nombre;
+    cout << "EL CLIENTE INGRESADO FUE: " << Nombre;
 
     fclose(ArchivoClientes);
 }
@@ -303,7 +305,7 @@ void Venta::VerificacionIDven(int id)
 
     if (ArchivoVendedor == NULL)
     {
-        cout << "Error al abrir";
+        cout << "ERROR AL ABRIR";
         system("pause");
     }
 
@@ -314,7 +316,7 @@ void Venta::VerificacionIDven(int id)
 
         if (IDexistente == false)
         {
-            cout << "ID no encontrado, por favor ingrese un nuevo ID: ";
+            cout << "ID NO ENCONTRADO, POR FAVOR INGRESE UN ID EXISTENTE: ";
             cin >> id;
             cout << endl;
 
@@ -342,7 +344,7 @@ void Venta::VerificacionIDven(int id)
 
     BorrarArea(1, 6);
     rlutil::locate(1,6);
-    cout << "El Vendedor ingresado fue: " << Nombre;
+    cout << "EL VENDEDOR INGRESADO FUE: " << Nombre;
     fclose(ArchivoVendedor);
 }
 

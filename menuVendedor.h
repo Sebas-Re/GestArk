@@ -143,7 +143,7 @@ void seccionVendedor(){
                 int agregados=0;
                 system("cls");
                 agregados = agregarVendedor();
-                cout << agregados <<"VENDEDOR/s CARGADO/s CON EXITO!"<<endl;
+                cout << agregados <<"VENDEDOR/es CARGADO/s CON EXITO!"<<endl;
                 system("pause");
                 break;
             }

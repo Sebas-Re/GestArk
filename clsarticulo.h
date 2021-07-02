@@ -79,7 +79,7 @@ void Articulo::VerificarStock (){
     Stock=s;
         BorrarArea(1,4);
         rlutil::locate(1,4);
-        cout << "Stock ingresado: " << Stock;
+        cout << "STOCK INGRESADO: " << Stock;
 
 }
 
@@ -98,7 +98,7 @@ void Articulo::cargar(){
         }
         BorrarArea(1,3);
         rlutil::locate(1,3);
-        cout << "El precio unitario ingresado fue: " << Pu;
+        cout << "EL PRECIO UNITARIO INGRESADO FUE: " << Pu;
 
         rlutil::locate(1,4);
         cout<<"INGRESE EL STOCK DEL ARTICULO: ";
@@ -106,16 +106,20 @@ void Articulo::cargar(){
 
 
         rlutil::locate(1,25);
-        cout << "Proveedores disponibles: ";
+        cout << "PROVEEDORES DISPONIBLES: ";
         listarProveedorPorDefecto(26);
 
-        rlutil::locate(1,6);
+        rlutil::locate(1,5);
         cout<<"INGRESE EL ID DEL PROVEEDOR DEL ARTICULO: ";
-        rlutil::locate(1,7);
+        rlutil::locate(1,6);
         cin>>idProveedor;
         posProv=buscarProveedor(idProveedor);
         nombreProveedor.leerDeDisco(posProv);
-        cout<<nombreProveedor.getNombreProv();
+        BorrarArea(1,5);
+        rlutil::locate(1,5);
+
+
+        cout<<"EL PROVEEDOR INGRESADO FUE: "<<nombreProveedor.getNombreProv();
         Estado=true;
         cout<<endl << "------------------------"<< endl;
 }

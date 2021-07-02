@@ -143,18 +143,18 @@ bool generarPedido(Articulo &aux){
 
         while(regpr.leerDeDisco(ap++) && Encontrado == 0){
                // rlutil::locate (1,30);
-                cout << regpr.getNombreProv()<<endl<<endl;
-                cout << regpr.getMailProv()<<endl<<endl;
-                cout << aux.getIdProveedor()<<endl<<endl;
-                system("pause");
+       //         cout << regpr.getNombreProv()<<endl<<endl;
+         //       cout << regpr.getMailProv()<<endl<<endl;
+       //         cout << aux.getIdProveedor()<<endl<<endl;
+      //          system("pause");
 
             if(aux.getIdProveedor()==regpr.getCodigoProv()){
                 regp.setEnvioMail(regpr.getMailProv());
                 regp.setProvasolicitar(regpr.getNombreProv());
                     Encontrado = true;
                     rlutil::locate(1,25);
-                    cout << "Email encontrado"<<endl;
-                    system("pause");
+        //            cout << "Email encontrado"<<endl;
+          //          system("pause");
 
             }
 

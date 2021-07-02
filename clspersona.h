@@ -71,29 +71,29 @@ void Persona::Cargar(){
 
     BorrarArea(1,1);
     rlutil::locate(1,1);
-    cout << "El DNI ingresado fue: " << Dni;
+    cout << "EL DNI INGRESADO FUE: " << Dni;
 
     rlutil::locate(1,2);
-    cout << "Nombre: ";
+    cout << "NOMBRE: ";
     cin.ignore();
     cin.getline(Nombre, 25);
     rlutil::locate(1,3);
-    cout << "Apellido: ";
+    cout << "APELLIDO: ";
     cin.getline(Apellido, 25);
     rlutil::locate(1,4);
-    cout << "Fecha de Nacimiento: ";
+    cout << "FECHA DE NACIMIENTO: ";
     FechaDeNacimiento.cargar();
     BorrarArea(1,4);
     rlutil::locate(1,4);
-    cout << "Fecha de nacimiento ingresada: ";
+    cout << "FECHA DE NACIMIENTO INGRESADA: ";
     rlutil::locate(1,5);
     FechaDeNacimiento.mostrar();
     rlutil::locate(1,6);
-    cout << "Email: ";
+    cout << "EMAIL: ";
     cin.ignore();
     cin.getline(Email, 30);
     rlutil::locate(1,7);
-    cout << "Telefono: ";
+    cout << "TELEFONO: ";
     cin.getline(Telefono, 20);
 
 }
@@ -101,25 +101,25 @@ void Persona::Cargar(){
 void Persona::MostrarCliente(){
 
     cout << "DNI: " << Dni << endl;
-    cout << "Nombre: " << Nombre << endl;
-    cout << "Apellido: " << Apellido << endl;
-    cout << "Fecha de Nacimiento: ";
+    cout << "NOMBRE: " << Nombre << endl;
+    cout << "APELLIDO: " << Apellido << endl;
+    cout << "FECHA DE NACIMIENTO: ";
     FechaDeNacimiento.mostrar();
     cout << endl;
-    cout << "Email: " << Email << endl;
-    cout << "Telefono: " << Telefono << endl;
+    cout << "EMAIL: " << Email << endl;
+    cout << "TELEFONO: " << Telefono << endl;
 }
 
 void Persona::MostrarVendedor(){
 
     cout << "DNI: " << Dni << endl;
-    cout << "Nombre: " << Nombre << endl;
-    cout << "Apellido: " << Apellido << endl;
-    cout << "Fecha de Ingreso: ";
+    cout << "NOMBRE: " << Nombre << endl;
+    cout << "APELLIDO: " << Apellido << endl;
+    cout << "FECHA DE NACIMIENTO: ";
     FechaDeNacimiento.mostrar();
     cout << endl;
-    cout << "Email: " << Email << endl;
-    cout << "Telefono: " << Telefono << endl;
+    cout << "EMAIL: " << Email << endl;
+    cout << "TELEFONO: " << Telefono << endl;
 }
 
 void Persona::MostrarVendedor(int y){
