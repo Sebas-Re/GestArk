@@ -1,11 +1,16 @@
 #ifndef MENUREPORTES_H_INCLUDED
 #define MENUREPORTES_H_INCLUDED
 
+void imprimiPedido(){
+    Pedido obj;
+    int pos=0;
 
+    while(obj.leerDeDisco(pos++)){
+        obj.mostrar();
+    }
+}
 
 void seccionReportes(){
-
-
 
     int opc;
     do{
@@ -13,7 +18,8 @@ void seccionReportes(){
         switch(opc){
             case 12:
                 system("cls");
-        //        generarPedido();
+                imprimiPedido();
+                system("pause");
                 break;
             case 13:
 

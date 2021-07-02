@@ -485,9 +485,9 @@ int menuReportes(){
    cout <<"MENU REPORTES"<<endl;
    rlutil::locate(47,11);
    cout <<"---------------------------"<<endl;
-   rlutil::locate(50,12);   cout<<"GENERAR PEDIDO AUTOMATICO"<<endl;
+   rlutil::locate(50,12);   cout<<"IMPRIMIR PEDIDO"<<endl;
    rlutil::locate(50,13);   cout<<"MODIFICAR PEDIDO AUTOMATICO"<<endl;
-   rlutil::locate(50,14);   cout<<"IMPRIMIR PEDIDO"<<endl;
+   rlutil::locate(50,14);   cout<<""<<endl;
    rlutil::locate(50,15);   cout<<"VER VENTAS POR VENDEDOR"<<endl;
    rlutil::locate(50,16);   cout<<">>POR FECHA"<<endl;
    rlutil::locate(50,17);   cout<<">>POR MONTO"<<endl;

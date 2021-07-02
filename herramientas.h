@@ -89,8 +89,11 @@ void seccionClientes();
 ///VENTA
 ///FUNCIONES DE ORDENAMIENTO VENTA///
 void listarVentas(int linea);
+
 void listarVentasDisp(int linea);
+
 void listarVentasNODisp(int linea);
+
 void elegirTipoListadoVentas();
 
 ///*************** FIN ORDENAMIENTO ********************///
@@ -202,6 +205,15 @@ int menuVendedor();
 
 void seccionVendedor();
 ///FIN VENDEDOR
+///-------------------------------------------------------///
+///REPORTES
+///-------------------------------------------------------///
+void imprimiPedido();
+
+int menuReportes();
+
+void seccionReportes();
+
 ///-------------------------------------------------------///
 ///CONFIGURACION
 ///-------------------------------------------------------///
