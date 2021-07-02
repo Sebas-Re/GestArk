@@ -132,7 +132,7 @@ bool generarPedido(Articulo &aux){
         regp.setCantSolicitada(cantapedir);
 
         //agrego el proveedor
-        regp.setProvasolicitar(aux.getProveedor());
+
 
         //recorro el archivo proveedor y saco el mail
 
@@ -145,11 +145,12 @@ bool generarPedido(Articulo &aux){
                // rlutil::locate (1,30);
                 cout << regpr.getNombreProv()<<endl<<endl;
                 cout << regpr.getMailProv()<<endl<<endl;
-                cout << aux.getProveedor()<<endl<<endl;
+                cout << aux.getIdProveedor()<<endl<<endl;
                 system("pause");
 
-            if(strcmp(aux.getProveedor(),regpr.getNombreProv()) == 0){
+            if(aux.getIdProveedor()==regpr.getCodigoProv()){
                 regp.setEnvioMail(regpr.getMailProv());
+                regp.setProvasolicitar(regpr.getNombreProv());
                     Encontrado = true;
                     rlutil::locate(1,25);
                     cout << "Email encontrado"<<endl;

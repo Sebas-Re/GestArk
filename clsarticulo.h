@@ -8,7 +8,7 @@ private:
     char Descripcion[25];
     float Pu;
     int Stock;
-    char Proveedor[25];
+    int idProveedor;
     bool Estado;
 public:
     ///constructor
@@ -17,7 +17,7 @@ public:
         strcpy(Descripcion,d);
         Pu=p;
         Stock=s;
-        strcpy(Proveedor,d);
+        idProveedor=c;
         Estado=false;
     }
     ///Sets
@@ -32,14 +32,14 @@ public:
             Pu=p;}
     }
     void setStock(int s){Stock=s;}
-    void setProveedor(char *d){strcpy(Proveedor,d);}
+    void setIdProveedor(int d){idProveedor=d;}
     void setEstado(bool e){Estado=e;}
     ///Gets
     int getID(){return ID;}
     char *getDescripcion(){return Descripcion;}
     float getPu(){return Pu;}
     int getStock(){return Stock;}
-    char *getProveedor(){return Proveedor;}
+    int getIdProveedor(){return idProveedor;}
     bool getEstado(){return Estado;}
     ///Metodos
   //  void iDAutomatico();
@@ -64,7 +64,7 @@ void Articulo::iDAutomatico(){
 }
 */
 
-    void Articulo::VerificarStock (){
+void Articulo::VerificarStock (){
 
     int s;
 
@@ -81,10 +81,11 @@ void Articulo::iDAutomatico(){
         rlutil::locate(1,4);
         cout << "Stock ingresado: " << Stock;
 
-    }
+}
 
 void Articulo::cargar(){
-
+    int posProv=0;
+    Proveedor nombreProveedor;
 
         cout<<"INGRESE DESCRIPCION DEL ARTICULO: ";
         cargarCadena(Descripcion,24);
@@ -109,38 +110,50 @@ void Articulo::cargar(){
         listarProveedorPorDefecto(26);
 
         rlutil::locate(1,6);
-        cout<<"INGRESE EL PROVEEDOR DEL ARTICULO: ";
+        cout<<"INGRESE EL ID DEL PROVEEDOR DEL ARTICULO: ";
         rlutil::locate(1,7);
-        cargarCadena(Proveedor,24);
+        cin>>idProveedor;
+        posProv=buscarProveedor(idProveedor);
+        nombreProveedor.leerDeDisco(posProv);
+        cout<<nombreProveedor.getNombreProv();
         Estado=true;
-        cout<<"------------------------"<<endl;
+        cout<<endl << "------------------------"<< endl;
 }
 
 void Articulo::mostrar(int y){
-       y+=2;
+        Proveedor nombreProveedor;
+        int posProv;
+        posProv=buscarProveedor(idProveedor);
+        nombreProveedor.leerDeDisco(posProv);
+        y+=2;
         gotoxy(4,y);
         cout<<ID<<"\t";
         gotoxy(13,y);
         cout<<Descripcion<<"\t";
         gotoxy(33,y);
-        cout<<Pu<<"\t";
+        cout<<"$ "<<Pu<<"\t";
         gotoxy(51,y);
         cout<<Stock<<"\t";
         gotoxy(62,y);
         if(Estado==true){cout<<"DISPONIBLE"<<endl;}
         else{cout<<"NO DISPONIBLE"<<endl;}
         gotoxy(79,y);
-        cout<<Proveedor;
+        cout<<nombreProveedor.getNombreProv();
 }
 
 void Articulo::mostrar(){
+        Proveedor nombreProveedor;
+        int posProv;
+        posProv=buscarProveedor(idProveedor);
+        nombreProveedor.leerDeDisco(posProv);
+
         cout<<"------------------------"<<endl;
         cout<<"CODIGO DE ARTICULO: "<<ID<<endl;
         cout<<"DESCRIPCION: "<<Descripcion<<endl;
-        cout<<"PRECIO UNITARIO: "<<Pu<<endl;
+        cout<<"PRECIO UNITARIO: $"<<Pu<<endl;
         cout<<"STOCK: "<<Stock<<endl;
-        cout<<"PROVEEDOR: "<<Proveedor<<endl;
-        cout<<"ESTADO: "<<"\t";
+        cout<<"PROVEEDOR: "<<nombreProveedor.getNombreProv()<<endl;
+        cout<<"ESTADO: ";
         if(Estado==true){cout<<"DISPONIBLE"<<endl;}
         else{cout<<"NO DISPONIBLE"<<endl;}
         cout<<"------------------------"<<endl;

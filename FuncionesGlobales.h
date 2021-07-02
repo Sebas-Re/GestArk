@@ -5,7 +5,6 @@
 bool verificarCliente(int );
 bool verificarVendedor(int );
 
-
 void cargarCadena(char *pal, int tam){//recibe un char y un int y ajusta la variable con memoria dinamica
   int i;
   fflush(stdin);
@@ -38,7 +37,6 @@ void cartelListarArticulos(int y){
 
 void BorrarArea(int x, int y){
 int i,j;
-
     for (j=x; j < x+200; j++)
     {
         for (i=y; i<y+30; i++)
@@ -47,10 +45,6 @@ int i,j;
             cout <<" ";
         }
     }
-
-
-
-
 }
 
 void cartelListarProveedores(int y){

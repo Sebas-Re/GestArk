@@ -71,6 +71,7 @@ const char CATEGORIAS[10][10]={
 #include "Menuventa.h"
 #include "MenuConfiguracion.h"
 #include "menuVendedor.h"
+#include "menuReportes.h"
 
 
 
@@ -121,7 +122,7 @@ return 0;
             seccionProveedores();
             break;
         case 17:
-            menuReportes();
+            seccionReportes();
             break;
         case 18:
             seccionConfiguracion();

@@ -3,7 +3,7 @@
 ///MENU PROVEEDOR
 ///-------------------------------------------------------///
 bool agregarProveedor(){//agrega un registro articulo
-    int r,contador=0;
+    int r, contador=0;
     do{
     Proveedor reg;
     FILE *pProveedor;
@@ -297,7 +297,7 @@ void seccionProveedores(){
                 int agregados=0;
                 system("cls");
                 agregados = agregarProveedor();
-                cout << agregados <<"PROVEEDORES/s CARGADO/s CON EXITO!"<<endl;
+                cout << agregados <<" PROVEEDOR/es CARGADO/s CON EXITO!"<<endl;
                 system("pause");
                 break;
             }
