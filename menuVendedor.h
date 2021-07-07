@@ -13,6 +13,32 @@ int buscarDNIVendedor(int dniBuscado){
     return -1;
 }
 
+int buscarIDvendedor(int id){
+    Vendedor registro;
+    int pos=0;
+    while(registro.leerDeDisco(pos)==1){
+        if(id==registro.getIdVendedor()){
+            return pos;
+            pos++;
+        }
+    }
+    return -1;
+}
+
+int BuscarVendedorNumero(int id){//busca articulo por id y lo muestra si "estado" esta en true
+    Vendedor reg;;
+    int pos=0;
+    FILE *pVendedor;
+    pVendedor=fopen(ARCHIVOVENDEDOR,"rb");
+    if(pVendedor==NULL){return -1;}
+    pos=buscarIDvendedor(id);
+    if(pos<0){return -2;}
+    reg.leerDeDisco(pos);
+    if(reg.getEstado()==true){reg.mostrar();}
+    else{return -2;}
+    fclose(pVendedor);
+}
+
 bool verificarVendedor(int d){
     int posicion=0;
     Vendedor registro;

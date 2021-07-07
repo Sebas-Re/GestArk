@@ -487,15 +487,11 @@ int menuReportes(){
    cout <<"---------------------------"<<endl;
    rlutil::locate(50,12);   cout<<"IMPRIMIR PEDIDO"<<endl;
    rlutil::locate(50,13);   cout<<"MODIFICAR PEDIDO AUTOMATICO"<<endl;
-   rlutil::locate(50,14);   cout<<""<<endl;
-   rlutil::locate(50,15);   cout<<"VER VENTAS POR VENDEDOR"<<endl;
-   rlutil::locate(50,16);   cout<<">>POR FECHA"<<endl;
-   rlutil::locate(50,17);   cout<<">>POR MONTO"<<endl;
-   rlutil::locate(50,18);   cout<<"VER COMPRAS POR CLIENTE"<<endl;
-   rlutil::locate(50,19);   cout<<">>POR FECHA"<<endl;
-   rlutil::locate(50,20);   cout<<">>POR MONTO"<<endl;
-   rlutil::locate(50,21);   cout<<"VOLVER AL MENU PRINCIPAL"<<endl;
-   rlutil::locate(47,22);
+   rlutil::locate(50,14);   cout<<"REPORTE ARTICULOS"<<endl;
+   rlutil::locate(50,15);   cout<<"REPORTE VENDEDORES"<<endl;
+   rlutil::locate(50,16);   cout<<"REPORTE CLIENTES"<<endl;
+   rlutil::locate(50,17);   cout<<"VOLVER AL MENU PRINCIPAL"<<endl;
+   rlutil::locate(47,19);
    cout <<"---------------------------"<<endl;
    rlutil::locate(x,y);printf("*");
    bool elegir=false;
@@ -504,11 +500,101 @@ int menuReportes(){
         rlutil::locate(x,y);printf(" ");
        char tecla = _getch();
         if (tecla==ENTER){elegir= true; return y;}
-        if (tecla==ESC){elegir= true; return 21;}
+        if (tecla==ESC){elegir= true; return 19;}
         if (tecla==ARRIBA&& y >12) rlutil::locate (x,y--);
-        if(tecla==ABAJO && y < 21) rlutil::locate(x,y++);
+        if(tecla==ABAJO && y < 19) rlutil::locate(x,y++);
         rlutil::locate(x,y);printf("*");}
    }
 }
 
+int menuReporteArticulos(){
+    int x=49,y=12;
+   system("cls");
+   recuadro(40,9,40,15);
+   rlutil::locate(53,10);
+   cout <<"REPORTE ARTICULOS"<<endl;
+   rlutil::locate(47,11);
+   cout <<"---------------------------"<<endl;
+   rlutil::locate(50,12);   cout<<"ID ARTICULO"<<endl;
+   rlutil::locate(50,13);   cout<<"POR FECHA"<<endl;
+   rlutil::locate(50,14);   cout<<"MAS VENDIDO"<<endl;
+   rlutil::locate(50,15);   cout<<"MAS VENDIDO POR FECHA"<<endl;
+   rlutil::locate(50,16);   cout<<"VOLVER AL MENU PRINCIPAL"<<endl;
+   rlutil::locate(47,17);
+   cout <<"---------------------------"<<endl;
+   rlutil::locate(x,y);printf("*");
+   bool elegir=false;
+   while(!elegir){
+    if(_kbhit()){
+        rlutil::locate(x,y);printf(" ");
+       char tecla = _getch();
+        if (tecla==ENTER){elegir= true; return y;}
+        if (tecla==ESC){elegir= true; return 16;}
+        if (tecla==ARRIBA&& y >12) rlutil::locate (x,y--);
+        if(tecla==ABAJO && y < 16) rlutil::locate(x,y++);
+        rlutil::locate(x,y);printf("*");}
+   }
+}
+
+int menumodificarPedido(){
+    int x=1,y=8;
+       rlutil::locate(2,8);   cout<<"MODIFICAR MAIL"<<endl;
+       rlutil::locate(2,9);   cout<<"MODIFICAR CANTIDAD A PEDIR"<<endl;
+       rlutil::locate(x,y);printf("*");
+       bool elegir=false;
+       while(!elegir){
+        if(_kbhit()){
+            rlutil::locate(x,y);printf(" ");
+           char tecla = _getch();
+            if (tecla==ENTER){elegir= true; return y;}
+            if (tecla==ARRIBA&& y >8) rlutil::locate (x,y--);
+            if(tecla==ABAJO && y <9) rlutil::locate(x,y++);
+            rlutil::locate(x,y);printf("*");}
+       }
+}
+
+int menuReportesVendedores(){
+int x=49,y=12;
+   system("cls");
+   recuadro(40,9,40,15);
+   rlutil::locate(53,10);
+   cout <<"REPORTE VENDEDORES"<<endl;
+   rlutil::locate(47,11);
+   cout <<"---------------------------"<<endl;
+   rlutil::locate(50,12);   cout<<"POR VENDEDOR"<<endl;
+   rlutil::locate(50,13);   cout<<"MEJORES VENDEDORES/AS"<<endl;
+   rlutil::locate(50,14);   cout<<"POR FECHA O RANGO"<<endl;
+   rlutil::locate(50,17);   cout<<"VOLVER AL MENU PRINCIPAL"<<endl;
+   rlutil::locate(47,19);
+   cout <<"---------------------------"<<endl;
+   rlutil::locate(x,y);printf("*");
+   bool elegir=false;
+   while(!elegir){
+    if(_kbhit()){
+        rlutil::locate(x,y);printf(" ");
+       char tecla = _getch();
+        if (tecla==ENTER){elegir= true; return y;}
+        if (tecla==ESC){elegir= true; return 17;}
+        if (tecla==ARRIBA&& y >12) rlutil::locate (x,y--);
+        if(tecla==ABAJO && y < 17) rlutil::locate(x,y++);
+        rlutil::locate(x,y);printf("*");}
+   }
+}
+
+int menuMejorVendedor(){
+    int x=1,y=8;
+       rlutil::locate(2,8);   cout<<"MAYOR CANTIDAD VENDIDA"<<endl;
+       rlutil::locate(2,9);   cout<<"MAYOR IMPORTE RECAUDADO"<<endl;
+       rlutil::locate(x,y);printf("*");
+       bool elegir=false;
+       while(!elegir){
+        if(_kbhit()){
+            rlutil::locate(x,y);printf(" ");
+           char tecla = _getch();
+            if (tecla==ENTER){elegir= true; return y;}
+            if (tecla==ARRIBA&& y >8) rlutil::locate (x,y--);
+            if(tecla==ABAJO && y <9) rlutil::locate(x,y++);
+            rlutil::locate(x,y);printf("*");}
+       }
+}
 #endif // MENUS_H_INCLUDED

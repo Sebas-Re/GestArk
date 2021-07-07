@@ -17,6 +17,18 @@ void cargarCadena(char *pal, int tam){//recibe un char y un int y ajusta la vari
 }
 
 ///CARTELES
+
+void cartelInicial(){
+    rlutil::hidecursor();
+    Sleep(500);
+    rlutil::locate(75,20);
+    cout<<"GESTARK";
+    Sleep(500);
+    rlutil::locate(69,22);
+    cout<<"Gestion Empresarial";
+    Sleep(1500);
+}
+
 void cartelListarArticulos(int y){
     gotoxy(1,y);
     cout<<"INVENTARIO: ";
@@ -122,6 +134,33 @@ void cartelListarVentas(int y){
     cout<<"FECHA DE VENTA";
     gotoxy(140,y);
     cout<<"ESTADO";
+}
+
+void cartelFinal(){
+    system("cls");
+    rlutil::hidecursor();
+    rlutil::locate(75,20);
+    cout<<"GESTARK";
+    Sleep(500);
+    rlutil::locate(69,21);
+    cout<<"Gestion Empresarial";
+    Sleep(500);
+    rlutil::locate(70,24);
+    cout<<"Desarrollado por";
+    Sleep(500);
+    rlutil::locate(70,25);
+    cout<<"Eduardo Angel Chavero";
+    Sleep(500);
+    rlutil::locate(70,26);
+    cout<<"Sebastian Re";
+    Sleep(500);
+    rlutil::locate(70,27);
+    cout<<"Amador Gonzalez"<<endl;
+    Sleep(900);
+    system("cls");
+    rlutil::locate(69,22);
+    cout<<"Fin del programa";
+    Sleep(500);
 }
 
 

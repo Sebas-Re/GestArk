@@ -163,7 +163,7 @@ void Venta::cargar()
 
     if ((aux.getStock() - cantVendida)< 10){
 
-        if (generarPedido(aux) == true){
+        if (generarPedido(aux,cantVendida) == true){
                 rlutil::locate(1,10);
             cout << "PEDIDO GENERADO.";
         }

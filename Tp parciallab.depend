@@ -1301,3 +1301,89 @@
 
 1625236797 c:\users\sebas\documents\github\gestark\menureportes.h
 
+1625368198 source:g:\descargas\gestark-main\gestark-main\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<windows.h>
+	"rlutil.h"
+	"FuncionesGlobales.h"
+	"clsfecha.h"
+	"clsdirrecion.h"
+	"clsproveedor.h"
+	"Menus.h"
+	"MenuProveedores.h"
+	"clsarticulo.h"
+	"clspersona.h"
+	"clsvendedor.h"
+	"clscliente.h"
+	"herramientas.h"
+	"clscadena.h"
+	"clsventa.h"
+	"clspedido.h"
+	"MenuArticulos.h"
+	"MenuClientes.h"
+	"Menuventa.h"
+	"MenuConfiguracion.h"
+	"menuVendedor.h"
+	"menuReportes.h"
+
+1625238464 g:\descargas\gestark-main\gestark-main\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1625274818 g:\descargas\gestark-main\gestark-main\funcionesglobales.h
+	"rlutil.h"
+
+1625238464 g:\descargas\gestark-main\gestark-main\clsfecha.h
+
+1625238464 g:\descargas\gestark-main\gestark-main\clsdirrecion.h
+
+1625238464 g:\descargas\gestark-main\gestark-main\clsproveedor.h
+
+1625403710 g:\descargas\gestark-main\gestark-main\menus.h
+	"rlutil.h"
+
+1625238464 g:\descargas\gestark-main\gestark-main\menuproveedores.h
+
+1625238464 g:\descargas\gestark-main\gestark-main\clsarticulo.h
+
+1625238464 g:\descargas\gestark-main\gestark-main\clspersona.h
+
+1625238464 g:\descargas\gestark-main\gestark-main\clsvendedor.h
+
+1625238464 g:\descargas\gestark-main\gestark-main\clscliente.h
+
+1625367257 g:\descargas\gestark-main\gestark-main\herramientas.h
+
+1625238464 g:\descargas\gestark-main\gestark-main\clscadena.h
+
+1625400317 g:\descargas\gestark-main\gestark-main\clsventa.h
+	"clspedido.h"
+
+1625401163 g:\descargas\gestark-main\gestark-main\clspedido.h
+
+1625238464 g:\descargas\gestark-main\gestark-main\menuarticulos.h
+
+1625238464 g:\descargas\gestark-main\gestark-main\menuclientes.h
+
+1625267222 g:\descargas\gestark-main\gestark-main\menuventa.h
+
+1625238464 g:\descargas\gestark-main\gestark-main\menuconfiguracion.h
+
+1625406161 g:\descargas\gestark-main\gestark-main\menuvendedor.h
+
+1625406406 g:\descargas\gestark-main\gestark-main\menureportes.h
+

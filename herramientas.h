@@ -208,7 +208,21 @@ void seccionVendedor();
 ///-------------------------------------------------------///
 ///REPORTES
 ///-------------------------------------------------------///
+int maximoVector(int *v, int tam);
+
 void imprimiPedido();
+
+void reportePorArticulo();
+
+void reportesArticulos();
+
+void reportePorFechaArticulo();
+
+void articuloMasVendido();
+
+int buscarPedido(int id);
+
+void modificarPedido();
 
 int menuReportes();
 
@@ -255,6 +269,7 @@ void seccionConfiguracion();
 
 ///GLOBALES
 ///-------------------------------------------------------///
+void cartelInicial();
 
 void cargarCadena(char *, int );
 
@@ -267,5 +282,9 @@ void cartelListarVendedores(int );
 void cartelListarClientes(int );
 
 void cartelListarVentas(int y);
+
+void cartelReporteArticulos(int y);
+
+void cartelFinal();
 
 #endif // HERRAMIENTAS_H_INCLUDED

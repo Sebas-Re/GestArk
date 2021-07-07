@@ -77,33 +77,11 @@ const char CATEGORIAS[10][10]={
 
 
 int main(){
-
     ShowWindow(GetConsoleWindow(),SW_MAXIMIZE);
-
-//
-/*
-Pedido obj;
-int pos;
-
-while(obj.leerDeDisco(pos++)){
-     obj.mostrar();
-}
-
-                system("pause");
-                system("cls");
-return 0;
-
-*/
-//
-
-    /*char tecla = _getch();
-    int otraTecla = _getch();
-    cout << tecla << "        " << otraTecla << endl;
-    system("pause");
-    return 0;*/
     system("TITLE GestArk - gestion empresarial");
+    //cartelInicial();
     int opc;
-    while(true){
+    do{
         opc=Menuprincipal();
         switch(opc){
         case 12:
@@ -129,9 +107,9 @@ return 0;
             break;
         case 19:
             rlutil::locate(1,25);
+            cartelFinal();
             return 0;
             break;
         }
-    }
-    return 0;
+    }while(opc!=19);
 }

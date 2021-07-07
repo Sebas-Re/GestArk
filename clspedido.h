@@ -33,7 +33,7 @@ public:
     void mostrar(int y);
     bool leerDeDisco(int i);
     bool grabarEnDisco();
-    bool modificarEnDisco(Proveedor reg, int pos);
+    bool modificarEnDisco(Pedido reg, int pos);
 };
 
 void Pedido::mostrar(){
@@ -76,7 +76,7 @@ bool Pedido::grabarEnDisco(){
     return escribio;
 }
 
-bool Pedido::modificarEnDisco(Proveedor reg, int pos){
+bool Pedido::modificarEnDisco(Pedido reg, int pos){
     FILE *pPedido;
     pPedido=fopen(ARCHIVOPEDIDO,"rb+");
     if(pPedido==NULL){return false;}
@@ -85,7 +85,6 @@ bool Pedido::modificarEnDisco(Proveedor reg, int pos){
     fclose(pPedido);
     return escribio;
 }
-
 
 void AsignacionNumeroPedido (Pedido &ven){
     FILE *pPedido;
@@ -96,16 +95,13 @@ void AsignacionNumeroPedido (Pedido &ven){
     fclose(pPedido);
 }
 
-bool generarPedido(Articulo &aux){
+bool generarPedido(Articulo &aux, int cantvendida){
     int i=0,v=0,ap=0,cantapedir=0;
     Pedido regp;
     Proveedor regpr;
     Venta regv;
 
-
-    //aca se fija que haya menos de diez
-
-        while(regp.leerDeDisco(i++)){
+    while(regp.leerDeDisco(i++)){
 
                 //aca busca que el producto no este pedido
             if(strcmp(aux.getDescripcion(),regp.getProducto())== 0){
@@ -127,6 +123,7 @@ bool generarPedido(Articulo &aux){
                 //aca recorre el archivo ventas y acumula cantvendida
             if(aux.getID()==regv.getIDarticulo()){
               cantapedir+=regv.getCantidadVendida();
+              cantapedir+=cantvendida;//no carga el valor
             }
         }
         regp.setCantSolicitada(cantapedir);

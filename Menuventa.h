@@ -81,7 +81,7 @@ int agregarVenta(){
             cout<<"COMPLETE LOS SIGUIENTES CAMPOS: "<<endl;
 
             ven.cargar();
-        
+
             if(!ven.grabarEnDisco()){
             cout << "Error al guardar el archivo.";
             system("pause");
@@ -107,8 +107,6 @@ int BuscarVentaporNumero(int venta){//busca articulo por id y lo muestra si "est
     if(ven.getEstado()==true){ven.mostrar();}
     else{return -2;}
     fclose(pVenta);
-
-
 }
 
 int contarRegistrosVentas(){//Devuelve la cantidad de registros
@@ -256,7 +254,7 @@ void seccionVenta(){
                 int agregados=0;
                 system("cls");
                 agregados = agregarVenta();
-                cout << agregados <<"VENTA/s CARGADA/s CON EXITO!"<<endl;
+                cout << agregados <<" VENTA/s CARGADA/s CON EXITO!"<<endl;
                 system("pause");
                 break;
             }
@@ -310,8 +308,6 @@ void copiarAVectorVentas(Venta *pVentas, int cantVentas){
     }
 }
 
-
-
 void ordenarIDVentas ( Venta *pVentas, int cantVentas){
     int i, j, posMax;
     Venta aux;
@@ -348,8 +344,6 @@ void ordenarImporteVentas ( Venta *pVentas, int cantVentas){
 
 }
 
-
-
 void listarVentasOrdenadas(int orden){
     int cantVentas=contarRegistrosVentas();
     Venta *pVentas;
@@ -374,7 +368,6 @@ void listarVentasOrdenadas(int orden){
     mostrarVectorVentas(pVentas, cantVentas);
     delete pVentas;
 }
-
 
 void elegirTipoListadoVentas(){
     int opc;
