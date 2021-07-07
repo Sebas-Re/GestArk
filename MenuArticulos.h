@@ -141,6 +141,28 @@ void mostrarVectorArticulos(Articulo *pArticulos, int cantArticulos){
     }
 }
 
+bool modificarStockArticulo(){
+    system("cls");
+    Articulo aux;
+    int stocknuevo, idArticulo;
+
+cout << "INGRESE EL ID DEL ARTICULO A MODIFICAR: ";cin >> idArticulo;
+aux.leerDeDisco (buscarArticulo(idArticulo) );
+cout << "EL ARTICULO SELECCIONADO FUE "<< aux.getDescripcion()<<endl;
+cout << "INGRESE EL NUEVO STOCK: ";cin >> stocknuevo;
+
+aux.setStock(stocknuevo);
+
+aux.modificarEnDisco(buscarArticulo(idArticulo));
+
+cout << "STOCK ACTUALIZADO."<<endl;
+
+system("pause");
+system("cls");
+
+
+}
+
 void listarArticulosOrdenados(int orden){
     int cantArticulos=contarRegistros();
     Articulo *pArticulos;
@@ -266,7 +288,7 @@ bool modificarPrecioU(){//modifica el precio unitario de un articulo
             cout<<"INGRESE EL NUEVO PRECIO: ";
             cin>>pu;
     reg.setPu(pu);
-    bool modifico=reg.modificarEnDisco(reg,pos);
+    bool modifico=reg.modificarEnDisco(pos);
     return modifico;
     }
     else{return false;}
@@ -288,7 +310,7 @@ bool elmininarArticulo(){//cambia el estado de true a false
     if(r=='y'||r=='Y'){
             reg.leerDeDisco(pos);
             reg.setEstado(nodisponible);
-            bool modifico=reg.modificarEnDisco(reg,pos);
+            bool modifico=reg.modificarEnDisco(pos);
             return modifico;
     }
     else{return false;}
@@ -310,7 +332,7 @@ bool altaArticulo(){// cambia el estado de false a true
     if(r=='y'||r=='Y'){
             reg.leerDeDisco(pos);
             reg.setEstado(disponible);
-            bool modifico=reg.modificarEnDisco(reg,pos);
+            bool modifico=reg.modificarEnDisco(pos);
             return modifico;
     }
     else{return false;}
@@ -349,19 +371,25 @@ void seccionArticulos(){
                system("pause");
             break;
            case 16:
+               if (modificarStockArticulo() == true) {
+                cout << "STOCK MODIFICADO"<<endl;
+               }
+               else{ cout << "NO SE HA PODIDO MODIFICAR EL STOCK"<<endl;}
+            break;
+           case 17:
                system("cls");
                if(elmininarArticulo()==1){cout<<"ARTICULO ELIMINADO"<<endl;}
                else{cout<<"NO SE PUDO ELIMINAR EL ARTICULO."<<endl;}
                system("pause");
             break;
-           case 17:
+           case 18:
                 system("cls");
                 if(altaArticulo()==1){cout<<"ALTA DE ARTICULO EXITOSA"<<endl;}
                 else{cout<<"NO SE PUDO DAR DE ALTA EL ARTICULO."<<endl;}
                 system("pause");
             break;
             }
-    }while(opc!=18);
+    }while(opc!=19);
 }
 
 ///-------------------------------------------------------///

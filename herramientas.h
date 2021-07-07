@@ -271,6 +271,8 @@ void seccionConfiguracion();
 ///-------------------------------------------------------///
 void cartelInicial();
 
+int Menuprincipal();
+
 void cargarCadena(char *, int );
 
 void cartelListarArticulos(int );

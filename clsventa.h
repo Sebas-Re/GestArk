@@ -161,6 +161,8 @@ void Venta::cargar()
 
     setimporte (calcularimporte(cantVendida,IDarticulo));
 
+
+
     if ((aux.getStock() - cantVendida)< 10){
 
         if (generarPedido(aux,cantVendida) == true){

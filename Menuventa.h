@@ -23,9 +23,12 @@ bool controlstock(int cantidad, int idarticulo, bool mod){
      art.leerDeDisco(pos);
      stockoriginal=art.getStock();
      if(mod==true){
-     art.setStock(stockoriginal-cantidad);}
+     art.setStock(stockoriginal-cantidad);
+     if (art.getStock() == 0){art.setEstado(false);}
+
+     }
      else{art.setStock(stockoriginal+cantidad);}
-     bool modifico=art.modificarEnDisco(art,pos);
+     bool modifico=art.modificarEnDisco(pos);
 
      return modifico;
 }
