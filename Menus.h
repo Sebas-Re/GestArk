@@ -60,6 +60,7 @@ const char *DOT="\x167";
 ///-------------------------------------------------------///
 ///MENU PRINCIPAL
 int Menuprincipal(){
+ //  FILE *pProv;
    int x=49,y=12;
    system("cls");
    recuadro(40,9,40,14);
@@ -67,9 +68,18 @@ int Menuprincipal(){
    cout <<"MENU PRINCIPAL"<<endl;
    rlutil::locate(47,11);
    cout <<"---------------------------"<<endl;
-   rlutil::locate(50,12);   cout<<"MENU ARTICULO"<<endl;
+/*
+   pProv=fopen(ARCHIVOPROVEEDOR, "rb");
+    if(!pProv==NULL){
+    rlutil::locate(50,12);   cout<<"MENU ARTICULO"<<endl;
+    rlutil::locate(50,14);   cout<<"MENU VENTAS"<<endl;
+    }
+    fclose(pProv);
+*/
+
+    rlutil::locate(50,12);   cout<<"MENU ARTICULO"<<endl;
+    rlutil::locate(50,14);   cout<<"MENU VENTAS"<<endl;
    rlutil::locate(50,13);   cout<<"MENU CLIENTES"<<endl;
-   rlutil::locate(50,14);   cout<<"MENU VENTAS"<<endl;
    rlutil::locate(50,15);   cout<<"MENU VENDEDORES"<<endl;
    rlutil::locate(50,16);   cout<<"MENU PROVEEDORES"<<endl;
    rlutil::locate(50,17);   cout<<"REPORTES"<<endl;
@@ -96,7 +106,7 @@ int Menuprincipal(){
 int Menuarticulos(){
    int x=49,y=12;
    system("cls");
-   recuadro(40,9,40,11);
+   recuadro(40,9,40,12);
    rlutil::locate(53,10);
    cout <<"MENU ARTICULO"<<endl;
    rlutil::locate(47,11);
@@ -105,10 +115,11 @@ int Menuarticulos(){
    rlutil::locate(50,13);   cout<<"LISTAR ARTICULO POR ID"<<endl;
    rlutil::locate(50,14);   cout<<"LISTAR TODOS LOS ARTICULOS"<<endl;
    rlutil::locate(50,15);   cout<<"MODIFICAR PRECIO ARTICULO"<<endl;
-   rlutil::locate(50,16);   cout<<"ELIMINAR ARTICULO"<<endl;
-   rlutil::locate(50,17);   cout<<"ALTA ARTICULO"<<endl;
-   rlutil::locate(50,18);   cout<<"VOLVER AL MENU PRINCIPAL"<<endl;
-   rlutil::locate(47,19);
+   rlutil::locate(50,16);   cout<<"MODIFICAR STOCK ARTICULO"<<endl;
+   rlutil::locate(50,17);   cout<<"ELIMINAR ARTICULO"<<endl;
+   rlutil::locate(50,18);   cout<<"ALTA ARTICULO"<<endl;
+   rlutil::locate(50,19);   cout<<"VOLVER AL MENU PRINCIPAL"<<endl;
+   rlutil::locate(47,20);
    cout <<"---------------------------"<<endl;
    rlutil::locate(x,y);printf("*");
    bool elegir=false;
@@ -117,9 +128,9 @@ int Menuarticulos(){
         rlutil::locate(x,y);printf(" ");
        char tecla = _getch();
         if (tecla==ENTER){elegir= true; return y;}
-        if (tecla==ESC){elegir= true; return 18;}
+        if (tecla==ESC){elegir= true; return 19;}
         if (tecla==ARRIBA&& y >12) rlutil::locate (x,y--);
-        if(tecla==ABAJO && y < 18) rlutil::locate(x,y++);
+        if(tecla==ABAJO && y < 19) rlutil::locate(x,y++);
         rlutil::locate(x,y);printf("*");}
    }
 }
@@ -500,9 +511,9 @@ int menuReportes(){
         rlutil::locate(x,y);printf(" ");
        char tecla = _getch();
         if (tecla==ENTER){elegir= true; return y;}
-        if (tecla==ESC){elegir= true; return 19;}
+        if (tecla==ESC){elegir= true; return 17;}
         if (tecla==ARRIBA&& y >12) rlutil::locate (x,y--);
-        if(tecla==ABAJO && y < 19) rlutil::locate(x,y++);
+        if(tecla==ABAJO && y < 17) rlutil::locate(x,y++);
         rlutil::locate(x,y);printf("*");}
    }
 }

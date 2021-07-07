@@ -105,8 +105,9 @@ bool generarPedido(Articulo &aux, int cantvendida){
 
                 //aca busca que el producto no este pedido
             if(strcmp(aux.getDescripcion(),regp.getProducto())== 0){
-                    rlutil::locate(16,13);
+                    rlutil::locate(16,10);
                 cout<<"YA SE GENERO UN PEDIDO PARA ESTE ARTICULO"<<endl; ////FUNCIONA 10 PUNTO
+
 
                 return false;
             }
@@ -123,18 +124,19 @@ bool generarPedido(Articulo &aux, int cantvendida){
                 //aca recorre el archivo ventas y acumula cantvendida
             if(aux.getID()==regv.getIDarticulo()){
               cantapedir+=regv.getCantidadVendida();
-              cantapedir+=cantvendida;//no carga el valor
+
+
             }
+
         }
-        regp.setCantSolicitada(cantapedir);
+
+        cantapedir+=cantvendida;
+
+        regp.setCantSolicitada(cantapedir); //Carga un valor na que ver
+
 
         //agrego el proveedor
-
-
         //recorro el archivo proveedor y saco el mail
-
-
-
 
             bool Encontrado=false;
 

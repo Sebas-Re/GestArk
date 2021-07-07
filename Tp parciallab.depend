@@ -1047,7 +1047,7 @@
 1623856523 c:\users\chave\desktop\gestark\funcionesglobales.h
 	"rlutil.h"
 
-1625236797 source:c:\users\sebas\documents\github\gestark\main.cpp
+1625368198 source:c:\users\sebas\documents\github\gestark\main.cpp
 	<iostream>
 	<iostream>
 	<cstdlib>
@@ -1076,10 +1076,10 @@
 	"menuVendedor.h"
 	"menuReportes.h"
 
-1625236797 c:\users\sebas\documents\github\gestark\funcionesglobales.h
+1625274818 c:\users\sebas\documents\github\gestark\funcionesglobales.h
 	"rlutil.h"
 
-1625235731 c:\users\sebas\documents\github\gestark\rlutil.h
+1625238464 c:\users\sebas\documents\github\gestark\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -1093,41 +1093,41 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1625237528 c:\users\sebas\documents\github\gestark\clsarticulo.h
+1625676042 c:\users\sebas\documents\github\gestark\clsarticulo.h
 
-1625236797 c:\users\sebas\documents\github\gestark\herramientas.h
+1625675469 c:\users\sebas\documents\github\gestark\herramientas.h
 
-1625236797 c:\users\sebas\documents\github\gestark\menus.h
+1625676321 c:\users\sebas\documents\github\gestark\menus.h
 	"rlutil.h"
 
-1625235731 c:\users\sebas\documents\github\gestark\clscadena.h
+1625238464 c:\users\sebas\documents\github\gestark\clscadena.h
 
-1625235731 c:\users\sebas\documents\github\gestark\clsdirrecion.h
+1625238464 c:\users\sebas\documents\github\gestark\clsdirrecion.h
 
-1625235731 c:\users\sebas\documents\github\gestark\clsfecha.h
+1625238464 c:\users\sebas\documents\github\gestark\clsfecha.h
 
-1625237681 c:\users\sebas\documents\github\gestark\clspersona.h
+1625238464 c:\users\sebas\documents\github\gestark\clspersona.h
 
-1625235731 c:\users\sebas\documents\github\gestark\clscliente.h
+1625238464 c:\users\sebas\documents\github\gestark\clscliente.h
 
-1625237982 c:\users\sebas\documents\github\gestark\clsventa.h
+1625673727 c:\users\sebas\documents\github\gestark\clsventa.h
 	"clspedido.h"
 
-1625235731 c:\users\sebas\documents\github\gestark\clsvendedor.h
+1625238464 c:\users\sebas\documents\github\gestark\clsvendedor.h
 
-1625235731 c:\users\sebas\documents\github\gestark\menuarticulos.h
+1625674083 c:\users\sebas\documents\github\gestark\menuarticulos.h
 
-1625235731 c:\users\sebas\documents\github\gestark\menuclientes.h
+1625238464 c:\users\sebas\documents\github\gestark\menuclientes.h
 
-1625235731 c:\users\sebas\documents\github\gestark\menuventa.h
+1625673727 c:\users\sebas\documents\github\gestark\menuventa.h
 
-1625235731 c:\users\sebas\documents\github\gestark\menuconfiguracion.h
+1625238464 c:\users\sebas\documents\github\gestark\menuconfiguracion.h
 
-1625235731 c:\users\sebas\documents\github\gestark\clsproveedor.h
+1625238464 c:\users\sebas\documents\github\gestark\clsproveedor.h
 
-1625236797 c:\users\sebas\documents\github\gestark\menuproveedores.h
+1625238464 c:\users\sebas\documents\github\gestark\menuproveedores.h
 
-1625238101 c:\users\sebas\documents\github\gestark\menuvendedor.h
+1625406161 c:\users\sebas\documents\github\gestark\menuvendedor.h
 
 1625150509 source:c:\users\chave\desktop\gestark-main\main.cpp
 	<iostream>
@@ -1295,11 +1295,11 @@
 
 1624995007 c:\users\sebas\documents\github\gestark-main\menuvendedor.h
 
-1625238356 c:\users\sebas\documents\github\gestark\clspedido.h
+1625673833 c:\users\sebas\documents\github\gestark\clspedido.h
 
 1625154340 c:\users\chave\desktop\gestark-main\menureportes.h
 
-1625236797 c:\users\sebas\documents\github\gestark\menureportes.h
+1625673411 c:\users\sebas\documents\github\gestark\menureportes.h
 
 1625368198 source:g:\descargas\gestark-main\gestark-main\main.cpp
 	<iostream>

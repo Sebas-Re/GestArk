@@ -31,7 +31,8 @@ public:
             cin>>p;}
             Pu=p;}
     }
-    void setStock(int s){Stock=s;}
+
+    void setStock(int s){VerificarStock(s);}
     void setIdProveedor(int d){idProveedor=d;}
     void setEstado(bool e){Estado=e;}
     ///Gets
@@ -48,8 +49,8 @@ public:
     void mostrar(int y);
     bool leerDeDisco(int i);
     bool grabarEnDisco();
-    bool modificarEnDisco(Articulo reg, int pos);
-    void VerificarStock ();
+    bool modificarEnDisco(int pos);
+    void VerificarStock (int);
 
 };
 /*
@@ -64,11 +65,7 @@ void Articulo::iDAutomatico(){
 }
 */
 
-void Articulo::VerificarStock (){
-
-    int s;
-
-    cin >> s;
+void Articulo::VerificarStock (int s){
 
     while (s < 1 or s > 99999){
         cout << "Stock invalido, ingrese Stock: "<<endl;
@@ -84,7 +81,7 @@ void Articulo::VerificarStock (){
 }
 
 void Articulo::cargar(){
-    int posProv=0;
+    int posProv=0, s;
     Proveedor nombreProveedor;
 
         cout<<"INGRESE DESCRIPCION DEL ARTICULO: ";
@@ -101,9 +98,8 @@ void Articulo::cargar(){
         cout << "EL PRECIO UNITARIO INGRESADO FUE: " << Pu;
 
         rlutil::locate(1,4);
-        cout<<"INGRESE EL STOCK DEL ARTICULO: ";
-        VerificarStock();
-
+        cout<<"INGRESE EL STOCK DEL ARTICULO: "; cin >> s;
+        VerificarStock(s);
 
         rlutil::locate(1,25);
         cout << "PROVEEDORES DISPONIBLES: ";
@@ -183,12 +179,12 @@ bool Articulo::grabarEnDisco(){
 
 }
 
-bool Articulo::modificarEnDisco(Articulo reg, int pos){
+bool Articulo::modificarEnDisco(int pos){
     FILE *pArticulo;
     pArticulo=fopen(ARCHIVOARTICULO,"rb+");
     if(pArticulo==NULL){return false;}
-    fseek(pArticulo,pos*sizeof reg,0);
-    bool escribio=fwrite(&reg,sizeof reg,1,pArticulo);
+    fseek(pArticulo,pos*sizeof (Articulo),0);
+    bool escribio=fwrite(this,sizeof (Articulo),1,pArticulo);
     fclose(pArticulo);
     return escribio;
 }

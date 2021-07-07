@@ -7,6 +7,7 @@ void imprimiPedido(){
 
     while(obj.leerDeDisco(pos++)){
         obj.mostrar();
+        cout << endl<<endl;
     }
 }
 
@@ -24,7 +25,7 @@ int buscarPedido(int id){
 
 bool modificarMailPedido(Pedido &aux, int pos){
     char mailPedido[25];
-    cout<<"INGRESE NUEVO MAIL DE PORVEEDOR: ";
+    cout<<"INGRESE NUEVO MAIL DE PROVEEDOR: ";
     cargarCadena(mailPedido,29);
     aux.setEnvioMail(mailPedido);
     bool modifico=aux.modificarEnDisco(aux,pos);
@@ -358,8 +359,9 @@ void seccionReportes(){
                 system("cls");
 
                 break;
+
         }
-    }while(opc!=16);
+    }while(opc!=17);
 }
 
 #endif // MENUREPORTES_H_INCLUDED
