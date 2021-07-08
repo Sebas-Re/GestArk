@@ -28,11 +28,26 @@ bool verificarCliente(int d){
     return false;
 }
 
+
+void AsignacionIDCliente (Cliente &cli){
+
+    FILE *pCliente;
+    pCliente=fopen(ARCHIVOCLIENTE,"rb");
+    fseek(pCliente,-sizeof (Cliente),2);
+    fread(&cli,sizeof cli,1,pCliente);
+    cli.setIDcliente(cli.getIDcliente()+1);
+    fclose(pCliente);
+
+}
+
+
 int agregarCliente(){//crea o agrega un registro cliente al final de los que esten hechos
     int r;
     int contador=0;
     do{
         Cliente cli;
+        AsignacionIDCliente (cli);
+
         cli.cargar();
         if(!cli.grabarEnDisco()){
             cout << "Error al guardar el archivo.";

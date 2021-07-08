@@ -138,11 +138,8 @@ void Venta::cargar()
     aux.leerDeDisco(pos);
    cout << "STOCK DISPONIBLE: "<<aux.getStock();
 
-
     rlutil::locate(1,8);
     cout<<"INGRESE CANTIDAD VENDIDA: ";cin>>cantVendida;
-
-
 
     while(verificarstock(cantVendida,IDarticulo)==0){
 

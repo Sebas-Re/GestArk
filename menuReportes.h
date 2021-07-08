@@ -376,7 +376,7 @@ void reportePorCliente(){
 void mejorEnCantidadCliente(){
     Venta reg;
 
-    //Cliente regc;
+    Cliente regc;
 
     Fecha fecha1,fecha2;
     int contarClientes=contarRegistrosClientes();
@@ -393,35 +393,33 @@ void mejorEnCantidadCliente(){
     system("cls");
 
 
-    /*
+
     while(reg.leerDeDisco(pos++)){
             if((reg.getFe()>fecha1) && (!(reg.getFe()>fecha2)))
-   //         cantClientes[reg.getIDvendedor()-1]+=reg.getCantidadVendida(); ////////////////////////////////FALTA ADAPTARLO A CLIENTES
+        cantClientes[regc.getIDcliente()-1]+=reg.getCantidadVendida();
         }
    for(int i=0;i<contarClientes;i++){ //dejo esto para ver como se carga el vector (sacar antes de entregar)
         if (cantClientes[i]){cout<<cantClientes[i]<<endl;}
 
     }
 
-    */
 
-    //regc.leerDeDisco(maximoVector(cantClientes,contarClientes) );
-    //cout<<"DNI DEL CLIENTE CON MAYOR CANTIDAD DE VENTAS :" << reg.getDNI();
-    //regc.Mostrar();
-  //  cout << "MAXIMA CANTIDAD VENDIDA: " <<cantClientes[maximoVector(cantClientes,contarClientes)]<<endl;
 
-    /*
-    cout<<"DNI DEL CLIENTE CON MAYOR CANTIDAD DE VENTAS :"<<maximoVector(cantClientes,contarClientes)+1<<endl;
-    BuscarVendedorNumero(maximoVector(cantClientes,contarClientes));
-    cout<<"MAXIMA CANTIDAD VENDIDA: "<<cantClientes[maximoVector(cantClientes,contarClientes)]<<endl;
-    cout<<"------------------------"<<endl;
-    */
-    system("pause");
+    regc.leerDeDisco(maximoVector(cantClientes,contarClientes) );
+    cout<<"DNI DEL CLIENTE CON MAYOR CANTIDAD DE VENTAS: " << regc.getDni()<<endl;
+    regc.mostrar();
+    cout << endl;
+   cout << "MAXIMA CANTIDAD VENDIDA: " <<cantClientes[maximoVector(cantClientes,contarClientes)]<<endl;
+   cout<<"------------------------"<<endl;
+ system("pause");
+
 }
 
-/*
+
 void mejorEnImporteCliente(){
     Venta reg;
+    Cliente regc;
+
     Fecha fecha1,fecha2;
     int contarClientes=contarRegistrosVendedores();
     int *cantClientes,pos=0;
@@ -437,20 +435,22 @@ void mejorEnImporteCliente(){
     system("cls");
     while(reg.leerDeDisco(pos++)){
             if((reg.getFe()>fecha1) && (!(reg.getFe()>fecha2)))
-            cantClientes[reg.getIDvendedor()-1]+=reg.getImporte();
+            cantClientes[regc.getIDcliente()-1]+=reg.getImporte();
         }
 
     for(int i=0;i<contarClientes;i++){// dejo esto para ver como se carga el vector (sacar antes de entregar)
         cout<<cantClientes[i]<<endl;
     }
-    cout<<"NUMERO DE  VENDEDOR CON MAYOR RECAUDACION  :"<<maximoVector(cantClientes,contarClientes)+1<<endl;
-    BuscarVendedorNumero(maximoVector(cantClientes,contarClientes));
-    cout<<"RECAUDADO: "<<cantClientes[maximoVector(cantClientes,contarClientes)]<<endl;
-    cout<<"------------------------"<<endl;
-    system("pause");
+
+    regc.leerDeDisco(maximoVector(cantClientes,contarClientes) );
+    cout<<"DNI DEL CLIENTE CON MAYOR CANTIDAD DE VENTAS: " << regc.getDni()<<endl;
+    regc.mostrar();
+    cout << endl;
+   cout << "IMPORTE TOTAL VENDIDO: " <<cantClientes[maximoVector(cantClientes,contarClientes)]<<endl;
+   cout<<"------------------------"<<endl;
+ system("pause");
 }
 
-*/
 void mejorCliente(){
     int opc;
     cout<<"FILTRAR POR: "<<endl;
@@ -462,7 +462,7 @@ void mejorCliente(){
         break;
     case 9:
         system("cls");
-      //  mejorEnImporteCliente();
+      mejorEnImporteCliente();
         break;
     }
 }
