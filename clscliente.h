@@ -8,6 +8,7 @@ class Cliente: public Persona{
     protected:
         Direccion domicilio;
         bool Estado;
+        int IDcliente;
 
     public:
         ///constructor
@@ -16,8 +17,10 @@ class Cliente: public Persona{
         }
         ///sets
         void setEstado(bool d){Estado=d;}
+        void setIDcliente(int d) {IDcliente=d;}
         ///gets
         bool GetEstado(){return Estado;}
+        int getIDcliente(){return IDcliente;}
         ///Metodos
         void cargar();
         void mostrar();
@@ -26,6 +29,8 @@ class Cliente: public Persona{
         bool grabarEnDisco();
         bool modificarEnDisco(int );
     };
+
+
 
 void Cliente::mostrar(){
     cout<<"-----------------------------"<<endl;
