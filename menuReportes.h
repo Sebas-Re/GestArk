@@ -221,7 +221,7 @@ void reportePorVendedor(){
     cin >> id;
     BorrarArea(1,29);
     system("cls");
-    cartelListarVentas(linea);
+    cartelListarVentas(1);
     while(reg.leerDeDisco(pos++)){
         if(reg.getIDvendedor()==id){reg.mostrar(linea+3);
            canttotal+=reg.getCantidadVendida();
@@ -242,6 +242,7 @@ void reportePorVendedor(){
 }
 
 void mejorEnCantidad(){
+    Vendedor aux;
     Venta reg;
     Fecha fecha1,fecha2;
     int contarVendedores=contarRegistrosVendedores();
@@ -261,15 +262,20 @@ void mejorEnCantidad(){
             cantVendedores[reg.getIDvendedor()-1]+=reg.getCantidadVendida();
         }
    for(int i=0;i<contarVendedores;i++){ //dejo esto para ver como se carga el vector (sacar antes de entregar)
-        cout<<cantVendedores[i]<<endl;
+        if (cantVendedores[i]){cout<<cantVendedores[i]<<endl;}
+
     }
+
     cout<<"NUMERO DE  VENDEDOR CON MAYOR CANTIDAD DE VENTAS :"<<maximoVector(cantVendedores,contarVendedores)+1<<endl;
-    cout<<"CANTIDAD VENDIDA: "<<cantVendedores[maximoVector(cantVendedores,contarVendedores)]<<endl;
+    aux.leerDeDisco(maximoVector(cantVendedores,contarVendedores));
+    aux.mostrar();
+    cout<<"MAXIMA CANTIDAD VENDIDA: "<<cantVendedores[maximoVector(cantVendedores,contarVendedores)]<<endl;
     cout<<"------------------------"<<endl;
     system("pause");
 }
 
 void mejorEnImporte(){
+    Vendedor aux;
     Venta reg;
     Fecha fecha1,fecha2;
     int contarVendedores=contarRegistrosVendedores();
@@ -288,11 +294,13 @@ void mejorEnImporte(){
             if((reg.getFe()>fecha1) && (!(reg.getFe()>fecha2)))
             cantVendedores[reg.getIDvendedor()-1]+=reg.getImporte();
         }
+
     for(int i=0;i<contarVendedores;i++){// dejo esto para ver como se carga el vector (sacar antes de entregar)
         cout<<cantVendedores[i]<<endl;
     }
     cout<<"NUMERO DE  VENDEDOR CON MAYOR RECAUDACION  :"<<maximoVector(cantVendedores,contarVendedores)+1<<endl;
-    BuscarVendedorNumero(maximoVector(cantVendedores,contarVendedores));
+    aux.leerDeDisco(maximoVector(cantVendedores,contarVendedores));
+    aux.mostrar();
     cout<<"RECAUDADO: "<<cantVendedores[maximoVector(cantVendedores,contarVendedores)]<<endl;
     cout<<"------------------------"<<endl;
     system("pause");
@@ -332,6 +340,151 @@ void reporteVendedores(){
     }while(opc!=17);
 }
 ///-------------------------------------------------------///
+///REPORTES CLIENTE
+///-------------------------------------------------------///
+void reportePorCliente(){
+    Venta reg;
+    int dni,pos=0,canttotal=0,linea=0;
+    rlutil::locate(1,30);
+    cout << "CLIENTES DISPONIBLES: ";
+    listarClientes(31);
+    rlutil::locate(1,1);
+    cout << "INGRESE DNI DEL CLIENTE: ";
+    cin >> dni;
+    BorrarArea(1,29);
+    system("cls");
+    cartelListarVentas(1);
+    while(reg.leerDeDisco(pos++)){
+        if(reg.getDNIcliente()==dni){reg.mostrar(linea+3);
+           canttotal+=reg.getImporte();
+           linea++;
+        }
+
+    }
+    if(linea==0){
+        rlutil::locate(1,3);
+        cout<<"NO HAY REGISTROS PARA ESTE CLIENTE"<<endl;}
+    else{
+    cout<<"-----------------------"<<endl;
+    cout<<endl;
+    cout<<"IMPORTE TOTAL VENDIDO: "<<canttotal<<endl;
+    cout<<"-----------------------"<<endl;
+    }
+    system("pause");
+}
+
+void mejorEnCantidadCliente(){
+    Venta reg;
+
+    //Cliente regc;
+
+    Fecha fecha1,fecha2;
+    int contarClientes=contarRegistrosClientes();
+    int *cantClientes,pos=0;
+    cantClientes= new int[contarClientes];
+    for(int i=0;i<contarClientes;i++){
+        cantClientes[i]=0;
+    }
+    cout<<"INGRESE RANGO O FECHA DE CONSULTA: "<<endl;
+    cout<<"PRIMER PARAMETRO: "<<endl;
+    fecha1.cargar();
+    cout<<"SEGUNDO PARAMETRO: "<<endl;
+    fecha2.cargar();
+    system("cls");
+
+
+    /*
+    while(reg.leerDeDisco(pos++)){
+            if((reg.getFe()>fecha1) && (!(reg.getFe()>fecha2)))
+   //         cantClientes[reg.getIDvendedor()-1]+=reg.getCantidadVendida(); ////////////////////////////////FALTA ADAPTARLO A CLIENTES
+        }
+   for(int i=0;i<contarClientes;i++){ //dejo esto para ver como se carga el vector (sacar antes de entregar)
+        if (cantClientes[i]){cout<<cantClientes[i]<<endl;}
+
+    }
+
+    */
+
+    //regc.leerDeDisco(maximoVector(cantClientes,contarClientes) );
+    //cout<<"DNI DEL CLIENTE CON MAYOR CANTIDAD DE VENTAS :" << reg.getDNI();
+    //regc.Mostrar();
+  //  cout << "MAXIMA CANTIDAD VENDIDA: " <<cantClientes[maximoVector(cantClientes,contarClientes)]<<endl;
+
+    /*
+    cout<<"DNI DEL CLIENTE CON MAYOR CANTIDAD DE VENTAS :"<<maximoVector(cantClientes,contarClientes)+1<<endl;
+    BuscarVendedorNumero(maximoVector(cantClientes,contarClientes));
+    cout<<"MAXIMA CANTIDAD VENDIDA: "<<cantClientes[maximoVector(cantClientes,contarClientes)]<<endl;
+    cout<<"------------------------"<<endl;
+    */
+    system("pause");
+}
+
+/*
+void mejorEnImporteCliente(){
+    Venta reg;
+    Fecha fecha1,fecha2;
+    int contarClientes=contarRegistrosVendedores();
+    int *cantClientes,pos=0;
+    cantClientes= new int[contarClientes];
+    for(int i=0;i<contarClientes;i++){
+        cantClientes[i]=0;
+    }
+    cout<<"INGRESE RANGO O FECHA DE CONSULTA: "<<endl;
+    cout<<"PRIMER PARAMETRO: "<<endl;
+    fecha1.cargar();
+    cout<<"SEGUNDO PARAMETRO: "<<endl;
+    fecha2.cargar();
+    system("cls");
+    while(reg.leerDeDisco(pos++)){
+            if((reg.getFe()>fecha1) && (!(reg.getFe()>fecha2)))
+            cantClientes[reg.getIDvendedor()-1]+=reg.getImporte();
+        }
+
+    for(int i=0;i<contarClientes;i++){// dejo esto para ver como se carga el vector (sacar antes de entregar)
+        cout<<cantClientes[i]<<endl;
+    }
+    cout<<"NUMERO DE  VENDEDOR CON MAYOR RECAUDACION  :"<<maximoVector(cantClientes,contarClientes)+1<<endl;
+    BuscarVendedorNumero(maximoVector(cantClientes,contarClientes));
+    cout<<"RECAUDADO: "<<cantClientes[maximoVector(cantClientes,contarClientes)]<<endl;
+    cout<<"------------------------"<<endl;
+    system("pause");
+}
+
+*/
+void mejorCliente(){
+    int opc;
+    cout<<"FILTRAR POR: "<<endl;
+    opc=menuMejorCliente();
+    switch(opc){
+    case 8:
+        system("cls");
+        mejorEnCantidadCliente();
+        break;
+    case 9:
+        system("cls");
+      //  mejorEnImporteCliente();
+        break;
+    }
+}
+
+
+void reporteClientes(){
+    int opc;
+    do{
+        opc=menuReportesClientes();
+        switch(opc){
+        case 12:
+            system("cls");
+            reportePorCliente();
+            break;
+        case 13:
+            system("cls");
+            mejorCliente();
+            break;
+        }
+    }while(opc!=17);
+}
+///-------------------------------------------------------///
 void seccionReportes(){
 
     int opc;
@@ -357,7 +510,7 @@ void seccionReportes(){
                 break;
             case 16:
                 system("cls");
-
+                reporteClientes();
                 break;
 
         }
