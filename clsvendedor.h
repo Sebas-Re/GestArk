@@ -54,14 +54,23 @@ bool Vendedor::iDAutomatico(){
 
 void Vendedor::cargar(){
     Persona::Cargar();
-    cout<<"CATEGORIA DEL VENDEDOR: ";
+    cout<<"CATEGORIA DEL VENDEDOR (1 A 5): ";
     cin>>Categoria;
+    while (Categoria<0 || Categoria>5){
+        cout << "NO EXISTE CATEGORIA PARA EL NUMERO INGRESADO." << endl;
+        cout << "INGRESE UNA CATEGORIA VALIDA (1 A 5): ";
+        cin >> Categoria;
+    }
+    BorrarArea(1, 8);
+    rlutil::locate(1, 8);
+    cout << "CATEGORIA INGRESADA >" << CATEGORIAS[Categoria-1] << "<" << endl;
+
 }
 
 void Vendedor::mostrar(){
     cout<<"-----------------------------"<<endl;
     cout<<"ID VENDEDOR: "<<idVendedor<<endl;
-    cout<<"CATEGORIA VENDEDOR: "<<Categoria<<endl;
+    cout<<"CATEGORIA VENDEDOR: "<<CATEGORIAS[Categoria-1]<<endl;
     Persona::MostrarVendedor();
 
 }

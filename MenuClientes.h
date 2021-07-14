@@ -28,7 +28,6 @@ bool verificarCliente(int d){
     return false;
 }
 
-
 void AsignacionIDCliente (Cliente &cli){
 
     FILE *pCliente;
@@ -39,7 +38,6 @@ void AsignacionIDCliente (Cliente &cli){
     fclose(pCliente);
 
 }
-
 
 int agregarCliente(){//crea o agrega un registro cliente al final de los que esten hechos
     int r;
@@ -57,6 +55,7 @@ int agregarCliente(){//crea o agrega un registro cliente al final de los que est
         contador++;
         cout<<"DESEA AGREGAR OTRO CLIENTE (y/n)?"<<endl;
         r=getch();
+        system("cls");
     }while(r==121||r==89);
     return contador;
 }
@@ -89,12 +88,16 @@ int modificarMailCliente(){
 
     if(!cli.leerDeDisco(pos)){return -3;}
     if(cli.GetEstado()==true){
+        cli.mostrar();
         char mailNuevo[30];
-        cout<<"INGRESE NUEVO MAIL: ";
+        cout<< endl <<"INGRESE NUEVO MAIL: ";
         cin.ignore();
         cin.getline(mailNuevo, 30);
         cli.setEmail(mailNuevo);
         modifico=cli.modificarEnDisco(pos);
+    }
+    else{
+        return -1;
     }
     return modifico;
 }
@@ -112,12 +115,11 @@ int eliminarCliente(){//cambia el estado de true a false
     if(pos<0){return -2;}
 
     if(!cli.leerDeDisco(pos)){return -3;}
-
-    cout<<"ELIMINAR CLIENTE (Y/N)?";
+    cli.mostrar();
+    cout<< endl <<"ELIMINAR CLIENTE (Y/N)?";
     r=getch();
     if(r!=121 && r!=89){
-        modifico = -1;
-        return modifico;
+        return -1;
     }
     cli.setEstado(false);
     modifico=cli.modificarEnDisco(pos);
@@ -137,11 +139,12 @@ int altaCliente(){// cambia el estado de false a true
     if(pos<0){return -2;}
 
     if(!cli.leerDeDisco(pos)){return -3;}
-    cout<<"DAR EL ALTA CLIENTE (Y/N)?" << endl;
+
+    cli.mostrar();
+    cout << endl <<"DAR EL ALTA CLIENTE (Y/N)?" << endl;
     r=getch();
     if(r!=121 && r!=89){
-        modifico = -1;
-        return modifico;
+        return -1;
     }
     cli.setEstado(true);
     modifico=cli.modificarEnDisco(pos);
@@ -171,9 +174,9 @@ void seccionClientes(){
                 cin>>dni;
                // system("pause");
                 checkeo=mostrarClientePorDNI(dni);
-                if(checkeo==-1){cout<<"El cliente esta dado de baja."<<endl;}
-                if(checkeo==-2){cout<<"El cliente no se encuentra registrado."<<endl;}
-                if(checkeo==-3){cout<<"Error al leer el archivo."<<endl;}
+                if(checkeo==-1){cout<<endl<<"El cliente esta dado de baja."<<endl;}
+                if(checkeo==-2){cout<<endl<<"El cliente no se encuentra registrado."<<endl;}
+                if(checkeo==-3){cout<<endl<<"Error al leer el archivo."<<endl;}
                 system("pause");
                 break;
             }
@@ -187,10 +190,10 @@ void seccionClientes(){
             {
                 system("cls");
                 checkeo=modificarMailCliente();
-                if(checkeo==-2){cout<<"El cliente no se encuentra registrado."<<endl;}
-                if(checkeo==-3){cout<<"Error al leer el archivo."<<endl;}
-                if(checkeo==1){cout<<"Email modificado con exito."<<endl;}
-                if(checkeo==0){cout<<"Error al guardar los nuevos datos en el archivo."<<endl;}
+                if(checkeo==-2){cout<<endl<<"El cliente no se encuentra registrado."<<endl;}
+                if(checkeo==-3){cout<<endl<<"Error al leer el archivo."<<endl;}
+                if(checkeo==1){cout<<endl<<"Email modificado con exito."<<endl;}
+                if(checkeo==0){cout<<endl<<"Error al guardar los nuevos datos en el archivo."<<endl;}
                 system("pause");
                 break;
             }
@@ -198,11 +201,11 @@ void seccionClientes(){
             {
                 system("cls");
                 checkeo=eliminarCliente();
-                if(checkeo==-1){cout<<"El cliente no fue dado de baja."<<endl;}
-                if(checkeo==-2){cout<<"El cliente no se encuentra registrado."<<endl;}
-                if(checkeo==-3){cout<<"Error al leer el archivo."<<endl;}
-                if(checkeo==1){cout<<"Cliente dado de baja con exito."<<endl;}
-                if(checkeo==0){cout<<"Error al guardar los nuevos datos en el archivo."<<endl;}
+                if(checkeo==-1){cout<<endl<<"El cliente no fue dado de baja."<<endl;}
+                if(checkeo==-2){cout<<endl<<"El cliente no se encuentra registrado."<<endl;}
+                if(checkeo==-3){cout<<endl<<"Error al leer el archivo."<<endl;}
+                if(checkeo==1){cout<<endl<<"Cliente dado de baja con exito."<<endl;}
+                if(checkeo==0){cout<<endl<<"Error al guardar los nuevos datos en el archivo."<<endl;}
                 system("pause");
                 break;
             }
@@ -210,11 +213,11 @@ void seccionClientes(){
             {
                 system("cls");
                 checkeo=altaCliente();
-                if(checkeo==-1){cout<<"El cliente no fue dado de alta."<<endl;}
-                if(checkeo==-2){cout<<"El cliente no se encuentra registrado."<<endl;}
-                if(checkeo==-3){cout<<"Error al leer el archivo."<<endl;}
-                if(checkeo==1){cout<<"Cliente dado de alta con exito."<<endl;}
-                if(checkeo==0){cout<<"Error al guardar los nuevos datos en el archivo."<<endl;}
+                if(checkeo==-1){cout<<endl<<"El cliente no fue dado de alta."<<endl;}
+                if(checkeo==-2){cout<<endl<<"El cliente no se encuentra registrado."<<endl;}
+                if(checkeo==-3){cout<<endl<<"Error al leer el archivo."<<endl;}
+                if(checkeo==1){cout<<endl<<"Cliente dado de alta con exito."<<endl;}
+                if(checkeo==0){cout<<endl<<"Error al guardar los nuevos datos en el archivo."<<endl;}
                 system("pause");
                 break;
             }
@@ -278,7 +281,7 @@ void porFechaDescendente(Cliente *vectorCliente, int totalRegistros){
     for(i=0;i<totalRegistros-1;i++){
         posMin=i;
         for(j=i+1;j<totalRegistros;j++){
-                if(vectorCliente[j].getFecha()>vectorCliente[posMin].getFecha() ==false){
+                if(( vectorCliente[j].getFecha()>vectorCliente[posMin].getFecha() )==false){
                         posMin=j;
                 }
         }
@@ -391,9 +394,6 @@ void elegirTipoListadoClientes(){
         }
     }while(opc!=19);
 }
-
-
-///-------------------------------------------------------///
 
 ///-------------------------------------------------------///
 

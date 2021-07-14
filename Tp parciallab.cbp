@@ -43,7 +43,6 @@
 		<Unit filename="Menus.h" />
 		<Unit filename="Menuventa.h" />
 		<Unit filename="clsarticulo.h" />
-		<Unit filename="clscadena.h" />
 		<Unit filename="clscliente.h" />
 		<Unit filename="clsdirrecion.h" />
 		<Unit filename="clsfecha.h" />

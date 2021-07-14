@@ -148,13 +148,15 @@ void Venta::cargar()
 
 
     if((controlstock(cantVendida,IDarticulo,true))==0){cout<<"NO SE PUDO MODIFICAR STOCK"<<endl;}
-            else{   BorrarArea(1,8);
+        else{
+            BorrarArea(1,8);
 
-                    rlutil::locate(1,8);
-                    cout << "CANTIDAD INGRESADA: "<<cantVendida;
+            rlutil::locate(1,8);
+            cout << "CANTIDAD INGRESADA: "<<cantVendida;
 
-                    rlutil::locate(1,9);
-                    cout<<"STOCK ACTUALIZADO"<<endl;}
+            rlutil::locate(1,9);
+            cout<<"STOCK ACTUALIZADO"<<endl;
+        }
 
     setimporte (calcularimporte(cantVendida,IDarticulo));
 
@@ -168,8 +170,6 @@ void Venta::cargar()
         }
 
     }
-
-
 
     rlutil::locate(1,11);
     cout << "IMPORTE: " << importe << endl;
@@ -357,6 +357,7 @@ void Venta::mostrar()
     cout<<"CANTIDAD VENDIDA: "<<cantVendida<<endl;
     cout<<"FECHA DE VENTA: "<<"\t";
     fe.mostrar();
+    cout << endl;
 }
 
 void Venta::mostrar(int y){

@@ -136,6 +136,19 @@ void cartelListarVentas(int y){
     cout<<"ESTADO";
 }
 
+void cartelListarPedidos(int y){
+    gotoxy(4,y);
+    cout<<"NRO DE PEDIDO";
+    gotoxy(20,y);
+    cout<<"PRODUCTO";
+    gotoxy(45,y);
+    cout<<"CANT PEDIDA";
+    gotoxy(60,y);
+    cout<<"PROVEEDOR";
+    gotoxy(82,y);
+    cout<<"MAIL";
+}
+
 void cartelFinal(){
     system("cls");
     rlutil::hidecursor();

@@ -33,6 +33,11 @@ void Direccion::cargar(){
     cin.getline(Calle, 35);
     cout<<"NUMERACION: "<<endl;
     cin>>Numero;
+    while(Numero<1){
+        cout << "LA NUMERACION NO PUEDE SER MENOR A 1" << endl;
+        cout << "INGRESE UNA NUMERACION CORRECTA: ";
+        cin >> Numero;
+    }
     cout<<"LOCALIDAD: "<<endl;
     cin.ignore();
     cin.getline(Localidad, 20);

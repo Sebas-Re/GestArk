@@ -36,7 +36,7 @@ void Cliente::mostrar(){
     cout<<"-----------------------------"<<endl;
     Persona::MostrarCliente();
     domicilio.Mostrar();
-    cout<<ESTADOS[Estado];
+    cout<<ESTADOS[Estado] << endl;
 }
 
 void Cliente::mostrar(int y){

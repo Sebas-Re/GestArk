@@ -208,10 +208,22 @@ void seccionVendedor();
 ///-------------------------------------------------------///
 ///REPORTES
 ///-------------------------------------------------------///
-int maximoVector(int *v, int tam);
 
+int menuReportes();
+
+void seccionReportes();
+
+int maximoVector(int *, int );
+
+///PEDIDO
 void imprimiPedido();
 
+int buscarPedido(int );
+
+void modificarPedido();
+
+///REPORTES ARTICULO
+///-------------------------------------------------------///
 void reportePorArticulo();
 
 void reportesArticulos();
@@ -220,13 +232,39 @@ void reportePorFechaArticulo();
 
 void articuloMasVendido();
 
-int buscarPedido(int id);
+void articuloMasVendidoxFecha();
 
-void modificarPedido();
+///-------------------------------------------------------///
+///REPORTES VENDEDOR
+///-------------------------------------------------------///
 
-int menuReportes();
+void ventasVendedoresEntreFechas();
 
-void seccionReportes();
+void mejorEnCantidad();
+
+void mejorEnImporte();
+
+void mejorEnImporteFecha();
+
+void mejorEnCantidadFecha();
+
+void reportePorVendedor();
+
+void reporteVendedores();
+///-------------------------------------------------------///
+///REPORTES CLIENTE
+///-------------------------------------------------------///
+
+void reportePorCliente();
+
+void comprasClientesEntreFechas();
+
+void mejorEnImporteClienteEntreFecha();
+
+void mejorEnCantidadClienteEntreFecha();
+
+void reporteClientes();
+
 
 ///-------------------------------------------------------///
 ///CONFIGURACION
@@ -239,7 +277,6 @@ bool hacerBackupVentas();
 
 bool restablecerArchivoVentas();
 
-bool restablecerarchivosVentasinicio();
 ///ARCHIVO ARTICULO
 void mostrarArticuloBackup();
 
@@ -249,7 +286,6 @@ bool hacerBackupArticulo();
 
 bool restablecerArchivoArticulo();
 
-bool restablecerarchivosArticuloinicio();
 ///ARCHIVOS CLIENTE
 void mostrarClienteBackup();
 
@@ -258,8 +294,6 @@ void mostrarClienteinicial();
 bool hacerBackupCliente();
 
 bool restablecerArchivoCliente();
-
-bool restablecerarchivosClientesinicio();
 
 int Menuconfiguracion();
 
