@@ -52,6 +52,10 @@ void Persona::Cargar(){
     bool vCli=false, vVen=false;
     cout << "DNI: ";
     cin >> Dni;
+    while (Dni < 0) {
+        cout << "INGRESE UN DNI VALIDO: ";
+        cin >> Dni;
+    }
     vCli=verificarCliente(Dni);
     vVen=verificarVendedor(Dni);
     while(vCli==true || vVen==true){

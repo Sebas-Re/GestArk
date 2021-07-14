@@ -10,7 +10,7 @@ bool verificarstock(int cantidad, int idarticulo){
     art.leerDeDisco(pos);
 
     if(cantidad<1 || cantidad>art.getStock()){
-        cout<<"SIN STOCK.LA CANTIDAD VENDIDA DEBE SER MAYOR A CERO Y MENOR  A: "<<art.getStock()<<endl;
+        cout<<"SIN STOCK. LA CANTIDAD VENDIDA DEBE SER MAYOR A CERO Y MENOR  A: "<<art.getStock()<<endl;
         return false;
     }
     else{return true;}
@@ -23,11 +23,16 @@ bool controlstock(int cantidad, int idarticulo, bool mod){
      art.leerDeDisco(pos);
      stockoriginal=art.getStock();
      if(mod==true){
-     art.setStock(stockoriginal-cantidad);
-     if (art.getStock() == 0){art.setEstado(false);}
+         art.setStock(stockoriginal-cantidad);
+         if (art.getStock() == 0){
+            art.setEstado(false);
+         }
 
      }
-     else{art.setStock(stockoriginal+cantidad);}
+     else{
+        art.setStock(stockoriginal+cantidad);
+        art.setEstado(true);
+     }
      bool modifico=art.modificarEnDisco(pos);
 
      return modifico;
@@ -162,87 +167,32 @@ void listarVentasNODisp(int linea){//lista todo el registro siempre y cuando "es
     }
 }
 
-bool eliminarVenta(){//cambia el estado de true a false
-    bool nodisponible=false;
-    char r;
-    int Nventa;
-    Venta ven;
-    FILE *pVenta;
-    pVenta=fopen(ARCHIVOVENTAS,"rb+");
-    if(pVenta==NULL){return false;}
-    cout<<"INGRESE ID DE VENTA: ";
-    cin>>Nventa;
-    int pos=buscarVenta(Nventa);
-    if(pos<0){
-            fclose(pVenta);
-            return false;}
-    ven.leerDeDisco(pos);
-    ven.mostrar();
-    cout<<"ELIMINAR VENTA (Y/N)?";
-    cin>>r;
-    if(r=='y'||r=='Y'){
-            ven.leerDeDisco(pos);
-            ven.setestado(nodisponible);
-            bool modifico=ven.modificarEnDisco(ven,pos);
-            fclose(pVenta);
-            return modifico;
-    }
-    else{return false;}
-}
-
-bool altaVenta(){// cambia el estado de false a true
-    bool disponible=true;
-    char r;
-    int Nventa;
-    Venta ven;
-    FILE *pVenta;
-    pVenta=fopen(ARCHIVOVENTAS,"rb+");
-    if(pVenta==NULL){return false;}
-    cout<<"INGRESE ID DE VENTA: ";
-    cin>>Nventa;
-    int pos=buscarVenta(Nventa);
-    if(pos<0){
-            fclose(pVenta);
-            return false;}
-            ven.leerDeDisco(pos);
-            ven.mostrar();
-            cout<<"DAR EL ALTA LA VENTA (Y/N)?";
-            cin>>r;
-    if(r=='y'||r=='Y'){
-            ven.leerDeDisco(pos);
-            ven.setestado(disponible);
-            bool modifico=ven.modificarEnDisco(ven,pos);
-            fclose(pVenta);
-            return modifico;
-    }
-    else{return false;}
-}
-
 bool devolverVenta(){//pone en false el estado de la venta y repone la cantidad de articulos vendida
     bool nodisponible=false;
-    char r;
+    int r;
     int Nventa;
     Venta ven;
-    FILE *pVenta;
-    pVenta=fopen(ARCHIVOVENTAS,"rb+");
-    if(pVenta==NULL){return false;}
     cout<<"INGRESE ID DE VENTA: ";
     cin>>Nventa;
+
     int pos=buscarVenta(Nventa);
-    if(pos<0){
-            fclose(pVenta);
-            return false;}
+    if(pos<0){return false;}
+
     ven.leerDeDisco(pos);
+    if(!ven.getEstado()){
+        cout << "LA DEVOLUCION DE LA VENTA, YA FUE REALIZADA." << endl;
+        return false;
+    }
     ven.mostrar();
-    cout<<"DEVOLVER VENTA (Y/N)?";
-    cin>>r;
-    if(r=='y'||r=='Y'){
-            ven.leerDeDisco(pos);
-            ven.setestado(nodisponible);
-            if((controlstock(ven.getCantidadVendida(),ven.getIDarticulo(),false))==0){cout<<"NO SE PUDO MODIFICAR STOCK"<<endl;}
+    cout<<"DEVOLVER VENTA (Y/N)?" <<endl;
+    r=getch();
+    if(r==121||r==89){
+        ven.setestado(nodisponible);
+        if((controlstock(ven.getCantidadVendida(),ven.getIDarticulo(),false))==0){cout<<"NO SE PUDO MODIFICAR STOCK"<<endl;}
+        else{
             bool modifico=ven.modificarEnDisco(ven,pos);
-            fclose(pVenta);
             return modifico;
+        }
     }
     else{return false;}
 }
@@ -261,45 +211,38 @@ void seccionVenta(){
                 system("pause");
                 break;
             }
-            break;
         case 13:
                 system("cls");
                 int nventa;
                 cout<<"INGRESE NUMERO DE VENTA: "<<endl;
                 cin>>nventa;
-                if (BuscarVentaporNumero(nventa)==-2){cout<<"VENTA INEXISTENTE O ELIMINADA"<<endl;}
+                if (BuscarVentaporNumero(nventa)==-2){cout<<endl<<"VENTA INEXISTENTE O ELIMINADA"<<endl;}
                 system("pause");
-            break;
+                break;
         case 14:
                 system("cls");
                 elegirTipoListadoVentas();
-            break;
+                break;
         case 15:
                 system("cls");
-                if(eliminarVenta()==false){cout<<"ERROR AL ELIMNIAR VENTA"<<endl;}
+                if(devolverVenta()==false){cout<<endl<<"ERROR AL RECUPERAR VENTA"<<endl;}
                 system("pause");
-            break;
-        case 16:
-                system("cls");
-                if(altaVenta()==false){cout<<"ERROR ALTA DE VENTA"<<endl;}
-                system("pause");
-            break;
-        case 17:
-                system("cls");
-                if(devolverVenta()==false){cout<<"ERROR ALTA DE VENTA"<<endl;}
-                system("pause");
-            break;
+                break;
         }
-    }while(opc!=18);
+    }while(opc!=16);
 }
+
 ///-------------------------------------------------------///
 
 void mostrarVectorVentas(Venta *pVentas, int cantVentas){
     int i;
     cartelListarVentas(1);
+    int linea=0;
     for(i=0;i<cantVentas;i++){
-                pVentas[i].mostrar(i+3);
-                cout<<endl;
+        if(pVentas[i].getEstado()){
+            pVentas[i].mostrar(linea+3);
+            linea++;
+        }
 
     }
 }
@@ -311,13 +254,13 @@ void copiarAVectorVentas(Venta *pVentas, int cantVentas){
     }
 }
 
-void ordenarIDVentas ( Venta *pVentas, int cantVentas){
+void ordenarIDVentas (Venta *pVentas, int cantVentas){
     int i, j, posMax;
     Venta aux;
     for(i=0;i<cantVentas-1;i++){
         posMax=i;
         for(j=i+1;j<cantVentas;j++){
-            if(pVentas[j].getNventa()>pVentas[posMax].getNventa()){
+            if(pVentas[j].getNventa()<pVentas[posMax].getNventa()){
                 posMax=j;
             }
         }
@@ -336,7 +279,24 @@ void ordenarImporteVentas ( Venta *pVentas, int cantVentas){
     for(i=0;i<cantVentas-1;i++){
         posMax=i;
         for(j=i+1;j<cantVentas;j++){
-            if(pVentas[j].getImporte()>pVentas[posMax].getImporte()){
+            if(pVentas[j].getImporte()<pVentas[posMax].getImporte()){
+                posMax=j;
+            }
+        }
+        aux=pVentas[i];
+        pVentas[i]=pVentas[posMax];
+        pVentas[posMax]=aux;
+    }
+
+}
+
+void ordenarUnidadesVendidas(Venta *pVentas, int cantVentas){
+    int i, j, posMax;
+    Venta aux;
+    for(i=0;i<cantVentas-1;i++){
+        posMax=i;
+        for(j=i+1;j<cantVentas;j++){
+            if(pVentas[j].getCantidadVendida()<pVentas[posMax].getCantidadVendida()){
                 posMax=j;
             }
         }
@@ -358,14 +318,13 @@ void listarVentasOrdenadas(int orden){
     copiarAVectorVentas(pVentas,cantVentas);
     switch(orden){
     case 1:
-       ordenarIDVentas(pVentas, cantVentas);
+        ordenarIDVentas(pVentas, cantVentas);
         break;
     case 2:
         ordenarImporteVentas(pVentas, cantVentas);
         break;
     case 3:
-  // ORDENAR POR CANTIDAD VENDIDA
-
+        ordenarUnidadesVendidas(pVentas, cantVentas);
         break;
     }
     mostrarVectorVentas(pVentas, cantVentas);
@@ -384,17 +343,17 @@ void elegirTipoListadoVentas(){
             break;
         case 13: ///POR ID
             system("cls;");
-        listarVentasOrdenadas(1);
+            listarVentasOrdenadas(1);
             system("pause");
             break;
         case 14: ///POR IMPORTE
             system("cls;");
-        listarVentasOrdenadas(2);
+            listarVentasOrdenadas(2);
             system("pause");
             break;
         case 15: ///POR CANT VENDIDA
             system("cls;");
-        listarVentasOrdenadas(3);
+            listarVentasOrdenadas(3);
             system("pause");
             break;
         case 16:

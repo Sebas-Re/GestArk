@@ -26,7 +26,7 @@ int buscarIDvendedor(int id){
 }
 
 int BuscarVendedorNumero(int id){//busca articulo por id y lo muestra si "estado" esta en true
-    Vendedor reg;;
+    Vendedor reg;
     int pos=0;
     FILE *pVendedor;
     pVendedor=fopen(ARCHIVOVENDEDOR,"rb");
@@ -74,11 +74,8 @@ int agregarVendedor(){
 
 int mostrarVendedorPorDni(int dni){//busca Vendedor por DNI y lo muestra si "estado" esta en true
     Vendedor registro;
-    int pos=0;
-    pos=buscarDNIVendedor(dni);
-    if(pos<0){return -2;}
 
-    if(!registro.leerDeDisco(pos)){return -3;}
+    if(!registro.leerDeDisco(dni-1)){return -3;}
 
     if(!registro.getEstado()){return -1;}
 
@@ -86,82 +83,77 @@ int mostrarVendedorPorDni(int dni){//busca Vendedor por DNI y lo muestra si "est
 }
 
 int modificarCategoria(){
-    int dni, pos;
+    int id;
     bool modifico=false;
     Vendedor registro;
 
-    cout<<"INGRESE DNI DEL VENDEDOR: ";
-    cin>>dni;
+    cout<<"INGRESE ID DEL VENDEDOR: ";
+    cin>>id;
 
-    pos=buscarDNIVendedor(dni);
-    if(pos<0){return -2;}
-
-
-    if(!registro.leerDeDisco(pos)){return -3;}
+    if(!registro.leerDeDisco(id-1)){return -3;}
     if(registro.getEstado()==true){
+        registro.mostrar();
+
         int catNueva;
-        cout<<"INGRESE LA NUEVA CATEGORIA: ";
+        cout<< endl << "INGRESE CATEGORIA NUEVA DEL VENDEDOR (1 A 5): ";
         cin >> catNueva;
+        while (catNueva<0 || catNueva>5){
+            cout << "NO EXISTE CATEGORIA PARA EL NUMERO INGRESADO." << endl;
+            cout << "INGRESE UNA CATEGORIA VALIDA (1 A 5): ";
+            cin >> catNueva;
+        }
+        cout << "CATEGORIA NUEVA INGRESADA >" << CATEGORIAS[catNueva-1] << "<" << endl;
         registro.setcategoria(catNueva);
-        modifico=registro.modificarEnDisco(pos);
+        modifico=registro.modificarEnDisco(id-1);
     }
     return modifico;
 }
 
 int eliminarVendedor(){//cambia el estado de true a false
     int r;
-    int dni, pos;
+    int id;
     bool modifico=false;
     Vendedor registro;
 
-    cout<<"INGRESE DNI DEL VENDEDOR: ";
-    cin>>dni;
+    cout<<"INGRESE ID DEL VENDEDOR: ";
+    cin>>id;
 
-    pos=buscarDNIVendedor(dni);
-    if(pos<0){return -2;}
-
-    if(!registro.leerDeDisco(pos)){return -3;}
-
-    cout<<"ELIMINAR VENDEDOR (Y/N)?";
+    if(!registro.leerDeDisco(id-1)){return -3;}
+    registro.mostrar();
+    cout<< endl << "ELIMINAR VENDEDOR (Y/N)?";
     r=getch();
     if(r!=121 && r!=89){
-        modifico = -1;
-        return modifico;
+        return -1;
     }
     registro.setEstado(false);
-    modifico=registro.modificarEnDisco(pos);
+    modifico=registro.modificarEnDisco(id-1);
     return modifico;
 }
 
 int altaVendedor(){//cambia el estado de true a false
     int r;
-    int dni, pos;
+    int id;
     bool modifico=false;
     Vendedor registro;
 
-    cout<<"INGRESE DNI DEL VENDEDOR: ";
-    cin>>dni;
+    cout<<"INGRESE ID DEL VENDEDOR: ";
+    cin>>id;
 
-    pos=buscarDNIVendedor(dni);
-    if(pos<0){return -2;}
-
-    if(!registro.leerDeDisco(pos)){return -3;}
-
-    cout<<"DAR DE ALTA AL VENDEDOR (Y/N)?";
+    if(!registro.leerDeDisco(id-1)){return -3;}
+    registro.mostrar();
+    cout<< endl <<"DAR DE ALTA AL VENDEDOR (Y/N)?";
     r=getch();
     if(r!=121 && r!=89){
-        modifico = -1;
-        return modifico;
+        return -1;
     }
     registro.setEstado(true);
-    modifico=registro.modificarEnDisco(pos);
+    modifico=registro.modificarEnDisco(id-1);
     return modifico;
 }
 
 void seccionVendedor(){
     int opc;
     do{
-        int checkeo=0;
         opc=menuVendedor();
         switch(opc){
         case 12:
@@ -177,12 +169,12 @@ void seccionVendedor(){
             {
                 system("cls");
                 int dni;
-                cout<<"INGRESE DNI DEL VENDEDOR: "<<endl;
+                cout<<"INGRESE ID DEL VENDEDOR: "<<endl;
                 cin>>dni;
-                checkeo=mostrarVendedorPorDni(dni);
-                if(checkeo==-1){cout<<"El vendedor esta dado de baja."<<endl;}
-                if(checkeo==-2){cout<<"El vendedor no se encuentra registrado."<<endl;}
-                if(checkeo==-3){cout<<"Error al leer el archivo."<<endl;}
+                int checkeo=mostrarVendedorPorDni(dni);
+                if(checkeo==-1){cout<< endl << "El vendedor esta dado de baja."<<endl;}
+                if(checkeo==-2){cout<< endl <<"El vendedor no se encuentra registrado."<<endl;}
+                if(checkeo==-3){cout<< endl <<"Error al leer el archivo."<<endl;}
                 system("pause");
                 break;
             }
@@ -195,35 +187,35 @@ void seccionVendedor(){
         case 15:
             {
                 system("cls");
-                checkeo=modificarCategoria();
-                if(checkeo==-2){cout<<"El vendedor no se encuentra registrado."<<endl;}
-                if(checkeo==-3){cout<<"Error al leer el archivo."<<endl;}
-                if(checkeo==1){cout<<"Categoria modificada con exito."<<endl;}
-                if(checkeo==0){cout<<"Error al guardar los nuevos datos en el archivo."<<endl;}
+                int checkeo=modificarCategoria();
+                if(checkeo==-2){cout<<endl <<"El vendedor no se encuentra registrado."<<endl;}
+                if(checkeo==-3){cout<<endl <<"Error al leer el archivo."<<endl;}
+                if(checkeo==1){cout<<endl <<"Categoria modificada con exito."<<endl;}
+                if(checkeo==0){cout<<endl <<"Error al guardar los nuevos datos en el archivo."<<endl;}
                 system("pause");
                 break;
             }
         case 16:
             {
                 system("cls");
-                checkeo=eliminarVendedor();
-                if(checkeo==-1){cout<<"El vendedor no fue dado de baja."<<endl;}
-                if(checkeo==-2){cout<<"El vendedor no se encuentra registrado."<<endl;}
-                if(checkeo==-3){cout<<"Error al leer el archivo."<<endl;}
-                if(checkeo==1){cout<<"Vendedor dado de baja con exito."<<endl;}
-                if(checkeo==0){cout<<"Error al guardar los nuevos datos en el archivo."<<endl;}
+                int checkeo=eliminarVendedor();
+                if(checkeo==-1){cout<<endl <<"El vendedor no fue dado de baja."<<endl;}
+                if(checkeo==-2){cout<<endl <<"El vendedor no se encuentra registrado."<<endl;}
+                if(checkeo==-3){cout<<endl <<"Error al leer el archivo."<<endl;}
+                if(checkeo==1){cout<<endl <<"Vendedor dado de baja con exito."<<endl;}
+                if(checkeo==0){cout<<endl <<"Error al guardar los nuevos datos en el archivo."<<endl;}
                 system("pause");
                 break;
             }
         case 17:
             {
                 system("cls");
-                checkeo=altaVendedor();
-                if(checkeo==-1){cout<<"El vendedor no fue dado de alta."<<endl;}
-                if(checkeo==-2){cout<<"El vendedor no se encuentra registrado."<<endl;}
-                if(checkeo==-3){cout<<"Error al leer el archivo."<<endl;}
-                if(checkeo==1){cout<<"Vendedor dado de alta con exito."<<endl;}
-                if(checkeo==0){cout<<"Error al guardar los nuevos datos en el archivo."<<endl;}
+                int checkeo=altaVendedor();
+                if(checkeo==-1){cout<<endl <<"El vendedor no fue dado de alta."<<endl;}
+                if(checkeo==-2){cout<<endl <<"El vendedor no se encuentra registrado."<<endl;}
+                if(checkeo==-3){cout<<endl <<"Error al leer el archivo."<<endl;}
+                if(checkeo==1){cout<<endl <<"Vendedor dado de alta con exito."<<endl;}
+                if(checkeo==0){cout<<endl <<"Error al guardar los nuevos datos en el archivo."<<endl;}
                 system("pause");
                 break;
             }
@@ -307,7 +299,7 @@ void porFechaDescendente(Vendedor *vectorVendedor, int totalRegistros){
     for(i=0;i<totalRegistros-1;i++){
         posMin=i;
         for(j=i+1;j<totalRegistros;j++){
-                if(vectorVendedor[j].getFecha()>vectorVendedor[posMin].getFecha() ==false){
+                if(( vectorVendedor[j].getFecha()>vectorVendedor[posMin].getFecha() ) ==false){
                         posMin=j;
                 }
         }
@@ -366,6 +358,7 @@ void listarVendedoresOrdenados(int tipoOrden){
         break;
     }
     mostrarVectorOrdenado(vectorVendedor, totalRegistros);
+    delete vectorVendedor;
 }
 
 void elegirTipoListadoVendedor(){

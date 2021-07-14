@@ -43,7 +43,6 @@ public:
     int getIdProveedor(){return idProveedor;}
     bool getEstado(){return Estado;}
     ///Metodos
-  //  void iDAutomatico();
     void cargar();
     void mostrar();
     void mostrar(int y);
@@ -53,31 +52,15 @@ public:
     void VerificarStock (int);
 
 };
-/*
-void Articulo::iDAutomatico(){
-    FILE *pArchivo;
-    pArchivo=fopen(ARCHIVOARTICULO,"rb");
-    fseek(pArchivo,-sizeof (Articulo),2);
-    fread(this, sizeof (Articulo),1,pArchivo);
-    ID+=1;
-    fclose(pArchivo);
-    cout<<"CODIGO AUTONUMERICO ASIGNADO: "<<ID<<endl;
-}
-*/
 
 void Articulo::VerificarStock (int s){
-
     while (s < 1 or s > 99999){
         cout << "Stock invalido, ingrese Stock: "<<endl;
         cin >> s;
-
     }
 
     Stock=s;
-        BorrarArea(1,4);
-        rlutil::locate(1,4);
-        cout << "STOCK INGRESADO: " << Stock;
-
+    cout << "STOCK INGRESADO: " << Stock << endl;
 }
 
 void Articulo::cargar(){
@@ -110,6 +93,13 @@ void Articulo::cargar(){
         rlutil::locate(1,6);
         cin>>idProveedor;
         posProv=buscarProveedor(idProveedor);
+        while (posProv < 0 ){
+            cout << "ID NO ENCONTRADO" << endl;
+            cout << "INGRESE UN ID VALIDO: ";
+            cin >> idProveedor;
+            posProv=buscarProveedor(idProveedor);
+        }
+
         nombreProveedor.leerDeDisco(posProv);
         BorrarArea(1,5);
         rlutil::locate(1,5);

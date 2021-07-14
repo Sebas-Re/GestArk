@@ -42,6 +42,7 @@ public:
     bool leerDeDisco(int i);
     bool grabarEnDisco();
     bool modificarEnDisco(Proveedor reg, int pos);
+    bool IDAutomatico();
 };
 
 void Proveedor::cargar(){
@@ -107,5 +108,12 @@ bool Proveedor::modificarEnDisco(Proveedor reg, int pos){
     return escribio;
 }
 
-
+bool Proveedor::IDAutomatico(){
+    FILE *pProveedor;
+    pProveedor=fopen(ARCHIVOPROVEEDOR,"rb");
+    fseek(pProveedor,-sizeof (Proveedor),2);
+    fread(this,sizeof (Proveedor),1,pProveedor);
+    codigoProveedor+=1;
+    fclose(pProveedor);
+}
 #endif // CLSPROVEEDOR_H_INCLUDED

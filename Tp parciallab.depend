@@ -1129,7 +1129,7 @@
 
 1625406161 c:\users\sebas\documents\github\gestark\menuvendedor.h
 
-1625150509 source:c:\users\chave\desktop\gestark-main\main.cpp
+1625715703 source:c:\users\chave\desktop\gestark-main\main.cpp
 	<iostream>
 	<iostream>
 	<cstdlib>
@@ -1158,7 +1158,7 @@
 	"menuVendedor.h"
 	"menuReportes.h"
 
-1625149125 c:\users\chave\desktop\gestark-main\rlutil.h
+1625715703 c:\users\chave\desktop\gestark-main\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -1172,46 +1172,46 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1625152652 c:\users\chave\desktop\gestark-main\funcionesglobales.h
+1625715703 c:\users\chave\desktop\gestark-main\funcionesglobales.h
 	"rlutil.h"
 
-1625149125 c:\users\chave\desktop\gestark-main\clsfecha.h
+1625715703 c:\users\chave\desktop\gestark-main\clsfecha.h
 
-1625149125 c:\users\chave\desktop\gestark-main\clsdirrecion.h
+1625715703 c:\users\chave\desktop\gestark-main\clsdirrecion.h
 
-1625149125 c:\users\chave\desktop\gestark-main\clsproveedor.h
+1625715703 c:\users\chave\desktop\gestark-main\clsproveedor.h
 
-1625150473 c:\users\chave\desktop\gestark-main\menus.h
+1625844929 c:\users\chave\desktop\gestark-main\menus.h
 	"rlutil.h"
 
-1625153193 c:\users\chave\desktop\gestark-main\menuproveedores.h
+1625715703 c:\users\chave\desktop\gestark-main\menuproveedores.h
 
-1625154124 c:\users\chave\desktop\gestark-main\clsarticulo.h
+1625715703 c:\users\chave\desktop\gestark-main\clsarticulo.h
 
-1625152652 c:\users\chave\desktop\gestark-main\clspersona.h
+1625715703 c:\users\chave\desktop\gestark-main\clspersona.h
 
-1625149125 c:\users\chave\desktop\gestark-main\clsvendedor.h
+1625846052 c:\users\chave\desktop\gestark-main\clsvendedor.h
 
-1625149125 c:\users\chave\desktop\gestark-main\clscliente.h
+1625840298 c:\users\chave\desktop\gestark-main\clscliente.h
 
-1625150172 c:\users\chave\desktop\gestark-main\herramientas.h
+1625844929 c:\users\chave\desktop\gestark-main\herramientas.h
 
-1625149125 c:\users\chave\desktop\gestark-main\clscadena.h
+1625715703 c:\users\chave\desktop\gestark-main\clscadena.h
 
-1625151830 c:\users\chave\desktop\gestark-main\clspedido.h
+1625715703 c:\users\chave\desktop\gestark-main\clspedido.h
 
-1625149125 c:\users\chave\desktop\gestark-main\clsventa.h
+1625846052 c:\users\chave\desktop\gestark-main\clsventa.h
 	"clspedido.h"
 
-1625149125 c:\users\chave\desktop\gestark-main\menuarticulos.h
+1625715703 c:\users\chave\desktop\gestark-main\menuarticulos.h
 
-1625149125 c:\users\chave\desktop\gestark-main\menuclientes.h
+1625839896 c:\users\chave\desktop\gestark-main\menuclientes.h
 
-1625149125 c:\users\chave\desktop\gestark-main\menuventa.h
+1625715703 c:\users\chave\desktop\gestark-main\menuventa.h
 
-1625149125 c:\users\chave\desktop\gestark-main\menuconfiguracion.h
+1625715703 c:\users\chave\desktop\gestark-main\menuconfiguracion.h
 
-1625149125 c:\users\chave\desktop\gestark-main\menuvendedor.h
+1625846052 c:\users\chave\desktop\gestark-main\menuvendedor.h
 
 1624986468 source:c:\users\sebas\documents\github\gestark-main\main.cpp
 	<iostream>
@@ -1297,7 +1297,7 @@
 
 1625673833 c:\users\sebas\documents\github\gestark\clspedido.h
 
-1625154340 c:\users\chave\desktop\gestark-main\menureportes.h
+1625846615 c:\users\chave\desktop\gestark-main\menureportes.h
 
 1625714649 c:\users\sebas\documents\github\gestark\menureportes.h
 
@@ -1386,4 +1386,89 @@
 1625406161 g:\descargas\gestark-main\gestark-main\menuvendedor.h
 
 1625406406 g:\descargas\gestark-main\gestark-main\menureportes.h
+
+1626289324 source:c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\main.cpp
+	<iostream>
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	<windows.h>
+	"rlutil.h"
+	"FuncionesGlobales.h"
+	"clsfecha.h"
+	"clsdirrecion.h"
+	"clsproveedor.h"
+	"Menus.h"
+	"MenuProveedores.h"
+	"clsarticulo.h"
+	"clspersona.h"
+	"clsvendedor.h"
+	"clscliente.h"
+	"herramientas.h"
+	"clsventa.h"
+	"clspedido.h"
+	"MenuArticulos.h"
+	"MenuClientes.h"
+	"Menuventa.h"
+	"MenuConfiguracion.h"
+	"menuVendedor.h"
+	"menuReportes.h"
+
+1625715704 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1626146079 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\funcionesglobales.h
+	"rlutil.h"
+
+1625715704 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\clsfecha.h
+
+1626274435 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\clsdirrecion.h
+
+1626273886 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\clsproveedor.h
+
+1626287414 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\menus.h
+	"rlutil.h"
+
+1626274435 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\menuproveedores.h
+
+1626271774 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\clsarticulo.h
+
+1626271217 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\clspersona.h
+
+1626276270 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\clsvendedor.h
+
+1626277893 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\clscliente.h
+
+1626268217 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\herramientas.h
+
+1625715704 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\clscadena.h
+
+1626279955 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\clsventa.h
+	"clspedido.h"
+
+1626289908 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\clspedido.h
+
+1626290077 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\menuarticulos.h
+
+1626290077 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\menuclientes.h
+
+1626286453 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\menuventa.h
+
+1626291710 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\menuconfiguracion.h
+
+1626290077 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\menuvendedor.h
+
+1626291489 c:\users\chave\desktop\gestark-chave 09-07\gestark-chave+\menureportes.h
 

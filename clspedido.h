@@ -47,13 +47,13 @@ void Pedido::mostrar(){
 void Pedido::mostrar(int y){
     gotoxy(4,y);
     cout<<nPedido<<"\t";
-    gotoxy(8,y);
+    gotoxy(20,y);
     cout<<producto<<"\t";
-    gotoxy(35,y);
+    gotoxy(45,y);
     cout<<cantSolicitada<<"\t";
     gotoxy(60,y);
     cout<<ProvaSolicitar<<"\t";
-    gotoxy(75,y);
+    gotoxy(82,y);
     cout<<envioMail;
 }
 
@@ -102,16 +102,11 @@ bool generarPedido(Articulo &aux, int cantvendida){
     Venta regv;
 
     while(regp.leerDeDisco(i++)){
-
                 //aca busca que el producto no este pedido
-            if(strcmp(aux.getDescripcion(),regp.getProducto())== 0){
-                    rlutil::locate(16,10);
-                cout<<"YA SE GENERO UN PEDIDO PARA ESTE ARTICULO"<<endl; ////FUNCIONA 10 PUNTO
-
-
-                return false;
-            }
+        if(strcmp(aux.getDescripcion(),regp.getProducto())== 0){
+            return false;
         }
+    }
 
         //asigna numero de pedido
         AsignacionNumeroPedido(regp);
@@ -124,45 +119,27 @@ bool generarPedido(Articulo &aux, int cantvendida){
                 //aca recorre el archivo ventas y acumula cantvendida
             if(aux.getID()==regv.getIDarticulo()){
               cantapedir+=regv.getCantidadVendida();
-
-
             }
 
         }
 
         cantapedir+=cantvendida;
 
-        regp.setCantSolicitada(cantapedir); //Carga un valor na que ver
-
-
-        //agrego el proveedor
-        //recorro el archivo proveedor y saco el mail
-
+        regp.setCantSolicitada(cantapedir);
             bool Encontrado=false;
 
         while(regpr.leerDeDisco(ap++) && Encontrado == 0){
-               // rlutil::locate (1,30);
-       //         cout << regpr.getNombreProv()<<endl<<endl;
-         //       cout << regpr.getMailProv()<<endl<<endl;
-       //         cout << aux.getIdProveedor()<<endl<<endl;
-      //          system("pause");
-
             if(aux.getIdProveedor()==regpr.getCodigoProv()){
                 regp.setEnvioMail(regpr.getMailProv());
                 regp.setProvasolicitar(regpr.getNombreProv());
                     Encontrado = true;
                     rlutil::locate(1,25);
-        //            cout << "Email encontrado"<<endl;
-          //          system("pause");
-
             }
 
         }
 
         if (Encontrado == false){
                 rlutil::locate(1,25);
-            cout << "Email no encontrado"<<endl;
-            system("pause");
             return false;
 
         }

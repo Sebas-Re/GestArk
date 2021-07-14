@@ -155,11 +155,11 @@ aux.setStock(stocknuevo);
 
 aux.modificarEnDisco(buscarArticulo(idArticulo));
 
-cout << "STOCK ACTUALIZADO."<<endl;
+cout << endl << "STOCK ACTUALIZADO." << endl;
 
 system("pause");
 system("cls");
-
+return true;
 
 }
 
@@ -296,7 +296,7 @@ bool modificarPrecioU(){//modifica el precio unitario de un articulo
 
 bool elmininarArticulo(){//cambia el estado de true a false
     bool nodisponible=false;
-    char r;
+    int r;
     int id;
     Articulo reg;
     cout<<"INGRESE EL CODIGO DEL ARTICULO: ";
@@ -306,19 +306,21 @@ bool elmininarArticulo(){//cambia el estado de true a false
     reg.leerDeDisco(pos);
     reg.mostrar();
     cout<<"ELIMINAR ARTICULO (Y/N)?";
-    cin>>r;
-    if(r=='y'||r=='Y'){
+    r = getch();
+    if(r==121||r==89){
             reg.leerDeDisco(pos);
             reg.setEstado(nodisponible);
             bool modifico=reg.modificarEnDisco(pos);
             return modifico;
     }
-    else{return false;}
+    else{
+        return false;
+    }
 }
 
 bool altaArticulo(){// cambia el estado de false a true
     bool disponible=true;
-    char r;
+    int r;
     int id;
     Articulo reg;
     cout<<"INGRESE EL CODIGO DEL ARTICULO: ";
@@ -327,15 +329,17 @@ bool altaArticulo(){// cambia el estado de false a true
     if(pos<0){return false;}
     reg.leerDeDisco(pos);
     reg.mostrar();
-            cout<<"DAR EL ALTA AL ARTICULO (Y/N)?";
-            cin>>r;
-    if(r=='y'||r=='Y'){
-            reg.leerDeDisco(pos);
-            reg.setEstado(disponible);
-            bool modifico=reg.modificarEnDisco(pos);
-            return modifico;
+    cout<<"DAR EL ALTA AL ARTICULO (Y/N)?";
+    r=getch();
+    if(r==121||r==89){
+        reg.leerDeDisco(pos);
+        reg.setEstado(disponible);
+        bool modifico=reg.modificarEnDisco(pos);
+        return modifico;
     }
-    else{return false;}
+    else{
+        return false;
+    }
 }
 
 void seccionArticulos(){

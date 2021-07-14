@@ -63,7 +63,6 @@ const char CATEGORIAS[10][10]={
 #include "clsvendedor.h"
 #include "clscliente.h"
 #include "herramientas.h"
-#include "clscadena.h"
 #include "clsventa.h"
 #include "clspedido.h"
 #include "MenuArticulos.h"
@@ -77,21 +76,39 @@ const char CATEGORIAS[10][10]={
 
 
 int main(){
+    rlutil::setColor(0);
+    rlutil::setBackgroundColor(15);
     ShowWindow(GetConsoleWindow(),SW_MAXIMIZE);
     system("TITLE GestArk - gestion empresarial");
-    //cartelInicial();
+    cartelInicial();
     int opc;
     do{
         opc=Menuprincipal();
         switch(opc){
         case 12:
-            seccionArticulos();
+            if(contarRegistrosProv()>0){
+                seccionArticulos();
+            }
+            else{
+                rlutil::locate(60,22);
+                cout << "PRIMERO DEBER GENERAR UN REGISTRO DE PROVEEDORES..." << endl;
+                rlutil::locate(60,23);
+                system("pause");
+            }
             break;
         case 13:
             seccionClientes();
             break;
         case 14:
-            seccionVenta();
+            if(contarRegistros()>0 && contarRegistrosClientes()>0 && contarRegistrosVendedores()>0){
+                seccionVenta();
+            }
+            else{
+                rlutil::locate(50,22);
+                cout << "PRIMERO DEBER GENERAR REGISTROS DE CLIENTES, VENDORES Y ARTICULOS..." << endl;
+                rlutil::locate(50,23);
+                system("pause");
+            }
             break;
         case 15:
             seccionVendedor();
@@ -108,6 +125,7 @@ int main(){
         case 19:
             rlutil::locate(1,25);
             cartelFinal();
+
             return 0;
             break;
         }

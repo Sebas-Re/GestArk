@@ -6,12 +6,7 @@ bool agregarProveedor(){//agrega un registro articulo
     int r, contador=0;
     do{
     Proveedor reg;
-    FILE *pProveedor;
-    pProveedor=fopen(ARCHIVOPROVEEDOR,"rb");
-    fseek(pProveedor,-sizeof (Proveedor),2);
-    fread(&reg,sizeof reg,1,pProveedor);
-    reg.setCodigoProv(reg.getCodigoProv()+1);
-    fclose(pProveedor);
+    reg.IDAutomatico();
     cout<<"CODIGO AUTONUMERICO ASIGNADO: "<<reg.getCodigoProv()<<endl;
     reg.cargar();
     if(!reg.grabarEnDisco()){
@@ -161,13 +156,13 @@ bool modificarmailProveedor(){
     int pos=buscarProveedor(id);
     if(pos<0){return false;}
     reg.leerDeDisco(pos);
-    reg.mostrar();
     if(reg.getEstado()==true){
-            cout<<"INGRESE NUEVO MAIL: ";
-            cargarCadena(mailProv,29);
-    reg.setMailProv(mailProv);
-    bool modifico=reg.modificarEnDisco(reg,pos);
-    return modifico;
+        reg.mostrar();
+        cout<<"INGRESE NUEVO MAIL: ";
+        cargarCadena(mailProv,29);
+        reg.setMailProv(mailProv);
+        bool modifico=reg.modificarEnDisco(reg,pos);
+        return modifico;
     }
     else{return false;}
 }
@@ -181,8 +176,8 @@ bool modificarTelProveedor(){
     int pos=buscarProveedor(id);
     if(pos<0){return false;}
     reg.leerDeDisco(pos);
-    reg.mostrar();
     if(reg.getEstado()==true){
+            reg.mostrar();
             cout<<"INGRESE NUEVO TELEFONO: ";
             cargarCadena(telProv,24);
     reg.setTelefonoProv(telProv);
@@ -201,20 +196,25 @@ bool modificarDirProveedor(){
     int pos=buscarProveedor(id);
     if(pos<0){return false;}
     reg.leerDeDisco(pos);
-    reg.mostrar();
     if(reg.getEstado()==true){
-            cout<<"INGRESE NUEVA DIRECCION: "<<endl;
-            cout<<"CALLE: ";
-            cargarCadena(calle,34);
-            reg.setCalleProv(calle);
-            cout<<"NUMERACION: ";
-            cin>>num;
-            reg.setNumProv(num);
-            cout<<"LOCALIDAD: ";
-            cargarCadena(loc,34);
-            reg.setLocProv(loc);
-    bool modifico=reg.modificarEnDisco(reg,pos);
-    return modifico;
+        reg.mostrar();
+        cout<<"INGRESE NUEVA DIRECCION: "<<endl;
+        cout<<"CALLE: ";
+        cargarCadena(calle,34);
+        reg.setCalleProv(calle);
+        cout<<"NUMERACION: ";
+        cin>>num;
+        while(num<1){
+            cout << "LA NUMERACION NO PUEDE SER MENOR A 1" << endl;
+            cout << "INGRESE UNA NUMERACION CORRECTA: ";
+            cin >> num;
+        }
+        reg.setNumProv(num);
+        cout<<"LOCALIDAD: ";
+        cargarCadena(loc,34);
+        reg.setLocProv(loc);
+        bool modifico=reg.modificarEnDisco(reg,pos);
+        return modifico;
     }
     else{return false;}
 }
@@ -245,7 +245,7 @@ bool modificarDatosProveedor(){
 
 bool elmininarProveedor(){
     bool nodisponible=false;
-    char r;
+    int r;
     int id;
     Proveedor reg;
     cout<<"INGRESE EL CODIGO DEL PROVEEDOR: ";
@@ -255,19 +255,21 @@ bool elmininarProveedor(){
     reg.leerDeDisco(pos);
     reg.mostrar();
     cout<<"ELIMINAR PROVEEDOR (Y/N)?";
-    cin>>r;
-    if(r=='y'||r=='Y'){
+    r=getch();
+    if(r==121||r==89){
             reg.leerDeDisco(pos);
             reg.setEstado(nodisponible);
             bool modifico=reg.modificarEnDisco(reg,pos);
             return modifico;
     }
-    else{return false;}
+    else{
+        return false;
+    }
 }
 
 bool recuperoProveedor(){
     bool disponible=true;
-    char r;
+    int r;
     int id;
     Proveedor reg;
     cout<<"INGRESE EL CODIGO DEL ARTICULO: ";
@@ -276,15 +278,17 @@ bool recuperoProveedor(){
     if(pos<0){return false;}
     reg.leerDeDisco(pos);
     reg.mostrar();
-            cout<<"DAR EL ALTA PROVEEDOR (Y/N)?";
-            cin>>r;
-    if(r=='y'||r=='Y'){
-            reg.leerDeDisco(pos);
-            reg.setEstado(disponible);
-            bool modifico=reg.modificarEnDisco(reg,pos);
-            return modifico;
+    cout<<"DAR EL ALTA PROVEEDOR (Y/N)?";
+    r=getch();
+    if(r==121||r==89){
+        reg.leerDeDisco(pos);
+        reg.setEstado(disponible);
+        bool modifico=reg.modificarEnDisco(reg,pos);
+        return modifico;
     }
-    else{return false;}
+    else{
+        return false;
+    }
 }
 
 void seccionProveedores(){
